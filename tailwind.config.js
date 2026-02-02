@@ -3,6 +3,9 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+
+    "./curation-pipeline/index.html",
+    "./curation-pipeline/src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

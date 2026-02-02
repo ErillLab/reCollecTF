@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import SearchButton from "./search/general/SearchButton";
+import NewCurationButton from "./search/general/NewCurationButton";
 import LoginButton from "./LoginButton";
 import WriteButton from "./WriteButton";
 import { useUser } from '@/contexts/UserContext';
@@ -25,6 +26,7 @@ const Header = () => {
                 {(userStatus == 2) && <WriteButton />}
 
                 <SearchButton />
+                <NewCurationButton />
 
                 <LoginButton userStatus={userStatus} user={user} loading={loading}/>
             </div>
