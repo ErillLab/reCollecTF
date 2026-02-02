@@ -1,30 +1,32 @@
 import { useState, useEffect } from "react";
 import { useCuration } from "../../context/CurationContext";
 
+const PROXY = "https://corsproxy.io/?";
+const BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils";
+
 export default function Step1Publication() {
   const { publication, setPublication, goToNextStep } = useCuration();
 
-  const [query, setQuery] = useState(""); //input
-  const [loading, setLoading] = useState(false); //si està buscant
+  // Estat local del formulari
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
   const [article, setArticle] = useState(null);
   const [error, setError] = useState("");
 
-  const PROXY = "https://corsproxy.io/?";
-  const BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils";
+  // Quan tornem enrere al pipeline, recuperem les dades guardades
+  useEffect(() => {
+    if (!publication) return;
 
-  useEffect(() => { //mostra dades al anar enrere
-    if (publication) {
-      setArticle({
-        ...publication,
-        doi: normalizeDOI(publication.doi),
-      });
-      if (publication.pmid) setQuery(publication.pmid);
-      else if (publication.doi) setQuery(publication.doi);
-    }
+    setArticle({
+      ...publication,
+      doi: normalizeDOI(publication.doi),
+    });
+
+    if (publication.pmid) setQuery(publication.pmid);
+    else if (publication.doi) setQuery(publication.doi);
   }, [publication]);
 
-
-  //Main search function (PMID, DOI o TITLE)
+  // Cerca principal: pot ser PMID, DOI o títol
   async function handleSearch(e) {
     e.preventDefault();
     setError("");
@@ -40,14 +42,14 @@ export default function Step1Publication() {
       const isPMID = /^\d+$/.test(q);
       const isDOI = q.includes("/");
 
-      // SEARCH BY PMID
+      // Cerca directa per PMID
       if (isPMID) {
         const url = `${BASE}/esummary.fcgi?db=pubmed&id=${q}&retmode=json`;
         const res = await fetch(PROXY + encodeURIComponent(url));
         const json = await res.json();
         const rec = json.result?.[q];
 
-        if (!rec) throw new Error("PMID not found.");
+        if (!rec) throw new Error("PMID no trobat");
 
         data = {
           pmid: q,
@@ -59,9 +61,8 @@ export default function Step1Publication() {
         };
       }
 
-      // SEARCH BY DOI (PubMed → fallback CrossRef)
+      // Cerca per DOI (primer PubMed, després CrossRef)
       if (!data && isDOI) {
-        // Try PubMed first
         const esearchUrl = `${BASE}/esearch.fcgi?db=pubmed&retmode=json&term=${encodeURIComponent(
           q
         )}[doi]`;
@@ -84,21 +85,18 @@ export default function Step1Publication() {
               journal: rec.fulljournalname || "Unknown",
               pubdate: rec.pubdate || "No date",
               doi: normalizeDOI(rec.elocationid || q),
-
             };
           }
         }
 
-        // Fallback: CrossRef
+        // Fallback a CrossRef si PubMed no retorna res
         if (!data) {
-          const crUrl = `https://api.crossref.org/works/${encodeURIComponent(
-            q
-          )}`;
+          const crUrl = `https://api.crossref.org/works/${encodeURIComponent(q)}`;
           const crRes = await fetch(PROXY + encodeURIComponent(crUrl));
           const crJson = await crRes.json();
           const m = crJson.message;
 
-          if (!m) throw new Error("DOI not found in CrossRef.");
+          if (!m) throw new Error("DOI no trobat a CrossRef");
 
           data = {
             pmid: null,
@@ -106,16 +104,14 @@ export default function Step1Publication() {
             authors: (m.author || [])
               .map((a) => `${a.family || ""} ${a.given || ""}`)
               .join(", "),
-            journal:
-              m["container-title"]?.[0] || "Unknown journal",
-            pubdate:
-              m.issued?.["date-parts"]?.[0]?.join("-") || "No date",
+            journal: m["container-title"]?.[0] || "Unknown journal",
+            pubdate: m.issued?.["date-parts"]?.[0]?.join("-") || "No date",
             doi: q,
           };
         }
       }
 
-      // SEARCH BY TITLE (PubMed)
+      // Cerca per títol (PubMed)
       if (!data && !isPMID && !isDOI) {
         const esearchUrl = `${BASE}/esearch.fcgi?db=pubmed&retmode=json&retmax=1&term=${encodeURIComponent(
           q
@@ -125,9 +121,7 @@ export default function Step1Publication() {
         const js1 = await r1.json();
         const pmid = js1.esearchresult?.idlist?.[0];
 
-        if (!pmid) {
-          throw new Error("No PubMed articles found with this title.");
-        }
+        if (!pmid) throw new Error("Cap article trobat amb aquest títol");
 
         const esumUrl = `${BASE}/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`;
         const r2 = await fetch(PROXY + encodeURIComponent(esumUrl));
@@ -144,31 +138,31 @@ export default function Step1Publication() {
         };
       }
 
-      if (!data) throw new Error("No results found.");
+      if (!data) throw new Error("Sense resultats");
 
       setArticle(data);
     } catch (e) {
       console.error(e);
       setError(
-        "Error searching the article. Please enter a PMID, DOI or article title."
+        "Error cercant l’article. Introdueix un PMID, un DOI o el títol."
       );
     } finally {
       setLoading(false);
     }
   }
 
+  // Normalitza el DOI quan ve incrustat en altres camps
   function normalizeDOI(raw) {
-    if (!raw) return "No DOI";
+    if (!raw) return "";
     const m = raw.match(/10\.\d{4,9}\/\S+/i);
     return m ? m[0] : raw;
   }
 
-  const handleConfirm = () => {
-    if (article) {
-      setPublication(article);
-      goToNextStep();
-    }
-  };
+  function handleConfirm() {
+    if (!article) return;
+    setPublication(article);
+    goToNextStep();
+  }
 
   return (
     <div className="space-y-4">
@@ -177,12 +171,12 @@ export default function Step1Publication() {
       <div className="flex gap-2">
         <input
           className="form-control"
-          placeholder="PMID, DOI or article title"
+          placeholder="PMID, DOI o títol de l’article"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn" onClick={handleSearch} disabled={loading}>
-          {loading ? "Searching..." : "Search"}
+          {loading ? "Cercant..." : "Cerca"}
         </button>
       </div>
 
@@ -192,7 +186,7 @@ export default function Step1Publication() {
         rel="noopener noreferrer"
         className="inline-block text-sm text-blue-400 hover:text-blue-300 underline mt-1"
       >
-        Search article directly on PubMed
+        Cercar directament a PubMed
       </a>
 
       {error && <p className="text-red-400">{error}</p>}
@@ -200,25 +194,15 @@ export default function Step1Publication() {
       {article && (
         <div className="bg-surface border border-border rounded p-4 space-y-1">
           <h3 className="text-xl font-semibold">{article.title}</h3>
-          <p>
-            <strong>Authors:</strong> {article.authors}
-          </p>
-          <p>
-            <strong>Journal:</strong> {article.journal}
-          </p>
-          <p>
-            <strong>Date:</strong> {article.pubdate}
-          </p>
-          <p>
-            <strong>PMID:</strong> {article.pmid || "—"}
-          </p>
-          <p>
-            <strong>DOI:</strong> {article.doi}
-          </p>
+          <p><strong>Autors:</strong> {article.authors}</p>
+          <p><strong>Revista:</strong> {article.journal}</p>
+          <p><strong>Data:</strong> {article.pubdate}</p>
+          <p><strong>PMID:</strong> {article.pmid || "—"}</p>
+          <p><strong>DOI:</strong> {article.doi || "—"}</p>
 
           <div className="pt-3">
             <button className="btn" onClick={handleConfirm}>
-              Confirm and continue →
+              Confirmar i continuar →
             </button>
           </div>
         </div>

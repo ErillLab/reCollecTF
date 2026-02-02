@@ -1,16 +1,21 @@
 // src/components/steps/Step6GeneRegulation.jsx
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCuration } from "../../context/CurationContext";
 
+function distIntervals(aStart, aEnd, bStart, bEnd) {
+  return Math.max(Number(aStart), Number(bStart)) - Math.min(Number(aEnd), Number(bEnd));
+}
+
+function distGeneToSite(g, siteStart, siteEnd) {
+  return distIntervals(g.start, g.end, siteStart, siteEnd);
+}
+
+function distGeneToGene(ga, gb) {
+  return distIntervals(ga.start, ga.end, gb.start, gb.end);
+}
+
 export default function Step6GeneRegulation() {
-  const {
-    step4Data,
-    step6Data,
-    setStep6Data,
-    goToNextStep,
-    genomes, // needed to recompute nearby genes exactly like Step4
-    strainData, // from Step2
-  } = useCuration();
+  const { step4Data, step6Data, setStep6Data, goToNextStep, genomes, strainData } = useCuration();
 
   const expressionEnabled = !!strainData?.expressionInfo;
 
@@ -19,15 +24,12 @@ export default function Step6GeneRegulation() {
   const exactHits = step4Data?.exactHits || {};
   const fuzzyHits = step4Data?.fuzzyHits || {};
 
-  // we keep this if it exists (for older sessions / quick UI), but Step6 will recompute anyway
+  // Ho mantenim per sessions velles, però la font bona és choice + hits
   const selectedBySite = step4Data?.selectedBySite || {};
 
   const [regulation, setRegulation] = useState({});
   const [activeSite, setActiveSite] = useState(null);
 
-  // -----------------------------
-  // RESTORE STATE
-  // -----------------------------
   useEffect(() => {
     if (step6Data) setRegulation(step6Data);
   }, [step6Data]);
@@ -48,10 +50,6 @@ export default function Step6GeneRegulation() {
     );
   }
 
-  // -----------------------------
-  // Reconstruct selected hit from Step4 choice (authoritative)
-  // (selectedBySite can be missing/stale; choice+hits is always enough)
-  // -----------------------------
   function getSelectedHit(site) {
     const sel = choice?.[site];
     if (!sel) return null;
@@ -71,34 +69,19 @@ export default function Step6GeneRegulation() {
     return null;
   }
 
-  // -----------------------------
-  // Nearby genes — EXACTLY the same logic as your Step4 (python-like)
-  // -----------------------------
-  function distIntervals(aStart, aEnd, bStart, bEnd) {
-    return Math.max(Number(aStart), Number(bStart)) - Math.min(Number(aEnd), Number(bEnd));
-  }
-
-  function distGeneToSite(g, siteStart, siteEnd) {
-    return distIntervals(g.start, g.end, siteStart, siteEnd);
-  }
-
-  function distGeneToGene(ga, gb) {
-    return distIntervals(ga.start, ga.end, gb.start, gb.end);
-  }
-
+  // Refem el càlcul de nearby genes igual que al Step4
   function findGenesForHit(acc, hitStart1, hitEnd1) {
     const genome = (genomes || []).find((g) => g.acc === acc);
     if (!genome || !genome.genes || genome.genes.length === 0) return [];
 
-    const genes = genome.genes; // already sorted by start in Step4 loader
+    const genes = genome.genes;
 
-    // normalize to 0-based for computations (same as Step4)
+    // Normalitzem a 0-based per fer els càlculs
     const siteStart = Math.min(Number(hitStart1), Number(hitEnd1)) - 1;
     const siteEnd = Math.max(Number(hitStart1), Number(hitEnd1)) - 1;
 
     const nearbyGenesRaw = [];
 
-    // Partition genes into left (< siteStart), right (> siteEnd), and overlap
     let leftCount = 0;
     for (let i = 0; i < genes.length; i++) {
       if (Number(genes[i].end) < siteStart) leftCount++;
@@ -115,10 +98,10 @@ export default function Step6GeneRegulation() {
     const rightGenes = genes.slice(genes.length - rightCount);
     const overlapGenes = genes.slice(leftCount, genes.length - rightCount);
 
-    // 1) overlap genes always included (site falls inside a gene too)
+    // Overlap sempre entra
     for (const g of overlapGenes) nearbyGenesRaw.push(g);
 
-    // 2) LEFT: nearest left gene; only if strand == '-'; then chain left with same strand + dist < 150
+    // Esquerra: el més proper si va a '-'
     if (leftGenes.length > 0) {
       let bestIdx = 0;
       let bestDist = Infinity;
@@ -147,7 +130,7 @@ export default function Step6GeneRegulation() {
       }
     }
 
-    // 3) RIGHT: nearest right gene; only if strand == '+'; then chain right with same strand + dist < 150
+    // Dreta: el més proper si va a '+'
     if (rightGenes.length > 0) {
       let bestIdx = 0;
       let bestDist = Infinity;
@@ -176,7 +159,7 @@ export default function Step6GeneRegulation() {
       }
     }
 
-    // 4) If none collected, add nearest gene globally
+    // Si no hi ha res, el més proper global
     if (nearbyGenesRaw.length === 0) {
       let best = genes[0];
       let bestDist = distGeneToSite(best, siteStart, siteEnd);
@@ -191,13 +174,13 @@ export default function Step6GeneRegulation() {
       nearbyGenesRaw.push(best);
     }
 
-    // Deduplicate by locus and map to UI shape (same as Step4 tables expect)
+    // Treure duplicats i adaptar al format que pinta la UI
     const seen = new Set();
     const result = [];
 
     for (const g of nearbyGenesRaw) {
       const locus = g?.locus || "";
-      if (!locus) continue; // keep consistent with Step4 display
+      if (!locus) continue;
       if (seen.has(locus)) continue;
       seen.add(locus);
 
@@ -215,9 +198,6 @@ export default function Step6GeneRegulation() {
     return result;
   }
 
-  // -----------------------------
-  // Toggle gene selection (only if expressionEnabled)
-  // -----------------------------
   function toggleGene(site, gene) {
     if (!expressionEnabled) return;
 
@@ -225,9 +205,7 @@ export default function Step6GeneRegulation() {
       const current = prev?.[site]?.regulatedGenes || [];
       const exists = current.some((g) => g.locus === gene.locus);
 
-      const updated = exists
-        ? current.filter((g) => g.locus !== gene.locus)
-        : [...current, gene];
+      const updated = exists ? current.filter((g) => g.locus !== gene.locus) : [...current, gene];
 
       return {
         ...prev,
@@ -239,9 +217,6 @@ export default function Step6GeneRegulation() {
     });
   }
 
-  // -----------------------------
-  // Confirm
-  // -----------------------------
   function handleConfirm() {
     setStep6Data(regulation);
     goToNextStep();
@@ -253,9 +228,6 @@ export default function Step6GeneRegulation() {
     return [sites[0]];
   }, [sites, activeSite]);
 
-  // -----------------------------
-  // Render
-  // -----------------------------
   return (
     <div className="space-y-6 text-sm">
       <h2 className="text-2xl font-bold">Step 6 – Gene Regulation</h2>
@@ -299,7 +271,6 @@ export default function Step6GeneRegulation() {
       )}
 
       {visibleSites.map((site) => {
-        // If Step4 stored selectedBySite we can still show it, but genes are recomputed below.
         const bundle = selectedBySite?.[site];
         const hit = getSelectedHit(site) || bundle?.hit || null;
 
@@ -324,8 +295,7 @@ export default function Step6GeneRegulation() {
             ) : (
               <div className="space-y-2">
                 {genes.map((g) => {
-                  const checked =
-                    regulation?.[site]?.regulatedGenes?.some((x) => x.locus === g.locus) || false;
+                  const checked = regulation?.[site]?.regulatedGenes?.some((x) => x.locus === g.locus) || false;
 
                   return (
                     <label

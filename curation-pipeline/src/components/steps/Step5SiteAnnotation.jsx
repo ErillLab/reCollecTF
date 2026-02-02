@@ -1,6 +1,30 @@
 // src/components/steps/Step5SiteAnnotation.jsx
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCuration } from "../../context/CurationContext";
+
+// Per normalitzar techniques (Step3 pot guardar string o objecte)
+function normalizeTechniques(techniques) {
+  const arr = Array.isArray(techniques) ? techniques : [];
+
+  return arr
+    .map((t) => {
+      const id =
+        (typeof t === "string" && t) ||
+        t?.ecoId ||
+        t?.eco ||
+        t?.EO_term ||
+        t?.id ||
+        t?.code ||
+        t?.identifier ||
+        "";
+
+      if (!id) return null;
+
+      const label = t?.name || t?.label || id;
+      return { id, label };
+    })
+    .filter(Boolean);
+}
 
 export default function Step5SiteAnnotation() {
   const { step4Data, techniques, step5Data, setStep5Data, goToNextStep } = useCuration();
@@ -10,37 +34,16 @@ export default function Step5SiteAnnotation() {
   const fuzzyHits = step4Data?.fuzzyHits || {};
   const choice = step4Data?.choice || {};
 
-  // annotations[site] = { selected, tfType, tfFunc, techniques: { ecoId: boolean } }
-  const [annotations, setAnnotations] = useState({});
-
   const TF_TYPES = ["monomer", "dimer", "tetramer", "other", "not specified"];
   const TF_FUNCS = ["activator", "repressor", "dual", "not specified"];
+
+  // annotations[site] = { selected, tfType, tfFunc, techniques: { ecoId: boolean } }
+  const [annotations, setAnnotations] = useState({});
 
   const [bulkTfType, setBulkTfType] = useState("monomer");
   const [bulkTfFunc, setBulkTfFunc] = useState("activator");
 
-  // Normalize techniques from Step 3 (string or {ecoId,name})
-  const techList = useMemo(() => {
-    const arr = Array.isArray(techniques) ? techniques : [];
-    return arr
-      .map((t) => {
-        const id =
-          (typeof t === "string" && t) ||
-          t?.ecoId ||
-          t?.eco ||
-          t?.EO_term ||
-          t?.id ||
-          t?.code ||
-          t?.identifier ||
-          "";
-
-        if (!id) return null;
-
-        const label = t?.name || t?.label || id;
-        return { id, label };
-      })
-      .filter(Boolean);
-  }, [techniques]);
+  const techList = useMemo(() => normalizeTechniques(techniques), [techniques]);
 
   const emptyTechMap = useMemo(() => {
     const m = {};
@@ -48,7 +51,7 @@ export default function Step5SiteAnnotation() {
     return m;
   }, [techList]);
 
-  // Restore / init state (supports old "useTechniques" boolean)
+  // Quan tornem enrere, mantenime la info
   useEffect(() => {
     const restored = step5Data?.annotations || {};
     const next = {};
@@ -77,7 +80,6 @@ export default function Step5SiteAnnotation() {
       setBulkTfType(step5Data.bulkTfType || "monomer");
       setBulkTfFunc(step5Data.bulkTfFunc || "activator");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sites.length, techList.length]);
 
   function siteDisplayText(site) {
@@ -103,44 +105,60 @@ export default function Step5SiteAnnotation() {
   function toggleSelectAll() {
     const any = sites.some((s) => annotations[s]?.selected);
     const next = { ...annotations };
+
     sites.forEach((s) => {
       next[s] = { ...(next[s] || {}), selected: !any };
     });
+
     setAnnotations(next);
   }
 
   function applyTfTypeToSelected() {
     const next = { ...annotations };
+
     sites.forEach((s) => {
       if (!next[s]?.selected) return;
       next[s] = { ...next[s], tfType: bulkTfType };
     });
+
     setAnnotations(next);
   }
 
   function applyTfFuncToSelected() {
     const next = { ...annotations };
+
     sites.forEach((s) => {
       if (!next[s]?.selected) return;
       next[s] = { ...next[s], tfFunc: bulkTfFunc };
     });
+
     setAnnotations(next);
   }
 
   function applyTechniqueToSelected(ecoId) {
     const next = { ...annotations };
+
     sites.forEach((s) => {
       if (!next[s]?.selected) return;
-      next[s] = { ...next[s], techniques: { ...(next[s].techniques || {}), [ecoId]: true } };
+      next[s] = {
+        ...next[s],
+        techniques: { ...(next[s].techniques || {}), [ecoId]: true },
+      };
     });
+
     setAnnotations(next);
   }
 
   function clearTechniqueAll(ecoId) {
     const next = { ...annotations };
+
     sites.forEach((s) => {
-      next[s] = { ...next[s], techniques: { ...(next[s].techniques || {}), [ecoId]: false } };
+      next[s] = {
+        ...next[s],
+        techniques: { ...(next[s].techniques || {}), [ecoId]: false },
+      };
     });
+
     setAnnotations(next);
   }
 
@@ -151,15 +169,12 @@ export default function Step5SiteAnnotation() {
 
   return (
     <div className="space-y-8">
-    <h2 className="text-2xl font-bold">
-      Step 5 – Site annotation
-    </h2>
+      <h2 className="text-2xl font-bold">Step 5 – Site annotation</h2>
+
       <div className="bg-surface border border-border rounded p-4">
-        {/* Scroll container so many techniques never overlap */}
         <div className="overflow-x-auto">
           <table className="min-w-max w-full text-xs border-collapse">
             <thead>
-              {/* Single header row */}
               <tr className="border-b border-border">
                 <th className="text-left px-2 py-2" style={{ minWidth: 360 }}>
                   Site
@@ -170,8 +185,6 @@ export default function Step5SiteAnnotation() {
                 <th className="text-left px-2 py-2" style={{ minWidth: 160 }}>
                   TF-function
                 </th>
-
-                {/* This is the group header like in your screenshot */}
                 <th className="text-left px-2 py-2" colSpan={Math.max(1, techList.length)}>
                   Experimental techniques
                 </th>
@@ -179,22 +192,33 @@ export default function Step5SiteAnnotation() {
             </thead>
 
             <tbody>
-              {/* BULK ROW: Select/Unselect all + bulk TF controls + technique headers HERE */}
               <tr className="border-b border-border bg-muted/40">
                 <td className="px-2 py-2 align-top" style={{ minWidth: 360 }}>
-                  <button type="button" className="text-blue-400 hover:text-blue-300 underline" onClick={toggleSelectAll}>
+                  <button
+                    type="button"
+                    className="text-blue-400 hover:text-blue-300 underline"
+                    onClick={toggleSelectAll}
+                  >
                     Select/Unselect all
                   </button>
                 </td>
 
                 <td className="px-2 py-2 align-top" style={{ minWidth: 140 }}>
                   <div className="flex flex-col gap-1">
-                    <select className="form-control text-xs" value={bulkTfType} onChange={(e) => setBulkTfType(e.target.value)}>
+                    <select
+                      className="form-control text-xs"
+                      value={bulkTfType}
+                      onChange={(e) => setBulkTfType(e.target.value)}
+                    >
                       {TF_TYPES.map((t) => (
                         <option key={t}>{t}</option>
                       ))}
                     </select>
-                    <button type="button" className="text-blue-400 hover:text-blue-300 underline text-[11px]" onClick={applyTfTypeToSelected}>
+                    <button
+                      type="button"
+                      className="text-blue-400 hover:text-blue-300 underline text-[11px]"
+                      onClick={applyTfTypeToSelected}
+                    >
                       Apply to selected
                     </button>
                   </div>
@@ -202,12 +226,20 @@ export default function Step5SiteAnnotation() {
 
                 <td className="px-2 py-2 align-top" style={{ minWidth: 160 }}>
                   <div className="flex flex-col gap-1">
-                    <select className="form-control text-xs" value={bulkTfFunc} onChange={(e) => setBulkTfFunc(e.target.value)}>
+                    <select
+                      className="form-control text-xs"
+                      value={bulkTfFunc}
+                      onChange={(e) => setBulkTfFunc(e.target.value)}
+                    >
                       {TF_FUNCS.map((t) => (
                         <option key={t}>{t}</option>
                       ))}
                     </select>
-                    <button type="button" className="text-blue-400 hover:text-blue-300 underline text-[11px]" onClick={applyTfFuncToSelected}>
+                    <button
+                      type="button"
+                      className="text-blue-400 hover:text-blue-300 underline text-[11px]"
+                      onClick={applyTfFuncToSelected}
+                    >
                       Apply to selected
                     </button>
                   </div>
@@ -240,7 +272,6 @@ export default function Step5SiteAnnotation() {
                 )}
               </tr>
 
-              {/* SITE ROWS */}
               {sites.map((site) => {
                 const ann = annotations[site] || {
                   selected: false,
@@ -263,7 +294,9 @@ export default function Step5SiteAnnotation() {
                             }))
                           }
                         />
-                        <span className="font-mono text-[11px] whitespace-pre-wrap">{siteDisplayText(site)}</span>
+                        <span className="font-mono text-[11px] whitespace-pre-wrap">
+                          {siteDisplayText(site)}
+                        </span>
                       </label>
                     </td>
 
@@ -303,7 +336,11 @@ export default function Step5SiteAnnotation() {
 
                     {techList.length > 0 ? (
                       techList.map((t) => (
-                        <td key={t.id} className="px-2 py-2 align-top text-center" style={{ minWidth: 190 }}>
+                        <td
+                          key={t.id}
+                          className="px-2 py-2 align-top text-center"
+                          style={{ minWidth: 190 }}
+                        >
                           <input
                             type="checkbox"
                             checked={!!ann.techniques?.[t.id]}

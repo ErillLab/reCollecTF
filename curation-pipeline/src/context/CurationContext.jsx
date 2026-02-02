@@ -1,25 +1,28 @@
-//Cervell del pipeline. Guarda les dades a compartir entre components/steps. (Pas que s'està fent, publicació seleccionada...)
-
-import { createContext, useContext, useState } from "react"; //Creem 3 eines de React
+import { createContext, useContext, useState } from "react";
 
 const CurationContext = createContext();
 
 export function useCuration() {
-  //Hook per a que desde tots els components puguem accedir a les dades de useCuration
+  // Hook per llegir/escriure l'estat del pipeline des de qualsevol step
   return useContext(CurationContext);
 }
 
 export function CurationProvider({ children }) {
-  const [currentStep, setCurrentStep] = useState(1); //currentStep per a guardar el step en el que estem, al principi el 1
+  // Control del pas actual del pipeline
+  const [currentStep, setCurrentStep] = useState(1);
 
-  const [publication, setPublication] = useState(null); //guardem la publication del step1, al principi null
+  // Step 1 – publicació seleccionada
+  const [publication, setPublication] = useState(null);
 
-  const [tf, setTf] = useState(null); //TF step2
-  const [genomeList, setGenomeList] = useState([]); // llistes accession numbers
+  // Step 2 – TF i llistes d’accessions
+  const [tf, setTf] = useState(null);
+  const [genomeList, setGenomeList] = useState([]);
   const [uniprotList, setUniprotList] = useState([]);
   const [refseqList, setRefseqList] = useState([]);
+
+  // Dades extra del Step 2 (checkboxes + textos d’organisme)
   const [strainData, setStrainData] = useState({
-    sameStrainGenome: true, //checkboxes
+    sameStrainGenome: true,
     sameStrainTF: true,
     organismTFBindingSites: "",
     organismReportedTF: "",
@@ -27,37 +30,42 @@ export function CurationProvider({ children }) {
     expressionInfo: false,
   });
 
-  const [techniques, setTechniques] = useState([]); //Tècniques del Step3
+  // Step 3 – tècniques experimentals seleccionades
+  const [techniques, setTechniques] = useState([]);
 
-  // STEP 4 – Reported sites
+  // Step 4 – sites reportats + genomes carregats (seqüència + genes)
   const [step4Data, setStep4Data] = useState(null);
   const [genomes, setGenomes] = useState([]);
 
-
-  // STEP 5 – Site annotation
+  // Step 5/6/7 – dades dels últims passos
   const [step5Data, setStep5Data] = useState(null);
-
   const [step6Data, setStep6Data] = useState(null);
-
   const [step7Data, setStep7Data] = useState(null);
 
+  // Taxonomia calculada a partir de les accessions (Step 2)
   const [taxonomyData, setTaxonomyData] = useState({ byAccession: {} });
 
-  const goToNextStep = () => setCurrentStep((s) => s + 1); //anar al següent pas
-  const goToStep = (n) => setCurrentStep(n); //anar a qualsevol pas
+  // Anar al següent pas
+  const goToNextStep = () => setCurrentStep((s) => s + 1);
+
+  // Anar a qualsevol pas enrere
+  const goToStep = (n) => setCurrentStep(n);
 
   return (
     <CurationContext.Provider
       value={{
+        // navegació
         currentStep,
         goToStep,
         goToNextStep,
+
+        // step 1
         publication,
         setPublication,
+
+        // step 2
         tf,
         setTf,
-        techniques,
-        setTechniques,
         genomeList,
         setGenomeList,
         uniprotList,
@@ -66,18 +74,26 @@ export function CurationProvider({ children }) {
         setRefseqList,
         strainData,
         setStrainData,
+        taxonomyData,
+        setTaxonomyData,
+
+        // step 3
+        techniques,
+        setTechniques,
+
+        // step 4
         step4Data,
         setStep4Data,
+        genomes,
+        setGenomes,
+
+        // step 5,6,7
         step5Data,
         setStep5Data,
         step6Data,
         setStep6Data,
         step7Data,
         setStep7Data,
-        genomes, 
-        setGenomes,
-        taxonomyData,
-        setTaxonomyData,
       }}
     >
       {children}

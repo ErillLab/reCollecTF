@@ -6,6 +6,6 @@ export default function NewCurationButton() {
   return (
     <button type="button" className="btn" onClick={() => navigate("/curation-pipeline")}>
       NEW CURATION
-    </button>
+    </button>   
   );
 }

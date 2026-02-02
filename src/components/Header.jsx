@@ -23,7 +23,7 @@ const Header = () => {
             </h1>
 
             <div className="flex items-center gap-4">
-                {(userStatus == 2) && <WriteButton />}
+                {(userStatus == 2)}
 
                 <SearchButton />
                 <NewCurationButton />

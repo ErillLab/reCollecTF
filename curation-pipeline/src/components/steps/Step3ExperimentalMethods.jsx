@@ -1,9 +1,16 @@
 // src/components/steps/Step3ExperimentalMethods.jsx
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { runQuery } from "../../db/queryExecutor";
 import { useCuration } from "../../context/CurationContext";
 
 const QUICKGO_BASE = "https://www.ebi.ac.uk/QuickGO/services/ontology/eco/terms/";
+const PROXY = "https://corsproxy.io/?";
+
+const PRESET_FUNCTIONS = [
+  { value: "Detection of binding", label: "Detection of binding" },
+  { value: "Assessment of expression", label: "Assessment of expression" },
+  { value: "In-silico prediction", label: "In-silico prediction" },
+];
 
 function normalizeEco(raw) {
   let v = String(raw || "").trim().toUpperCase();
@@ -12,78 +19,61 @@ function normalizeEco(raw) {
   return v;
 }
 
-async function fetchEcoFromQuickGO(ecoId, { proxy = "" } = {}) {
+async function fetchEcoFromQuickGO(ecoId) {
   const id = normalizeEco(ecoId);
   if (!id) return null;
 
   const url = `${QUICKGO_BASE}${encodeURIComponent(id)}`;
-  const res = await fetch(proxy ? proxy + encodeURIComponent(url) : url, {
+  const res = await fetch(PROXY + encodeURIComponent(url), {
     headers: { Accept: "application/json" },
   });
 
   if (!res.ok) return null;
-  const json = await res.json();
 
+  const json = await res.json();
   const term = json?.results?.[0];
   if (!term?.id) return null;
 
   return {
     id: term.id,
     name: term.name || "",
-    definition:
-      term.definition?.text ||
-      term.definition ||
-      "",
+    definition: term.definition?.text || term.definition || "",
   };
+}
+
+// Per llegir ECO igual tant si guardem string com objecte
+function getEcoId(t) {
+  return typeof t === "string" ? t : t?.ecoId || t?.eco || t?.EO_term || t?.id || "";
 }
 
 export default function Step3ExperimentalMethods() {
   const { techniques, setTechniques, goToNextStep } = useCuration();
 
   const [ecoInput, setEcoInput] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
   const [validatedEco, setValidatedEco] = useState(null);
   const [ecoName, setEcoName] = useState("");
   const [existsInDB, setExistsInDB] = useState(null);
 
-  // Create a new technique (category + description)
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [techDescription, setTechDescription] = useState("");
-
-  const [suggestions, setSuggestions] = useState([]);
-
-  const [error, setError] = useState("");
-  const [showCreateForm, setShowCreateForm] = useState(false);
-
-  // Preset function (like CollecTF)
-  const PRESET_FUNCTIONS = [
-    { value: "Detection of binding", label: "Detection of binding" },
-    { value: "Assessment of expression", label: "Assessment of expression" },
-    { value: "In-silico prediction", label: "In-silico prediction" },
-  ];
-
   const [presetFunction, setPresetFunction] = useState("");
 
-  // Manual ECO code (new)
+  const [showCreateForm, setShowCreateForm] = useState(false);
   const [newEcoCode, setNewEcoCode] = useState("");
 
-  const PROXY = "https://corsproxy.io/?";
   const [quickGoTerm, setQuickGoTerm] = useState(null);
   const [validatingQuickGo, setValidatingQuickGo] = useState(false);
 
+  const [error, setError] = useState("");
 
   function esc(str) {
     return String(str || "").replace(/'/g, "''");
   }
 
-  // Normalize technique shape
-  // - If string => ECO code
-  // - If object => try common keys
-  function getEcoId(t) {
-    return typeof t === "string" ? t : t?.ecoId || t?.eco || t?.EO_term || t?.id || "";
-  }
-
-  // Load categories
+  // Categories del desplegable (DB)
   useEffect(() => {
     async function fetchCategories() {
       const rows = await runQuery(`
@@ -96,13 +86,13 @@ export default function Step3ExperimentalMethods() {
     fetchCategories();
   }, []);
 
+  // Quan escrius un ECO nou al formulari, el validem amb QuickGO
   useEffect(() => {
     if (!showCreateForm) return;
 
     const id = normalizeEco(newEcoCode);
     setQuickGoTerm(null);
 
-    // si está vacío, no validamos
     if (!id) return;
 
     let cancelled = false;
@@ -111,7 +101,7 @@ export default function Step3ExperimentalMethods() {
 
     const t = setTimeout(async () => {
       try {
-        const term = await fetchEcoFromQuickGO(id, { proxy: PROXY });
+        const term = await fetchEcoFromQuickGO(id);
         if (cancelled) return;
 
         if (!term) {
@@ -121,14 +111,14 @@ export default function Step3ExperimentalMethods() {
           setQuickGoTerm(term);
           setError("");
         }
-      } catch (e) {
+      } catch {
         if (cancelled) return;
         setQuickGoTerm(null);
         setError("Error contacting QuickGO for ECO validation.");
       } finally {
         if (!cancelled) setValidatingQuickGo(false);
       }
-    }, 400); // pequeño debounce para no spamear la API
+    }, 400);
 
     return () => {
       cancelled = true;
@@ -136,7 +126,7 @@ export default function Step3ExperimentalMethods() {
     };
   }, [newEcoCode, showCreateForm]);
 
-  // Autocomplete (by name or ECO code)
+  // Autocomplete: per nom o per codi ECO (DB)
   async function handleAutocomplete(val) {
     setEcoInput(val);
     setValidatedEco(null);
@@ -163,7 +153,6 @@ export default function Step3ExperimentalMethods() {
     setSuggestions(rows);
   }
 
-  // Select existing technique from autocomplete
   function selectExisting(ecoCode, name) {
     setEcoInput(ecoCode);
     setValidatedEco(ecoCode);
@@ -174,7 +163,6 @@ export default function Step3ExperimentalMethods() {
     setError("");
   }
 
-  // Add existing technique to curation
   function handleAddExisting() {
     if (!validatedEco) return;
 
@@ -184,7 +172,7 @@ export default function Step3ExperimentalMethods() {
       return;
     }
 
-    // Store BOTH ecoId + name (so Step5 can display names/columns)
+    // Guardem ecoId + name perquè a Step5 quedi bé a les columnes
     setTechniques([...techniques, { ecoId: validatedEco, name: ecoName }]);
 
     setValidatedEco(null);
@@ -192,20 +180,20 @@ export default function Step3ExperimentalMethods() {
     setError("");
   }
 
-  // Open manual create form
   function handleAddTechnique() {
     setError("");
     setShowCreateForm(true);
 
     setValidatedEco(null);
     setExistsInDB(false);
+
     setTechDescription("");
     setSelectedCategory("");
     setNewEcoCode("");
     setPresetFunction("");
+    setQuickGoTerm(null);
   }
 
-  // Create a new technique manually
   async function handleCreateEco() {
     setError("");
 
@@ -215,12 +203,11 @@ export default function Step3ExperimentalMethods() {
       return;
     }
 
-    // 1) Debe existir en QuickGO
-    // (si aún no está cargado, intenta buscarlo aquí también)
+    // Si per timing encara no hi és, fem una última validació directa
     let term = quickGoTerm;
     if (!term || term.id !== raw) {
       setValidatingQuickGo(true);
-      term = await fetchEcoFromQuickGO(raw, { proxy: PROXY });
+      term = await fetchEcoFromQuickGO(raw);
       setValidatingQuickGo(false);
     }
 
@@ -229,14 +216,13 @@ export default function Step3ExperimentalMethods() {
       return;
     }
 
-    // 2) No duplicados en la curation actual
+    // Evitem duplicats dins la curation actual
     const exists = techniques.some((t) => getEcoId(t) === raw);
     if (exists) {
       setError("This ECO code is already added to the curation.");
       return;
     }
 
-    // 3) Campos internos tuyos (siguen igual)
     if (!presetFunction) {
       setError("Please select a preset function.");
       return;
@@ -246,22 +232,17 @@ export default function Step3ExperimentalMethods() {
       return;
     }
 
-    // 4) Insert a DB (IMPORTANTE: name NO NULL)
-    const presetValue = presetFunction ? `'${esc(presetFunction)}'` : "NULL";
-
-    // Si el usuario no pone descripción, usa la definición de QuickGO como fallback
     const finalDesc =
       String(techDescription || "").trim() ||
       String(term.definition || "").trim() ||
       "—";
 
-    // 5) Guardar en contexto (con nombre oficial QuickGO)
     setTechniques([
       ...techniques,
       { ecoId: raw, name: term.name || raw, description: finalDesc },
     ]);
 
-    // limpiar UI
+    // Neteja del formulari
     setShowCreateForm(false);
     setNewEcoCode("");
     setTechDescription("");
@@ -269,9 +250,10 @@ export default function Step3ExperimentalMethods() {
     setPresetFunction("");
     setQuickGoTerm(null);
     setError("");
+
+    void esc;
   }
 
-  // Remove technique
   function handleRemoveTechnique(index) {
     const updated = techniques.filter((_, i) => i !== index);
     setTechniques(updated);
@@ -281,7 +263,6 @@ export default function Step3ExperimentalMethods() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold">Step 3 – Experimental Methods</h2>
 
-      {/* INPUT + Add technique button */}
       <div>
         <label className="block font-medium">Enter ECO code or name</label>
 
@@ -298,7 +279,6 @@ export default function Step3ExperimentalMethods() {
           </button>
         </div>
 
-        {/* Autocomplete */}
         {suggestions.length > 0 && (
           <div className="border border-border p-2 bg-surface rounded mt-1">
             {suggestions.map((s) => (
@@ -313,11 +293,9 @@ export default function Step3ExperimentalMethods() {
           </div>
         )}
 
-        {/* Error message */}
         {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
       </div>
 
-      {/* Existing ECO selected */}
       {validatedEco && existsInDB === true && (
         <div className="p-4 bg-surface border border-border rounded">
           <p>
@@ -329,12 +307,10 @@ export default function Step3ExperimentalMethods() {
         </div>
       )}
 
-      {/* Manual create form */}
       {showCreateForm && (
         <div className="p-4 bg-surface border border-border rounded space-y-3">
           <h3 className="text-lg font-semibold">Create new experimental technique</h3>
 
-          {/* ECO code manual */}
           <div>
             <label className="block font-medium">ECO code</label>
             <input
@@ -355,7 +331,6 @@ export default function Step3ExperimentalMethods() {
             </div>
           )}
 
-          {/* Preset function */}
           <div>
             <label className="block font-medium">Preset function</label>
             <select
@@ -372,7 +347,6 @@ export default function Step3ExperimentalMethods() {
             </select>
           </div>
 
-          {/* Category */}
           <div>
             <label className="block font-medium">Category</label>
             <select
@@ -389,7 +363,6 @@ export default function Step3ExperimentalMethods() {
             </select>
           </div>
 
-          {/* Description */}
           <div>
             <label className="block font-medium">Description</label>
             <textarea
@@ -411,7 +384,6 @@ export default function Step3ExperimentalMethods() {
         </div>
       )}
 
-      {/* List */}
       <div>
         <h3 className="font-semibold mt-4">Added techniques:</h3>
         {techniques.length === 0 && <p>None yet.</p>}
