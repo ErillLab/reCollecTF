@@ -26,6 +26,53 @@ export default function Step1Publication() {
     else if (publication.doi) setQuery(publication.doi);
   }, [publication]);
 
+  // Aquí fem un fetch amb alternatives, perquè els proxys públics a vegades peten (403, CORS, etc.)
+  async function fetchWithFallback(url, { timeoutMs = 12000 } = {}) {
+    const proxyOrder = ["direct", "allorigins", "isomorphic", "corsproxy"];
+    let lastErr = null;
+
+    for (const proxy of proxyOrder) {
+      const finalUrl = proxify(url, proxy);
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), timeoutMs);
+
+      try {
+        const res = await fetch(finalUrl, {
+          method: "GET",
+          signal: ctrl.signal,
+          headers: { Accept: "application/json" },
+        });
+
+        clearTimeout(t);
+
+        if (!res.ok) {
+          lastErr = new Error(`HTTP ${res.status} (${proxy})`);
+          continue;
+        }
+
+        const json = await res.json();
+        return json;
+      } catch (e) {
+        clearTimeout(t);
+        lastErr = e;
+        continue;
+      }
+    }
+
+    throw lastErr || new Error("No s'ha pogut fer la petició (tots els proxys han fallat).");
+  }
+
+  function proxify(url, proxyKind) {
+    const enc = encodeURIComponent(url);
+
+    if (proxyKind === "direct") return url;
+    if (proxyKind === "allorigins") return `https://api.allorigins.win/raw?url=${enc}`;
+    if (proxyKind === "isomorphic") return `https://cors.isomorphic-git.org/${url}`;
+    if (proxyKind === "corsproxy") return `${PROXY}${enc}`;
+
+    return url;
+  }
+
   // Cerca principal: pot ser PMID, DOI o títol
   async function handleSearch(e) {
     e.preventDefault();
@@ -45,8 +92,7 @@ export default function Step1Publication() {
       // Cerca directa per PMID
       if (isPMID) {
         const url = `${BASE}/esummary.fcgi?db=pubmed&id=${q}&retmode=json`;
-        const res = await fetch(PROXY + encodeURIComponent(url));
-        const json = await res.json();
+        const json = await fetchWithFallback(url);
         const rec = json.result?.[q];
 
         if (!rec) throw new Error("PMID no trobat");
@@ -67,14 +113,12 @@ export default function Step1Publication() {
           q
         )}[doi]`;
 
-        const r1 = await fetch(PROXY + encodeURIComponent(esearchUrl));
-        const js1 = await r1.json();
+        const js1 = await fetchWithFallback(esearchUrl);
         const pmid = js1.esearchresult?.idlist?.[0];
 
         if (pmid) {
           const esumUrl = `${BASE}/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`;
-          const r2 = await fetch(PROXY + encodeURIComponent(esumUrl));
-          const js2 = await r2.json();
+          const js2 = await fetchWithFallback(esumUrl);
           const rec = js2.result?.[pmid];
 
           if (rec) {
@@ -92,8 +136,7 @@ export default function Step1Publication() {
         // Fallback a CrossRef si PubMed no retorna res
         if (!data) {
           const crUrl = `https://api.crossref.org/works/${encodeURIComponent(q)}`;
-          const crRes = await fetch(PROXY + encodeURIComponent(crUrl));
-          const crJson = await crRes.json();
+          const crJson = await fetchWithFallback(crUrl);
           const m = crJson.message;
 
           if (!m) throw new Error("DOI no trobat a CrossRef");
@@ -117,15 +160,13 @@ export default function Step1Publication() {
           q
         )}[title]`;
 
-        const r1 = await fetch(PROXY + encodeURIComponent(esearchUrl));
-        const js1 = await r1.json();
+        const js1 = await fetchWithFallback(esearchUrl);
         const pmid = js1.esearchresult?.idlist?.[0];
 
         if (!pmid) throw new Error("Cap article trobat amb aquest títol");
 
         const esumUrl = `${BASE}/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`;
-        const r2 = await fetch(PROXY + encodeURIComponent(esumUrl));
-        const js2 = await r2.json();
+        const js2 = await fetchWithFallback(esumUrl);
         const rec = js2.result?.[pmid];
 
         data = {
@@ -143,9 +184,7 @@ export default function Step1Publication() {
       setArticle(data);
     } catch (e) {
       console.error(e);
-      setError(
-        "Error cercant l’article. Introdueix un PMID, un DOI o el títol."
-      );
+      setError("Error cercant l’article. Introdueix un PMID, un DOI o el títol.");
     } finally {
       setLoading(false);
     }
@@ -199,7 +238,7 @@ export default function Step1Publication() {
           <p><strong>Data:</strong> {article.pubdate}</p>
           <p><strong>PMID:</strong> {article.pmid || "—"}</p>
           <p><strong>DOI:</strong> {article.doi || "—"}</p>
-
+          
           <div className="pt-3">
             <button className="btn" onClick={handleConfirm}>
               Confirmar i continuar →
