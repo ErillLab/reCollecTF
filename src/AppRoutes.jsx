@@ -25,7 +25,6 @@ function AppRoutes() {
             path="Write"
             element={
               <ProtectedRoute userStatus={userStatus}>
-                <WritePage />
               </ProtectedRoute>
             }
           />
