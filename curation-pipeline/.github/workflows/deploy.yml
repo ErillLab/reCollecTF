@@ -1,0 +1,59 @@
+name: Deploy
+
+on:
+  # Para despliegues automáticos al finalizar Update DB
+  workflow_run:
+    workflows: ["Update DB"]
+    types: [completed]
+
+  # Para cuando tú haces push manual de código
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    # Si viene de workflow_run, solo si Update DB terminó bien
+    if: |
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # Si tu build NO copia el .gz desde /public por algún motivo, lo forzamos
+      - name: Ensure DB is in dist
+        run: |
+          test -f ./public/CollecTF.db.gz
+          cp ./public/CollecTF.db.gz ./dist/CollecTF.db.gz
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
