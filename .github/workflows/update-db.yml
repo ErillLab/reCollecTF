@@ -3,61 +3,59 @@ name: Update DB
 on:
   workflow_dispatch:
     inputs:
+      sql_path:
+        description: "Path to SQL file committed in repo"
+        required: true
       queries:
-        description: 'Write SQL queries'
+        description: "Write SQL queries (deprecated)"
         required: false
-        default: 'false'
+        default: "false"
 
+permissions:
+  contents: write
+  actions: write
 
 jobs:
   update:
-    name: Update
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        
-      - name: Install SQLite
-        if: ${{github.event.inputs.queries != 'false'}}
-        run: sudo apt-get install sqlite3 
+        with:
+          fetch-depth: 0
 
-      - name: Create SQL queries file ans activate FK
-        if: ${{github.event.inputs.queries != 'false'}}
+      - name: Install sqlite3
         run: |
-          echo "PRAGMA foreign_keys = ON;" > queries.sql
-          echo "${{ github.event.inputs.queries }}" | base64 -d > queries.json
-          jq -r '.[]' queries.json >> queries.sql
-          cat queries.sql
+          sudo apt-get update
+          sudo apt-get install -y sqlite3
 
-      - name: Run SQL queries
-        if: ${{github.event.inputs.queries != 'false'}}
+      - name: Run SQL from file
         run: |
           set -e
-          sqlite3 ./public/CollecTF.db.gz < queries.sql
+          echo "Using SQL file: ${{ github.event.inputs.sql_path }}"
+          test -f "${{ github.event.inputs.sql_path }}"
+          sqlite3 ./public/CollecTF.db.gz < "${{ github.event.inputs.sql_path }}"
 
-      - name: Delete SQL queries file
-        if: ${{github.event.inputs.queries != 'false'}}
-        run: rm queries.sql && rm queries.json
+      - name: Delete SQL file after use
+        run: |
+          rm -f "${{ github.event.inputs.sql_path }}"
 
-      - name: Commit updated database
-        if: ${{ github.event.inputs.queries != 'false' }}
-        env: 
+      - name: Commit updated database + cleanup sql file
+        env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
+          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+
           git add ./public/CollecTF.db.gz
-          if ! git diff --cached --quiet; then
-            git commit -m "Update database via workflow_dispatch"
-            git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
-            git push origin main
-            echo "${{ github.repository }}"
-            curl -X POST \
-            -H "Authorization: token ${TOKEN}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yml/dispatches \
-            -d '{"ref":"main"}'
-          else
+          git add -u  # incluye el borrado del sql file
+
+          if git diff --cached --quiet; then
             echo "No changes to commit."
+            exit 0
           fi
+
+          git commit -m "Update database via workflow_dispatch"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git push origin main

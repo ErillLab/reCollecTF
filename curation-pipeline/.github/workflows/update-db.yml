@@ -6,7 +6,6 @@ on:
       sql_path:
         description: "Path to SQL file committed in repo"
         required: true
-      # puedes dejar queries si quieres compatibilidad, pero ideal es no usarlo
       queries:
         description: "Write SQL queries (deprecated)"
         required: false

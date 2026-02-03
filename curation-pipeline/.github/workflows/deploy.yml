@@ -1,12 +1,10 @@
 name: Deploy
 
 on:
-  # Para despliegues automáticos al finalizar Update DB
   workflow_run:
     workflows: ["Update DB"]
     types: [completed]
 
-  # Para cuando tú haces push manual de código
   push:
     branches: [ main ]
 
@@ -21,7 +19,6 @@ concurrency:
 
 jobs:
   deploy:
-    # Si viene de workflow_run, solo si Update DB terminó bien
     if: |
       github.event_name != 'workflow_run' ||
       github.event.workflow_run.conclusion == 'success'
@@ -46,7 +43,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # Si tu build NO copia el .gz desde /public por algún motivo, lo forzamos
       - name: Ensure DB is in dist
         run: |
           test -f ./public/CollecTF.db.gz
