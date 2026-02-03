@@ -592,7 +592,7 @@ WHERE ${geneIdExpr} IS NOT NULL;
         submittedAt: new Date().toISOString(),
       });
 
-      setMsg("✅ Submit OK: inserts/updates executed successfully.");
+      setMsg("Submit OK: inserts/updates executed successfully.");
     } catch (e) {
       console.error("Submit error full:", e);
       console.error("Submit error payload:", e?.payload);
