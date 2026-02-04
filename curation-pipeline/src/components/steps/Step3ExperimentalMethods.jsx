@@ -19,26 +19,72 @@ function normalizeEco(raw) {
   return v;
 }
 
+function proxify(url, proxyKind) {
+  const enc = encodeURIComponent(url);
+
+  if (proxyKind === "direct") return url;
+  if (proxyKind === "allorigins") return `https://api.allorigins.win/raw?url=${enc}`;
+  if (proxyKind === "isomorphic") return `https://cors.isomorphic-git.org/${url}`;
+  if (proxyKind === "corsproxy") return `${PROXY}${enc}`;
+
+  return url;
+}
+
+// Fem fetch amb alternatives perquè QuickGO sovint peta per CORS/403 segons proxy
+async function fetchWithFallback(url, { timeoutMs = 12000 } = {}) {
+  const proxyOrder = ["direct", "allorigins", "isomorphic", "corsproxy"];
+  let lastErr = null;
+
+  for (const proxy of proxyOrder) {
+    const finalUrl = proxify(url, proxy);
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), timeoutMs);
+
+    try {
+      const res = await fetch(finalUrl, {
+        method: "GET",
+        signal: ctrl.signal,
+        headers: { Accept: "application/json" },
+      });
+
+      clearTimeout(t);
+
+      if (!res.ok) {
+        lastErr = new Error(`HTTP ${res.status} (${proxy})`);
+        continue;
+      }
+
+      const json = await res.json();
+      return json;
+    } catch (e) {
+      clearTimeout(t);
+      lastErr = e;
+      continue;
+    }
+  }
+
+  throw lastErr || new Error("No s'ha pogut fer la petició (tots els proxys han fallat).");
+}
+
 async function fetchEcoFromQuickGO(ecoId) {
   const id = normalizeEco(ecoId);
   if (!id) return null;
 
   const url = `${QUICKGO_BASE}${encodeURIComponent(id)}`;
-  const res = await fetch(PROXY + encodeURIComponent(url), {
-    headers: { Accept: "application/json" },
-  });
 
-  if (!res.ok) return null;
+  try {
+    const json = await fetchWithFallback(url);
+    const term = json?.results?.[0];
+    if (!term?.id) return null;
 
-  const json = await res.json();
-  const term = json?.results?.[0];
-  if (!term?.id) return null;
-
-  return {
-    id: term.id,
-    name: term.name || "",
-    definition: term.definition?.text || term.definition || "",
-  };
+    return {
+      id: term.id,
+      name: term.name || "",
+      definition: term.definition?.text || term.definition || "",
+    };
+  } catch {
+    return null;
+  }
 }
 
 // Per llegir ECO igual tant si guardem string com objecte
@@ -68,10 +114,6 @@ export default function Step3ExperimentalMethods() {
   const [validatingQuickGo, setValidatingQuickGo] = useState(false);
 
   const [error, setError] = useState("");
-
-  function esc(str) {
-    return String(str || "").replace(/'/g, "''");
-  }
 
   // Categories del desplegable (DB)
   useEffect(() => {
@@ -250,8 +292,6 @@ export default function Step3ExperimentalMethods() {
     setPresetFunction("");
     setQuickGoTerm(null);
     setError("");
-
-    void esc;
   }
 
   function handleRemoveTechnique(index) {
