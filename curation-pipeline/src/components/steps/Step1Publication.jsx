@@ -59,7 +59,7 @@ export default function Step1Publication() {
       }
     }
 
-    throw lastErr || new Error("No s'ha pogut fer la petició (tots els proxys han fallat).");
+    throw lastErr || new Error("Request failed (all proxies failed).");
   }
 
   function proxify(url, proxyKind) {
@@ -95,7 +95,7 @@ export default function Step1Publication() {
         const json = await fetchWithFallback(url);
         const rec = json.result?.[q];
 
-        if (!rec) throw new Error("PMID no trobat");
+        if (!rec) throw new Error("PMID not found");
 
         data = {
           pmid: q,
@@ -139,7 +139,7 @@ export default function Step1Publication() {
           const crJson = await fetchWithFallback(crUrl);
           const m = crJson.message;
 
-          if (!m) throw new Error("DOI no trobat a CrossRef");
+          if (!m) throw new Error("DOI not found in CrossRef");
 
           data = {
             pmid: null,
@@ -163,7 +163,7 @@ export default function Step1Publication() {
         const js1 = await fetchWithFallback(esearchUrl);
         const pmid = js1.esearchresult?.idlist?.[0];
 
-        if (!pmid) throw new Error("Cap article trobat amb aquest títol");
+        if (!pmid) throw new Error("No article found with this title");
 
         const esumUrl = `${BASE}/esummary.fcgi?db=pubmed&id=${pmid}&retmode=json`;
         const js2 = await fetchWithFallback(esumUrl);
@@ -179,12 +179,12 @@ export default function Step1Publication() {
         };
       }
 
-      if (!data) throw new Error("Sense resultats");
+      if (!data) throw new Error("No results");
 
       setArticle(data);
     } catch (e) {
       console.error(e);
-      setError("Error cercant l’article. Introdueix un PMID, un DOI o el títol.");
+      setError("Error searching the article. Please enter a PMID, a DOI, or the title.");
     } finally {
       setLoading(false);
     }
@@ -210,12 +210,12 @@ export default function Step1Publication() {
       <div className="flex gap-2">
         <input
           className="form-control"
-          placeholder="PMID, DOI o títol de l’article"
+          placeholder="PMID, DOI, or article title"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn" onClick={handleSearch} disabled={loading}>
-          {loading ? "Cercant..." : "Cerca"}
+          {loading ? "Searching..." : "Search"}
         </button>
       </div>
 
@@ -225,7 +225,7 @@ export default function Step1Publication() {
         rel="noopener noreferrer"
         className="inline-block text-sm text-blue-400 hover:text-blue-300 underline mt-1"
       >
-        Cercar directament a PubMed
+        Search directly on PubMed
       </a>
 
       {error && <p className="text-red-400">{error}</p>}
@@ -233,15 +233,25 @@ export default function Step1Publication() {
       {article && (
         <div className="bg-surface border border-border rounded p-4 space-y-1">
           <h3 className="text-xl font-semibold">{article.title}</h3>
-          <p><strong>Autors:</strong> {article.authors}</p>
-          <p><strong>Revista:</strong> {article.journal}</p>
-          <p><strong>Data:</strong> {article.pubdate}</p>
-          <p><strong>PMID:</strong> {article.pmid || "—"}</p>
-          <p><strong>DOI:</strong> {article.doi || "—"}</p>
-          
+          <p>
+            <strong>Authors:</strong> {article.authors}
+          </p>
+          <p>
+            <strong>Journal:</strong> {article.journal}
+          </p>
+          <p>
+            <strong>Date:</strong> {article.pubdate}
+          </p>
+          <p>
+            <strong>PMID:</strong> {article.pmid || "—"}
+          </p>
+          <p>
+            <strong>DOI:</strong> {article.doi || "—"}
+          </p>
+
           <div className="pt-3">
             <button className="btn" onClick={handleConfirm}>
-              Confirmar i continuar →
+              Confirm and continue →
             </button>
           </div>
         </div>
