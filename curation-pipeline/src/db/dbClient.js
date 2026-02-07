@@ -19,3 +19,4 @@ export const dbWorkerPromise = createDbWorker(
   wasmUrl,
   10 * 1024 * 1024
 );
+

@@ -11,7 +11,6 @@ export async function dispatchWorkflow(data) {
     body: JSON.stringify(data),
   });
 
-  // IMPORTANTE: lee el body para poder mostrar el error real
   const text = await res.text();
   let payload;
   try {
