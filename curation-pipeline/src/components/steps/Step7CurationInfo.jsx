@@ -1,7 +1,7 @@
 // src/components/steps/Step7CurationInfo.jsx
 import { useMemo, useState } from "react";
 import { useCuration } from "../../context/CurationContext";
-import { dispatchWorkflow } from "@/utils/serverless";
+import { dispatchWorkflow } from "../../utils/serverless";
 
 function esc(str) {
   return String(str ?? "").replace(/'/g, "''");
@@ -28,7 +28,7 @@ function normalizeStrand(str) {
 }
 
 function doiToUrl(doiRaw) {
-  const doi = String(doiRaw || "").trim();c
+  const doi = String(doiRaw || "").trim();
   if (!doi) return "";
   if (doi.toLowerCase().startsWith("http")) return doi;
   return `https://doi.org/${doi}`;
