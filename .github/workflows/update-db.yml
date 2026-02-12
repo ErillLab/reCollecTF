@@ -6,14 +6,9 @@ on:
       sql_path:
         description: "Path to SQL file committed in repo"
         required: true
-      queries:
-        description: "Write SQL queries (deprecated)"
-        required: false
-        default: "false"
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   update:
@@ -27,29 +22,61 @@ jobs:
       - name: Install sqlite3
         run: |
           sudo apt-get update
-          sudo apt-get install -y sqlite3
+          sudo apt-get install -y sqlite3 gzip
 
-      - name: Run SQL from file
+      - name: Validate sql_path
         run: |
-          set -e
-          echo "Using SQL file: ${{ github.event.inputs.sql_path }}"
-          test -f "${{ github.event.inputs.sql_path }}"
-          sqlite3 ./public/CollecTF.db.gz < "${{ github.event.inputs.sql_path }}"
+          set -euo pipefail
+          SQL_PATH="${{ github.event.inputs.sql_path }}"
+
+          # Permite SOLO dentro de esta carpeta (ajusta si hace falta)
+          case "$SQL_PATH" in
+            curation_sql/pending/*.sql) ;;
+            *) echo "Invalid sql_path: $SQL_PATH"; exit 1 ;;
+          esac
+
+          test -f "$SQL_PATH"
+          echo "SQL_PATH=$SQL_PATH" >> $GITHUB_ENV
+
+      - name: Unzip DB
+        run: |
+          set -euo pipefail
+          test -f ./public/CollecTF.db.gz
+          gunzip -c ./public/CollecTF.db.gz > ./public/CollecTF.db
+
+      - name: Run SQL from file (atomic-ish)
+        run: |
+          set -euo pipefail
+          echo "Using SQL file: $SQL_PATH"
+
+          # Ejecuta SQL en una transacción (por si el sql no la incluye)
+          sqlite3 ./public/CollecTF.db <<'SQL'
+          PRAGMA foreign_keys=ON;
+          .read '"'"$SQL_PATH"'"'
+          SQL
+
+      - name: Re-zip DB
+        run: |
+          set -euo pipefail
+          gzip -f ./public/CollecTF.db  # deja ./public/CollecTF.db.gz
+          # opcional: elimina el .db si gzip no lo borra (gzip normal lo borra)
+          rm -f ./public/CollecTF.db || true
 
       - name: Delete SQL file after use
         run: |
-          rm -f "${{ github.event.inputs.sql_path }}"
+          set -euo pipefail
+          rm -f "$SQL_PATH"
 
       - name: Commit updated database + cleanup sql file
         env:
           TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
-          set -e
+          set -euo pipefail
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
           git add ./public/CollecTF.db.gz
-          git add -u  # incluye el borrado del sql file
+          git add -u
 
           if git diff --cached --quiet; then
             echo "No changes to commit."

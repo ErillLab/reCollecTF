@@ -579,7 +579,7 @@ WHERE ${geneIdExpr} IS NOT NULL;
     setLoading(true);
 
     try {
-      const sqlString = "SELECT 1;";
+      const sqlString = buildFullSql();
 
       await dispatchWorkflow({
         inputs: { queries: sqlString },
