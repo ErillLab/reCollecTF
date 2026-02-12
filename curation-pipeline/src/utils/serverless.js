@@ -1,5 +1,5 @@
 // src/utils/serverless.js
-const dispatchUrl = "https://recollectf.vercel.app/api/functions/send-form";
+const dispatchUrl = "https://recollectf.vercel.app/api/functions/send-form.ts";
 
 export async function dispatchWorkflow(data) {
   console.log("Data to dispatch:", data);
