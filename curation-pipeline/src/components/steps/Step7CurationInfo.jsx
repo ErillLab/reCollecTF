@@ -6,11 +6,9 @@ import { dispatchWorkflow } from "../../utils/serverless";
 function esc(str) {
   return String(str ?? "").replace(/'/g, "''");
 }
-
 function truthyBool(v) {
   return v ? 1 : 0;
 }
-
 function pickFirstNonEmpty(...vals) {
   for (const v of vals) {
     if (v === 0) return 0;
@@ -21,80 +19,70 @@ function pickFirstNonEmpty(...vals) {
   }
   return "";
 }
-
 function normalizeStrand(str) {
   if (str === "-" || str === -1) return -1;
   return 1;
 }
-
 function doiToUrl(doiRaw) {
   const doi = String(doiRaw || "").trim();
   if (!doi) return "";
   if (doi.toLowerCase().startsWith("http")) return doi;
   return `https://doi.org/${doi}`;
 }
-
 function firstAcc(list) {
   const x = Array.isArray(list) ? list[0] : null;
   if (!x) return "";
   if (typeof x === "string") return x.trim();
   return String(x.accession || "").trim();
 }
-
 function firstDesc(list) {
   const x = Array.isArray(list) ? list[0] : null;
   if (!x) return "";
   if (typeof x === "string") return "";
   return String(x.description || "").trim();
 }
-
 function getStep5ForSite(step5Data, site) {
   return step5Data?.annotations?.[site] || null;
 }
 
-/**
- * Split a big SQL string into exactly 2 parts, cutting at a safe boundary.
- * We cut near the middle, but always at the last "\n\n" before the target.
- * Each part gets its own BEGIN/COMMIT wrapper, so it can run independently.
- *
- * NOTE: This does NOT guarantee semantic correctness for all DB schemas,
- * but it typically works if your SQL uses INSERT/UPDATE with SELECT subqueries.
- */
-function splitSqlIntoTwoTransactions(sqlString) {
-  const s = String(sqlString || "").trim();
-  if (!s) return ["", ""];
+// ---- NEW: pack statements into ~N chunks (each chunk is its own transaction)
+function packIntoNChunks(statements, n = 7) {
+  const sts = (statements || []).map((s) => String(s).trim()).filter(Boolean);
+  if (sts.length === 0) return [];
 
-  // Remove outer wrappers if present (we'll re-add per chunk).
-  let body = s
-    .replace(/^PRAGMA foreign_keys\s*=\s*ON;\s*/i, "")
-    .replace(/^BEGIN TRANSACTION;\s*/i, "")
-    .replace(/\s*COMMIT;\s*$/i, "")
-    .trim();
+  const sizes = sts.map((s) => s.length);
+  const total = sizes.reduce((a, b) => a + b, 0);
+  const target = Math.ceil(total / n);
 
-  // If it's already small, just send as one.
-  if (body.length < 12000) {
-    const one = ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", body, "COMMIT;"].join("\n");
-    return [one, ""];
+  const chunks = [];
+  let buf = [];
+  let bufLen = 0;
+
+  const flush = () => {
+    if (!buf.length) return;
+    const sql = ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", ...buf, "COMMIT;"].join("\n");
+    chunks.push(sql);
+    buf = [];
+    bufLen = 0;
+  };
+
+  for (let i = 0; i < sts.length; i++) {
+    const s = sts[i];
+
+    // si un statement es enorme, lo mandamos solo en su chunk
+    if (s.length > target && buf.length) flush();
+
+    // si al añadirlo se pasa mucho del target, flush antes
+    if (bufLen > 0 && bufLen + s.length > target && chunks.length < n - 1) {
+      flush();
+    }
+
+    buf.push(s);
+    bufLen += s.length + 1;
   }
+  flush();
 
-  // Target midpoint and try to split on a blank line boundary.
-  const mid = Math.floor(body.length / 2);
-  const left = body.slice(0, mid);
-  const splitAt = left.lastIndexOf("\n\n");
-
-  // Fallback if no double-newline exists.
-  const cut = splitAt > 0 ? splitAt : left.lastIndexOf("\n");
-  const idx = cut > 0 ? cut : mid;
-
-  const part1Body = body.slice(0, idx).trim();
-  const part2Body = body.slice(idx).trim();
-
-  const part1 = ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", part1Body, "COMMIT;"].join("\n");
-  const part2 = part2Body
-    ? ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", part2Body, "COMMIT;"].join("\n")
-    : "";
-
-  return [part1, part2];
+  return chunks;
 }
 
 export default function Step7CurationInfo() {
@@ -127,7 +115,6 @@ export default function Step7CurationInfo() {
   const [revisionReason, setRevisionReason] = useState("None");
   const [curationComplete, setCurationComplete] = useState(true);
   const [notes, setNotes] = useState("");
-
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState("");
 
@@ -135,7 +122,8 @@ export default function Step7CurationInfo() {
     return !!publication && !!tf?.name && !!step4Data && !loading;
   }, [publication, tf, step4Data, loading]);
 
-  function buildFullSql() {
+  // NEW: return array of statements instead of one giant SQL string
+  function buildSqlStatements() {
     if (!publication) throw new Error("Missing publication (Step 1).");
     if (!tf?.name) throw new Error("Missing TF name (Step 2).");
     if (!step4Data?.sites?.length) throw new Error("Missing sites (Step 4).");
@@ -158,7 +146,6 @@ export default function Step7CurationInfo() {
 
     const tfName = String(tf.name).trim();
 
-    // Families
     const rawFamilyId = tf?.family_id ?? tf?.familyId ?? tf?.familyID ?? null;
     const familyIdNum = Number(rawFamilyId);
     const hasFamilyId = Number.isFinite(familyIdNum) && familyIdNum > 0;
@@ -175,7 +162,6 @@ export default function Step7CurationInfo() {
     if (!uniAcc) throw new Error("Missing UniProt accession (Step 2).");
     if (!refAcc) throw new Error("Missing RefSeq accession (Step 2).");
 
-    // Espècies tal com surt a Step2
     const siteSpecies = pickFirstNonEmpty(
       strainData?.organismTFBindingSites,
       (genomeList?.[0] && (genomeList[0].organism || genomeList[0].description)) || "",
@@ -195,12 +181,9 @@ export default function Step7CurationInfo() {
     const siteType = pickFirstNonEmpty(step4Data?.siteType, "");
 
     const sql = [];
-    sql.push("PRAGMA foreign_keys = ON;");
-    sql.push("BEGIN TRANSACTION;");
 
-    // Publication (upsert)
-    sql.push(
-      `
+    // Publication upsert
+    sql.push(`
 INSERT INTO core_publication
   (publication_type, pmid, authors, title, journal, publication_date, url,
    contains_promoter_data, contains_expression_data, submission_notes, curation_complete,
@@ -221,12 +204,9 @@ SELECT
   '${esc(siteSpecies)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_publication WHERE ${pubKeyWhere}
-);
-      `.trim()
-    );
+);`.trim());
 
-    sql.push(
-      `
+    sql.push(`
 UPDATE core_publication
 SET
   authors = CASE WHEN authors IS NULL OR authors='' THEN '${esc(pubAuthors)}' ELSE authors END,
@@ -243,55 +223,41 @@ SET
     WHEN submission_notes IS NULL OR submission_notes='' THEN ${submissionNotes ? `'${esc(submissionNotes)}'` : "submission_notes"}
     ELSE submission_notes
   END
-WHERE ${pubKeyWhere};
-      `.trim()
-    );
+WHERE ${pubKeyWhere};`.trim());
 
     const publicationIdExpr = `(SELECT publication_id FROM core_publication WHERE ${pubKeyWhere} LIMIT 1)`;
 
-    // TF family + TF
     if (!hasFamilyId) {
-      sql.push(
-        `
+      sql.push(`
 INSERT INTO core_tffamily (name, description)
 SELECT '${esc(familyName)}', '${esc(familyDesc)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_tffamily WHERE lower(name)=lower('${esc(familyName)}')
-);
-        `.trim()
-      );
+);`.trim());
     }
 
     const familyIdExpr = hasFamilyId
       ? `${familyIdNum}`
       : `(SELECT tf_family_id FROM core_tffamily WHERE lower(name)=lower('${esc(familyName)}') LIMIT 1)`;
 
-    sql.push(
-      `
+    sql.push(`
 INSERT INTO core_tf (name, family_id, description)
 SELECT '${esc(tfName)}', ${familyIdExpr}, '${esc(tfDesc)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_tf WHERE lower(name)=lower('${esc(tfName)}')
-);
-      `.trim()
-    );
+);`.trim());
 
-    sql.push(
-      `
+    sql.push(`
 UPDATE core_tf
 SET
   family_id = COALESCE(family_id, ${familyIdExpr}),
   description = CASE WHEN description IS NULL THEN '${esc(tfDesc)}' ELSE description END
-WHERE lower(name)=lower('${esc(tfName)}');
-      `.trim()
-    );
+WHERE lower(name)=lower('${esc(tfName)}');`.trim());
 
     const tfIdExpr = `(SELECT TF_id FROM core_tf WHERE lower(name)=lower('${esc(tfName)}') LIMIT 1)`;
     const forceTfOverride = !!tf?.isNew;
 
-    // TF instance
-    sql.push(
-      `
+    sql.push(`
 INSERT INTO core_tfinstance (refseq_accession, uniprot_accession, description, TF_id, notes)
 SELECT
   '${esc(refAcc)}',
@@ -301,68 +267,51 @@ SELECT
   '${esc(tfInstanceNotes)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_tfinstance WHERE uniprot_accession='${esc(uniAcc)}'
-);
-      `.trim()
-    );
+);`.trim());
 
-    sql.push(
-      `
+    sql.push(`
 UPDATE core_tfinstance
 SET
   TF_id = ${forceTfOverride ? `${tfIdExpr}` : `COALESCE(TF_id, ${tfIdExpr})`},
   refseq_accession = COALESCE(NULLIF(refseq_accession,''), '${esc(refAcc)}'),
   description = ${forceTfOverride ? `'${esc(tfInstanceDesc)}'` : `COALESCE(NULLIF(description,''), '${esc(tfInstanceDesc)}')`},
   notes = COALESCE(notes, '')
-WHERE uniprot_accession='${esc(uniAcc)}';
-      `.trim()
-    );
+WHERE uniprot_accession='${esc(uniAcc)}';`.trim());
 
-    const tfInstanceIdExpr = `(SELECT TF_instance_id FROM core_tfinstance WHERE uniprot_accession='${esc(
-      uniAcc
-    )}' LIMIT 1)`;
+    const tfInstanceIdExpr = `(SELECT TF_instance_id FROM core_tfinstance WHERE uniprot_accession='${esc(uniAcc)}' LIMIT 1)`;
 
-    // Curation
     const curatorIdExpr = `(SELECT curator_id FROM core_curator ORDER BY curator_id LIMIT 1)`;
     const curationNotes = pickFirstNonEmpty(submissionNotes, "");
 
-    sql.push(
-      `
+    sql.push(`
 INSERT INTO core_curation
   (TF_species, site_species, experimental_process, forms_complex,
    complex_notes, notes, last_modified, curator_id, publication_id, created, validated_by_id)
 VALUES
   ('${esc(tfSpecies)}', '${esc(siteSpecies)}', NULL,
    0, NULL, '${esc(curationNotes)}',
-   datetime('now'), ${curatorIdExpr}, ${publicationIdExpr}, datetime('now'), NULL);
-      `.trim()
-    );
+   datetime('now'), ${curatorIdExpr}, ${publicationIdExpr}, datetime('now'), NULL);`.trim());
 
     const curationIdExpr = `(SELECT curation_id FROM core_curation WHERE publication_id=${publicationIdExpr} ORDER BY curation_id DESC LIMIT 1)`;
 
-    sql.push(
-      `
+    sql.push(`
 INSERT INTO core_curation_TF_instances (curation_id, tfinstance_id)
 SELECT ${curationIdExpr}, ${tfInstanceIdExpr}
 WHERE NOT EXISTS (
   SELECT 1 FROM core_curation_TF_instances
   WHERE curation_id=${curationIdExpr} AND tfinstance_id=${tfInstanceIdExpr}
-);
-      `.trim()
-    );
+);`.trim());
 
     // Genomes + genes
     const accessions = (genomeList || []).map((g) => g.accession).filter(Boolean);
 
     for (const acc of accessions) {
-      sql.push(
-        `
+      sql.push(`
 INSERT INTO core_genome (genome_accession, organism)
 SELECT '${esc(acc)}', '${esc(siteSpecies)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_genome WHERE genome_accession='${esc(acc)}'
-);
-        `.trim()
-      );
+);`.trim());
     }
 
     const genesByAcc = step4Data?.genesByAcc || null;
@@ -371,7 +320,6 @@ WHERE NOT EXISTS (
         if (!Array.isArray(genes) || genes.length === 0) continue;
 
         const genomeIdExpr = `(SELECT genome_id FROM core_genome WHERE genome_accession='${esc(acc)}' LIMIT 1)`;
-
         for (const g of genes) {
           const locus = pickFirstNonEmpty(g?.locus, "");
           if (!locus) continue;
@@ -382,8 +330,7 @@ WHERE NOT EXISTS (
           const end = Number(g?.end ?? 0);
           const strand = normalizeStrand(g?.strand);
 
-          sql.push(
-            `
+          sql.push(`
 INSERT INTO core_gene (genome_id, name, description, start, end, strand, locus_tag, gene_type)
 SELECT
   ${genomeIdExpr},
@@ -397,16 +344,13 @@ SELECT
 WHERE NOT EXISTS (
   SELECT 1 FROM core_gene
   WHERE genome_id=${genomeIdExpr} AND locus_tag='${esc(locus)}'
-);
-            `.trim()
-          );
+);`.trim());
         }
       }
     }
 
-    // Taxonomia + link a genome
+    // Taxonomy + link
     const taxByAcc = taxonomyData || {};
-
     for (const acc of accessions) {
       const tInfo = taxByAcc?.[acc];
       const path = Array.isArray(tInfo?.path) ? tInfo.path : [];
@@ -424,8 +368,7 @@ WHERE NOT EXISTS (
           ? `(SELECT id FROM core_taxonomy WHERE taxonomy_id='${esc(parentTaxid)}' LIMIT 1)`
           : "NULL";
 
-        sql.push(
-          `
+        sql.push(`
 INSERT INTO core_taxonomy (taxonomy_id, rank, name, parent_id)
 SELECT
   '${esc(taxid)}',
@@ -434,39 +377,30 @@ SELECT
   ${parentIdExpr}
 WHERE NOT EXISTS (
   SELECT 1 FROM core_taxonomy WHERE taxonomy_id='${esc(taxid)}'
-);
-          `.trim()
-        );
+);`.trim());
 
-        sql.push(
-          `
+        sql.push(`
 UPDATE core_taxonomy
 SET
   rank = COALESCE(NULLIF(rank,''), ${rank ? `'${esc(rank)}'` : "rank"}),
   name = COALESCE(NULLIF(name,''), ${name ? `'${esc(name)}'` : "name"}),
   parent_id = COALESCE(parent_id, ${parentIdExpr})
-WHERE taxonomy_id='${esc(taxid)}';
-          `.trim()
-        );
+WHERE taxonomy_id='${esc(taxid)}';`.trim());
       }
 
       const leafTaxid = String(path[path.length - 1]?.taxid || "").trim();
       if (leafTaxid) {
-        sql.push(
-          `
+        sql.push(`
 UPDATE core_genome
 SET taxonomy_id = (
   SELECT id FROM core_taxonomy WHERE taxonomy_id='${esc(leafTaxid)}' LIMIT 1
 )
-WHERE genome_accession='${esc(acc)}';
-          `.trim()
-        );
+WHERE genome_accession='${esc(acc)}';`.trim());
       }
     }
 
-    // Tècniques
+    // Techniques
     const techList = Array.isArray(techniques) ? techniques : [];
-
     for (const t of techList) {
       const EO = pickFirstNonEmpty(t?.ecoId, t?.eco, t?.EO_term, t?.id, t?.code, "");
       if (!EO) continue;
@@ -475,20 +409,16 @@ WHERE genome_accession='${esc(acc)}';
       const name = pickFirstNonEmpty(t?.name, EO);
       const desc = pickFirstNonEmpty(t?.description, t?.name, "—");
 
-      sql.push(
-        `
+      sql.push(`
 INSERT INTO core_experimentaltechnique (name, description, preset_function, EO_term)
 SELECT '${esc(name)}', '${esc(desc)}', ${preset ? `'${esc(preset)}'` : "NULL"}, '${esc(EO)}'
 WHERE NOT EXISTS (
   SELECT 1 FROM core_experimentaltechnique WHERE EO_term='${esc(EO)}'
-);
-        `.trim()
-      );
+);`.trim());
     }
 
-    // Sites + mappings + regulation
+    // Sites + regulation
     const sitesList = step4Data.sites || [];
-
     for (const site of sitesList) {
       const bundle = selectedBySite?.[site] || { kind: "none", hit: null, nearbyGenes: [] };
       const s5 = getStep5ForSite(step5Data, site);
@@ -501,14 +431,11 @@ WHERE NOT EXISTS (
       const quantitativeValue = Number.isFinite(qvNum) ? qvNum : null;
 
       if (!bundle || bundle.kind === "none" || !bundle.hit) {
-        sql.push(
-          `
+        sql.push(`
 INSERT INTO core_notannotatedsiteinstance (sequence, curation_id, TF_type, TF_function)
 VALUES ('${esc(site)}', ${curationIdExpr},
         ${TF_type ? `'${esc(TF_type)}'` : "NULL"},
-        ${TF_function ? `'${esc(TF_function)}'` : "NULL"});
-          `.trim()
-        );
+        ${TF_function ? `'${esc(TF_function)}'` : "NULL"});`.trim());
         continue;
       }
 
@@ -520,8 +447,7 @@ VALUES ('${esc(site)}', ${curationIdExpr},
 
       const genomeIdExpr = `(SELECT genome_id FROM core_genome WHERE genome_accession='${esc(acc)}' LIMIT 1)`;
 
-      sql.push(
-        `
+      sql.push(`
 INSERT INTO core_siteinstance (_seq, genome_id, start, end, strand)
 SELECT
   '${esc(site)}',
@@ -534,9 +460,7 @@ WHERE NOT EXISTS (
   WHERE genome_id=${genomeIdExpr}
     AND start=${hitStart0} AND end=${hitEnd0} AND strand=${strand}
     AND _seq='${esc(site)}'
-);
-        `.trim()
-      );
+);`.trim());
 
       const siteInstanceIdExpr = `(SELECT site_id FROM core_siteinstance
         WHERE genome_id=${genomeIdExpr}
@@ -544,8 +468,7 @@ WHERE NOT EXISTS (
           AND _seq='${esc(site)}'
         ORDER BY site_id DESC LIMIT 1)`;
 
-      sql.push(
-        `
+      sql.push(`
 INSERT INTO core_curation_siteinstance
   (curation_id, site_instance_id, annotated_seq, quantitative_value, site_type, TF_function, TF_type)
 VALUES
@@ -555,9 +478,7 @@ VALUES
    ${quantitativeValue === null ? "NULL" : quantitativeValue},
    ${siteType ? `'${esc(siteType)}'` : "NULL"},
    '${esc(TF_function)}',
-   '${esc(TF_type)}');
-        `.trim()
-      );
+   '${esc(TF_type)}');`.trim());
 
       const curationSiteInstanceIdExpr = `(SELECT id FROM core_curation_siteinstance
         WHERE curation_id=${curationIdExpr}
@@ -573,8 +494,7 @@ VALUES
           WHERE EO_term='${esc(eco)}'
           LIMIT 1)`;
 
-        sql.push(
-          `
+        sql.push(`
 INSERT INTO core_curation_siteinstance_experimental_techniques
   (curation_siteinstance_id, experimentaltechnique_id)
 SELECT ${curationSiteInstanceIdExpr}, ${techIdExpr}
@@ -583,9 +503,7 @@ WHERE ${techIdExpr} IS NOT NULL
     SELECT 1 FROM core_curation_siteinstance_experimental_techniques
     WHERE curation_siteinstance_id=${curationSiteInstanceIdExpr}
       AND experimentaltechnique_id=${techIdExpr}
-  );
-          `.trim()
-        );
+  );`.trim());
       }
 
       const regsForSite = step6Data?.[site]?.regulatedGenes || [];
@@ -600,23 +518,19 @@ WHERE ${techIdExpr} IS NOT NULL
 
           const evidenceType = containsExpression ? "exp_verified" : "inferred";
 
-          sql.push(
-            `
+          sql.push(`
 INSERT INTO core_regulation (curation_site_instance_id, gene_id, evidence_type, meta_site_id)
 SELECT
   ${curationSiteInstanceIdExpr},
   ${geneIdExpr},
   '${esc(evidenceType)}',
   NULL
-WHERE ${geneIdExpr} IS NOT NULL;
-            `.trim()
-          );
+WHERE ${geneIdExpr} IS NOT NULL;`.trim());
         }
       }
     }
 
-    sql.push("COMMIT;");
-    return sql.join("\n\n");
+    return sql;
   }
 
   async function handleSubmit() {
@@ -624,17 +538,16 @@ WHERE ${geneIdExpr} IS NOT NULL;
     setLoading(true);
 
     try {
-      const sqlString = buildFullSql();
-      const [part1, part2] = splitSqlIntoTwoTransactions(sqlString);
+      const statements = buildSqlStatements();
 
-      // Enviar parte 1
-      if (part1) {
-        await dispatchWorkflow({ inputs: { queries: part1 } });
-      }
+      // Generate up to 7 chunks
+      const chunks = packIntoNChunks(statements, 7);
 
-      // Enviar parte 2 (si existe)
-      if (part2) {
-        await dispatchWorkflow({ inputs: { queries: part2 } });
+      // Dispatch in order
+      for (let i = 0; i < chunks.length; i++) {
+        await dispatchWorkflow({
+          inputs: { queries: chunks[i] },
+        });
       }
 
       setStep7Data({
@@ -644,7 +557,7 @@ WHERE ${geneIdExpr} IS NOT NULL;
         submittedAt: new Date().toISOString(),
       });
 
-      setMsg("✅ Submit OK: inserts/updates executed successfully (2 chunks).");
+      setMsg(`✅ Submit OK: executed successfully in ${chunks.length} chunks.`);
     } catch (e) {
       console.error("Submit error full:", e);
       console.error("Submit error payload:", e?.payload);
