@@ -52,6 +52,51 @@ function getStep5ForSite(step5Data, site) {
   return step5Data?.annotations?.[site] || null;
 }
 
+/**
+ * Split a big SQL string into exactly 2 parts, cutting at a safe boundary.
+ * We cut near the middle, but always at the last "\n\n" before the target.
+ * Each part gets its own BEGIN/COMMIT wrapper, so it can run independently.
+ *
+ * NOTE: This does NOT guarantee semantic correctness for all DB schemas,
+ * but it typically works if your SQL uses INSERT/UPDATE with SELECT subqueries.
+ */
+function splitSqlIntoTwoTransactions(sqlString) {
+  const s = String(sqlString || "").trim();
+  if (!s) return ["", ""];
+
+  // Remove outer wrappers if present (we'll re-add per chunk).
+  let body = s
+    .replace(/^PRAGMA foreign_keys\s*=\s*ON;\s*/i, "")
+    .replace(/^BEGIN TRANSACTION;\s*/i, "")
+    .replace(/\s*COMMIT;\s*$/i, "")
+    .trim();
+
+  // If it's already small, just send as one.
+  if (body.length < 12000) {
+    const one = ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", body, "COMMIT;"].join("\n");
+    return [one, ""];
+  }
+
+  // Target midpoint and try to split on a blank line boundary.
+  const mid = Math.floor(body.length / 2);
+  const left = body.slice(0, mid);
+  const splitAt = left.lastIndexOf("\n\n");
+
+  // Fallback if no double-newline exists.
+  const cut = splitAt > 0 ? splitAt : left.lastIndexOf("\n");
+  const idx = cut > 0 ? cut : mid;
+
+  const part1Body = body.slice(0, idx).trim();
+  const part2Body = body.slice(idx).trim();
+
+  const part1 = ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", part1Body, "COMMIT;"].join("\n");
+  const part2 = part2Body
+    ? ["PRAGMA foreign_keys = ON;", "BEGIN TRANSACTION;", part2Body, "COMMIT;"].join("\n")
+    : "";
+
+  return [part1, part2];
+}
+
 export default function Step7CurationInfo() {
   const {
     publication,
@@ -580,10 +625,17 @@ WHERE ${geneIdExpr} IS NOT NULL;
 
     try {
       const sqlString = buildFullSql();
+      const [part1, part2] = splitSqlIntoTwoTransactions(sqlString);
 
-      await dispatchWorkflow({
-        inputs: { queries: sqlString },
-      });
+      // Enviar parte 1
+      if (part1) {
+        await dispatchWorkflow({ inputs: { queries: part1 } });
+      }
+
+      // Enviar parte 2 (si existe)
+      if (part2) {
+        await dispatchWorkflow({ inputs: { queries: part2 } });
+      }
 
       setStep7Data({
         revisionReason,
@@ -592,7 +644,7 @@ WHERE ${geneIdExpr} IS NOT NULL;
         submittedAt: new Date().toISOString(),
       });
 
-      setMsg("✅ Submit OK: inserts/updates executed successfully.");
+      setMsg("✅ Submit OK: inserts/updates executed successfully (2 chunks).");
     } catch (e) {
       console.error("Submit error full:", e);
       console.error("Submit error payload:", e?.payload);
