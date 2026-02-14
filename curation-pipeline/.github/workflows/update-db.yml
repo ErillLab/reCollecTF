@@ -54,10 +54,7 @@ jobs:
         run: |
           set -euo pipefail
           echo "Using SQL file: $SQL_PATH"
-          sqlite3 ./public/CollecTF.db <<'SQL'
-          PRAGMA foreign_keys=ON;
-          .read '"'"$SQL_PATH"'"'
-          SQL
+          sqlite3 ./public/CollecTF.db ".read $SQL_PATH"
 
       - name: Re-zip DB (always produce real gzip)
         run: |
