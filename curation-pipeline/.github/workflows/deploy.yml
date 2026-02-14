@@ -43,10 +43,23 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Ensure DB is in dist
+      - name: Verify source DB is valid gzip
         run: |
-          test -f ./public/CollecTF.db.gz
-          cp ./public/CollecTF.db.gz ./dist/CollecTF.db.gz
+          set -euo pipefail
+          ls -lh ./public/CollecTF.db.gz
+          gzip -t ./public/CollecTF.db.gz
+
+      - name: Ensure DB is in dist (overwrite)
+        run: |
+          set -euo pipefail
+          test -d ./dist
+          cp -f ./public/CollecTF.db.gz ./dist/CollecTF.db.gz
+          ls -lh ./dist/CollecTF.db.gz
+
+      - name: Verify dist DB is valid gzip
+        run: |
+          set -euo pipefail
+          gzip -t ./dist/CollecTF.db.gz
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
