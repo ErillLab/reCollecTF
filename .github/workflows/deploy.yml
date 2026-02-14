@@ -30,6 +30,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          lfs: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -46,6 +47,7 @@ jobs:
       - name: Verify source DB is valid gzip
         run: |
           set -euo pipefail
+          test -f ./public/CollecTF.db.gz
           ls -lh ./public/CollecTF.db.gz
           gzip -t ./public/CollecTF.db.gz
 
