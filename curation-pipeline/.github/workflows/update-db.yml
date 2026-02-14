@@ -31,7 +31,7 @@ jobs:
 
           # Permite SOLO dentro de esta carpeta (ajusta si hace falta)
           case "$SQL_PATH" in
-            curation_sql/pending/*.sql) ;;
+            pending-sql/*.sql) ;;
             *) echo "Invalid sql_path: $SQL_PATH"; exit 1 ;;
           esac
 
