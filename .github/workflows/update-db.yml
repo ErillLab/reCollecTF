@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install sqlite3
+      - name: Install sqlite3 + gzip
         run: |
           sudo apt-get update
           sudo apt-get install -y sqlite3 gzip
@@ -29,7 +29,6 @@ jobs:
           set -euo pipefail
           SQL_PATH="${{ github.event.inputs.sql_path }}"
 
-          # Permite SOLO dentro de esta carpeta (ajusta si hace falta)
           case "$SQL_PATH" in
             pending-sql/*.sql) ;;
             *) echo "Invalid sql_path: $SQL_PATH"; exit 1 ;;
@@ -38,28 +37,32 @@ jobs:
           test -f "$SQL_PATH"
           echo "SQL_PATH=$SQL_PATH" >> $GITHUB_ENV
 
-      - name: Unzip DB
+      - name: Prepare DB (gz or plain)
         run: |
           set -euo pipefail
           test -f ./public/CollecTF.db.gz
-          gunzip -c ./public/CollecTF.db.gz > ./public/CollecTF.db
 
-      - name: Run SQL from file (atomic-ish)
+          if gzip -t ./public/CollecTF.db.gz 2>/dev/null; then
+            echo "DB is valid gzip, unzipping..."
+            gunzip -c ./public/CollecTF.db.gz > ./public/CollecTF.db
+          else
+            echo "WARNING: CollecTF.db.gz is NOT gzip. Treating it as plain sqlite DB."
+            cp ./public/CollecTF.db.gz ./public/CollecTF.db
+          fi
+
+      - name: Run SQL from file
         run: |
           set -euo pipefail
           echo "Using SQL file: $SQL_PATH"
-
-          # Ejecuta SQL en una transacción (por si el sql no la incluye)
           sqlite3 ./public/CollecTF.db <<'SQL'
           PRAGMA foreign_keys=ON;
           .read '"'"$SQL_PATH"'"'
           SQL
 
-      - name: Re-zip DB
+      - name: Re-zip DB (always produce real gzip)
         run: |
           set -euo pipefail
-          gzip -f ./public/CollecTF.db  # deja ./public/CollecTF.db.gz
-          # opcional: elimina el .db si gzip no lo borra (gzip normal lo borra)
+          gzip -f ./public/CollecTF.db
           rm -f ./public/CollecTF.db || true
 
       - name: Delete SQL file after use
