@@ -37,18 +37,22 @@ jobs:
           test -f "$SQL_PATH"
           echo "SQL_PATH=$SQL_PATH" >> $GITHUB_ENV
 
-      - name: Prepare DB (gz or plain)
+      - name: Prepare DB (accept gz or plain, always output plain sqlite)
         run: |
           set -euo pipefail
           test -f ./public/CollecTF.db.gz
 
+          # Queremos un archivo sqlite plano en ./public/CollecTF.db
           if gzip -t ./public/CollecTF.db.gz 2>/dev/null; then
-            echo "DB is valid gzip, unzipping..."
+            echo "DB is valid gzip, unzipping to plain sqlite..."
             gunzip -c ./public/CollecTF.db.gz > ./public/CollecTF.db
           else
-            echo "WARNING: CollecTF.db.gz is NOT gzip. Treating it as plain sqlite DB."
+            echo "DB is NOT gzip. Treating ./public/CollecTF.db.gz as plain sqlite..."
             cp ./public/CollecTF.db.gz ./public/CollecTF.db
           fi
+
+          # (Opcional) sanity check: sqlite header
+          head -c 16 ./public/CollecTF.db | strings || true
 
       - name: Run SQL from file
         run: |
@@ -56,11 +60,12 @@ jobs:
           echo "Using SQL file: $SQL_PATH"
           sqlite3 ./public/CollecTF.db ".read $SQL_PATH"
 
-      - name: Re-zip DB (always produce real gzip)
+      - name: Store updated DB as .gz filename (but keep it plain sqlite)
         run: |
           set -euo pipefail
-          gzip -f ./public/CollecTF.db
-          rm -f ./public/CollecTF.db || true
+          # Tu front espera CollecTF.db.gz, pero lo quiere como sqlite directo.
+          # Por eso NO comprimimos: renombramos el sqlite plano al nombre .gz.
+          mv -f ./public/CollecTF.db ./public/CollecTF.db.gz
 
       - name: Delete SQL file after use
         run: |
