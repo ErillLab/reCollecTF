@@ -108,8 +108,8 @@ export default function Step7CurationInfo() {
     const pubKeyWhere = pmid
       ? `pmid='${esc(pmid)}'`
       : url
-      ? `url='${esc(url)}'`
-      : `title='${esc(pubTitle)}' AND journal='${esc(pubJournal)}' AND publication_date='${esc(pubDate)}'`;
+        ? `url='${esc(url)}'`
+        : `title='${esc(pubTitle)}' AND journal='${esc(pubJournal)}' AND publication_date='${esc(pubDate)}'`;
 
     const tfName = String(tf.name).trim();
 
@@ -360,27 +360,26 @@ WHERE NOT EXISTS (
     }
 
     // Taxonomia + link a genome
-    const taxByAcc = taxonomyData || {};
+    const taxByAcc = taxonomyData?.byAccession || {};
 
     for (const acc of accessions) {
       const tInfo = taxByAcc?.[acc];
-      const path = Array.isArray(tInfo?.path) ? tInfo.path : [];
-      if (!path.length) continue;
+      const chain = Array.isArray(tInfo?.chain) ? tInfo.chain : [];
+      if (!chain.length) continue;
 
-      for (let i = 0; i < path.length; i++) {
-        const node = path[i];
-        const taxid = String(node.taxid || "").trim();
+      for (let i = 0; i < chain.length; i++) {
+        const node = chain[i];
+        const taxid = String(node.taxonomy_id || "").trim();
         const name = String(node.name || "").trim();
         const rank = String(node.rank || "no rank").trim();
         if (!taxid) continue;
 
-        const parentTaxid = i > 0 ? String(path[i - 1].taxid || "").trim() : "";
+        const parentTaxid = i > 0 ? String(chain[i - 1].taxonomy_id || "").trim() : "";
         const parentIdExpr = parentTaxid
           ? `(SELECT id FROM core_taxonomy WHERE taxonomy_id='${esc(parentTaxid)}' LIMIT 1)`
           : "NULL";
 
-        sql.push(
-          `
+        sql.push(`
 INSERT INTO core_taxonomy (taxonomy_id, rank, name, parent_id)
 SELECT
   '${esc(taxid)}',
@@ -390,34 +389,30 @@ SELECT
 WHERE NOT EXISTS (
   SELECT 1 FROM core_taxonomy WHERE taxonomy_id='${esc(taxid)}'
 );
-          `.trim()
-        );
+    `.trim());
 
-        sql.push(
-          `
+        sql.push(`
 UPDATE core_taxonomy
 SET
   rank = COALESCE(NULLIF(rank,''), ${rank ? `'${esc(rank)}'` : "rank"}),
   name = COALESCE(NULLIF(name,''), ${name ? `'${esc(name)}'` : "name"}),
   parent_id = COALESCE(parent_id, ${parentIdExpr})
 WHERE taxonomy_id='${esc(taxid)}';
-          `.trim()
-        );
+    `.trim());
       }
 
-      const leafTaxid = String(path[path.length - 1]?.taxid || "").trim();
+      const leafTaxid = String(chain[chain.length - 1]?.taxonomy_id || "").trim();
       if (leafTaxid) {
-        sql.push(
-          `
+        sql.push(`
 UPDATE core_genome
 SET taxonomy_id = (
   SELECT id FROM core_taxonomy WHERE taxonomy_id='${esc(leafTaxid)}' LIMIT 1
 )
 WHERE genome_accession='${esc(acc)}';
-          `.trim()
-        );
+    `.trim());
       }
     }
+
 
     // Tècniques
     const techList = Array.isArray(techniques) ? techniques : [];
@@ -601,8 +596,8 @@ WHERE ${geneIdExpr} IS NOT NULL;
         typeof e?.payload === "string"
           ? e.payload
           : e?.payload
-          ? JSON.stringify(e.payload, null, 2)
-          : "";
+            ? JSON.stringify(e.payload, null, 2)
+            : "";
 
       setMsg(`Error: ${e?.message || String(e)}\n\n${details}`);
     } finally {
