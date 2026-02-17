@@ -58,35 +58,32 @@ async function fetchNuccoreTaxInfo(acc) {
 }
 
 async function fetchTaxonomyLineageEx(taxid) {
-  // efetch es el endpoint que devuelve LineageEx de forma consistente
-  const url = `${ENTREZ_BASE}/efetch.fcgi?db=taxonomy&id=${encodeURIComponent(
+  const url = `${ENTREZ_BASE}/esummary.fcgi?db=taxonomy&id=${encodeURIComponent(
     taxid
   )}&retmode=json`;
-
   const j = await fetchJson(url, { isNcbi: true });
 
-  // efetch devuelve algo tipo { result: [ { TaxId, ScientificName, Rank, LineageEx: [...] } ] }
-  const rec = Array.isArray(j?.result) ? j.result[0] : null;
-  if (!rec) return null;
+  const node = j?.result?.[String(taxid)];
+  if (!node) return null;
 
-  const lineageEx = Array.isArray(rec.LineageEx) ? rec.LineageEx : [];
+  const lineageEx = Array.isArray(node.lineageex) ? node.lineageex : [];
 
-  // LineageEx son los ancestros; añadimos el nodo final (leaf)
   const path = lineageEx.map((x) => ({
-    taxid: x?.TaxId ? String(x.TaxId) : "",
-    name: x?.ScientificName || "",
-    rank: x?.Rank || "no rank",
+    taxid: x?.taxid ? String(x.taxid) : "",
+    name: x?.scientificname || "",
+    rank: x?.rank || "no rank",
   }));
 
+  // Afegim el node final (taxid consultat) si no hi és
   const leaf = {
-    taxid: rec.TaxId ? String(rec.TaxId) : String(taxid),
-    name: rec.ScientificName || "",
-    rank: rec.Rank || "no rank",
+    taxid: String(taxid),
+    name: node.scientificname || "",
+    rank: node.rank || "no rank",
   };
 
   if (!path.length || path[path.length - 1].taxid !== leaf.taxid) path.push(leaf);
 
-  // limpiar duplicados/basura
+  // Neteja de duplicats i buits
   const seen = new Set();
   const cleaned = [];
   for (const n of path) {
@@ -95,7 +92,7 @@ async function fetchTaxonomyLineageEx(taxid) {
     cleaned.push(n);
   }
 
-  // devolver chain con parent_taxonomy_id encadenado
+  // El format que guardem ja porta el parent_taxonomy_id per facilitar inserts
   return cleaned.map((n, i) => ({
     taxonomy_id: n.taxid,
     name: n.name,
@@ -121,18 +118,6 @@ async function computeTaxonomyForAcc(acc) {
     chain,
     computedAt: new Date().toISOString(),
   };
-
-  console.log(
-    "STEP2 TAX chain ranks/taxids",
-    acc,
-    payload.chain.map(n => ({
-      id: n.taxonomy_id,
-      rank: n.rank,
-      parent: n.parent_taxonomy_id,
-      name: n.name
-    }))
-  );
-
 
   taxonomyCacheByAcc.set(acc, payload);
   return payload;
