@@ -123,11 +123,6 @@ async function computeTaxonomyForAcc(acc) {
   return payload;
 }
 
-computeTaxonomyForAcc(accession).then((payload) => {
-  console.log("TAXONOMY payload", accession, payload);
-});
-
-
 export default function Step2GenomeTF() {
   const {
     tf,
