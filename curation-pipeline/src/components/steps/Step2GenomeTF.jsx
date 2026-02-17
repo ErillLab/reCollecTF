@@ -119,6 +119,18 @@ async function computeTaxonomyForAcc(acc) {
     computedAt: new Date().toISOString(),
   };
 
+  console.log(
+    "STEP2 TAX chain ranks/taxids",
+    acc,
+    payload.chain.map(n => ({
+      id: n.taxonomy_id,
+      rank: n.rank,
+      parent: n.parent_taxonomy_id,
+      name: n.name
+    }))
+  );
+
+
   taxonomyCacheByAcc.set(acc, payload);
   return payload;
 }

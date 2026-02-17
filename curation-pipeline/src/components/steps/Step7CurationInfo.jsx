@@ -362,6 +362,11 @@ WHERE NOT EXISTS (
     // Taxonomia + link a genome
     // Inserta la cadena completa (ancestros + hoja)
     // Pero la BD "indexa" hasta species: si el leaf es strain/subspecies, enlazamos el genoma a la species.
+
+    // DEBUG
+    console.log("STEP7 taxonomyData keys", Object.keys(taxonomyData || {}));
+    console.log("STEP7 byAcc keys", Object.keys(taxByAcc));
+
     const taxByAcc = taxonomyData?.byAccession || {};
 
     const rankScore = (r) => {
@@ -383,6 +388,9 @@ WHERE NOT EXISTS (
     };
 
     for (const acc of accessions) {
+
+      console.log("STEP7 for acc", acc, taxByAcc?.[acc]);
+
       const tInfo = taxByAcc?.[acc];
       const chainRaw = Array.isArray(tInfo?.chain) ? tInfo.chain : [];
       if (!chainRaw.length) continue;
