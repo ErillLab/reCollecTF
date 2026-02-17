@@ -58,32 +58,35 @@ async function fetchNuccoreTaxInfo(acc) {
 }
 
 async function fetchTaxonomyLineageEx(taxid) {
-  const url = `${ENTREZ_BASE}/esummary.fcgi?db=taxonomy&id=${encodeURIComponent(
+  // efetch es el endpoint que devuelve LineageEx de forma consistente
+  const url = `${ENTREZ_BASE}/efetch.fcgi?db=taxonomy&id=${encodeURIComponent(
     taxid
   )}&retmode=json`;
+
   const j = await fetchJson(url, { isNcbi: true });
 
-  const node = j?.result?.[String(taxid)];
-  if (!node) return null;
+  // efetch devuelve algo tipo { result: [ { TaxId, ScientificName, Rank, LineageEx: [...] } ] }
+  const rec = Array.isArray(j?.result) ? j.result[0] : null;
+  if (!rec) return null;
 
-  const lineageEx = Array.isArray(node.lineageex) ? node.lineageex : [];
+  const lineageEx = Array.isArray(rec.LineageEx) ? rec.LineageEx : [];
 
+  // LineageEx son los ancestros; añadimos el nodo final (leaf)
   const path = lineageEx.map((x) => ({
-    taxid: x?.taxid ? String(x.taxid) : "",
-    name: x?.scientificname || "",
-    rank: x?.rank || "no rank",
+    taxid: x?.TaxId ? String(x.TaxId) : "",
+    name: x?.ScientificName || "",
+    rank: x?.Rank || "no rank",
   }));
 
-  // Afegim el node final (taxid consultat) si no hi és
   const leaf = {
-    taxid: String(taxid),
-    name: node.scientificname || "",
-    rank: node.rank || "no rank",
+    taxid: rec.TaxId ? String(rec.TaxId) : String(taxid),
+    name: rec.ScientificName || "",
+    rank: rec.Rank || "no rank",
   };
 
   if (!path.length || path[path.length - 1].taxid !== leaf.taxid) path.push(leaf);
 
-  // Neteja de duplicats i buits
+  // limpiar duplicados/basura
   const seen = new Set();
   const cleaned = [];
   for (const n of path) {
@@ -92,7 +95,7 @@ async function fetchTaxonomyLineageEx(taxid) {
     cleaned.push(n);
   }
 
-  // El format que guardem ja porta el parent_taxonomy_id per facilitar inserts
+  // devolver chain con parent_taxonomy_id encadenado
   return cleaned.map((n, i) => ({
     taxonomy_id: n.taxid,
     name: n.name,

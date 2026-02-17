@@ -360,63 +360,19 @@ WHERE NOT EXISTS (
     }
 
     // Taxonomia + link a genome
-    // Inserta la cadena completa (ancestros + hoja)
-    // Pero la BD "indexa" hasta species: si el leaf es strain/subspecies, enlazamos el genoma a la species.
-
-    // DEBUG
-    console.log("STEP7 taxonomyData keys", Object.keys(taxonomyData || {}));
-    console.log("STEP7 byAcc keys", Object.keys(taxByAcc));
-
     const taxByAcc = taxonomyData?.byAccession || {};
 
-    const rankScore = (r) => {
-      const x = String(r || "no rank").toLowerCase();
-      const order = {
-        "no rank": 0,
-        superkingdom: 1,
-        kingdom: 2,
-        phylum: 3,
-        class: 4,
-        order: 5,
-        family: 6,
-        genus: 7,
-        species: 8,
-        subspecies: 9,
-        strain: 10,
-      };
-      return order[x] ?? 0;
-    };
-
     for (const acc of accessions) {
-
-      console.log("STEP7 for acc", acc, taxByAcc?.[acc]);
-
       const tInfo = taxByAcc?.[acc];
-      const chainRaw = Array.isArray(tInfo?.chain) ? tInfo.chain : [];
-      if (!chainRaw.length) continue;
+      const chain = Array.isArray(tInfo?.chain) ? tInfo.chain : [];
+      if (!chain.length) continue;
 
-      // Aseguramos orden de general -> específico.
-      // Si viene al revés, invertimos (p.ej. empieza en strain y termina en phylum).
-      const chainOrdered = [...chainRaw];
-      if (chainOrdered.length >= 2) {
-        const first = rankScore(chainOrdered[0]?.rank);
-        const last = rankScore(chainOrdered[chainOrdered.length - 1]?.rank);
-        if (first > last) chainOrdered.reverse();
-      }
-
-      // Si NCBI devuelve strain/subspecies, recortamos la cadena para enlazar el genoma a species.
-      let chain = chainOrdered;
-      const idxSpecies = chainOrdered.findIndex((n) => String(n?.rank || "").toLowerCase() === "species");
-      if (idxSpecies >= 0) chain = chainOrdered.slice(0, idxSpecies + 1);
-
-      // Insert/Update de cada nodo y su parent_id (FK a core_taxonomy.id)
       for (let i = 0; i < chain.length; i++) {
         const node = chain[i];
         const taxid = String(node.taxonomy_id || "").trim();
-        if (!taxid) continue;
-
         const name = String(node.name || "").trim();
         const rank = String(node.rank || "no rank").trim();
+        if (!taxid) continue;
 
         const parentTaxid = i > 0 ? String(chain[i - 1].taxonomy_id || "").trim() : "";
         const parentIdExpr = parentTaxid
@@ -445,7 +401,6 @@ WHERE taxonomy_id='${esc(taxid)}';
     `.trim());
       }
 
-      // Enlazamos el genoma al leaf elegido (species si existe; si no, el último del chain)
       const leafTaxid = String(chain[chain.length - 1]?.taxonomy_id || "").trim();
       if (leafTaxid) {
         sql.push(`
