@@ -22,7 +22,7 @@ export default function App() {
       <div className="flex gap-6">
         
         {/*Steps (zona esquerra*/}
-        <div className="flex-1">
+        <div className="flex-1"> 
           <StepNavigation />
 
           {currentStep === 1 && <Step1Publicacio />}
