@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExpR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">ExpR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q92L12/entry">
+          UniProtKB: Q92L12
+        </a>
+        regulon and binding site collection of Sinorhizobium meliloti 1021
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCCGCAGATTCCCCCACAAATCTATTGGGAAA</td>
+        <td class="border p-2">+  [1996735, 1996767]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SMc00170 (SMc00170)</span>, </span><span><span style="color: #4CAF50;">SMc00168 (SMc00168)</span></span></td>
+        <td class="border p-2">361</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18515420" target="_blank" rel="noopener noreferrer">18515420</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003078.1" target="_blank" rel="noopener noreferrer">NC_003078.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TACCGGGTAAAGCCCCAAGAATCTATTGTTGTG</td>
+        <td class="border p-2">+  [985903, 985935]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">wgcA (SM_b21318)</span>, </span><span><span style="color: #ffffff;">wggR (SM_b21317)</span>, </span><span><span style="color: #ffffff;">wgaA (SM_b21319)</span>, </span><span><span style="color: #ffffff;">wgaB (SM_b21320)</span>, </span><span><span style="color: #ffffff;">wgaD (SM_b21321)</span>, </span><span><span style="color: #ffffff;">wgaE (SM_b21322)</span>, </span><span><span style="color: #ffffff;">wgaF (SM_b21323)</span>, </span><span><span style="color: #ffffff;">wgaG (SM_b21324)</span>, </span><span><span style="color: #ffffff;">wgaH (SM_b21325)</span>, </span><span><span style="color: #ffffff;">wgaI (SM_b21326)</span>, </span><span><span style="color: #ffffff;">wgaA0 (SM_b21327)</span>, </span><span><span style="color: #ffffff;">SM_b21328 (SM_b21328)</span>, </span><span><span style="color: #ffffff;">SM_b21329 (SM_b21329)</span></span></td>
+        <td class="border p-2">362</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18515420" target="_blank" rel="noopener noreferrer">18515420</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003078.1" target="_blank" rel="noopener noreferrer">NC_003078.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCGTCAGAATTACTCCTAAAATTATATTGTACCA</td>
+        <td class="border p-2">+  [980413, 980446]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">wgeA (SM_b21314)</span>, </span><span><span style="color: #ffffff;">wgeB (SM_b21313)</span>, </span><span><span style="color: #ffffff;">wgeC (SM_b21312)</span>, </span><span><span style="color: #ffffff;">wgeD (SM_b21311)</span>, </span><span><span style="color: #ffffff;">wgeE (SM_b21310)</span>, </span><span><span style="color: #ffffff;">wgeF (SM_b21309)</span>, </span><span><span style="color: #ffffff;">wgeG (SM_b21308)</span>, </span><span><span style="color: #ffffff;">wgeH (SM_b21307)</span>, </span><span><span style="color: #ffffff;">orf23 (SM_b21215)</span>, </span><span><span style="color: #ffffff;">orf24 (SM_b21214)</span>, </span><span><span style="color: #ffffff;">pphA (SM_b21213)</span>, </span><span><span style="color: #ffffff;">SM_b21667 (SM_b21667)</span>, </span><span><span style="color: #ffffff;">SM_b21212 (SM_b21212)</span>, </span><span><span style="color: #ffffff;">SM_b21211 (SM_b21211)</span>, </span><span><span style="color: #ffffff;">wgdB (SM_b21315)</span>, </span><span><span style="color: #ffffff;">wgdA (SM_b21316)</span></span></td>
+        <td class="border p-2">362</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18515420" target="_blank" rel="noopener noreferrer">18515420</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003078.1" target="_blank" rel="noopener noreferrer">NC_003078.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCGTCCCCCAAACTCTTGGGGGTTATTAAAACT</td>
+        <td class="border p-2">+  [1157603, 1157635]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">exsH (SM_b20932)</span>, </span><span><span style="color: #ffffff;">SM_b20931 (SM_b20931)</span>, </span><span><span style="color: #ffffff;">exsG (SM_b20933)</span>, </span><span><span style="color: #ffffff;">exsF (SM_b20934)</span>, </span><span><span style="color: #ffffff;">exsI (SM_b20935)</span></span></td>
+        <td class="border p-2">363</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18515420" target="_blank" rel="noopener noreferrer">18515420</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003078.1" target="_blank" rel="noopener noreferrer">NC_003078.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCCCTCATCGTCATTATCCTGCTCTATATGTTCG</td>
+        <td class="border p-2">+  [1179558, 1179591]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SM_b21673 (SM_b21673)</span>, </span><span><span style="color: #ffffff;">exoT (SM_b20950)</span>, </span><span><span style="color: #ffffff;">exoW (SM_b21690)</span>, </span><span><span style="color: #ffffff;">exoV (SM_b20949)</span>, </span><span><span style="color: #ffffff;">exoU (SM_b20948)</span>, </span><span><span style="color: #ffffff;">exoX (SM_b20947)</span>, </span><span><span style="color: #ffffff;">exoI (SM_b20951)</span>, </span><span><span style="color: #ffffff;">SM_b20952 (SM_b20952)</span>, </span><span><span style="color: #ffffff;">SM_b20953 (SM_b20953)</span>, </span><span><span style="color: #ffffff;">exoH (SM_b20954)</span>, </span><span><span style="color: #ffffff;">exoK (SM_b20955)</span>, </span><span><span style="color: #ffffff;">exoL (SM_b20956)</span>, </span><span><span style="color: #ffffff;">exoA (SM_b20957)</span>, </span><span><span style="color: #ffffff;">exoM (SM_b20958)</span>, </span><span><span style="color: #ffffff;">exoO (SM_b20959)</span>, </span><span><span style="color: #ffffff;">exoN (SM_b20960)</span>, </span><span><span style="color: #ffffff;">exoP (SM_b20961)</span></span></td>
+        <td class="border p-2">363</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18515420" target="_blank" rel="noopener noreferrer">18515420</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCCCCGCTAAATTCAGGGTA</td>
+        <td class="border p-2">+  [160626, 160645]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SMc04115 (SMc04115)</span>, </span><span><span style="color: #F44336;">pilA1 (SMc04114)</span>, </span><span><span style="color: #ffffff;">cpaA1 (SMc04113)</span>, </span><span><span style="color: #ffffff;">cpaB1 (SMc04112)</span>, </span><span><span style="color: #ffffff;">cpaC1 (SMc04111)</span>, </span><span><span style="color: #ffffff;">SMc04110 (SMc04110)</span>, </span><span><span style="color: #ffffff;">cpaE1 (SMc04109)</span>, </span><span><span style="color: #ffffff;">cpaF1 (SMc02820)</span>, </span><span><span style="color: #ffffff;">SMc02821 (SMc02821)</span>, </span><span><span style="color: #ffffff;">SMc02822 (SMc02822)</span></span></td>
+        <td class="border p-2">943</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24509921" target="_blank" rel="noopener noreferrer">24509921</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020528.1" target="_blank" rel="noopener noreferrer">NC_020528.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACCATGTTTATTATAGGGGCA</td>
+        <td class="border p-2">+  [1995631, 1995652]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">sinR (SM2011_c00170)</span></span></td>
+        <td class="border p-2">944</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19889097" target="_blank" rel="noopener noreferrer">19889097</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACCCGTAAAAACCAAGGGG</td>
+        <td class="border p-2">+  [3177550, 3177569]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SMc03150 (SMc03150)</span>, </span><span><span style="color: #ffffff;">SMc03149 (SMc03149)</span>, </span><span><span style="color: #ffffff;">SMc03148 (SMc03148)</span>, </span><span><span style="color: #ffffff;">SMc03147 (SMc03147)</span>, </span><span><span style="color: #ffffff;">SMc03146 (SMc03146)</span>, </span><span><span style="color: #ffffff;">SMc03145 (SMc03145)</span>, </span><span><span style="color: #ffffff;">SMc03144 (SMc03144)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCCCTTAAATGGCGGGGTT</td>
+        <td class="border p-2">+  [2064418, 2064437]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SMc04237 (SMc04237)</span>, </span><span><span style="color: #ffffff;">SMc04238 (SMc04238)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACTCCGAGTTTTTGCAGGTT</td>
+        <td class="border p-2">+  [3568553, 3568572]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SMc03899 (SMc03899)</span>, </span><span><span style="color: #ffffff;">TRm1a (SMc03898)</span>, </span><span><span style="color: #ffffff;">TRm1b (SMc03948)</span>, </span><span><span style="color: #ffffff;">SMc03896 (SMc03896)</span>, </span><span><span style="color: #ffffff;">ndvA (SMc03900)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCCCTAAAATTGCATAGTGG</td>
+        <td class="border p-2">+  [445303, 445322]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">phrR (SMc01110)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTCCCGGATATTCATTGAAA</td>
+        <td class="border p-2">+  [2610275, 2610294]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc01524 (SMc01524)</span>, </span><span><span style="color: #ffffff;">dppA2 (SMc01525)</span>, </span><span><span style="color: #ffffff;">dppB2 (SMc01526)</span>, </span><span><span style="color: #ffffff;">dppC2 (SMc01527)</span>, </span><span><span style="color: #ffffff;">dppD2 (SMc01528)</span>, </span><span><span style="color: #ffffff;">dppF2 (SMc01529)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACCCATCAATTATTTGTGT</td>
+        <td class="border p-2">+  [1132186, 1132205]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc02378 (SMc02378)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCCCATAGATTTTATGACA</td>
+        <td class="border p-2">+  [3527868, 3527887]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc03864 (SMc03864)</span>, </span><span><span style="color: #ffffff;">SMc03865 (SMc03865)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCCGTACGTTTATGAGGGA</td>
+        <td class="border p-2">+  [2071327, 2071346]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc04246 (SMc04246)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTCCCATTAGAAGCCACGGG</td>
+        <td class="border p-2">+  [3063619, 3063638]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc04059 (SMc04059)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACCCATCACTCTTACTGTG</td>
+        <td class="border p-2">+  [2520754, 2520773]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">cspA3 (SMc01585)</span>, </span><span><span style="color: #ffffff;">SMc01586 (SMc01586)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TACCCCCATTTCTTGCAGGG</td>
+        <td class="border p-2">+  [2594936, 2594955]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc05009 (SMc05009)</span>, </span><span><span style="color: #ffffff;">SMc01535 (SMc01535)</span>, </span><span><span style="color: #ffffff;">SMc01534 (SMc01534)</span>, </span><span><span style="color: #ffffff;">adeC1 (SMc01533)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCCCTAAAATTGTTTTGGTT</td>
+        <td class="border p-2">+  [493621, 493640]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc01711 (SMc01711)</span>, </span><span><span style="color: #ffffff;">SMc01710 (SMc01710)</span>, </span><span><span style="color: #ffffff;">SMc01709 (SMc01709)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATCCTATAAAAGATGAAGGG</td>
+        <td class="border p-2">+  [3178485, 3178504]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SMc03150 (SMc03150)</span>, </span><span><span style="color: #2196F3;">SMc03149 (SMc03149)</span>, </span><span><span style="color: #ffffff;">SMc03148 (SMc03148)</span>, </span><span><span style="color: #ffffff;">SMc03147 (SMc03147)</span>, </span><span><span style="color: #ffffff;">SMc03146 (SMc03146)</span>, </span><span><span style="color: #ffffff;">SMc03145 (SMc03145)</span>, </span><span><span style="color: #ffffff;">SMc03144 (SMc03144)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGCCCAGCTATAAGAAGTGA</td>
+        <td class="border p-2">+  [3036104, 3036123]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc04032 (SMc04032)</span>, </span><span><span style="color: #ffffff;">pip2 (SMc04031)</span>, </span><span><span style="color: #ffffff;">pip3 (SMc04033)</span>, </span><span><span style="color: #ffffff;">SMc04034 (SMc04034)</span>, </span><span><span style="color: #ffffff;">SMc04035 (SMc04035)</span>, </span><span><span style="color: #ffffff;">SMc04036 (SMc04036)</span>, </span><span><span style="color: #ffffff;">SMc04037 (SMc04037)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCCCCTTTTTTTAGTGGTA</td>
+        <td class="border p-2">+  [2058912, 2058931]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc04232 (SMc04232)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGCCCCGCACTTTGACGGGG</td>
+        <td class="border p-2">+  [2087713, 2087732]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc04258 (SMc04258)</span>, </span><span><span style="color: #ffffff;">SMc04257 (SMc04257)</span>, </span><span><span style="color: #ffffff;">SMc04256 (SMc04256)</span>, </span><span><span style="color: #ffffff;">manB (SMc04255)</span>, </span><span><span style="color: #ffffff;">SMc04254 (SMc04254)</span>, </span><span><span style="color: #ffffff;">SMc04253 (SMc04253)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCCCTAGATTTATATTGAC</td>
+        <td class="border p-2">+  [2578426, 2578445]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SMc02727 (SMc02727)</span>, </span><span><span style="color: #ffffff;">SMc02726 (SMc02726)</span></span></td>
+        <td class="border p-2">946</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23687265" target="_blank" rel="noopener noreferrer">23687265</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020528.1" target="_blank" rel="noopener noreferrer">NC_020528.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACGGGACGCCCTGTCTTTTTG</td>
+        <td class="border p-2">+  [713926, 713947]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">visN (SM2011_c03015)</span></span></td>
+        <td class="border p-2">948</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18842098" target="_blank" rel="noopener noreferrer">18842098</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92L12" target="_blank" rel="noopener noreferrer">Q92L12</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACAAATCTATTGGGAAAAAATGAG</td>
+        <td class="border p-2">+  [1996751, 1996774]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Hydroxyl-radical footprinting (ECO:0005643)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SMc00168 (SMc00168)</span></span></td>
+        <td class="border p-2">952</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17384071" target="_blank" rel="noopener noreferrer">17384071</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

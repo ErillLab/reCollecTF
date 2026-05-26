@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VpsR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">VpsR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9KU59/entry">
+          UniProtKB: Q9KU59
+        </a>
+        regulon and binding site collection of Vibrio cholerae C6706
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTTCATTATTGAGAATA</td>
+        <td class="border p-2">+  [2375084, 2375101]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), Motif-discovery (ECO:0005558)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ppc (VC0395_A2222)</span>, </span><span><span style="color: #4CAF50;">VC0395_A2223 (VC0395_A2223)</span>, </span><span><span style="color: #ffffff;">VC0395_A2224 (VC0395_A2224)</span>, </span><span><span style="color: #ffffff;">cysE (VC0395_A2225)</span>, </span><span><span style="color: #ffffff;">gpsA (VC0395_A2226)</span></span></td>
+        <td class="border p-2">515</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17501920" target="_blank" rel="noopener noreferrer">17501920</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTTTCATTATTGAGAATA</td>
+        <td class="border p-2">+  [2821207, 2821224]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Luciferase reporter assay (ECO:0005648), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC2647 (VC2647)</span>, </span><span><span style="color: #ffffff;">VC2648 (VC2648)</span></span></td>
+        <td class="border p-2">915</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21926235" target="_blank" rel="noopener noreferrer">21926235</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCTTAATATTGAGAAGG</td>
+        <td class="border p-2">+  [902239, 902256]</td>
+        <td class="border p-2">Luciferase reporter assay (ECO:0005648), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VCA0952 (VCA0952)</span></span></td>
+        <td class="border p-2">915</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21926235" target="_blank" rel="noopener noreferrer">21926235</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012668.1" target="_blank" rel="noopener noreferrer">NC_012668.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTTTCATTATTGAGAATA</td>
+        <td class="border p-2">+  [773436, 773453]</td>
+        <td class="border p-2">Luciferase reporter assay (ECO:0005648), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VCD_001716 (VCD_001716)</span></span></td>
+        <td class="border p-2">917</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21926235" target="_blank" rel="noopener noreferrer">21926235</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012667.1" target="_blank" rel="noopener noreferrer">NC_012667.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCTTAATATTGAGAAGG</td>
+        <td class="border p-2">+  [443577, 443594]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Luciferase reporter assay (ECO:0005648), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCD_000382 (VCD_000382)</span>, </span><span><span style="color: #4CAF50;">VCD_000383 (VCD_000383)</span></span></td>
+        <td class="border p-2">917</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21926235" target="_blank" rel="noopener noreferrer">21926235</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTCTTAGAATTGATGCAGATA</td>
+        <td class="border p-2">+  [999131, 999151]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Luciferase reporter assay (ECO:0005648), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0933 (VC0933)</span>, </span><span><span style="color: #ffffff;">VC0932 (VC0932)</span>, </span><span><span style="color: #4CAF50;">VC0934 (VC0934)</span>, </span><span><span style="color: #ffffff;">VC0935 (VC0935)</span>, </span><span><span style="color: #ffffff;">VC0936 (VC0936)</span>, </span><span><span style="color: #ffffff;">VC0937 (VC0937)</span>, </span><span><span style="color: #ffffff;">VC0938 (VC0938)</span>, </span><span><span style="color: #ffffff;">VC0939 (VC0939)</span></span></td>
+        <td class="border p-2">1098</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/25622616" target="_blank" rel="noopener noreferrer">25622616</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAATTATTTTTGAGAAAAGTA</td>
+        <td class="border p-2">+  [998850, 998870]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Luciferase reporter assay (ECO:0005648), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0933 (VC0933)</span>, </span><span><span style="color: #ffffff;">VC0932 (VC0932)</span>, </span><span><span style="color: #4CAF50;">VC0934 (VC0934)</span>, </span><span><span style="color: #ffffff;">VC0935 (VC0935)</span>, </span><span><span style="color: #ffffff;">VC0936 (VC0936)</span>, </span><span><span style="color: #ffffff;">VC0937 (VC0937)</span>, </span><span><span style="color: #ffffff;">VC0938 (VC0938)</span>, </span><span><span style="color: #ffffff;">VC0939 (VC0939)</span></span></td>
+        <td class="border p-2">1098</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/25622616" target="_blank" rel="noopener noreferrer">25622616</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KU59" target="_blank" rel="noopener noreferrer">Q9KU59</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTATTACATTTTGGATTTACA</td>
+        <td class="border p-2">+  [998873, 998893]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Luciferase reporter assay (ECO:0005648), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0933 (VC0933)</span>, </span><span><span style="color: #ffffff;">VC0932 (VC0932)</span>, </span><span><span style="color: #4CAF50;">VC0934 (VC0934)</span>, </span><span><span style="color: #ffffff;">VC0935 (VC0935)</span>, </span><span><span style="color: #ffffff;">VC0936 (VC0936)</span>, </span><span><span style="color: #ffffff;">VC0937 (VC0937)</span>, </span><span><span style="color: #ffffff;">VC0938 (VC0938)</span>, </span><span><span style="color: #ffffff;">VC0939 (VC0939)</span></span></td>
+        <td class="border p-2">1098</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/25622616" target="_blank" rel="noopener noreferrer">25622616</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
