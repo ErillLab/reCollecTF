@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0A7C2/entry">
+          UniProtKB: P0A7C2
+        </a>
+        regulon and binding site collection of Escherichia coli str. K-12 substr. MG1655
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATATAAAACCAGTT</td>
+        <td class="border p-2">+  [2749748, 2749767]</td>
+        <td class="border p-2">GST pull-down assay (ECO:0005640), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nadK (b2615)</span>, </span><span><span style="color: #ffffff;">recN (b2616)</span></span></td>
+        <td class="border p-2">68</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCTGTATATACTCACAGCA</td>
+        <td class="border p-2">+  [4255090, 4255109]</td>
+        <td class="border p-2">GST pull-down assay (ECO:0005640), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dgkA (b4042)</span>, </span><span><span style="color: #ffffff;">lexA (b4043)</span>, </span><span><span style="color: #ffffff;">dinF (b4044)</span></span></td>
+        <td class="border p-2">68</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATATAAAAACAGTA</td>
+        <td class="border p-2">+  [1229950, 1229969]</td>
+        <td class="border p-2">GST pull-down assay (ECO:0005640), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hlyE (b1182)</span>, </span><span><span style="color: #ffffff;">umuD (b1183)</span>, </span><span><span style="color: #ffffff;">umuC (b1184)</span>, </span><span><span style="color: #ffffff;">dsbB (b1185)</span></span></td>
+        <td class="border p-2">68</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GACTGTATAAAACCACAGCC</td>
+        <td class="border p-2">+  [65833, 65852]</td>
+        <td class="border p-2">GST pull-down assay (ECO:0005640), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">polB (b0060)</span>, </span><span><span style="color: #ffffff;">araD (b0061)</span></span></td>
+        <td class="border p-2">68</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGCTGGATATCTATCCAGCA</td>
+        <td class="border p-2">+  [1944049, 1944068]</td>
+        <td class="border p-2">GST pull-down assay (ECO:0005640), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ruvA (b1861)</span>, </span><span><span style="color: #ffffff;">ruvB (b1860)</span>, </span><span><span style="color: #ffffff;">yobI (b4677)</span></span></td>
+        <td class="border p-2">68</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTACATCCATACAGTA</td>
+        <td class="border p-2">+  [1020164, 1020183]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">sulA (b0958)</span>, </span><span><span style="color: #ffffff;">sxy (b0959)</span>, </span><span><span style="color: #ffffff;">yccS (b0960)</span>, </span><span><span style="color: #ffffff;">yccF (b0961)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTTTATTTATACAGTA</td>
+        <td class="border p-2">+  [3851321, 3851340]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">istR (b4616)</span>, </span><span><span style="color: #ffffff;">tisB (b4618)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATATAAAAACAGTA</td>
+        <td class="border p-2">+  [1229950, 1229969]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hlyE (b1182)</span>, </span><span><span style="color: #ffffff;">umuD (b1183)</span>, </span><span><span style="color: #ffffff;">umuC (b1184)</span>, </span><span><span style="color: #ffffff;">dsbB (b1185)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGTATATAAATACAGTT</td>
+        <td class="border p-2">+  [3815719, 3815738]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yicC (b3644)</span>, </span><span><span style="color: #ffffff;">dinD (b3645)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATATAAAACCAGTT</td>
+        <td class="border p-2">+  [2749748, 2749767]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nadK (b2615)</span>, </span><span><span style="color: #ffffff;">recN (b2616)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATAAAATCACAGTT</td>
+        <td class="border p-2">+  [1928788, 1928807]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yebG (b1848)</span>, </span><span><span style="color: #ffffff;">purT (b1849)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCTGTATATACTCACAGCA</td>
+        <td class="border p-2">+  [4255090, 4255109]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dgkA (b4042)</span>, </span><span><span style="color: #ffffff;">lexA (b4043)</span>, </span><span><span style="color: #ffffff;">dinF (b4044)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACCTGTATAAATAACCAGTA</td>
+        <td class="border p-2">+  [1120729, 1120748]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dinI (b1061)</span>, </span><span><span style="color: #ffffff;">pyrC (b1062)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTACGTATCGACAGTT</td>
+        <td class="border p-2">+  [1808200, 1808219]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yniC (b1727)</span>, </span><span><span style="color: #ffffff;">ydjM (b1728)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGATGATATATACAGGT</td>
+        <td class="border p-2">+  [4577938, 4577957]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">symR (b4625)</span>, </span><span><span style="color: #ffffff;">symE (b4347)</span>, </span><span><span style="color: #ffffff;">hsdS (b4348)</span>, </span><span><span style="color: #ffffff;">hsdM (b4349)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATGCTCATACAGTA</td>
+        <td class="border p-2">+  [2821850, 2821869]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">recA (b2699)</span>, </span><span><span style="color: #ffffff;">ygaD (b2700)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACCTGAATGAATATACAGTA</td>
+        <td class="border p-2">+  [4271977, 4271996]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">uvrA (b4058)</span>, </span><span><span style="color: #ffffff;">yjbR (b4057)</span>, </span><span><span style="color: #ffffff;">yjbQ (b4056)</span>, </span><span><span style="color: #ffffff;">ssb (b4059)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGGACGTTTGTACAGCA</td>
+        <td class="border p-2">+  [4015292, 4015311]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">udp (b3831)</span>, </span><span><span style="color: #ffffff;">rmuC (b3832)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGTTTTTTTATCCAGTA</td>
+        <td class="border p-2">+  [812654, 812673]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">bioD (b0778)</span>, </span><span><span style="color: #ffffff;">bioC (b0777)</span>, </span><span><span style="color: #ffffff;">bioF (b0776)</span>, </span><span><span style="color: #ffffff;">bioB (b0775)</span>, </span><span><span style="color: #ffffff;">uvrB (b0779)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGGATAAAATTACAGGG</td>
+        <td class="border p-2">+  [2194468, 2194487]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">metG (b2114)</span>, </span><span><span style="color: #ffffff;">yehH (b4499)</span>, </span><span><span style="color: #ffffff;">yehI (b2118)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATGATTATCCAGTT</td>
+        <td class="border p-2">+  [3646002, 3646021]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dinQ (b4613)</span>, </span><span><span style="color: #ffffff;">arsR (b3501)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACTGTATACTTTACCAGTG</td>
+        <td class="border p-2">+  [250863, 250882]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lafU (b0230)</span>, </span><span><span style="color: #ffffff;">lfhA (b0229)</span>, </span><span><span style="color: #ffffff;">dinB (b0231)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCCTGTTAATCCATACAGCA</td>
+        <td class="border p-2">+  [932350, 932369]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lrp (b0889)</span>, </span><span><span style="color: #ffffff;">ftsK (b0890)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACTGGATAGATAACCAGCA</td>
+        <td class="border p-2">+  [1821505, 1821524]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nadE (b1740)</span>, </span><span><span style="color: #ffffff;">cho (b1741)</span>, </span><span><span style="color: #ffffff;">ves (b1742)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GACTGTATAAAACCACAGCC</td>
+        <td class="border p-2">+  [65833, 65852]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">polB (b0060)</span>, </span><span><span style="color: #ffffff;">araD (b0061)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGCTGGATATCTATCCAGCA</td>
+        <td class="border p-2">+  [1944049, 1944068]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ruvA (b1861)</span>, </span><span><span style="color: #ffffff;">ruvB (b1860)</span>, </span><span><span style="color: #ffffff;">yobI (b4677)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TATTGGCTGTTTATACAGTA</td>
+        <td class="border p-2">+  [832258, 832277]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ybiA (b0798)</span>, </span><span><span style="color: #ffffff;">dinG (b0799)</span>, </span><span><span style="color: #ffffff;">ybiB (b0800)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCTGTATATATACCCAGCT</td>
+        <td class="border p-2">+  [3995929, 3995948]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yigB (b3812)</span>, </span><span><span style="color: #ffffff;">xerC (b3811)</span>, </span><span><span style="color: #ffffff;">yigA (b3810)</span>, </span><span><span style="color: #ffffff;">dapF (b3809)</span>, </span><span><span style="color: #ffffff;">yifL (b4558)</span>, </span><span><span style="color: #ffffff;">uvrD (b3813)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGGATATTTAAACAGGT</td>
+        <td class="border p-2">+  [1225560, 1225579]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">minC (b1176)</span>, </span><span><span style="color: #ffffff;">minD (b1175)</span>, </span><span><span style="color: #ffffff;">minE (b1174)</span>, </span><span><span style="color: #ffffff;">ycgJ (b1177)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGGATAACACACCATGA</td>
+        <td class="border p-2">+  [1892003, 1892022]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yoaB (b1809)</span>, </span><span><span style="color: #ffffff;">yoaC (b1810)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCATGTTGAAATAGCCAGTA</td>
+        <td class="border p-2">+  [3958234, 3958253]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yifN (b3777)</span>, </span><span><span style="color: #ffffff;">ppiC (b3775)</span>, </span><span><span style="color: #ffffff;">rep (b3778)</span>, </span><span><span style="color: #ffffff;">gpp (b3779)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAATGTTTTTACATCCACTA</td>
+        <td class="border p-2">+  [243356, 243375]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">fadE (b0221)</span>, </span><span><span style="color: #ffffff;">ivy (b0220)</span>, </span><span><span style="color: #ffffff;">lpcA (b0222)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTCTATATTACCCCAGTT</td>
+        <td class="border p-2">+  [1585353, 1585372]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ydeQ (b1502)</span>, </span><span><span style="color: #ffffff;">ydeP (b1501)</span>, </span><span><span style="color: #ffffff;">ydeR (b1503)</span>, </span><span><span style="color: #ffffff;">ydeS (b1504)</span>, </span><span><span style="color: #ffffff;">ydeT (b1505)</span></span></td>
+        <td class="border p-2">69</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16264194" target="_blank" rel="noopener noreferrer">16264194</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATGATTATCCAGTT</td>
+        <td class="border p-2">+  [3646002, 3646021]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dinQ (b4613)</span>, </span><span><span style="color: #ffffff;">arsR (b3501)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACTGTATAAATAAACAGCT</td>
+        <td class="border p-2">+  [606862, 606881]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ybdK (b0581)</span>, </span><span><span style="color: #ffffff;">sokE (b4700)</span>, </span><span><span style="color: #F44336;">hokE (b4415)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGATTAAAAACCCAGCG</td>
+        <td class="border p-2">+  [711237, 711256]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ybfE (b0685)</span>, </span><span><span style="color: #ffffff;">ybfF (b0686)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTTTATTTATACAGTA</td>
+        <td class="border p-2">+  [3851321, 3851340]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">istR (b4616)</span>, </span><span><span style="color: #F44336;">tisB (b4618)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGCTGTATTTGTCTCCAGTA</td>
+        <td class="border p-2">+  [3719632, 3719651]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">insK (b3558)</span>, </span><span><span style="color: #ffffff;">insJ (b3557)</span>, </span><span><span style="color: #ffffff;">sokA (b4614)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGATGATATATACAGGT</td>
+        <td class="border p-2">+  [4577938, 4577957]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">symR (b4625)</span>, </span><span><span style="color: #F44336;">symE (b4347)</span>, </span><span><span style="color: #ffffff;">hsdS (b4348)</span>, </span><span><span style="color: #ffffff;">hsdM (b4349)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACTGGATAGATAACCAGCA</td>
+        <td class="border p-2">+  [1821505, 1821524]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nadE (b1740)</span>, </span><span><span style="color: #F44336;">cho (b1741)</span>, </span><span><span style="color: #ffffff;">ves (b1742)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGGATAAAATTACAGGG</td>
+        <td class="border p-2">+  [2194468, 2194487]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">metG (b2114)</span>, </span><span><span style="color: #F44336;">yehH (b4499)</span>, </span><span><span style="color: #ffffff;">yehI (b2118)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATATAAAAACAGTA</td>
+        <td class="border p-2">+  [1229950, 1229969]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hlyE (b1182)</span>, </span><span><span style="color: #F44336;">umuD (b1183)</span>, </span><span><span style="color: #F44336;">umuC (b1184)</span>, </span><span><span style="color: #ffffff;">dsbB (b1185)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTATGCTCATACAGTA</td>
+        <td class="border p-2">+  [2821850, 2821869]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Northern blot (ECO:0005653)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">recA (b2699)</span>, </span><span><span style="color: #ffffff;">ygaD (b2700)</span></span></td>
+        <td class="border p-2">286</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACTGTATAAAAATCCTATA</td>
+        <td class="border p-2">+  [1808182, 1808201]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), Northern blot (ECO:0005653), Hydroxyl-radical footprinting (ECO:0005643)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yniC (b1727)</span>, </span><span><span style="color: #F44336;">ydjM (b1728)</span></span></td>
+        <td class="border p-2">287</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACTGTACGTATCGACAGTT</td>
+        <td class="border p-2">+  [1808200, 1808219]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), Northern blot (ECO:0005653), Hydroxyl-radical footprinting (ECO:0005643)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yniC (b1727)</span>, </span><span><span style="color: #F44336;">ydjM (b1728)</span></span></td>
+        <td class="border p-2">287</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACTGGACGTTTGTACAGCA</td>
+        <td class="border p-2">+  [4015292, 4015311]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">udp (b3831)</span>, </span><span><span style="color: #F44336;">rmuC (b3832)</span></span></td>
+        <td class="border p-2">288</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GACTGTATAAAACCACAGCC</td>
+        <td class="border p-2">+  [65833, 65852]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">polB (b0060)</span>, </span><span><span style="color: #ffffff;">araD (b0061)</span></span></td>
+        <td class="border p-2">288</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10760155" target="_blank" rel="noopener noreferrer">10760155</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007682.3" target="_blank" rel="noopener noreferrer">NC_007682.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GACTGTTTTTTTGTACAGTC</td>
+        <td class="border p-2">+  [8356, 8375]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">intI1 (pMUR050_006)</span>, </span><span><span style="color: #ffffff;">ant3'9 (pMUR050_007)</span>, </span><span><span style="color: #ffffff;">linF (pMUR050_008)</span></span></td>
+        <td class="border p-2">665</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21529368" target="_blank" rel="noopener noreferrer">21529368</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A7C2" target="_blank" rel="noopener noreferrer">P0A7C2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTGAATAAATATACAG</td>
+        <td class="border p-2">+  [246518, 246533]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dinJ (b0226)</span>, </span><span><span style="color: #F44336;">yafQ (b0225)</span>, </span><span><span style="color: #ffffff;">yafL (b0227)</span></span></td>
+        <td class="border p-2">1034</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19210620" target="_blank" rel="noopener noreferrer">19210620</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

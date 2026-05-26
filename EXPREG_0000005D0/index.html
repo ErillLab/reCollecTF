@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/I6Y1J7/entry">
+          UniProtKB: I6Y1J7
+        </a>
+        regulon and binding site collection of Mycobacterium tuberculosis H37Rv
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTCGATT</td>
+        <td class="border p-2">+  [1552513, 1552530]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_1378c (RVBD_1378c)</span>, </span><span><span style="color: #ffffff;">RVBD_1377c (RVBD_1377c)</span>, </span><span><span style="color: #ffffff;">RVBD_1376 (RVBD_1376)</span>, </span><span><span style="color: #ffffff;">RVBD_1375 (RVBD_1375)</span>, </span><span><span style="color: #ffffff;">RVBD_1379 (RVBD_1379)</span>, </span><span><span style="color: #ffffff;">RVBD_1380 (RVBD_1380)</span>, </span><span><span style="color: #ffffff;">RVBD_1381 (RVBD_1381)</span>, </span><span><span style="color: #ffffff;">RVBD_1382 (RVBD_1382)</span>, </span><span><span style="color: #ffffff;">RVBD_1383 (RVBD_1383)</span>, </span><span><span style="color: #ffffff;">RVBD_1384 (RVBD_1384)</span>, </span><span><span style="color: #ffffff;">RVBD_1385 (RVBD_1385)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTCGAGA</td>
+        <td class="border p-2">+  [3436767, 3436784]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_3074 (RVBD_3074)</span>, </span><span><span style="color: #ffffff;">RVBD_3073c (RVBD_3073c)</span>, </span><span><span style="color: #ffffff;">RVBD_3072c (RVBD_3072c)</span>, </span><span><span style="color: #ffffff;">RVBD_3075c (RVBD_3075c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAATTGTTCGATA</td>
+        <td class="border p-2">+  [3784969, 3784986]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_3370c (RVBD_3370c)</span>, </span><span><span style="color: #ffffff;">RVBD_3371 (RVBD_3371)</span>, </span><span><span style="color: #ffffff;">RVBD_3372 (RVBD_3372)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTTGATT</td>
+        <td class="border p-2">+  [3031749, 3031766]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAATACATGTTCGAAT</td>
+        <td class="border p-2">+  [1928572, 1928589]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1702c (RVBD_1702c)</span>, </span><span><span style="color: #ffffff;">RVBD_1701 (RVBD_1701)</span>, </span><span><span style="color: #ffffff;">RVBD_1700 (RVBD_1700)</span>, </span><span><span style="color: #ffffff;">RVBD_1699 (RVBD_1699)</span>, </span><span><span style="color: #ffffff;">RVBD_1702Ac (RVBD_1702Ac)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAAAATATATTCGATA</td>
+        <td class="border p-2">+  [1178865, 1178882]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1056 (RVBD_1056)</span>, </span><span><span style="color: #F44336;">RVBD_1057 (RVBD_1057)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CCGAACACCTGTTCGATT</td>
+        <td class="border p-2">+  [3051541, 3051558]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2737c (RVBD_2737c)</span>, </span><span><span style="color: #ffffff;">RVBD_2736c (RVBD_2736c)</span>, </span><span><span style="color: #ffffff;">RVBD_2735c (RVBD_2735c)</span>, </span><span><span style="color: #ffffff;">RVBD_2734 (RVBD_2734)</span>, </span><span><span style="color: #ffffff;">RVBD_2737A (RVBD_2737A)</span>, </span><span><span style="color: #ffffff;">RVBD_2738c (RVBD_2738c)</span>, </span><span><span style="color: #ffffff;">RVBD_2739c (RVBD_2739c)</span>, </span><span><span style="color: #ffffff;">RVBD_2740 (RVBD_2740)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGATCACTTGTTCGAAT</td>
+        <td class="border p-2">+  [3640306, 3640323]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_3260c (RVBD_3260c)</span>, </span><span><span style="color: #ffffff;">RVBD_3259 (RVBD_3259)</span>, </span><span><span style="color: #ffffff;">RVBD_3261 (RVBD_3261)</span>, </span><span><span style="color: #ffffff;">RVBD_3262 (RVBD_3262)</span>, </span><span><span style="color: #ffffff;">RVBD_3262A (RVBD_3262A)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAAAATATGTTCGAAG</td>
+        <td class="border p-2">+  [3811830, 3811847]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_3395c (RVBD_3395c)</span>, </span><span><span style="color: #ffffff;">RVBD_3394c (RVBD_3394c)</span>, </span><span><span style="color: #ffffff;">RVBD_3395A (RVBD_3395A)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGCACACATGTTCGAGA</td>
+        <td class="border p-2">+  [2358502, 2358519]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2100 (RVBD_2100)</span>, </span><span><span style="color: #ffffff;">RVBD_2099c (RVBD_2099c)</span>, </span><span><span style="color: #ffffff;">RVBD_2098c (RVBD_2098c)</span>, </span><span><span style="color: #ffffff;">RVBD_2101 (RVBD_2101)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGTATGTTCGAGA</td>
+        <td class="border p-2">+  [4221258, 4221275]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3775 (RVBD_3775)</span>, </span><span><span style="color: #ffffff;">RVBD_3774 (RVBD_3774)</span>, </span><span><span style="color: #ffffff;">RVBD_3773c (RVBD_3773c)</span>, </span><span><span style="color: #ffffff;">RVBD_3772 (RVBD_3772)</span>, </span><span><span style="color: #ffffff;">RVBD_6095 (RVBD_6095)</span>, </span><span><span style="color: #ffffff;">RVBD_3777 (RVBD_3777)</span>, </span><span><span style="color: #ffffff;">RVBD_3778c (RVBD_3778c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACTCATATTCGAAT</td>
+        <td class="border p-2">+  [79474, 79491]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_0071 (RVBD_0071)</span>, </span><span><span style="color: #ffffff;">RVBD_0070c (RVBD_0070c)</span>, </span><span><span style="color: #ffffff;">RVBD_0069c (RVBD_0069c)</span>, </span><span><span style="color: #ffffff;">RVBD_0068 (RVBD_0068)</span>, </span><span><span style="color: #ffffff;">RVBD_0072 (RVBD_0072)</span>, </span><span><span style="color: #ffffff;">RVBD_0073 (RVBD_0073)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGAATGTGCGATA</td>
+        <td class="border p-2">+  [1117142, 1117159]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_1000c (RVBD_1000c)</span>, </span><span><span style="color: #ffffff;">RVBD_0999 (RVBD_0999)</span>, </span><span><span style="color: #ffffff;">RVBD_0998 (RVBD_0998)</span>, </span><span><span style="color: #ffffff;">RVBD_0997 (RVBD_0997)</span>, </span><span><span style="color: #ffffff;">RVBD_1001 (RVBD_1001)</span>, </span><span><span style="color: #ffffff;">RVBD_1002c (RVBD_1002c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CCGAACAATCGTTCGATA</td>
+        <td class="border p-2">+  [2925414, 2925431]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2594c (RVBD_2594c)</span>, </span><span><span style="color: #ffffff;">RVBD_2593c (RVBD_2593c)</span>, </span><span><span style="color: #ffffff;">RVBD_2592c (RVBD_2592c)</span>, </span><span><span style="color: #ffffff;">RVBD_2591 (RVBD_2591)</span>, </span><span><span style="color: #ffffff;">RVBD_2595 (RVBD_2595)</span>, </span><span><span style="color: #ffffff;">RVBD_2596 (RVBD_2596)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAACCGTTCTATA</td>
+        <td class="border p-2">+  [2903549, 2903566]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2578c (RVBD_2578c)</span>, </span><span><span style="color: #ffffff;">RVBD_2577 (RVBD_2577)</span>, </span><span><span style="color: #F44336;">RVBD_2579 (RVBD_2579)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGCTCAAATATTCGAAT</td>
+        <td class="border p-2">+  [2833845, 2833862]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2517c (RVBD_2517c)</span>, </span><span><span style="color: #ffffff;">RVBD_2516c (RVBD_2516c)</span>, </span><span><span style="color: #ffffff;">RVBD_2518c (RVBD_2518c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CCGAACATTTGATCGAAG</td>
+        <td class="border p-2">+  [3031616, 3031633]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGAGTGACT</td>
+        <td class="border p-2">+  [3031595, 3031612]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACGCGAGCGATT</td>
+        <td class="border p-2">+  [3031571, 3031588]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAGAACACCCGTTCGATA</td>
+        <td class="border p-2">+  [2925178, 2925195]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_2594c (RVBD_2594c)</span>, </span><span><span style="color: #ffffff;">RVBD_2593c (RVBD_2593c)</span>, </span><span><span style="color: #ffffff;">RVBD_2592c (RVBD_2592c)</span>, </span><span><span style="color: #ffffff;">RVBD_2591 (RVBD_2591)</span>, </span><span><span style="color: #ffffff;">RVBD_2595 (RVBD_2595)</span>, </span><span><span style="color: #ffffff;">RVBD_2596 (RVBD_2596)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACGAAAGTCTGTTCGAAG</td>
+        <td class="border p-2">+  [1547174, 1547191]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1374c (RVBD_1374c)</span>, </span><span><span style="color: #ffffff;">RVBD_1373 (RVBD_1373)</span>, </span><span><span style="color: #ffffff;">RVBD_1372 (RVBD_1372)</span>, </span><span><span style="color: #ffffff;">RVBD_1371 (RVBD_1371)</span>, </span><span><span style="color: #ffffff;">RVBD_1375 (RVBD_1375)</span>, </span><span><span style="color: #ffffff;">RVBD_1376 (RVBD_1376)</span>, </span><span><span style="color: #ffffff;">RVBD_1377c (RVBD_1377c)</span>, </span><span><span style="color: #ffffff;">RVBD_1378c (RVBD_1378c)</span>, </span><span><span style="color: #ffffff;">RVBD_1379 (RVBD_1379)</span>, </span><span><span style="color: #ffffff;">RVBD_1380 (RVBD_1380)</span>, </span><span><span style="color: #ffffff;">RVBD_1381 (RVBD_1381)</span>, </span><span><span style="color: #ffffff;">RVBD_1382 (RVBD_1382)</span>, </span><span><span style="color: #ffffff;">RVBD_1383 (RVBD_1383)</span>, </span><span><span style="color: #ffffff;">RVBD_1384 (RVBD_1384)</span>, </span><span><span style="color: #ffffff;">RVBD_1385 (RVBD_1385)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGCTAACATGTTCGAAT</td>
+        <td class="border p-2">+  [105088, 105105]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_0095c (RVBD_0095c)</span>, </span><span><span style="color: #ffffff;">RVBD_0094c (RVBD_0094c)</span>, </span><span><span style="color: #ffffff;">RVBD_0093c (RVBD_0093c)</span>, </span><span><span style="color: #ffffff;">RVBD_0092 (RVBD_0092)</span>, </span><span><span style="color: #ffffff;">RVBD_0096 (RVBD_0096)</span>, </span><span><span style="color: #ffffff;">RVBD_0097 (RVBD_0097)</span>, </span><span><span style="color: #ffffff;">RVBD_0098 (RVBD_0098)</span>, </span><span><span style="color: #ffffff;">RVBD_0099 (RVBD_0099)</span>, </span><span><span style="color: #ffffff;">RVBD_0100 (RVBD_0100)</span>, </span><span><span style="color: #ffffff;">RVBD_0101 (RVBD_0101)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGCTAACATGTTCGAAT</td>
+        <td class="border p-2">+  [1789833, 1789850]</td>
+        <td class="border p-2">Beta-gal reporter assay, qRT-PCR [RNA] (ECO:0001808), ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1588c (RVBD_1588c)</span>, </span><span><span style="color: #ffffff;">RVBD_1587c (RVBD_1587c)</span>, </span><span><span style="color: #ffffff;">RVBD_1586c (RVBD_1586c)</span>, </span><span><span style="color: #ffffff;">RVBD_1585c (RVBD_1585c)</span>, </span><span><span style="color: #ffffff;">RVBD_1589 (RVBD_1589)</span>, </span><span><span style="color: #ffffff;">RVBD_1590 (RVBD_1590)</span>, </span><span><span style="color: #ffffff;">RVBD_1591 (RVBD_1591)</span></span></td>
+        <td class="border p-2">6</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTCGAGA</td>
+        <td class="border p-2">+  [3436767, 3436784]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">RVBD_3074 (RVBD_3074)</span>, </span><span><span style="color: #ffffff;">RVBD_3073c (RVBD_3073c)</span>, </span><span><span style="color: #ffffff;">RVBD_3072c (RVBD_3072c)</span>, </span><span><span style="color: #ffffff;">RVBD_3075c (RVBD_3075c)</span></span></td>
+        <td class="border p-2">135</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGTATGTTCGAGA</td>
+        <td class="border p-2">+  [4221258, 4221275]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3775 (RVBD_3775)</span>, </span><span><span style="color: #ffffff;">RVBD_3774 (RVBD_3774)</span>, </span><span><span style="color: #ffffff;">RVBD_3773c (RVBD_3773c)</span>, </span><span><span style="color: #ffffff;">RVBD_3772 (RVBD_3772)</span>, </span><span><span style="color: #ffffff;">RVBD_6095 (RVBD_6095)</span>, </span><span><span style="color: #ffffff;">RVBD_3777 (RVBD_3777)</span>, </span><span><span style="color: #ffffff;">RVBD_3778c (RVBD_3778c)</span></span></td>
+        <td class="border p-2">135</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAATTGTTCGATA</td>
+        <td class="border p-2">+  [3784969, 3784986]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3370c (RVBD_3370c)</span>, </span><span><span style="color: #ffffff;">RVBD_3371 (RVBD_3371)</span>, </span><span><span style="color: #ffffff;">RVBD_3372 (RVBD_3372)</span></span></td>
+        <td class="border p-2">135</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTCGA</td>
+        <td class="border p-2">+  [1552509, 1552524]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv1378c (Rv1378c)</span>, </span><span><span style="color: #ffffff;">Rv1377c (Rv1377c)</span>, </span><span><span style="color: #ffffff;">Rv1376 (Rv1376)</span>, </span><span><span style="color: #ffffff;">Rv1375 (Rv1375)</span>, </span><span><span style="color: #ffffff;">pyrR (Rv1379)</span>, </span><span><span style="color: #ffffff;">pyrB (Rv1380)</span>, </span><span><span style="color: #ffffff;">pyrC (Rv1381)</span>, </span><span><span style="color: #ffffff;">Rv1382 (Rv1382)</span>, </span><span><span style="color: #ffffff;">carA (Rv1383)</span>, </span><span><span style="color: #ffffff;">carB (Rv1384)</span>, </span><span><span style="color: #ffffff;">pyrF (Rv1385)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTCGA</td>
+        <td class="border p-2">+  [3436770, 3436785]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv3074 (Rv3074)</span>, </span><span><span style="color: #ffffff;">Rv3073c (Rv3073c)</span>, </span><span><span style="color: #ffffff;">Rv3072c (Rv3072c)</span>, </span><span><span style="color: #ffffff;">Rv3075c (Rv3075c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAATTGTTCGA</td>
+        <td class="border p-2">+  [3784789, 3784804]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dnaE2 (Rv3370c)</span>, </span><span><span style="color: #ffffff;">Rv3371 (Rv3371)</span>, </span><span><span style="color: #ffffff;">otsB2 (Rv3372)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGTATGTTCGA</td>
+        <td class="border p-2">+  [4221080, 4221095]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv3776 (Rv3776)</span>, </span><span><span style="color: #ffffff;">lipE (Rv3775)</span>, </span><span><span style="color: #ffffff;">echA21 (Rv3774)</span>, </span><span><span style="color: #ffffff;">Rv3773c (Rv3773c)</span>, </span><span><span style="color: #ffffff;">hisC2 (Rv3772)</span>, </span><span><span style="color: #ffffff;">serU (Rvnt45)</span>, </span><span><span style="color: #ffffff;">Rv3777 (Rv3777)</span>, </span><span><span style="color: #ffffff;">Rv3778c (Rv3778c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAAAGTATGTTCGA</td>
+        <td class="border p-2">+  [400159, 400174]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PE6 (Rv0335c)</span>, </span><span><span style="color: #ffffff;">rmlA (Rv0334)</span>, </span><span><span style="color: #ffffff;">Rv0333 (Rv0333)</span>, </span><span><span style="color: #ffffff;">Rv0332 (Rv0332)</span>, </span><span><span style="color: #F44336;">Rv0336 (Rv0336)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAAAGTATGTTCGA</td>
+        <td class="border p-2">+  [606518, 606533]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Rv0514 (Rv0514)</span>, </span><span><span style="color: #ffffff;">Rv0513 (Rv0513)</span>, </span><span><span style="color: #ffffff;">hemB (Rv0512)</span>, </span><span><span style="color: #F44336;">Rv0515 (Rv0515)</span>, </span><span><span style="color: #ffffff;">Rv0516c (Rv0516c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGAATGTGCGA</td>
+        <td class="border p-2">+  [1117140, 1117155]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv1000c (Rv1000c)</span>, </span><span><span style="color: #ffffff;">Rv0999 (Rv0999)</span>, </span><span><span style="color: #ffffff;">Rv0998 (Rv0998)</span>, </span><span><span style="color: #ffffff;">Rv0997 (Rv0997)</span>, </span><span><span style="color: #ffffff;">arcA (Rv1001)</span>, </span><span><span style="color: #ffffff;">Rv1002c (Rv1002c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACATGTATTCGA</td>
+        <td class="border p-2">+  [1928565, 1928580]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv1702c (Rv1702c)</span>, </span><span><span style="color: #ffffff;">Rv1701 (Rv1701)</span>, </span><span><span style="color: #ffffff;">Rv1700 (Rv1700)</span>, </span><span><span style="color: #ffffff;">pyrG (Rv1699)</span>, </span><span><span style="color: #ffffff;">Rv1703c (Rv1703c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGCACACATGTTCGA</td>
+        <td class="border p-2">+  [2358494, 2358509]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv2100 (Rv2100)</span>, </span><span><span style="color: #ffffff;">PE21 (Rv2099c)</span>, </span><span><span style="color: #ffffff;">PE_PGRS36 (Rv2098c)</span>, </span><span><span style="color: #ffffff;">helZ (Rv2101)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAGAACGGTTGTTCGA</td>
+        <td class="border p-2">+  [2903539, 2903554]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv2578c (Rv2578c)</span>, </span><span><span style="color: #ffffff;">Rv2577 (Rv2577)</span>, </span><span><span style="color: #ffffff;">dhaA (Rv2579)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAACCGTTCTA</td>
+        <td class="border p-2">+  [2903539, 2903554]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Rv2578c (Rv2578c)</span>, </span><span><span style="color: #ffffff;">Rv2577 (Rv2577)</span>, </span><span><span style="color: #F44336;">dhaA (Rv2579)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACGATTGTTCGG</td>
+        <td class="border p-2">+  [2925404, 2925419]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ruvC (Rv2594c)</span>, </span><span><span style="color: #ffffff;">ruvA (Rv2593c)</span>, </span><span><span style="color: #ffffff;">ruvB (Rv2592c)</span>, </span><span><span style="color: #ffffff;">PE_PGRS44 (Rv2591)</span>, </span><span><span style="color: #ffffff;">vapB40 (Rv2595)</span>, </span><span><span style="color: #ffffff;">vapC40 (Rv2596)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACACATGTTTGA</td>
+        <td class="border p-2">+  [3031739, 3031754]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Rv2719c (Rv2719c)</span>, </span><span><span style="color: #F44336;">lexA (Rv2720)</span>, </span><span><span style="color: #ffffff;">Rv2721c (Rv2721c)</span>, </span><span><span style="color: #ffffff;">Rv2722 (Rv2722)</span>, </span><span><span style="color: #ffffff;">Rv2723 (Rv2723)</span>, </span><span><span style="color: #ffffff;">fadE20 (Rv2724c)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAGGTGTTCGG</td>
+        <td class="border p-2">+  [3051531, 3051546]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">recA (Rv2737c)</span>, </span><span><span style="color: #ffffff;">recX (Rv2736c)</span>, </span><span><span style="color: #ffffff;">Rv2735c (Rv2735c)</span>, </span><span><span style="color: #ffffff;">Rv2734 (Rv2734)</span>, </span><span><span style="color: #ffffff;">Rv2737A (Rv2737A)</span>, </span><span><span style="color: #ffffff;">Rv2738c (Rv2738c)</span>, </span><span><span style="color: #ffffff;">Rv2739c (Rv2739c)</span>, </span><span><span style="color: #ffffff;">ephG (Rv2740)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACATATTTTCGA</td>
+        <td class="border p-2">+  [3811650, 3811665]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">Rv3395c (Rv3395c)</span>, </span><span><span style="color: #ffffff;">Rv3394c (Rv3394c)</span>, </span><span><span style="color: #ffffff;">Rv3395A (Rv3395A)</span></span></td>
+        <td class="border p-2">174</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGGGATCTGGTATCACCGCGAGCCGGCTCAGATCCGCCCCCATCTCCACCGCGGCCAGCAACCCGATATCCGGCTGGCCAACGATGGCCGCGTTTCCCCCGGCCGCCGTCACCGATGCCACCATGCTCAGCAGCAGTGACCGCGCACCCGACAGCACTCCCACCGTCCCCGGGGGCAACGACACCGGTCCCGCCGGCACCAGGTCGCCCGAACGGCTGGGCCCCCCGGACACCTTCTCGGACAGCAAAGCCATCTGCCGTCGTAGTGATTCGAGC</td>
+        <td class="border p-2">+  [3811491, 3811765]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3395c (RVBD_3395c)</span>, </span><span><span style="color: #ffffff;">RVBD_3394c (RVBD_3394c)</span>, </span><span><span style="color: #ffffff;">RVBD_3393 (RVBD_3393)</span>, </span><span><span style="color: #ffffff;">RVBD_3392c (RVBD_3392c)</span>, </span><span><span style="color: #ffffff;">RVBD_3391 (RVBD_3391)</span>, </span><span><span style="color: #ffffff;">RVBD_3390 (RVBD_3390)</span>, </span><span><span style="color: #ffffff;">RVBD_3389c (RVBD_3389c)</span>, </span><span><span style="color: #ffffff;">RVBD_3388 (RVBD_3388)</span>, </span><span><span style="color: #ffffff;">RVBD_3395A (RVBD_3395A)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCTTGAACCAGCGTCCGCCCGGCGGTTGGTGTCATTGAGCCGTTTGCGTGGATCACTTCCGCTGCTGCTTGATCGGGCCCTGGTCTGTGTCGGCAGCGGCTGGTAGTATCGAAAGTATG</td>
+        <td class="border p-2">+  [606413, 606531]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_0514 (RVBD_0514)</span>, </span><span><span style="color: #ffffff;">RVBD_0513 (RVBD_0513)</span>, </span><span><span style="color: #ffffff;">RVBD_0512 (RVBD_0512)</span>, </span><span><span style="color: #ffffff;">RVBD_0511 (RVBD_0511)</span>, </span><span><span style="color: #ffffff;">RVBD_0510 (RVBD_0510)</span>, </span><span><span style="color: #ffffff;">RVBD_0509 (RVBD_0509)</span>, </span><span><span style="color: #ffffff;">RVBD_0508 (RVBD_0508)</span>, </span><span><span style="color: #ffffff;">RVBD_0507 (RVBD_0507)</span>, </span><span><span style="color: #ffffff;">RVBD_0506 (RVBD_0506)</span>, </span><span><span style="color: #ffffff;">RVBD_0515 (RVBD_0515)</span>, </span><span><span style="color: #ffffff;">RVBD_0516c (RVBD_0516c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGGTTTGATCAGTAGCGGCAAACCCGGTAGGGACCCCGAGGCTGGGCGCTACGGCGCCCTGCTGAACGCCATTACCGCCGAAATACCACGGGCATCGTCGGGCTGATCTGCCCACGAGCACGCCACGCCGCCCTAACCGAGCCGGACGGCTTTGTCGTGCCGGTCACATGTCGGCCTGT</td>
+        <td class="border p-2">+  [4221004, 4221182]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3775 (RVBD_3775)</span>, </span><span><span style="color: #ffffff;">RVBD_3774 (RVBD_3774)</span>, </span><span><span style="color: #ffffff;">RVBD_3773c (RVBD_3773c)</span>, </span><span><span style="color: #ffffff;">RVBD_3772 (RVBD_3772)</span>, </span><span><span style="color: #ffffff;">RVBD_6094 (RVBD_6094)</span>, </span><span><span style="color: #ffffff;">RVBD_6093 (RVBD_6093)</span>, </span><span><span style="color: #ffffff;">RVBD_3771c (RVBD_3771c)</span>, </span><span><span style="color: #ffffff;">RVBD_3770B (RVBD_3770B)</span>, </span><span><span style="color: #ffffff;">RVBD_3770A (RVBD_3770A)</span>, </span><span><span style="color: #ffffff;">RVBD_3770c (RVBD_3770c)</span>, </span><span><span style="color: #ffffff;">RVBD_6095 (RVBD_6095)</span>, </span><span><span style="color: #ffffff;">RVBD_3777 (RVBD_3777)</span>, </span><span><span style="color: #ffffff;">RVBD_3778c (RVBD_3778c)</span>, </span><span><span style="color: #ffffff;">RVBD_3779 (RVBD_3779)</span>, </span><span><span style="color: #ffffff;">RVBD_3780 (RVBD_3780)</span>, </span><span><span style="color: #ffffff;">RVBD_3781 (RVBD_3781)</span>, </span><span><span style="color: #ffffff;">RVBD_3782 (RVBD_3782)</span>, </span><span><span style="color: #ffffff;">RVBD_3783 (RVBD_3783)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GACCGCACCGAGTGCCGTGCTCGCCCTCGGCGGCTACCGAGCCGGTGTCTCCCTAGTCATCCACGTTATCCACAGCGCCTTGGGTTACCGGGCGCCGGTCGGGTAGCGATGGTAGTATCGAAAGTATGTTCGA</td>
+        <td class="border p-2">+  [400042, 400174]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_0335c (RVBD_0335c)</span>, </span><span><span style="color: #ffffff;">RVBD_0334 (RVBD_0334)</span>, </span><span><span style="color: #ffffff;">RVBD_0333 (RVBD_0333)</span>, </span><span><span style="color: #ffffff;">RVBD_0332 (RVBD_0332)</span>, </span><span><span style="color: #ffffff;">RVBD_0331 (RVBD_0331)</span>, </span><span><span style="color: #ffffff;">RVBD_0330c (RVBD_0330c)</span>, </span><span><span style="color: #ffffff;">RVBD_0329c (RVBD_0329c)</span>, </span><span><span style="color: #ffffff;">RVBD_0328 (RVBD_0328)</span>, </span><span><span style="color: #ffffff;">RVBD_0327c (RVBD_0327c)</span>, </span><span><span style="color: #ffffff;">RVBD_0326 (RVBD_0326)</span>, </span><span><span style="color: #ffffff;">RVBD_0325 (RVBD_0325)</span>, </span><span><span style="color: #ffffff;">RVBD_0324 (RVBD_0324)</span>, </span><span><span style="color: #ffffff;">RVBD_0323c (RVBD_0323c)</span>, </span><span><span style="color: #ffffff;">RVBD_0322 (RVBD_0322)</span>, </span><span><span style="color: #ffffff;">RVBD_0321 (RVBD_0321)</span>, </span><span><span style="color: #ffffff;">RVBD_0320 (RVBD_0320)</span>, </span><span><span style="color: #ffffff;">RVBD_0319 (RVBD_0319)</span>, </span><span><span style="color: #ffffff;">RVBD_0318c (RVBD_0318c)</span>, </span><span><span style="color: #ffffff;">RVBD_6051 (RVBD_6051)</span>, </span><span><span style="color: #ffffff;">RVBD_0336 (RVBD_0336)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGCGGCCTCCTCGACCAACTCCTCGGGCGTGCTGGCCCCGTCGAGGAAGCTGTACGCCGAATGCGCATGCAGCTCGGCATACGCGACGGACGATCCGACCCGTTCCCGGCCCGGCGGCTGGTACGCCCCGCGCTTGCGGGACCGTGGGACGTCCCCATCCGCGTCGAACGCCGGCACCCCGGCATGGCGCGGCTTGCCGTTAA</td>
+        <td class="border p-2">+  [3784704, 3784906]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3370c (RVBD_3370c)</span>, </span><span><span style="color: #ffffff;">RVBD_3369 (RVBD_3369)</span>, </span><span><span style="color: #ffffff;">RVBD_3368c (RVBD_3368c)</span>, </span><span><span style="color: #ffffff;">RVBD_3367 (RVBD_3367)</span>, </span><span><span style="color: #ffffff;">RVBD_3371 (RVBD_3371)</span>, </span><span><span style="color: #ffffff;">RVBD_3372 (RVBD_3372)</span>, </span><span><span style="color: #ffffff;">RVBD_3372A (RVBD_3372A)</span>, </span><span><span style="color: #ffffff;">RVBD_3373 (RVBD_3373)</span>, </span><span><span style="color: #ffffff;">RVBD_3374 (RVBD_3374)</span>, </span><span><span style="color: #ffffff;">RVBD_3375 (RVBD_3375)</span>, </span><span><span style="color: #ffffff;">RVBD_3376 (RVBD_3376)</span>, </span><span><span style="color: #ffffff;">RVBD_3377c (RVBD_3377c)</span>, </span><span><span style="color: #ffffff;">RVBD_3378c (RVBD_3378c)</span>, </span><span><span style="color: #ffffff;">RVBD_3379c (RVBD_3379c)</span>, </span><span><span style="color: #ffffff;">RVBD_3379A (RVBD_3379A)</span>, </span><span><span style="color: #ffffff;">RVBD_3380c (RVBD_3380c)</span>, </span><span><span style="color: #ffffff;">RVBD_3381c (RVBD_3381c)</span>, </span><span><span style="color: #ffffff;">RVBD_3382c (RVBD_3382c)</span>, </span><span><span style="color: #ffffff;">RVBD_3383c (RVBD_3383c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAGGTGTTCATAGGACATGCCTCCGCCTCCTCACTCGATAGATAGTGAAATGGTTTCCCACTGTTTTGATGTACAGTTAACCCAATTCGAACAAGTGATCGAATCTCGGTCTGCGACACCGAAACCGGCCGGCCAACCGCGAAATGACACTGATGTGATTAGACACAAGTTGGGGACGCGGGTCAAG</td>
+        <td class="border p-2">+  [3640222, 3640408]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3260c (RVBD_3260c)</span>, </span><span><span style="color: #ffffff;">RVBD_3259 (RVBD_3259)</span>, </span><span><span style="color: #ffffff;">RVBD_3258c (RVBD_3258c)</span>, </span><span><span style="color: #ffffff;">RVBD_3257c (RVBD_3257c)</span>, </span><span><span style="color: #ffffff;">RVBD_3256c (RVBD_3256c)</span>, </span><span><span style="color: #ffffff;">RVBD_3255c (RVBD_3255c)</span>, </span><span><span style="color: #ffffff;">RVBD_3254 (RVBD_3254)</span>, </span><span><span style="color: #ffffff;">RVBD_3253c (RVBD_3253c)</span>, </span><span><span style="color: #ffffff;">RVBD_3252c (RVBD_3252c)</span>, </span><span><span style="color: #ffffff;">RVBD_3251c (RVBD_3251c)</span>, </span><span><span style="color: #ffffff;">RVBD_3250c (RVBD_3250c)</span>, </span><span><span style="color: #ffffff;">RVBD_3249c (RVBD_3249c)</span>, </span><span><span style="color: #ffffff;">RVBD_3248c (RVBD_3248c)</span>, </span><span><span style="color: #ffffff;">RVBD_3247c (RVBD_3247c)</span>, </span><span><span style="color: #ffffff;">RVBD_3246c (RVBD_3246c)</span>, </span><span><span style="color: #ffffff;">RVBD_3245c (RVBD_3245c)</span>, </span><span><span style="color: #ffffff;">RVBD_3244c (RVBD_3244c)</span>, </span><span><span style="color: #ffffff;">RVBD_3243c (RVBD_3243c)</span>, </span><span><span style="color: #ffffff;">RVBD_3242c (RVBD_3242c)</span>, </span><span><span style="color: #ffffff;">RVBD_3261 (RVBD_3261)</span>, </span><span><span style="color: #ffffff;">RVBD_3262 (RVBD_3262)</span>, </span><span><span style="color: #ffffff;">RVBD_3262A (RVBD_3262A)</span>, </span><span><span style="color: #ffffff;">RVBD_3263 (RVBD_3263)</span>, </span><span><span style="color: #ffffff;">RVBD_3264c (RVBD_3264c)</span>, </span><span><span style="color: #ffffff;">RVBD_3265c (RVBD_3265c)</span>, </span><span><span style="color: #ffffff;">RVBD_3266c (RVBD_3266c)</span>, </span><span><span style="color: #ffffff;">RVBD_3267 (RVBD_3267)</span>, </span><span><span style="color: #ffffff;">RVBD_3268 (RVBD_3268)</span>, </span><span><span style="color: #ffffff;">RVBD_3269 (RVBD_3269)</span>, </span><span><span style="color: #ffffff;">RVBD_3270 (RVBD_3270)</span>, </span><span><span style="color: #ffffff;">RVBD_3271c (RVBD_3271c)</span>, </span><span><span style="color: #ffffff;">RVBD_3272 (RVBD_3272)</span>, </span><span><span style="color: #ffffff;">RVBD_3273 (RVBD_3273)</span>, </span><span><span style="color: #ffffff;">RVBD_3274c (RVBD_3274c)</span>, </span><span><span style="color: #ffffff;">RVBD_3275c (RVBD_3275c)</span>, </span><span><span style="color: #ffffff;">RVBD_3276c (RVBD_3276c)</span>, </span><span><span style="color: #ffffff;">RVBD_3277 (RVBD_3277)</span>, </span><span><span style="color: #ffffff;">RVBD_3278c (RVBD_3278c)</span>, </span><span><span style="color: #ffffff;">RVBD_3279c (RVBD_3279c)</span>, </span><span><span style="color: #ffffff;">RVBD_3280 (RVBD_3280)</span>, </span><span><span style="color: #ffffff;">RVBD_3281 (RVBD_3281)</span>, </span><span><span style="color: #ffffff;">RVBD_3282 (RVBD_3282)</span>, </span><span><span style="color: #ffffff;">RVBD_3283 (RVBD_3283)</span>, </span><span><span style="color: #ffffff;">RVBD_3284 (RVBD_3284)</span>, </span><span><span style="color: #ffffff;">RVBD_3285 (RVBD_3285)</span>, </span><span><span style="color: #ffffff;">RVBD_3286c (RVBD_3286c)</span>, </span><span><span style="color: #ffffff;">RVBD_3287c (RVBD_3287c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CCACACCACCGACACGTTTCGGTTGGAGCCGGACTTCCGGCGCGAAGGCCCAGCCACTCCTCGTGCCCTCCCGCGACCGGAACACGCCTGTCGAACACATGTTTGATTCTTGGTGCGAATGCGACTACATTCATTGCCATGAACGACAGCAACGACACCTCGGTTGCCGGCGGAGCCG</td>
+        <td class="border p-2">+  [3031659, 3031836]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span>, </span><span><span style="color: #ffffff;">RVBD_2725c (RVBD_2725c)</span>, </span><span><span style="color: #ffffff;">RVBD_2726c (RVBD_2726c)</span>, </span><span><span style="color: #ffffff;">RVBD_2727c (RVBD_2727c)</span>, </span><span><span style="color: #ffffff;">RVBD_2728c (RVBD_2728c)</span>, </span><span><span style="color: #ffffff;">RVBD_2729c (RVBD_2729c)</span>, </span><span><span style="color: #ffffff;">RVBD_2730 (RVBD_2730)</span>, </span><span><span style="color: #ffffff;">RVBD_2731 (RVBD_2731)</span>, </span><span><span style="color: #ffffff;">RVBD_2732c (RVBD_2732c)</span>, </span><span><span style="color: #ffffff;">RVBD_2733c (RVBD_2733c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATTTGACCCGCTCCAGCTCGGCGATCCGCGCGGTCAGGCTCGCCTCATCGTCGCGCGAATCCACGCCCGCGAGGCTCACTAAATCGAACATGTGTTCGAGTATAGCAGGCCTGGGCCACCGCGGCCACCGCACCGCGGGCCCGCAGCGTGCGAGTGCTACGCTGCCGAGCGGTCGACATCCTTTAACGATCCGTCCAGAGA</td>
+        <td class="border p-2">+  [1552432, 1552632]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1378c (RVBD_1378c)</span>, </span><span><span style="color: #ffffff;">RVBD_1377c (RVBD_1377c)</span>, </span><span><span style="color: #ffffff;">RVBD_1376 (RVBD_1376)</span>, </span><span><span style="color: #ffffff;">RVBD_1375 (RVBD_1375)</span>, </span><span><span style="color: #ffffff;">RVBD_1379 (RVBD_1379)</span>, </span><span><span style="color: #ffffff;">RVBD_1380 (RVBD_1380)</span>, </span><span><span style="color: #ffffff;">RVBD_1381 (RVBD_1381)</span>, </span><span><span style="color: #ffffff;">RVBD_1382 (RVBD_1382)</span>, </span><span><span style="color: #ffffff;">RVBD_1383 (RVBD_1383)</span>, </span><span><span style="color: #ffffff;">RVBD_1384 (RVBD_1384)</span>, </span><span><span style="color: #ffffff;">RVBD_1385 (RVBD_1385)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TATAGCCGTTACCGCGGGGGCTTATCCACAGCCACCGGCGCCACCAGTTGTCCCGGTCTGTGCAGGCTGCTATTCTCGAACACATGTTCGAGACATTGACCGCGATCGACCCGGATGCCGAGGAAGCGGCGTTGATCGAGCGAATCGCCGAGCTGGAGCGGCTTAAGTC</td>
+        <td class="border p-2">+  [3436692, 3436860]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3074 (RVBD_3074)</span>, </span><span><span style="color: #ffffff;">RVBD_3073c (RVBD_3073c)</span>, </span><span><span style="color: #ffffff;">RVBD_3072c (RVBD_3072c)</span>, </span><span><span style="color: #ffffff;">RVBD_3075c (RVBD_3075c)</span>, </span><span><span style="color: #ffffff;">RVBD_3076 (RVBD_3076)</span>, </span><span><span style="color: #ffffff;">RVBD_3077 (RVBD_3077)</span>, </span><span><span style="color: #ffffff;">RVBD_3078 (RVBD_3078)</span>, </span><span><span style="color: #ffffff;">RVBD_3079c (RVBD_3079c)</span>, </span><span><span style="color: #ffffff;">RVBD_3080c (RVBD_3080c)</span>, </span><span><span style="color: #ffffff;">RVBD_3081 (RVBD_3081)</span>, </span><span><span style="color: #ffffff;">RVBD_3082c (RVBD_3082c)</span>, </span><span><span style="color: #ffffff;">RVBD_3083 (RVBD_3083)</span>, </span><span><span style="color: #ffffff;">RVBD_3084 (RVBD_3084)</span>, </span><span><span style="color: #ffffff;">RVBD_3085 (RVBD_3085)</span>, </span><span><span style="color: #ffffff;">RVBD_3086 (RVBD_3086)</span>, </span><span><span style="color: #ffffff;">RVBD_3087 (RVBD_3087)</span>, </span><span><span style="color: #ffffff;">RVBD_3088 (RVBD_3088)</span>, </span><span><span style="color: #ffffff;">RVBD_3089 (RVBD_3089)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGGTGTTCGATTGACCGGTATCGGTCGGTTGGCCGTGACACTAGAGACAGCCACTGACAAGTCGGCTGCTCCGAATGATCACCACAGTAGCCGAACACCTGTTCGATTCAAGTGTGACACGCCGCGTGTGGCAACATCGCGTCCGCGCTCGTCGGCGCGTCGAACGCCCTGGCGGCGGTGCGGCCCGACTTGCG</td>
+        <td class="border p-2">+  [3051451, 3051644]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2737A (RVBD_2737A)</span>, </span><span><span style="color: #ffffff;">RVBD_2737c (RVBD_2737c)</span>, </span><span><span style="color: #ffffff;">RVBD_2736c (RVBD_2736c)</span>, </span><span><span style="color: #ffffff;">RVBD_2735c (RVBD_2735c)</span>, </span><span><span style="color: #ffffff;">RVBD_2734 (RVBD_2734)</span>, </span><span><span style="color: #ffffff;">RVBD_2738c (RVBD_2738c)</span>, </span><span><span style="color: #ffffff;">RVBD_2739c (RVBD_2739c)</span>, </span><span><span style="color: #ffffff;">RVBD_2740 (RVBD_2740)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGACCTTCAGGACCCGGTTAAGGGCGGTGTCGAGGTTGTCGAACGCGGCGACGGCCTCCTCCCGGCTACTCGAATACATGTTCGAATACTATCACGGTTAGCCGGCCGATGCCATGCTGATTGTGGGTTAATCCAATGTGGTGCAGTTGAATTCAGGAGCATCGCCAGCCGCGAGGCCACGCCTATTCGGCGAGCATAATGGTCGG</td>
+        <td class="border p-2">+  [1928503, 1928708]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1702c (RVBD_1702c)</span>, </span><span><span style="color: #ffffff;">RVBD_1701 (RVBD_1701)</span>, </span><span><span style="color: #ffffff;">RVBD_1700 (RVBD_1700)</span>, </span><span><span style="color: #ffffff;">RVBD_1699 (RVBD_1699)</span>, </span><span><span style="color: #ffffff;">RVBD_1698 (RVBD_1698)</span>, </span><span><span style="color: #ffffff;">RVBD_1697 (RVBD_1697)</span>, </span><span><span style="color: #ffffff;">RVBD_1696 (RVBD_1696)</span>, </span><span><span style="color: #ffffff;">RVBD_1695 (RVBD_1695)</span>, </span><span><span style="color: #ffffff;">RVBD_1694 (RVBD_1694)</span>, </span><span><span style="color: #ffffff;">RVBD_1693 (RVBD_1693)</span>, </span><span><span style="color: #ffffff;">RVBD_1692 (RVBD_1692)</span>, </span><span><span style="color: #ffffff;">RVBD_1691 (RVBD_1691)</span>, </span><span><span style="color: #ffffff;">RVBD_1690 (RVBD_1690)</span>, </span><span><span style="color: #ffffff;">RVBD_1702Ac (RVBD_1702Ac)</span>, </span><span><span style="color: #ffffff;">RVBD_1703c (RVBD_1703c)</span>, </span><span><span style="color: #ffffff;">RVBD_1704c (RVBD_1704c)</span>, </span><span><span style="color: #ffffff;">RVBD_1705c (RVBD_1705c)</span>, </span><span><span style="color: #ffffff;">RVBD_1706c (RVBD_1706c)</span>, </span><span><span style="color: #ffffff;">RVBD_1706Xc (RVBD_1706Xc)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCGAGCTGTCTTCGCTCGTTGTGCTCGAAGAGCGCGCCTTGAACCGCGATCGCCACGCCGCCAAGCTTATCGCACATTCGTTCGATGGCGCCGCCCCGGCTACGGTTTGACCTGTGGGTGTCGAATTGGGGTCAAATTCCGAGGTCGGCGCGCTAAGAGTGGTCATCCTGCACCG</td>
+        <td class="border p-2">+  [1117074, 1117249]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1000c (RVBD_1000c)</span>, </span><span><span style="color: #ffffff;">RVBD_0999 (RVBD_0999)</span>, </span><span><span style="color: #ffffff;">RVBD_0998 (RVBD_0998)</span>, </span><span><span style="color: #ffffff;">RVBD_0997 (RVBD_0997)</span>, </span><span><span style="color: #ffffff;">RVBD_1001 (RVBD_1001)</span>, </span><span><span style="color: #ffffff;">RVBD_1002c (RVBD_1002c)</span>, </span><span><span style="color: #ffffff;">RVBD_1003 (RVBD_1003)</span>, </span><span><span style="color: #ffffff;">RVBD_1004c (RVBD_1004c)</span>, </span><span><span style="color: #ffffff;">RVBD_1005c (RVBD_1005c)</span>, </span><span><span style="color: #ffffff;">RVBD_1006 (RVBD_1006)</span>, </span><span><span style="color: #ffffff;">RVBD_1007c (RVBD_1007c)</span>, </span><span><span style="color: #ffffff;">RVBD_1008 (RVBD_1008)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCCCTGGCTGATCCGCAAGGCCGCACCGACCTCAGCGATCACCGCCGCCTGTGACCACTAACCAGTCTCATCGAAAATATATTCGATACAGCCACTTGCCGTCGACATTGACCATGAGGCGTTCACGTCGCAGGGCCG</td>
+        <td class="border p-2">+  [1178794, 1178932]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1056 (RVBD_1056)</span>, </span><span><span style="color: #ffffff;">RVBD_1057 (RVBD_1057)</span>, </span><span><span style="color: #ffffff;">RVBD_1058 (RVBD_1058)</span>, </span><span><span style="color: #ffffff;">RVBD_1059 (RVBD_1059)</span>, </span><span><span style="color: #ffffff;">RVBD_1060 (RVBD_1060)</span>, </span><span><span style="color: #ffffff;">RVBD_1061 (RVBD_1061)</span>, </span><span><span style="color: #ffffff;">RVBD_1062 (RVBD_1062)</span>, </span><span><span style="color: #ffffff;">RVBD_1063c (RVBD_1063c)</span>, </span><span><span style="color: #ffffff;">RVBD_1064c (RVBD_1064c)</span>, </span><span><span style="color: #ffffff;">RVBD_1065 (RVBD_1065)</span>, </span><span><span style="color: #ffffff;">RVBD_1066 (RVBD_1066)</span>, </span><span><span style="color: #ffffff;">RVBD_1067c (RVBD_1067c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CCGGACCGGTGTCATGTTCGCTCCTCCAACTCAGACGGTAATCGCTCGCGTGTTCGACACTGTAGTCACTCATGTGTTCGATATCCGAACATTTGATCGA</td>
+        <td class="border p-2">+  [3031532, 3031631]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2719c (RVBD_2719c)</span>, </span><span><span style="color: #ffffff;">RVBD_2718c (RVBD_2718c)</span>, </span><span><span style="color: #ffffff;">RVBD_2717c (RVBD_2717c)</span>, </span><span><span style="color: #ffffff;">RVBD_2716 (RVBD_2716)</span>, </span><span><span style="color: #ffffff;">RVBD_2715 (RVBD_2715)</span>, </span><span><span style="color: #ffffff;">RVBD_2714 (RVBD_2714)</span>, </span><span><span style="color: #ffffff;">RVBD_2720 (RVBD_2720)</span>, </span><span><span style="color: #ffffff;">RVBD_2721c (RVBD_2721c)</span>, </span><span><span style="color: #ffffff;">RVBD_2722 (RVBD_2722)</span>, </span><span><span style="color: #ffffff;">RVBD_2723 (RVBD_2723)</span>, </span><span><span style="color: #ffffff;">RVBD_2724c (RVBD_2724c)</span>, </span><span><span style="color: #ffffff;">RVBD_2725c (RVBD_2725c)</span>, </span><span><span style="color: #ffffff;">RVBD_2726c (RVBD_2726c)</span>, </span><span><span style="color: #ffffff;">RVBD_2727c (RVBD_2727c)</span>, </span><span><span style="color: #ffffff;">RVBD_2728c (RVBD_2728c)</span>, </span><span><span style="color: #ffffff;">RVBD_2729c (RVBD_2729c)</span>, </span><span><span style="color: #ffffff;">RVBD_2730 (RVBD_2730)</span>, </span><span><span style="color: #ffffff;">RVBD_2731 (RVBD_2731)</span>, </span><span><span style="color: #ffffff;">RVBD_2732c (RVBD_2732c)</span>, </span><span><span style="color: #ffffff;">RVBD_2733c (RVBD_2733c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATATGCGATTTAGTTGTGTGTAGCTTGTTTTGCTGTCTGTACGACTGCACCGAGGGGTGAGCGCGTGTCGCACGAAAGTCTGTTCGAAGAAAGCGAAGCGCCCTACGCGGCGCTGTGCGTAGTTGC</td>
+        <td class="border p-2">+  [1547103, 1547228]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1374c (RVBD_1374c)</span>, </span><span><span style="color: #ffffff;">RVBD_1373 (RVBD_1373)</span>, </span><span><span style="color: #ffffff;">RVBD_1372 (RVBD_1372)</span>, </span><span><span style="color: #ffffff;">RVBD_1371 (RVBD_1371)</span>, </span><span><span style="color: #ffffff;">RVBD_1370c (RVBD_1370c)</span>, </span><span><span style="color: #ffffff;">RVBD_1369c (RVBD_1369c)</span>, </span><span><span style="color: #ffffff;">RVBD_1375 (RVBD_1375)</span>, </span><span><span style="color: #ffffff;">RVBD_1376 (RVBD_1376)</span>, </span><span><span style="color: #ffffff;">RVBD_1377c (RVBD_1377c)</span>, </span><span><span style="color: #ffffff;">RVBD_1378c (RVBD_1378c)</span>, </span><span><span style="color: #ffffff;">RVBD_1379 (RVBD_1379)</span>, </span><span><span style="color: #ffffff;">RVBD_1380 (RVBD_1380)</span>, </span><span><span style="color: #ffffff;">RVBD_1381 (RVBD_1381)</span>, </span><span><span style="color: #ffffff;">RVBD_1382 (RVBD_1382)</span>, </span><span><span style="color: #ffffff;">RVBD_1383 (RVBD_1383)</span>, </span><span><span style="color: #ffffff;">RVBD_1384 (RVBD_1384)</span>, </span><span><span style="color: #ffffff;">RVBD_1385 (RVBD_1385)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGCTTCTCAGACGACCCGTGACGCGAACCGTCGTGCTGTCGGTGGCCGCTACTAGTATCGCACACATGTTCGAGATATCGCTGCCGGACCCGACGGAGCTGTGCCGATCCGATGATGGCGCGCTGGTGGCCG</td>
+        <td class="border p-2">+  [2358445, 2358576]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2100 (RVBD_2100)</span>, </span><span><span style="color: #ffffff;">RVBD_2099c (RVBD_2099c)</span>, </span><span><span style="color: #ffffff;">RVBD_2098c (RVBD_2098c)</span>, </span><span><span style="color: #ffffff;">RVBD_2097c (RVBD_2097c)</span>, </span><span><span style="color: #ffffff;">RVBD_2096c (RVBD_2096c)</span>, </span><span><span style="color: #ffffff;">RVBD_2095c (RVBD_2095c)</span>, </span><span><span style="color: #ffffff;">RVBD_2094c (RVBD_2094c)</span>, </span><span><span style="color: #ffffff;">RVBD_2093c (RVBD_2093c)</span>, </span><span><span style="color: #ffffff;">RVBD_2092c (RVBD_2092c)</span>, </span><span><span style="color: #ffffff;">RVBD_2091c (RVBD_2091c)</span>, </span><span><span style="color: #ffffff;">RVBD_2090 (RVBD_2090)</span>, </span><span><span style="color: #ffffff;">RVBD_2101 (RVBD_2101)</span>, </span><span><span style="color: #ffffff;">RVBD_2102 (RVBD_2102)</span>, </span><span><span style="color: #ffffff;">RVBD_2103c (RVBD_2103c)</span>, </span><span><span style="color: #ffffff;">RVBD_2104c (RVBD_2104c)</span>, </span><span><span style="color: #ffffff;">RVBD_2104Ac (RVBD_2104Ac)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACAGGGGTGCGTTTGTCGGCGGCTGGCGGGGCGTGGCGGCGATAGCATTCGAATATGAGTTCGATCACGGTGTCGGTGGACCCGGTGGACCCGGTGGACCCGGTGG</td>
+        <td class="border p-2">+  [79428, 79533]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_0071 (RVBD_0071)</span>, </span><span><span style="color: #ffffff;">RVBD_0070c (RVBD_0070c)</span>, </span><span><span style="color: #ffffff;">RVBD_0069c (RVBD_0069c)</span>, </span><span><span style="color: #ffffff;">RVBD_0068 (RVBD_0068)</span>, </span><span><span style="color: #ffffff;">RVBD_0067c (RVBD_0067c)</span>, </span><span><span style="color: #ffffff;">RVBD_0066c (RVBD_0066c)</span>, </span><span><span style="color: #ffffff;">RVBD_0065 (RVBD_0065)</span>, </span><span><span style="color: #ffffff;">RVBD_0064A (RVBD_0064A)</span>, </span><span><span style="color: #ffffff;">RVBD_0064 (RVBD_0064)</span>, </span><span><span style="color: #ffffff;">RVBD_0072 (RVBD_0072)</span>, </span><span><span style="color: #ffffff;">RVBD_0073 (RVBD_0073)</span>, </span><span><span style="color: #ffffff;">RVBD_0074 (RVBD_0074)</span>, </span><span><span style="color: #ffffff;">RVBD_0075 (RVBD_0075)</span>, </span><span><span style="color: #ffffff;">RVBD_0076c (RVBD_0076c)</span>, </span><span><span style="color: #ffffff;">RVBD_0077c (RVBD_0077c)</span>, </span><span><span style="color: #ffffff;">RVBD_0078 (RVBD_0078)</span>, </span><span><span style="color: #ffffff;">RVBD_0078A (RVBD_0078A)</span>, </span><span><span style="color: #ffffff;">RVBD_0078Bc (RVBD_0078Bc)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CATCGGGTCAACCCGGGATCGACACCCATCACCCGCACCGCACGCTCCCTCAGCCATTTCCGAACAATCGTTCGATACGCTAGCGGATCGTCCCGACATCC</td>
+        <td class="border p-2">+  [2925355, 2925455]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2594c (RVBD_2594c)</span>, </span><span><span style="color: #ffffff;">RVBD_2593c (RVBD_2593c)</span>, </span><span><span style="color: #ffffff;">RVBD_2592c (RVBD_2592c)</span>, </span><span><span style="color: #ffffff;">RVBD_2591 (RVBD_2591)</span>, </span><span><span style="color: #ffffff;">RVBD_2595 (RVBD_2595)</span>, </span><span><span style="color: #ffffff;">RVBD_2596 (RVBD_2596)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTCGGGCACTGACAAAGAGCGCCCCGCTGATAACCGTGAAACTGAAGTGACACAAGGGATTTACCCAGATCCTACGAGTTGATACGGGAAGG</td>
+        <td class="border p-2">+  [105112, 105203]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_0095c (RVBD_0095c)</span>, </span><span><span style="color: #ffffff;">RVBD_0094c (RVBD_0094c)</span>, </span><span><span style="color: #ffffff;">RVBD_0093c (RVBD_0093c)</span>, </span><span><span style="color: #ffffff;">RVBD_0092 (RVBD_0092)</span>, </span><span><span style="color: #ffffff;">RVBD_0091 (RVBD_0091)</span>, </span><span><span style="color: #ffffff;">RVBD_0090A (RVBD_0090A)</span>, </span><span><span style="color: #ffffff;">RVBD_0090 (RVBD_0090)</span>, </span><span><span style="color: #ffffff;">RVBD_0089 (RVBD_0089)</span>, </span><span><span style="color: #ffffff;">RVBD_0096 (RVBD_0096)</span>, </span><span><span style="color: #ffffff;">RVBD_0097 (RVBD_0097)</span>, </span><span><span style="color: #ffffff;">RVBD_0098 (RVBD_0098)</span>, </span><span><span style="color: #ffffff;">RVBD_0099 (RVBD_0099)</span>, </span><span><span style="color: #ffffff;">RVBD_0100 (RVBD_0100)</span>, </span><span><span style="color: #ffffff;">RVBD_0101 (RVBD_0101)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGGCAGCGCCCCGTCGTCAACGGGCATCCCGTTCACCGCGACGGCTTGCCGGGCCCAACGCATACCATTATTCGAACAACCGTTCTATACTTTGTCAACGCTGGCCGCTACCGAGCGCCGCACAGG</td>
+        <td class="border p-2">+  [2903478, 2903603]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2578c (RVBD_2578c)</span>, </span><span><span style="color: #ffffff;">RVBD_2577 (RVBD_2577)</span>, </span><span><span style="color: #ffffff;">RVBD_2579 (RVBD_2579)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAACATGTTCGAATCATAACGTCGGGCACTGACAAGAAGTCGCGCCGACAGCTGCTAGAACTGGTGTTAGCTAAGTGAATTCAGTGACTCGAGAGCCCTCGCGAGCTTGGCCGCCCACCAGGTCGGCGGGGATGCCTA</td>
+        <td class="border p-2">+  [1789837, 1789974]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1588c (RVBD_1588c)</span>, </span><span><span style="color: #ffffff;">RVBD_1587c (RVBD_1587c)</span>, </span><span><span style="color: #ffffff;">RVBD_1586c (RVBD_1586c)</span>, </span><span><span style="color: #ffffff;">RVBD_1585c (RVBD_1585c)</span>, </span><span><span style="color: #ffffff;">RVBD_1584c (RVBD_1584c)</span>, </span><span><span style="color: #ffffff;">RVBD_1583c (RVBD_1583c)</span>, </span><span><span style="color: #ffffff;">RVBD_1582c (RVBD_1582c)</span>, </span><span><span style="color: #ffffff;">RVBD_1581Ac (RVBD_1581Ac)</span>, </span><span><span style="color: #ffffff;">RVBD_1581c (RVBD_1581c)</span>, </span><span><span style="color: #ffffff;">RVBD_1580c (RVBD_1580c)</span>, </span><span><span style="color: #ffffff;">RVBD_1579c (RVBD_1579c)</span>, </span><span><span style="color: #ffffff;">RVBD_1578c (RVBD_1578c)</span>, </span><span><span style="color: #ffffff;">RVBD_1589 (RVBD_1589)</span>, </span><span><span style="color: #ffffff;">RVBD_1590 (RVBD_1590)</span>, </span><span><span style="color: #ffffff;">RVBD_1591 (RVBD_1591)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAGACGCGACATCGTAAAGGTTTTAGCCGGACTCATTCGAATATTTGAGCGATGTAGCCAGTGAGTGGGTGCTCCGATGATCACGGCT</td>
+        <td class="border p-2">+  [2833810, 2833898]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2517c (RVBD_2517c)</span>, </span><span><span style="color: #ffffff;">RVBD_2516c (RVBD_2516c)</span>, </span><span><span style="color: #ffffff;">RVBD_2515c (RVBD_2515c)</span>, </span><span><span style="color: #ffffff;">RVBD_2514c (RVBD_2514c)</span>, </span><span><span style="color: #ffffff;">RVBD_2518c (RVBD_2518c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAGCGGGCGGGCAGCAAACGTCTAGCCCACGCAATCCAAAGCCGCTTCGTAACTTTCGCAGAATTGGGCCTTGCTGTGTTAAAGGTCTAGTAGTACAAAGGAACCACGGAAGCCCGGTGA</td>
+        <td class="border p-2">+  [4100756, 4100875]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_3661 (RVBD_3661)</span>, </span><span><span style="color: #ffffff;">RVBD_3662c (RVBD_3662c)</span>, </span><span><span style="color: #ffffff;">RVBD_3663c (RVBD_3663c)</span>, </span><span><span style="color: #ffffff;">RVBD_3664c (RVBD_3664c)</span>, </span><span><span style="color: #ffffff;">RVBD_3665c (RVBD_3665c)</span>, </span><span><span style="color: #ffffff;">RVBD_3666c (RVBD_3666c)</span>, </span><span><span style="color: #ffffff;">RVBD_3666A (RVBD_3666A)</span>, </span><span><span style="color: #ffffff;">RVBD_3666B (RVBD_3666B)</span>, </span><span><span style="color: #ffffff;">RVBD_3667 (RVBD_3667)</span>, </span><span><span style="color: #ffffff;">RVBD_3668c (RVBD_3668c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCGCCGCCAGGGCGATCACGCCGCCGGCCTGCGCGGTGCCCATCACCGTGGTCACGTTGAGCTGAGAGAACACCCGTTCGATAGCCACCACCTCCGGATGATGGGTGTCCAG</td>
+        <td class="border p-2">+  [2925112, 2925224]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_2594c (RVBD_2594c)</span>, </span><span><span style="color: #ffffff;">RVBD_2593c (RVBD_2593c)</span>, </span><span><span style="color: #ffffff;">RVBD_2592c (RVBD_2592c)</span>, </span><span><span style="color: #ffffff;">RVBD_2591 (RVBD_2591)</span>, </span><span><span style="color: #ffffff;">RVBD_2595 (RVBD_2595)</span>, </span><span><span style="color: #ffffff;">RVBD_2596 (RVBD_2596)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6Y1J7" target="_blank" rel="noopener noreferrer">I6Y1J7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCAGCGCTTTTGGTGCCGAAATGCGGCGAATCCCGGGCAGTCGGCGTCGCACAGCACGGTTGCTGTGCTGTCGCAAGCCTGGAGGCCCGC</td>
+        <td class="border p-2">+  [1179232, 1179321]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1056 (RVBD_1056)</span>, </span><span><span style="color: #ffffff;">RVBD_1057 (RVBD_1057)</span>, </span><span><span style="color: #ffffff;">RVBD_1058 (RVBD_1058)</span>, </span><span><span style="color: #ffffff;">RVBD_1059 (RVBD_1059)</span>, </span><span><span style="color: #ffffff;">RVBD_1060 (RVBD_1060)</span>, </span><span><span style="color: #ffffff;">RVBD_1061 (RVBD_1061)</span>, </span><span><span style="color: #ffffff;">RVBD_1062 (RVBD_1062)</span>, </span><span><span style="color: #ffffff;">RVBD_1063c (RVBD_1063c)</span>, </span><span><span style="color: #ffffff;">RVBD_1064c (RVBD_1064c)</span>, </span><span><span style="color: #ffffff;">RVBD_1065 (RVBD_1065)</span>, </span><span><span style="color: #ffffff;">RVBD_1066 (RVBD_1066)</span>, </span><span><span style="color: #ffffff;">RVBD_1067c (RVBD_1067c)</span></span></td>
+        <td class="border p-2">379</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22528497" target="_blank" rel="noopener noreferrer">22528497</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

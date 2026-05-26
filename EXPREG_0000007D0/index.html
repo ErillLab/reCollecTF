@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AraC - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">AraC</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0A9E0/entry">
+          UniProtKB: P0A9E0
+        </a>
+        regulon and binding site collection of Escherichia coli str. K-12 substr. MG1655
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CAGAGCAGGAAAATCCATA</td>
+        <td class="border p-2">+  [4447794, 4447812]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ppa (b4226)</span>, </span><span><span style="color: #F44336;">ytfQ (b4227)</span>, </span><span><span style="color: #ffffff;">ytfR (b4485)</span>, </span><span><span style="color: #ffffff;">ytfT (b4230)</span>, </span><span><span style="color: #ffffff;">yjfF (b4231)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CACAGCAGATTAATCCATA</td>
+        <td class="border p-2">+  [1984396, 1984414]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araF (b1901)</span>, </span><span><span style="color: #4CAF50;">araG (b1900)</span>, </span><span><span style="color: #4CAF50;">araH (b4460)</span>, </span><span><span style="color: #ffffff;">ftnB (b1902)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TATAGCAGGAAGATCCATA</td>
+        <td class="border p-2">+  [1623631, 1623649]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dcp (b1538)</span>, </span><span><span style="color: #ffffff;">ydfG (b1539)</span>, </span><span><span style="color: #ffffff;">ydfH (b1540)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGCAGCAATTTAATCCATA</td>
+        <td class="border p-2">+  [2980286, 2980304]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araE (b2841)</span>, </span><span><span style="color: #4CAF50;">ygeA (b2840)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCAGCAGGATAATGAATA</td>
+        <td class="border p-2">+  [411808, 411826]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araJ (b0396)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CATAGCATTTTTATCCATA</td>
+        <td class="border p-2">+  [70130, 70148]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araB (b0063)</span>, </span><span><span style="color: #4CAF50;">araA (b0062)</span>, </span><span><span style="color: #ffffff;">araC (b0064)</span>, </span><span><span style="color: #ffffff;">yabI (b0065)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACGGCAGAAAAGTCCACA</td>
+        <td class="border p-2">+  [70183, 70201]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araB (b0063)</span>, </span><span><span style="color: #4CAF50;">araA (b0062)</span>, </span><span><span style="color: #ffffff;">araC (b0064)</span>, </span><span><span style="color: #ffffff;">yabI (b0065)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A9E0" target="_blank" rel="noopener noreferrer">P0A9E0</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTTAGCGGGAAAAGACATA</td>
+        <td class="border p-2">+  [1984342, 1984360]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), ChIP-PCR (ECO:0005620), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araF (b1901)</span>, </span><span><span style="color: #4CAF50;">araG (b1900)</span>, </span><span><span style="color: #4CAF50;">araH (b4460)</span>, </span><span><span style="color: #ffffff;">ftnB (b1902)</span></span></td>
+        <td class="border p-2">622</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

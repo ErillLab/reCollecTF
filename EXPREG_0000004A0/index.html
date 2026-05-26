@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FleQ - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">FleQ</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/G3XCV0/entry">
+          UniProtKB: G3XCV0
+        </a>
+        regulon and binding site collection of Pseudomonas aeruginosa PAO1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGCCTAAAAATTGACAGTT</td>
+        <td class="border p-2">+  [3434063, 3434081]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pelA (PA3064)</span>, </span><span><span style="color: #ffffff;">pelB (PA3063)</span>, </span><span><span style="color: #ffffff;">pelC (PA3062)</span>, </span><span><span style="color: #ffffff;">pelD (PA3061)</span>, </span><span><span style="color: #ffffff;">pelE (PA3060)</span>, </span><span><span style="color: #ffffff;">pelF (PA3059)</span>, </span><span><span style="color: #ffffff;">pelG (PA3058)</span>, </span><span><span style="color: #ffffff;">PA3057 (PA3057)</span>, </span><span><span style="color: #ffffff;">PA3056 (PA3056)</span>, </span><span><span style="color: #ffffff;">PA3055 (PA3055)</span>, </span><span><span style="color: #ffffff;">PA3054 (PA3054)</span>, </span><span><span style="color: #ffffff;">PA3065 (PA3065)</span>, </span><span><span style="color: #ffffff;">PA3066 (PA3066)</span>, </span><span><span style="color: #ffffff;">PA3067 (PA3067)</span>, </span><span><span style="color: #ffffff;">gdhB (PA3068)</span></span></td>
+        <td class="border p-2">413</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22581773" target="_blank" rel="noopener noreferrer">22581773</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CATTAGATTGACGTTAATC</td>
+        <td class="border p-2">+  [3434010, 3434028]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pelA (PA3064)</span>, </span><span><span style="color: #ffffff;">pelB (PA3063)</span>, </span><span><span style="color: #ffffff;">pelC (PA3062)</span>, </span><span><span style="color: #ffffff;">pelD (PA3061)</span>, </span><span><span style="color: #ffffff;">pelE (PA3060)</span>, </span><span><span style="color: #ffffff;">pelF (PA3059)</span>, </span><span><span style="color: #ffffff;">pelG (PA3058)</span>, </span><span><span style="color: #ffffff;">PA3057 (PA3057)</span>, </span><span><span style="color: #ffffff;">PA3056 (PA3056)</span>, </span><span><span style="color: #ffffff;">PA3055 (PA3055)</span>, </span><span><span style="color: #ffffff;">PA3054 (PA3054)</span>, </span><span><span style="color: #ffffff;">PA3065 (PA3065)</span>, </span><span><span style="color: #ffffff;">PA3066 (PA3066)</span>, </span><span><span style="color: #ffffff;">PA3067 (PA3067)</span>, </span><span><span style="color: #ffffff;">gdhB (PA3068)</span></span></td>
+        <td class="border p-2">413</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22581773" target="_blank" rel="noopener noreferrer">22581773</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGCCTAAAAATTGACAGTT</td>
+        <td class="border p-2">+  [3434063, 3434081]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">pelA (PA3064)</span>, </span><span><span style="color: #ffffff;">pelB (PA3063)</span>, </span><span><span style="color: #ffffff;">pelC (PA3062)</span>, </span><span><span style="color: #ffffff;">pelD (PA3061)</span>, </span><span><span style="color: #ffffff;">pelE (PA3060)</span>, </span><span><span style="color: #ffffff;">pelF (PA3059)</span>, </span><span><span style="color: #ffffff;">pelG (PA3058)</span>, </span><span><span style="color: #ffffff;">PA3057 (PA3057)</span>, </span><span><span style="color: #ffffff;">PA3056 (PA3056)</span>, </span><span><span style="color: #ffffff;">PA3055 (PA3055)</span>, </span><span><span style="color: #ffffff;">PA3054 (PA3054)</span>, </span><span><span style="color: #ffffff;">PA3065 (PA3065)</span>, </span><span><span style="color: #ffffff;">PA3066 (PA3066)</span>, </span><span><span style="color: #ffffff;">PA3067 (PA3067)</span>, </span><span><span style="color: #ffffff;">gdhB (PA3068)</span></span></td>
+        <td class="border p-2">414</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22581773" target="_blank" rel="noopener noreferrer">22581773</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CATTAGATTGACGTTAATC</td>
+        <td class="border p-2">+  [3434010, 3434028]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">pelA (PA3064)</span>, </span><span><span style="color: #ffffff;">pelB (PA3063)</span>, </span><span><span style="color: #ffffff;">pelC (PA3062)</span>, </span><span><span style="color: #ffffff;">pelD (PA3061)</span>, </span><span><span style="color: #ffffff;">pelE (PA3060)</span>, </span><span><span style="color: #ffffff;">pelF (PA3059)</span>, </span><span><span style="color: #ffffff;">pelG (PA3058)</span>, </span><span><span style="color: #ffffff;">PA3057 (PA3057)</span>, </span><span><span style="color: #ffffff;">PA3056 (PA3056)</span>, </span><span><span style="color: #ffffff;">PA3055 (PA3055)</span>, </span><span><span style="color: #ffffff;">PA3054 (PA3054)</span>, </span><span><span style="color: #ffffff;">PA3065 (PA3065)</span>, </span><span><span style="color: #ffffff;">PA3066 (PA3066)</span>, </span><span><span style="color: #ffffff;">PA3067 (PA3067)</span>, </span><span><span style="color: #ffffff;">gdhB (PA3068)</span></span></td>
+        <td class="border p-2">414</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22581773" target="_blank" rel="noopener noreferrer">22581773</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCGGCGTCAAAAGTTTGTT</td>
+        <td class="border p-2">+  [1580256, 1580274]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flhA (PA1452)</span>, </span><span><span style="color: #ffffff;">flhF (PA1453)</span>, </span><span><span style="color: #ffffff;">fleN (PA1454)</span>, </span><span><span style="color: #ffffff;">fliA (PA1455)</span>, </span><span><span style="color: #ffffff;">cheY (PA1456)</span>, </span><span><span style="color: #ffffff;">cheZ (PA1457)</span></span></td>
+        <td class="border p-2">648</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12218010" target="_blank" rel="noopener noreferrer">12218010</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAAGCCGCGGCTGTT</td>
+        <td class="border p-2">+  [1192024, 1192039]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliE (PA1100)</span>, </span><span><span style="color: #ffffff;">fliF (PA1101)</span>, </span><span><span style="color: #ffffff;">fliG (PA1102)</span>, </span><span><span style="color: #ffffff;">PA1103 (PA1103)</span>, </span><span><span style="color: #ffffff;">fliI (PA1104)</span>, </span><span><span style="color: #ffffff;">fliJ (PA1105)</span></span></td>
+        <td class="border p-2">648</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12218010" target="_blank" rel="noopener noreferrer">12218010</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAACCCTTCATTTGACGCTATAGCGACGGATTTTTGGCATGG</td>
+        <td class="border p-2">+  [1571984, 1572025]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA1442 (PA1442)</span>, </span><span><span style="color: #ffffff;">fliM (PA1443)</span>, </span><span><span style="color: #ffffff;">fliN (PA1444)</span>, </span><span><span style="color: #ffffff;">fliO (PA1445)</span>, </span><span><span style="color: #ffffff;">fliP (PA1446)</span>, </span><span><span style="color: #ffffff;">fliQ (PA1447)</span>, </span><span><span style="color: #ffffff;">fliR (PA1448)</span>, </span><span><span style="color: #ffffff;">flhB (PA1449)</span>, </span><span><span style="color: #ffffff;">PA1450 (PA1450)</span>, </span><span><span style="color: #ffffff;">PA1451 (PA1451)</span>, </span><span><span style="color: #ffffff;">flhA (PA1452)</span>, </span><span><span style="color: #ffffff;">flhF (PA1453)</span>, </span><span><span style="color: #ffffff;">fleN (PA1454)</span>, </span><span><span style="color: #ffffff;">fliA (PA1455)</span>, </span><span><span style="color: #ffffff;">cheY (PA1456)</span>, </span><span><span style="color: #ffffff;">cheZ (PA1457)</span></span></td>
+        <td class="border p-2">648</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12218010" target="_blank" rel="noopener noreferrer">12218010</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCV0" target="_blank" rel="noopener noreferrer">G3XCV0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTGTCAATCATCCGACA</td>
+        <td class="border p-2">+  [1189045, 1189061]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">fleQ (PA1097)</span>, </span><span><span style="color: #4CAF50;">fleS (PA1098)</span>, </span><span><span style="color: #4CAF50;">fleR (PA1099)</span></span></td>
+        <td class="border p-2">648</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12218010" target="_blank" rel="noopener noreferrer">12218010</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

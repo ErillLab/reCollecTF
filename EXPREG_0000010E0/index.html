@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q87KN2/entry">
+          UniProtKB: Q87KN2
+        </a>
+        regulon and binding site collection of Vibrio parahaemolyticus ATCC 17802  
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTACTGGATATACTCACAGTTA</td>
+        <td class="border p-2">+  [3150341, 3150362]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP2945 (VP2945)</span>, </span><span><span style="color: #ffffff;">VP2946 (VP2946)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAACTGTATAAAAAGACAGGTG</td>
+        <td class="border p-2">+  [3150321, 3150342]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP2945 (VP2945)</span>, </span><span><span style="color: #ffffff;">VP2946 (VP2946)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATACTGTTGATTCATACAGTGT</td>
+        <td class="border p-2">+  [2694441, 2694462]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">recA (VP2550)</span>, </span><span><span style="color: #ffffff;">VP2551 (VP2551)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACCTGTATATAAATACAGTAT</td>
+        <td class="border p-2">+  [2132041, 2132062]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP2033 (VP2033)</span>, </span><span><span style="color: #ffffff;">VP2034 (VP2034)</span>, </span><span><span style="color: #ffffff;">VP2035 (VP2035)</span>, </span><span><span style="color: #ffffff;">VP2036 (VP2036)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAACTGTATAAATGAACAGTAA</td>
+        <td class="border p-2">+  [2260931, 2260952]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP2149 (VP2149)</span>, </span><span><span style="color: #ffffff;">VP2147 (VP2147)</span>, </span><span><span style="color: #ffffff;">VP2148 (VP2148)</span>, </span><span><span style="color: #ffffff;">VP2146 (VP2146)</span>, </span><span><span style="color: #ffffff;">VP2150 (VP2150)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCCTGTACAAAAACACAGCTC</td>
+        <td class="border p-2">+  [170660, 170681]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP0157 (VP0157)</span>, </span><span><span style="color: #ffffff;">VP0158 (VP0158)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGGCTGGATGAATAAACAGGGG</td>
+        <td class="border p-2">+  [535829, 535850]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP0518 (VP0518)</span>, </span><span><span style="color: #ffffff;">VP0517 (VP0517)</span>, </span><span><span style="color: #ffffff;">VP0519 (VP0519)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATGCTGTATGTGTATACAGTAG</td>
+        <td class="border p-2">+  [1339300, 1339321]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP1264 (VP1264)</span>, </span><span><span style="color: #ffffff;">VP1265 (VP1265)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATACTGTATATAAAAACAGTAT</td>
+        <td class="border p-2">+  [1534638, 1534659]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Comparative genomics search (ECO:0005622)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VP1427 (VP1427)</span>, </span><span><span style="color: #ffffff;">VP1428 (VP1428)</span>, </span><span><span style="color: #ffffff;">VP1429 (VP1429)</span></span></td>
+        <td class="border p-2">1</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22305460" target="_blank" rel="noopener noreferrer">22305460</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004603.1" target="_blank" rel="noopener noreferrer">NC_004603.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q87KN2" target="_blank" rel="noopener noreferrer">Q87KN2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACCTGTATAAATAAACAGAC</td>
+        <td class="border p-2">+  [1948250, 1948269]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">VP1865 (VP1865)</span></span></td>
+        <td class="border p-2">664</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21529368" target="_blank" rel="noopener noreferrer">21529368</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

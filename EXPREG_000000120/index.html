@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A0A0H3NC35/entry">
+          UniProtKB: A0A0H3NC35
+        </a>
+        regulon and binding site collection of Peptoclostridium difficile R20291
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGGAACAAATGTTTGC</td>
+        <td class="border p-2">+  [2168608, 2168623]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dinR (CDR20291_1854)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAGAACAAATGTTTGT</td>
+        <td class="border p-2">+  [1395928, 1395943]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">recA (CDR20291_1169)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAGAACATAAGTTTTT</td>
+        <td class="border p-2">+  [3187647, 3187662]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ruvC (CDR20291_2696)</span>, </span><span><span style="color: #ffffff;">ruvA (CDR20291_2695)</span>, </span><span><span style="color: #ffffff;">ruvB (CDR20291_2694)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGGAACTAATGTTCGA</td>
+        <td class="border p-2">+  [3863557, 3863572]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">uvrB (CDR20291_3234)</span>, </span><span><span style="color: #ffffff;">uvrA (CDR20291_3233)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAGAACAGTAGTTCCA</td>
+        <td class="border p-2">+  [3710720, 3710735]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">sspB (CDR20291_3107)</span>, </span><span><span style="color: #ffffff;">CDR20291_3106 (CDR20291_3106)</span>, </span><span><span style="color: #ffffff;">CDR20291_3108 (CDR20291_3108)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAGAACATAAAAATTT</td>
+        <td class="border p-2">+  [953590, 953605]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_0782 (CDR20291_0782)</span>, </span><span><span style="color: #ffffff;">CDR20291_0781 (CDR20291_0781)</span>, </span><span><span style="color: #ffffff;">oppB (CDR20291_0783)</span>, </span><span><span style="color: #ffffff;">oppC (CDR20291_0784)</span>, </span><span><span style="color: #ffffff;">oppA (CDR20291_0785)</span>, </span><span><span style="color: #ffffff;">oppD (CDR20291_0786)</span>, </span><span><span style="color: #ffffff;">oppF (CDR20291_0787)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTGAACTTTAGTTTCT</td>
+        <td class="border p-2">+  [4183519, 4183534]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_3533 (CDR20291_3533)</span>, </span><span><span style="color: #ffffff;">soj (CDR20291_3532)</span>, </span><span><span style="color: #ffffff;">spo0J (CDR20291_3531)</span>, </span><span><span style="color: #ffffff;">CDR20291_3530 (CDR20291_3530)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAGAACATCTGAAAAG</td>
+        <td class="border p-2">+  [2694006, 2694021]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_2298 (CDR20291_2298)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAGAACTATTATTTTA</td>
+        <td class="border p-2">+  [3732293, 3732308]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_3125 (CDR20291_3125)</span>, </span><span><span style="color: #ffffff;">CDR20291_3124 (CDR20291_3124)</span>, </span><span><span style="color: #ffffff;">CDR20291_3123 (CDR20291_3123)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATGAACTTAGGTTTCT</td>
+        <td class="border p-2">+  [113808, 113823]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rplF (CDR20291_0082)</span>, </span><span><span style="color: #ffffff;">rplR (CDR20291_0083)</span>, </span><span><span style="color: #ffffff;">rpsE (CDR20291_0084)</span>, </span><span><span style="color: #ffffff;">rpmD (CDR20291_0085)</span>, </span><span><span style="color: #ffffff;">rplO (CDR20291_0086)</span>, </span><span><span style="color: #ffffff;">prlA (CDR20291_0087)</span>, </span><span><span style="color: #ffffff;">adk (CDR20291_0088)</span>, </span><span><span style="color: #ffffff;">map1 (CDR20291_0089)</span>, </span><span><span style="color: #ffffff;">CDR20291_0090 (CDR20291_0090)</span>, </span><span><span style="color: #ffffff;">infA (CDR20291_0091)</span>, </span><span><span style="color: #ffffff;">rpmJ (CDR20291_0092)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATGAACTATTGTTTTA</td>
+        <td class="border p-2">+  [93864, 93879]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rpoB (CDR20291_0060)</span>, </span><span><span style="color: #ffffff;">rpoC (CDR20291_0061)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGGAACTTTGGTTCAG</td>
+        <td class="border p-2">+  [1076101, 1076116]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">potB (CDR20291_0881)</span>, </span><span><span style="color: #ffffff;">potC (CDR20291_0882)</span>, </span><span><span style="color: #ffffff;">potD (CDR20291_0883)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTGAACCAATGTTTGA</td>
+        <td class="border p-2">+  [715455, 715470]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tcdA (CDR20291_0584)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGGAACTTTAGTTCTA</td>
+        <td class="border p-2">+  [3181958, 3181973]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_2690 (CDR20291_2690)</span>, </span><span><span style="color: #ffffff;">CDR20291_2689 (CDR20291_2689)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAAAACACCCGTTCTG</td>
+        <td class="border p-2">+  [2409491, 2409506]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_2056 (CDR20291_2056)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013316.1" target="_blank" rel="noopener noreferrer">NC_013316.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3NC35" target="_blank" rel="noopener noreferrer">A0A0H3NC35</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAGAACTAAAGTTCCT</td>
+        <td class="border p-2">+  [976785, 976800]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), Comparative genomics search (ECO:0005622), Surface plasmon resonance</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CDR20291_0804 (CDR20291_0804)</span>, </span><span><span style="color: #ffffff;">CDR20291_0803 (CDR20291_0803)</span>, </span><span><span style="color: #ffffff;">CDR20291_0802 (CDR20291_0802)</span></span></td>
+        <td class="border p-2">645</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24713082" target="_blank" rel="noopener noreferrer">24713082</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

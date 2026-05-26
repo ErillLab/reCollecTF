@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AtzR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">AtzR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q936X4/entry">
+          UniProtKB: Q936X4
+        </a>
+        regulon and binding site collection of Pseudomonas sp. ADP
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004956.1" target="_blank" rel="noopener noreferrer">NC_004956.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q936X4" target="_blank" rel="noopener noreferrer">Q936X4</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">GGTCGGAAAAAGGCGGCAGTCAAGTGCG</td>
+        <td class="border p-2">+  [100893, 100920]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">orf99 (pADP-1_p099)</span>, </span><span><span style="color: #ffffff;">orf98 (pADP-1_p098)</span>, </span><span><span style="color: #ffffff;">orf97 (pADP-1_p097)</span>, </span><span><span style="color: #ffffff;">orf96 (pADP-1_p096)</span>, </span><span><span style="color: #ffffff;">orf95 (pADP-1_p095)</span>, </span><span><span style="color: #ffffff;">orf94 (pADP-1_p094)</span>, </span><span><span style="color: #4CAF50;">atzD (pADP-1_p100)</span></span></td>
+        <td class="border p-2">652</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17854404" target="_blank" rel="noopener noreferrer">17854404</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004956.1" target="_blank" rel="noopener noreferrer">NC_004956.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q936X4" target="_blank" rel="noopener noreferrer">Q936X4</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">GGTGCCGGATCGGCACCA</td>
+        <td class="border p-2">+  [100871, 100888]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">orf99 (pADP-1_p099)</span>, </span><span><span style="color: #ffffff;">orf98 (pADP-1_p098)</span>, </span><span><span style="color: #ffffff;">orf97 (pADP-1_p097)</span>, </span><span><span style="color: #ffffff;">orf96 (pADP-1_p096)</span>, </span><span><span style="color: #ffffff;">orf95 (pADP-1_p095)</span>, </span><span><span style="color: #ffffff;">orf94 (pADP-1_p094)</span>, </span><span><span style="color: #ffffff;">atzD (pADP-1_p100)</span></span></td>
+        <td class="border p-2">652</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17854404" target="_blank" rel="noopener noreferrer">17854404</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004956.1" target="_blank" rel="noopener noreferrer">NC_004956.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q936X4" target="_blank" rel="noopener noreferrer">Q936X4</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TGGTGCCGATCCGGCACC</td>
+        <td class="border p-2">+  [100871, 100888]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), In-vitro transcription (ECO:0001204)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">orf99 (pADP-1_p099)</span>, </span><span><span style="color: #ffffff;">orf98 (pADP-1_p098)</span>, </span><span><span style="color: #ffffff;">orf97 (pADP-1_p097)</span>, </span><span><span style="color: #ffffff;">orf96 (pADP-1_p096)</span>, </span><span><span style="color: #ffffff;">orf95 (pADP-1_p095)</span>, </span><span><span style="color: #ffffff;">orf94 (pADP-1_p094)</span>, </span><span><span style="color: #ffffff;">atzD (pADP-1_p100)</span></span></td>
+        <td class="border p-2">674</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19570137" target="_blank" rel="noopener noreferrer">19570137</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004956.1" target="_blank" rel="noopener noreferrer">NC_004956.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q936X4" target="_blank" rel="noopener noreferrer">Q936X4</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">CGCACTTGACTGCCGCCTTTTTCCGACC</td>
+        <td class="border p-2">+  [100893, 100920]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), In-vitro transcription (ECO:0001204)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">orf99 (pADP-1_p099)</span>, </span><span><span style="color: #ffffff;">orf98 (pADP-1_p098)</span>, </span><span><span style="color: #ffffff;">orf97 (pADP-1_p097)</span>, </span><span><span style="color: #ffffff;">orf96 (pADP-1_p096)</span>, </span><span><span style="color: #ffffff;">orf95 (pADP-1_p095)</span>, </span><span><span style="color: #ffffff;">orf94 (pADP-1_p094)</span>, </span><span><span style="color: #ffffff;">atzD (pADP-1_p100)</span></span></td>
+        <td class="border p-2">674</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19570137" target="_blank" rel="noopener noreferrer">19570137</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004956.1" target="_blank" rel="noopener noreferrer">NC_004956.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q936X4" target="_blank" rel="noopener noreferrer">Q936X4</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">GGTGCCGGATCGGCACCAGTTAGGTCGGAAAAAGGCGGCAGTCAAGTGCG</td>
+        <td class="border p-2">+  [100871, 100920]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">orf99 (pADP-1_p099)</span>, </span><span><span style="color: #ffffff;">orf98 (pADP-1_p098)</span>, </span><span><span style="color: #ffffff;">orf97 (pADP-1_p097)</span>, </span><span><span style="color: #ffffff;">orf96 (pADP-1_p096)</span>, </span><span><span style="color: #ffffff;">orf95 (pADP-1_p095)</span>, </span><span><span style="color: #ffffff;">orf94 (pADP-1_p094)</span>, </span><span><span style="color: #4CAF50;">atzD (pADP-1_p100)</span></span></td>
+        <td class="border p-2">817</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23906008" target="_blank" rel="noopener noreferrer">23906008</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q7VHS0/entry">
+          UniProtKB: Q7VHS0
+        </a>
+        regulon and binding site collection of Helicobacter hepaticus ATCC 51449
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004917.1" target="_blank" rel="noopener noreferrer">NC_004917.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7VHS0" target="_blank" rel="noopener noreferrer">Q7VHS0</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTAATTATTGTTATAAA</td>
+        <td class="border p-2">+  [391820, 391837]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HH0406 (HH0406)</span>, </span><span><span style="color: #ffffff;">HH0405 (HH0405)</span>, </span><span><span style="color: #ffffff;">HH0404 (HH0404)</span>, </span><span><span style="color: #ffffff;">HH0403 (HH0403)</span>, </span><span><span style="color: #ffffff;">HH0402 (HH0402)</span>, </span><span><span style="color: #F44336;">ureA (HH0407)</span>, </span><span><span style="color: #ffffff;">ureB (HH0408)</span>, </span><span><span style="color: #ffffff;">ureI (HH0409)</span>, </span><span><span style="color: #ffffff;">ureE (HH0410)</span>, </span><span><span style="color: #ffffff;">ureF (HH0411)</span>, </span><span><span style="color: #ffffff;">ureG (HH0412)</span>, </span><span><span style="color: #ffffff;">ureH (HH0413)</span>, </span><span><span style="color: #ffffff;">nikE (HH0414)</span>, </span><span><span style="color: #ffffff;">nikD (HH0415)</span>, </span><span><span style="color: #ffffff;">nikB (HH0416)</span>, </span><span><span style="color: #ffffff;">nikA (HH0417)</span>, </span><span><span style="color: #ffffff;">HH0418 (HH0418)</span>, </span><span><span style="color: #ffffff;">proB (HH0419)</span>, </span><span><span style="color: #ffffff;">fmt (HH0420)</span>, </span><span><span style="color: #ffffff;">birA (HH0421)</span>, </span><span><span style="color: #ffffff;">parA (HH0422)</span>, </span><span><span style="color: #ffffff;">parB (HH0423)</span>, </span><span><span style="color: #ffffff;">atpF (HH0424)</span>, </span><span><span style="color: #ffffff;">atpF' (HH0425)</span>, </span><span><span style="color: #ffffff;">atpH (HH0426)</span>, </span><span><span style="color: #ffffff;">atpA (HH0427)</span>, </span><span><span style="color: #ffffff;">atpG (HH0428)</span>, </span><span><span style="color: #ffffff;">atpD (HH0429)</span>, </span><span><span style="color: #ffffff;">atpC (HH0430)</span>, </span><span><span style="color: #ffffff;">HH0431 (HH0431)</span>, </span><span><span style="color: #ffffff;">HH0432 (HH0432)</span>, </span><span><span style="color: #ffffff;">HH0433 (HH0433)</span>, </span><span><span style="color: #ffffff;">tolB (HH0434)</span>, </span><span><span style="color: #ffffff;">HH0435 (HH0435)</span>, </span><span><span style="color: #ffffff;">HH0436 (HH0436)</span>, </span><span><span style="color: #ffffff;">slyD (HH0437)</span></span></td>
+        <td class="border p-2">499</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17101656" target="_blank" rel="noopener noreferrer">17101656</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

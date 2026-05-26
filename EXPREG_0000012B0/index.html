@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HexR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">HexR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q8EE97/entry">
+          UniProtKB: Q8EE97
+        </a>
+        regulon and binding site collection of Shewanella oneidensis MR-1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTTATAAAACTACAT</td>
+        <td class="border p-2">+  [928748, 928764]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SO_0900 (SO_0900)</span>, </span><span><span style="color: #ffffff;">SO_0899 (SO_0899)</span>, </span><span><span style="color: #ffffff;">SO_0898 (SO_0898)</span>, </span><span><span style="color: #F44336;">nqrA (SO_0902)</span>, </span><span><span style="color: #F44336;">nqrB (SO_0903)</span>, </span><span><span style="color: #F44336;">nqrC (SO_0904)</span>, </span><span><span style="color: #F44336;">nqrD (SO_0905)</span>, </span><span><span style="color: #F44336;">nqrE (SO_0906)</span>, </span><span><span style="color: #F44336;">nqrF (SO_0907)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGAAATTAAACTCCAA</td>
+        <td class="border p-2">+  [1260774, 1260790]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SO_1214 (SO_1214)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTAATATTGCTACAG</td>
+        <td class="border p-2">+  [1264666, 1264682]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">deoA (SO_1218)</span>, </span><span><span style="color: #F44336;">deoB (SO_1219)</span>, </span><span><span style="color: #F44336;">deoD (SO_1221)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGTAATTAAGTTACAA</td>
+        <td class="border p-2">+  [2001966, 2001982]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gnd (SO_1902)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGTAATTTTACTACCA</td>
+        <td class="border p-2">+  [2453840, 2453856]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gapA (SO_2345)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTCTAATAAAATTACAG</td>
+        <td class="border p-2">+  [2454934, 2454950]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SO_2346 (SO_2346)</span>, </span><span><span style="color: #4CAF50;">gapB (SO_2347)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTGTTGTTATATTACAA</td>
+        <td class="border p-2">+  [2612650, 2612666]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">zwf (SO_2489)</span>, </span><span><span style="color: #F44336;">pgl (SO_2488)</span>, </span><span><span style="color: #F44336;">edd (SO_2487)</span>, </span><span><span style="color: #F44336;">eda (SO_2486)</span>, </span><span><span style="color: #ffffff;">hexR (SO_2490)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTAACTTTACTACAT</td>
+        <td class="border p-2">+  [2613863, 2613879]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">pykA (SO_2491)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAGTAATAAAATTACAA</td>
+        <td class="border p-2">+  [2782333, 2782349]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ppsA (SO_2644)</span>, </span><span><span style="color: #ffffff;">SO_2643 (SO_2643)</span>, </span><span><span style="color: #ffffff;">SO_2642 (SO_2642)</span>, </span><span><span style="color: #ffffff;">SO_2640 (SO_2640)</span>, </span><span><span style="color: #ffffff;">ydiA (SO_2645)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTGTAACAAAATTACTA</td>
+        <td class="border p-2">+  [2913730, 2913746]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">cdd (SO_2791)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTAAGAAAATTACAA</td>
+        <td class="border p-2">+  [3696432, 3696448]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SO_3541 (SO_3541)</span>, </span><span><span style="color: #ffffff;">SO_3540 (SO_3540)</span>, </span><span><span style="color: #F44336;">xfp (SO_3542)</span>, </span><span><span style="color: #ffffff;">tnpA (SO_3543)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTAATTTTTTTACAT</td>
+        <td class="border p-2">+  [3703006, 3703022]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">talB (SO_3546)</span>, </span><span><span style="color: #F44336;">pgi (SO_3547)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004347.2" target="_blank" rel="noopener noreferrer">NC_004347.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8EE97" target="_blank" rel="noopener noreferrer">Q8EE97</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTGTAAATTTTTTACAG</td>
+        <td class="border p-2">+  [4755365, 4755381]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Comparative genomics search (ECO:0005622), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SO_4557 (SO_4557)</span>, </span><span><span style="color: #ffffff;">SO_4558 (SO_4558)</span></span></td>
+        <td class="border p-2">984</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21849503" target="_blank" rel="noopener noreferrer">21849503</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DosR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">DosR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/I6XGD8/entry">
+          UniProtKB: I6XGD8
+        </a>
+        regulon and binding site collection of Mycobacterium tuberculosis H37Rv
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTAGGGCCGGAAGTCCCCAA</td>
+        <td class="border p-2">+  [1965467, 1965486]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Immuno-Precipitation</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1737c (RVBD_1737c)</span>, </span><span><span style="color: #ffffff;">RVBD_1736c (RVBD_1736c)</span>, </span><span><span style="color: #4CAF50;">RVBD_1738 (RVBD_1738)</span>, </span><span><span style="color: #ffffff;">RVBD_1739c (RVBD_1739c)</span></span></td>
+        <td class="border p-2">52</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18502855" target="_blank" rel="noopener noreferrer">18502855</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGGCGGACGAATGACCCCAG</td>
+        <td class="border p-2">+  [1965507, 1965526]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Immuno-Precipitation</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1737c (RVBD_1737c)</span>, </span><span><span style="color: #ffffff;">RVBD_1736c (RVBD_1736c)</span>, </span><span><span style="color: #4CAF50;">RVBD_1738 (RVBD_1738)</span>, </span><span><span style="color: #ffffff;">RVBD_1739c (RVBD_1739c)</span></span></td>
+        <td class="border p-2">52</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18502855" target="_blank" rel="noopener noreferrer">18502855</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCGGGACTTCAGGCCCTAT</td>
+        <td class="border p-2">+  [1965529, 1965548]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Immuno-Precipitation</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_1737c (RVBD_1737c)</span>, </span><span><span style="color: #ffffff;">RVBD_1736c (RVBD_1736c)</span>, </span><span><span style="color: #4CAF50;">RVBD_1738 (RVBD_1738)</span>, </span><span><span style="color: #ffffff;">RVBD_1739c (RVBD_1739c)</span></span></td>
+        <td class="border p-2">52</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18502855" target="_blank" rel="noopener noreferrer">18502855</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGGGGACCATTGACCCTG</td>
+        <td class="border p-2">+  [2279060, 2279077]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631), qRT-PCR [RNA] (ECO:0001808), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_2031c (RVBD_2031c)</span>, </span><span><span style="color: #ffffff;">RVBD_2030c (RVBD_2030c)</span>, </span><span><span style="color: #ffffff;">RVBD_2029c (RVBD_2029c)</span>, </span><span><span style="color: #ffffff;">RVBD_2028c (RVBD_2028c)</span>, </span><span><span style="color: #ffffff;">RVBD_2032 (RVBD_2032)</span></span></td>
+        <td class="border p-2">63</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18391009" target="_blank" rel="noopener noreferrer">18391009</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCGGGCCATTTGTCCGCG</td>
+        <td class="border p-2">+  [2279025, 2279042]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631), qRT-PCR [RNA] (ECO:0001808), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_2031c (RVBD_2031c)</span>, </span><span><span style="color: #ffffff;">RVBD_2030c (RVBD_2030c)</span>, </span><span><span style="color: #ffffff;">RVBD_2029c (RVBD_2029c)</span>, </span><span><span style="color: #ffffff;">RVBD_2028c (RVBD_2028c)</span>, </span><span><span style="color: #ffffff;">RVBD_2032 (RVBD_2032)</span></span></td>
+        <td class="border p-2">63</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18391009" target="_blank" rel="noopener noreferrer">18391009</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAGGGACAGAAGTCCCCG</td>
+        <td class="border p-2">+  [2279003, 2279020]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631), qRT-PCR [RNA] (ECO:0001808), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_2031c (RVBD_2031c)</span>, </span><span><span style="color: #ffffff;">RVBD_2030c (RVBD_2030c)</span>, </span><span><span style="color: #ffffff;">RVBD_2029c (RVBD_2029c)</span>, </span><span><span style="color: #ffffff;">RVBD_2028c (RVBD_2028c)</span>, </span><span><span style="color: #ffffff;">RVBD_2032 (RVBD_2032)</span></span></td>
+        <td class="border p-2">63</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18391009" target="_blank" rel="noopener noreferrer">18391009</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGGGGACTTCTGTCCCTAG</td>
+        <td class="border p-2">+  [2279002, 2279021]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Luciferase reporter assay (ECO:0005648), Motif-discovery (ECO:0005558), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_2031c (RVBD_2031c)</span>, </span><span><span style="color: #ffffff;">RVBD_2030c (RVBD_2030c)</span>, </span><span><span style="color: #ffffff;">RVBD_2029c (RVBD_2029c)</span>, </span><span><span style="color: #ffffff;">RVBD_2028c (RVBD_2028c)</span>, </span><span><span style="color: #ffffff;">RVBD_2032 (RVBD_2032)</span></span></td>
+        <td class="border p-2">65</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12694625" target="_blank" rel="noopener noreferrer">12694625</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACAGGGTCAATGGTCCCCAA</td>
+        <td class="border p-2">+  [2279059, 2279078]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Luciferase reporter assay (ECO:0005648), Motif-discovery (ECO:0005558), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_2031c (RVBD_2031c)</span>, </span><span><span style="color: #ffffff;">RVBD_2030c (RVBD_2030c)</span>, </span><span><span style="color: #ffffff;">RVBD_2029c (RVBD_2029c)</span>, </span><span><span style="color: #ffffff;">RVBD_2028c (RVBD_2028c)</span>, </span><span><span style="color: #ffffff;">RVBD_2032 (RVBD_2032)</span></span></td>
+        <td class="border p-2">65</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12694625" target="_blank" rel="noopener noreferrer">12694625</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTGGGGACCAACGCCCCTGG</td>
+        <td class="border p-2">+  [3500818, 3500837]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">66</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18359816" target="_blank" rel="noopener noreferrer">18359816</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATAAGGACTAACGGCCCTCA</td>
+        <td class="border p-2">+  [3500839, 3500858]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">66</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18359816" target="_blank" rel="noopener noreferrer">18359816</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACCTGGACGAGCCACCCGTG</td>
+        <td class="border p-2">+  [3500910, 3500929]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">67</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16339949" target="_blank" rel="noopener noreferrer">16339949</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACGGGATGTATCCGCCCCAG</td>
+        <td class="border p-2">+  [3500760, 3500779]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">67</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16339949" target="_blank" rel="noopener noreferrer">16339949</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGTCGGCCTTATGCCCCGTG</td>
+        <td class="border p-2">+  [3500347, 3500366]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">67</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16339949" target="_blank" rel="noopener noreferrer">16339949</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/I6XGD8" target="_blank" rel="noopener noreferrer">I6XGD8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCGGGTGGATCGGGCCATC</td>
+        <td class="border p-2">+  [3500083, 3500102]</td>
+        <td class="border p-2">EMSA (ECO:0001807), GFP Promoter Fusion (ECO:0005636), Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">RVBD_3134c (RVBD_3134c)</span>, </span><span><span style="color: #ffffff;">RVBD_3133c (RVBD_3133c)</span>, </span><span><span style="color: #ffffff;">RVBD_3132c (RVBD_3132c)</span>, </span><span><span style="color: #ffffff;">RVBD_3131 (RVBD_3131)</span>, </span><span><span style="color: #ffffff;">RVBD_3135 (RVBD_3135)</span></span></td>
+        <td class="border p-2">67</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16339949" target="_blank" rel="noopener noreferrer">16339949</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

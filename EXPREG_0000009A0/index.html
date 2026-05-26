@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AmpR  - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">AmpR </b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P24734/entry">
+          UniProtKB: P24734
+        </a>
+        regulon and binding site collection of Pseudomonas aeruginosa PAO1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTTCTGGCAGGTT</td>
+        <td class="border p-2">+  [4057692, 4057705]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmZ (PA3621.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCGGCAGCCATTTT</td>
+        <td class="border p-2">+  [4057721, 4057734]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmZ (PA3621.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTTATGGAAATGT</td>
+        <td class="border p-2">+  [3206881, 3206894]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprI (PA2853)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTGTTCAAAAAAT</td>
+        <td class="border p-2">+  [3206738, 3206751]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprI (PA2853)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCTGCTTATGTATT</td>
+        <td class="border p-2">+  [5308571, 5308584]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">crcZ (PA4726.11)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCACTGCAATATT</td>
+        <td class="border p-2">+  [4059031, 4059044]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA3623 (PA3623)</span>, </span><span><span style="color: #ffffff;">rpoS (PA3622)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGGTGGCAAGTTT</td>
+        <td class="border p-2">+  [1921103, 1921116]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCATCTGAAAACTT</td>
+        <td class="border p-2">+  [1921038, 1921051]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">sigX (PA1776)</span>, </span><span><span style="color: #ffffff;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGGTTAATAGTTT</td>
+        <td class="border p-2">+  [1558139, 1558152]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lasR (PA1430)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCTGCTCCAAATTT</td>
+        <td class="border p-2">+  [4593882, 4593895]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ampR (PA4109)</span>, </span><span><span style="color: #ffffff;">ampC (PA4110)</span>, </span><span><span style="color: #ffffff;">PA4111 (PA4111)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAGTTTCAATATT</td>
+        <td class="border p-2">+  [4632340, 4632353]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4141 (PA4141)</span>, </span><span><span style="color: #ffffff;">PA4142 (PA4142)</span>, </span><span><span style="color: #ffffff;">PA4143 (PA4143)</span>, </span><span><span style="color: #ffffff;">PA4144 (PA4144)</span>, </span><span><span style="color: #ffffff;">PA4145 (PA4145)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCATTCGCAAAGTT</td>
+        <td class="border p-2">+  [4632297, 4632310]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4141 (PA4141)</span>, </span><span><span style="color: #ffffff;">PA4142 (PA4142)</span>, </span><span><span style="color: #ffffff;">PA4143 (PA4143)</span>, </span><span><span style="color: #ffffff;">PA4144 (PA4144)</span>, </span><span><span style="color: #ffffff;">PA4145 (PA4145)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGGCTCGATAATT</td>
+        <td class="border p-2">+  [4632364, 4632377]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4141 (PA4141)</span>, </span><span><span style="color: #ffffff;">PA4142 (PA4142)</span>, </span><span><span style="color: #ffffff;">PA4143 (PA4143)</span>, </span><span><span style="color: #ffffff;">PA4144 (PA4144)</span>, </span><span><span style="color: #ffffff;">PA4145 (PA4145)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCTCCTTTAGGCTT</td>
+        <td class="border p-2">+  [4632454, 4632467]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4141 (PA4141)</span>, </span><span><span style="color: #ffffff;">PA4142 (PA4142)</span>, </span><span><span style="color: #ffffff;">PA4143 (PA4143)</span>, </span><span><span style="color: #ffffff;">PA4144 (PA4144)</span>, </span><span><span style="color: #ffffff;">PA4145 (PA4145)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCTTTTGGAAGGTT</td>
+        <td class="border p-2">+  [4956178, 4956191]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4421 (PA4421)</span>, </span><span><span style="color: #ffffff;">PA4420 (PA4420)</span>, </span><span><span style="color: #ffffff;">ftsL (PA4419)</span>, </span><span><span style="color: #ffffff;">ftsI (PA4418)</span>, </span><span><span style="color: #ffffff;">murE (PA4417)</span>, </span><span><span style="color: #ffffff;">murF (PA4416)</span>, </span><span><span style="color: #ffffff;">mraY (PA4415)</span>, </span><span><span style="color: #ffffff;">murD (PA4414)</span>, </span><span><span style="color: #ffffff;">ftsW (PA4413)</span>, </span><span><span style="color: #ffffff;">murG (PA4412)</span>, </span><span><span style="color: #ffffff;">murC (PA4411)</span>, </span><span><span style="color: #ffffff;">ddlB (PA4410)</span>, </span><span><span style="color: #ffffff;">ftsQ (PA4409)</span>, </span><span><span style="color: #ffffff;">ftsA (PA4408)</span>, </span><span><span style="color: #ffffff;">ftsZ (PA4407)</span>, </span><span><span style="color: #ffffff;">PA4406.1 (PA4406.1)</span>, </span><span><span style="color: #ffffff;">lpxC (PA4406)</span>, </span><span><span style="color: #ffffff;">rnpB (PA4421.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACTTATTGAAATTA</td>
+        <td class="border p-2">+  [4057752, 4057765]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmZ (PA3621.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTCGCCGAACTT</td>
+        <td class="border p-2">+  [4455756, 4455769]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ladS (PA3974)</span>, </span><span><span style="color: #ffffff;">PA3973 (PA3973)</span>, </span><span><span style="color: #ffffff;">PA3972 (PA3972)</span>, </span><span><span style="color: #ffffff;">PA3971 (PA3971)</span>, </span><span><span style="color: #ffffff;">amn (PA3970)</span>, </span><span><span style="color: #ffffff;">thiD (PA3975)</span>, </span><span><span style="color: #ffffff;">thiE (PA3976)</span>, </span><span><span style="color: #ffffff;">hemL (PA3977)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGTGCCCGAAAGGT</td>
+        <td class="border p-2">+  [4455824, 4455837]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ladS (PA3974)</span>, </span><span><span style="color: #ffffff;">PA3973 (PA3973)</span>, </span><span><span style="color: #ffffff;">PA3972 (PA3972)</span>, </span><span><span style="color: #ffffff;">PA3971 (PA3971)</span>, </span><span><span style="color: #ffffff;">amn (PA3970)</span>, </span><span><span style="color: #ffffff;">thiD (PA3975)</span>, </span><span><span style="color: #ffffff;">thiE (PA3976)</span>, </span><span><span style="color: #ffffff;">hemL (PA3977)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCTGCGCGAAAAGT</td>
+        <td class="border p-2">+  [1921028, 1921041]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">sigX (PA1776)</span>, </span><span><span style="color: #ffffff;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTTATCAGAACTT</td>
+        <td class="border p-2">+  [1921093, 1921106]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCGAATCCATATTT</td>
+        <td class="border p-2">+  [1558119, 1558132]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lasR (PA1430)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGGCTTGAAAATG</td>
+        <td class="border p-2">+  [1954750, 1954763]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">clpX (PA1802)</span>, </span><span><span style="color: #ffffff;">lon (PA1803)</span>, </span><span><span style="color: #ffffff;">hupB (PA1804)</span>, </span><span><span style="color: #ffffff;">PA1804.1 (PA1804.1)</span>, </span><span><span style="color: #ffffff;">ppiD (PA1805)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCTGTCCGAATCGT</td>
+        <td class="border p-2">+  [3122656, 3122669]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA2763 (PA2763)</span>, </span><span><span style="color: #ffffff;">PA2762 (PA2762)</span>, </span><span><span style="color: #ffffff;">PA2764 (PA2764)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAGCCTTCGAACTT</td>
+        <td class="border p-2">+  [4956246, 4956259]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4421 (PA4421)</span>, </span><span><span style="color: #ffffff;">PA4420 (PA4420)</span>, </span><span><span style="color: #ffffff;">ftsL (PA4419)</span>, </span><span><span style="color: #ffffff;">ftsI (PA4418)</span>, </span><span><span style="color: #ffffff;">murE (PA4417)</span>, </span><span><span style="color: #ffffff;">murF (PA4416)</span>, </span><span><span style="color: #ffffff;">mraY (PA4415)</span>, </span><span><span style="color: #ffffff;">murD (PA4414)</span>, </span><span><span style="color: #ffffff;">ftsW (PA4413)</span>, </span><span><span style="color: #ffffff;">murG (PA4412)</span>, </span><span><span style="color: #ffffff;">murC (PA4411)</span>, </span><span><span style="color: #ffffff;">ddlB (PA4410)</span>, </span><span><span style="color: #ffffff;">ftsQ (PA4409)</span>, </span><span><span style="color: #ffffff;">ftsA (PA4408)</span>, </span><span><span style="color: #ffffff;">ftsZ (PA4407)</span>, </span><span><span style="color: #ffffff;">PA4406.1 (PA4406.1)</span>, </span><span><span style="color: #ffffff;">lpxC (PA4406)</span>, </span><span><span style="color: #ffffff;">rnpB (PA4421.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCCAAAGACAATACGGAAACTCAGGGAATCCACCATGGATGGT</td>
+        <td class="border p-2">+  [586888, 586930]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmY (PA0527.1)</span>, </span><span><span style="color: #ffffff;">dnr (PA0527)</span>, </span><span><span style="color: #ffffff;">PA0526 (PA0526)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CATCGAAGACCAAGTCCACCACTTGGCTCCATTCCAAGGTGAACAGGCTGCACTCCAGTCAGTACTGAGCCTTTTGGATGA</td>
+        <td class="border p-2">+  [797294, 797374]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0729 (PA0729)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTGTTACCGGCGT</td>
+        <td class="border p-2">+  [901840, 901853]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0826.1 (PA0826.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TACCCGTCAACCTGGTCAGGTCCGGAAGGAAGCAGCCACAG</td>
+        <td class="border p-2">+  [1668963, 1669003]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ffs (PA1530.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAAGGTCCACGGCAACCTGACCTCCCTGGACGCCATCTACCACTTCGGTACCCCGGGCGTAGGTCTGCGTCCGTACGTGTCGGCTGGTCTGGCTCACCAGAACATCACCAACAT</td>
+        <td class="border p-2">+  [1921430, 1921543]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCTCCATGCCCGTCGCGAC</td>
+        <td class="border p-2">+  [3123393, 3123411]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA2763 (PA2763)</span>, </span><span><span style="color: #ffffff;">PA2762 (PA2762)</span>, </span><span><span style="color: #ffffff;">PA2764 (PA2764)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGTCCCTTCCCCGATCCTTCGGGGTT</td>
+        <td class="border p-2">+  [4057616, 4057641]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmZ (PA3621.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACCGTATCAACCTTGGGAGGGCCCGAGCGTATAAAAAAAGGCGCGAGGAAGGTGATTACTTCTTCATCGACACTTGAATCGCCTGCATAACCGTTATCTCCCCCGCGCCT</td>
+        <td class="border p-2">+  [4592895, 4593005]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ampR (PA4109)</span>, </span><span><span style="color: #ffffff;">ampC (PA4110)</span>, </span><span><span style="color: #ffffff;">PA4111 (PA4111)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCAGCTCGAGCTGCGCCTGGCGCGCCTCGGCGGCGGCCATGTGGGCCAGGTCAACGGCGCGCTCGCTGTCGCTGCGGTCGCGCCCCCAGAGATCGAGCTTGTAGTTCAGGCCGATCTCGGTGGAGTTGTTCCAGGAAGTGGTCCGCGCCAGGTCGCCGGGGCCGTAGAAATAGTCGTCCGGCCAGCGGTGGC</td>
+        <td class="border p-2">+  [4362457, 4362649]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA3894 (PA3894)</span>, </span><span><span style="color: #ffffff;">PA3893 (PA3893)</span>, </span><span><span style="color: #ffffff;">PA3895 (PA3895)</span>, </span><span><span style="color: #ffffff;">PA3896 (PA3896)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGGTACGTACAGCAGCGTCCAGATCAGCAGCGGTCAGGTCAGCCTGCTTGGTCTTGGCGATCTCTTCCAGCTGGGCACGGGTAACGGTACCGACTTTCTGGGAGTTCGGACGAGCGGAGCCGCTGGTGATGCCAGCTGCTTTTTTCAGCAGGACGGCAGCCGGGGTGCTCTTGGTTTCGAAGGTGAAGCTACGGTCGCTGTAAACGGTGATGATCACAGGAGTCGGCAGGCCCGGCTCTTGGCCTTGGGTCTTGGCGTTGAACGCCTTGCAGAATTCCATGATGTTCACGCCGTGCTGACCCAGGGCAGGG</td>
+        <td class="border p-2">+  [4782725, 4783036]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rplK (PA4274)</span>, </span><span><span style="color: #ffffff;">rplA (PA4273)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCTATTTGGTCTTGCTCCGAGTGGGGTTTACCTAGCCACGCACTGTTGCCAGCCGTGCGGTGCGCTCTTACCGCACCTTTTCACCCTTACCGGCGCTGTTGCGCTTAGGCGGTTATTTTCTGTGGCACTTTCCGTAGGCTCGCGCCTCCCAGGCGTTACCTGGCACTCTGCCCTATGGAGCCCGGACTTTCCTCCACCGCGCTATTGCGCGAC</td>
+        <td class="border p-2">+  [4956459, 4956671]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rnpB (PA4421.1)</span>, </span><span><span style="color: #ffffff;">PA4421 (PA4421)</span>, </span><span><span style="color: #ffffff;">PA4420 (PA4420)</span>, </span><span><span style="color: #ffffff;">ftsL (PA4419)</span>, </span><span><span style="color: #ffffff;">ftsI (PA4418)</span>, </span><span><span style="color: #ffffff;">murE (PA4417)</span>, </span><span><span style="color: #ffffff;">murF (PA4416)</span>, </span><span><span style="color: #ffffff;">mraY (PA4415)</span>, </span><span><span style="color: #ffffff;">murD (PA4414)</span>, </span><span><span style="color: #ffffff;">ftsW (PA4413)</span>, </span><span><span style="color: #ffffff;">murG (PA4412)</span>, </span><span><span style="color: #ffffff;">murC (PA4411)</span>, </span><span><span style="color: #ffffff;">ddlB (PA4410)</span>, </span><span><span style="color: #ffffff;">ftsQ (PA4409)</span>, </span><span><span style="color: #ffffff;">ftsA (PA4408)</span>, </span><span><span style="color: #ffffff;">ftsZ (PA4407)</span>, </span><span><span style="color: #ffffff;">PA4406.1 (PA4406.1)</span>, </span><span><span style="color: #ffffff;">lpxC (PA4406)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCCAGGAACGGCTGCCGTCCCCCACCGGATTTGAAGTCCGGCCACGCCACC</td>
+        <td class="border p-2">+  [5387789, 5387840]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4802.1 (PA4802.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGTGTGCATGTCCGCACGACGGAAAGCCTTAAGGTCTACTGCAACCGCCACCTTGAACTTTCGGGTTCAAGGGC</td>
+        <td class="border p-2">+  [5884393, 5884467]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ssrS (PA5227.1)</span>, </span><span><span style="color: #ffffff;">PA5228 (PA5228)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAAACGGCGGCGGGTTTTGTTGTGTGCGTGGGAAATGTTATTCCCGGTAACCGGACCCTTACCGGTTACTTGACAGACTCTAGACATGCCTCAGCCCTCTAT</td>
+        <td class="border p-2">+  [5986032, 5986133]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rpmB (PA5316)</span>, </span><span><span style="color: #ffffff;">PA5316.1 (PA5316.1)</span>, </span><span><span style="color: #ffffff;">rpmG (PA5315)</span>, </span><span><span style="color: #ffffff;">PA5317 (PA5317)</span>, </span><span><span style="color: #ffffff;">PA5318 (PA5318)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATGGGGAGGGGGAAGTTCGGGGTTCAAGTCCGGACCGCTAG</td>
+        <td class="border p-2">+  [6183549, 6183590]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA5492 (PA5492)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAGCGCCAAAGACAATACGGAAACTCAGGGAATCCACCATGGATGG</td>
+        <td class="border p-2">+  [586884, 586929]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rsmY (PA0527.1)</span>, </span><span><span style="color: #ffffff;">dnr (PA0527)</span>, </span><span><span style="color: #ffffff;">PA0526 (PA0526)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CAGCGAATTTACGAGTTCTGCTACCAGCTCGGCATGCCCCTCAAGTTTTGTTACCGGCG</td>
+        <td class="border p-2">+  [901794, 901852]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0826.1 (PA0826.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTACCCGTCAACCTGGTCAGGTCCGGAAGGAAGCAGCCACAGCGGGA</td>
+        <td class="border p-2">+  [1668962, 1669008]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ffs (PA1530.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGAGATTGCTGTTATGGAAATGTCCACCTTAAGGGGAACACGATGAACAACGTTCTGAAATTCTCTGCTCTGGCTCTGGCTGCTGTTCTGGCCACCGGTTGCAGCAGCCACTCCAAAGAAACCGAAGCTCGTCTGACCGCTACCGAAGACGCAGCTGC</td>
+        <td class="border p-2">+  [3206872, 3207029]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">oprI (PA2853)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCGTATCAACCTTGGGAGGGCCCGAGCGTATAAAAAAAGGCGCGAGGAAGGTGATTACTTCTTCATCGACACTTGAATCGCCTGCATAACCGTTATCTCCCCCGCGCCTCA</td>
+        <td class="border p-2">+  [4592896, 4593007]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ampR (PA4109)</span>, </span><span><span style="color: #ffffff;">ampC (PA4110)</span>, </span><span><span style="color: #ffffff;">PA4111 (PA4111)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAGCCACGCACTGTTGCCAGCCGTGCGGTGCGCTCTTACCGCACCTTTTCACCCTTACCGGCGCTGTTGCGCTTAGGCGGTTATTTTCTGTGGCACTTTCCGTAGGCTCGCGCCTCCCAGGCGTTACCTGGCACTCTGCCCTATGGAGCCCGGACTTTCCTCCACCGCGCTATTGCGC</td>
+        <td class="border p-2">+  [4956491, 4956668]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rnpB (PA4421.1)</span>, </span><span><span style="color: #ffffff;">PA4421 (PA4421)</span>, </span><span><span style="color: #ffffff;">PA4420 (PA4420)</span>, </span><span><span style="color: #ffffff;">ftsL (PA4419)</span>, </span><span><span style="color: #ffffff;">ftsI (PA4418)</span>, </span><span><span style="color: #ffffff;">murE (PA4417)</span>, </span><span><span style="color: #ffffff;">murF (PA4416)</span>, </span><span><span style="color: #ffffff;">mraY (PA4415)</span>, </span><span><span style="color: #ffffff;">murD (PA4414)</span>, </span><span><span style="color: #ffffff;">ftsW (PA4413)</span>, </span><span><span style="color: #ffffff;">murG (PA4412)</span>, </span><span><span style="color: #ffffff;">murC (PA4411)</span>, </span><span><span style="color: #ffffff;">ddlB (PA4410)</span>, </span><span><span style="color: #ffffff;">ftsQ (PA4409)</span>, </span><span><span style="color: #ffffff;">ftsA (PA4408)</span>, </span><span><span style="color: #ffffff;">ftsZ (PA4407)</span>, </span><span><span style="color: #ffffff;">PA4406.1 (PA4406.1)</span>, </span><span><span style="color: #ffffff;">lpxC (PA4406)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGACGAAGACAATAAAAACAACACGTAACGACTCCAGCACAACAAAAACAAAATCGCGGAGGCGCAGCTAACTGATTCTTTTGGAGAGGAGTTGCTGTCGGGACCCGTCCCGCAGCCAGTCGGAAGAAGAATAAAACTGCCTTGAGGCAGCGCACAGACTGGTTGGATCGCTCGACGATCATGGCAGCATCAGCGACCAAAGCAATCCGTTTGCTATTGAACTCCCAGCCTGGGAGATATCCCTG</td>
+        <td class="border p-2">+  [5308608, 5308852]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">crcZ (PA4726.11)</span>, </span><span><span style="color: #ffffff;">PA4726.2 (PA4726.2)</span>, </span><span><span style="color: #ffffff;">pcnB (PA4727)</span>, </span><span><span style="color: #ffffff;">folK (PA4728)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCACCCAGGAACGGCTGCCGTCCCCCACCGGATTTGAAGTCCGGCCACGCCACC</td>
+        <td class="border p-2">+  [5387787, 5387840]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4802.1 (PA4802.1)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCCAGTTGGACCGGTGTGCATGTCCGCACGACGGAAAGCCTTAAGGTCTACTGCAACCGCCACCTTGAACTTTCGGGTTCAAGGGC</td>
+        <td class="border p-2">+  [5884382, 5884467]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ssrS (PA5227.1)</span>, </span><span><span style="color: #ffffff;">PA5228 (PA5228)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P24734" target="_blank" rel="noopener noreferrer">P24734</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATGGGGAGGGGGAAGTTCGGGGTTCAAGTCCGGACCGCTAGGGC</td>
+        <td class="border p-2">+  [6183549, 6183593]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA5492 (PA5492)</span></span></td>
+        <td class="border p-2">647</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24157832" target="_blank" rel="noopener noreferrer">24157832</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
