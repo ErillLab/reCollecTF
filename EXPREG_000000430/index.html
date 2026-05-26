@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rem - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Rem</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/F7X8H2/entry">
+          UniProtKB: F7X8H2
+        </a>
+        regulon and binding site collection of Sinorhizobium meliloti Ru11/001
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_017325.1" target="_blank" rel="noopener noreferrer">NC_017325.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/F7X8H2" target="_blank" rel="noopener noreferrer">F7X8H2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCCCGACAAGTCCCACGCAAGATT</td>
+        <td class="border p-2">+  [307639, 307663]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgB (SM11_chr0295)</span>, </span><span><span style="color: #ffffff;">flgC (SM11_chr0296)</span>, </span><span><span style="color: #ffffff;">fliE (SM11_chr0297)</span>, </span><span><span style="color: #ffffff;">flgG (SM11_chr0298)</span>, </span><span><span style="color: #ffffff;">flgA (SM11_chr0299)</span>, </span><span><span style="color: #ffffff;">flgI (SM11_chr0300)</span>, </span><span><span style="color: #ffffff;">motE (SM11_chr0301)</span>, </span><span><span style="color: #ffffff;">flgH (SM11_chr0302)</span>, </span><span><span style="color: #ffffff;">fliL (SM11_chr0303)</span>, </span><span><span style="color: #ffffff;">fliP (SM11_chr0304)</span></span></td>
+        <td class="border p-2">991</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16980496" target="_blank" rel="noopener noreferrer">16980496</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_017325.1" target="_blank" rel="noopener noreferrer">NC_017325.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/F7X8H2" target="_blank" rel="noopener noreferrer">F7X8H2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCCTTCGCCAAGTTCGCGCAAGTTT</td>
+        <td class="border p-2">+  [294145, 294169]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliF (SM11_chr0282)</span></span></td>
+        <td class="border p-2">991</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16980496" target="_blank" rel="noopener noreferrer">16980496</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_017325.1" target="_blank" rel="noopener noreferrer">NC_017325.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/F7X8H2" target="_blank" rel="noopener noreferrer">F7X8H2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCTGCCGCTTGCATCGCGCTTT</td>
+        <td class="border p-2">+  [321426, 321447]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SM11_chr0312 (SM11_chr0312)</span>, </span><span><span style="color: #ffffff;">motB (SM11_chr0313)</span>, </span><span><span style="color: #ffffff;">motC (SM11_chr0314)</span>, </span><span><span style="color: #ffffff;">fliK (SM11_chr0315)</span>, </span><span><span style="color: #ffffff;">SM11_chr0316 (SM11_chr0316)</span></span></td>
+        <td class="border p-2">991</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16980496" target="_blank" rel="noopener noreferrer">16980496</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_017325.1" target="_blank" rel="noopener noreferrer">NC_017325.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/F7X8H2" target="_blank" rel="noopener noreferrer">F7X8H2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCGTTAACTTTTCAACATCATGTTAGTGGTAAGGTTAACGATCACCC</td>
+        <td class="border p-2">+  [326773, 326819]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Multiple sequence alignment (MSA) (ECO:0005556), Growth curve analysis (ECO:0005638)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">rem (SM11_chr0317)</span>, </span><span><span style="color: #ffffff;">flgE (SM11_chr0318)</span>, </span><span><span style="color: #ffffff;">flgK (SM11_chr0319)</span>, </span><span><span style="color: #ffffff;">flgL (SM11_chr0320)</span>, </span><span><span style="color: #ffffff;">flaF (SM11_chr0321)</span>, </span><span><span style="color: #ffffff;">flbT (SM11_chr0322)</span>, </span><span><span style="color: #ffffff;">flgD (SM11_chr0323)</span>, </span><span><span style="color: #ffffff;">fliQ (SM11_chr0324)</span>, </span><span><span style="color: #ffffff;">flhA (SM11_chr0325)</span>, </span><span><span style="color: #ffffff;">fliR (SM11_chr0326)</span>, </span><span><span style="color: #ffffff;">SM11_chr0327 (SM11_chr0327)</span>, </span><span><span style="color: #ffffff;">SM11_chr0328 (SM11_chr0328)</span>, </span><span><span style="color: #ffffff;">SM11_chr0329 (SM11_chr0329)</span>, </span><span><span style="color: #ffffff;">SM11_chr0330 (SM11_chr0330)</span></span></td>
+        <td class="border p-2">992</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16980496" target="_blank" rel="noopener noreferrer">16980496</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

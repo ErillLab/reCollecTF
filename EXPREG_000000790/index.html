@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NikR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">NikR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0A6Z6/entry">
+          UniProtKB: P0A6Z6
+        </a>
+        regulon and binding site collection of Escherichia coli strain MC1061
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.2" target="_blank" rel="noopener noreferrer">NC_000913.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A6Z6" target="_blank" rel="noopener noreferrer">P0A6Z6</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATCAGTATGACGAATACTTAAAATCGTCATATA</td>
+        <td class="border p-2">+  [3611619, 3611652]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nikA (b3476)</span>, </span><span><span style="color: #ffffff;">nikB (b3477)</span>, </span><span><span style="color: #ffffff;">nikC (b3478)</span>, </span><span><span style="color: #ffffff;">nikD (b3479)</span>, </span><span><span style="color: #ffffff;">nikE (b3480)</span>, </span><span><span style="color: #ffffff;">nikR (b3481)</span></span></td>
+        <td class="border p-2">621</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10595554" target="_blank" rel="noopener noreferrer">10595554</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3" target="_blank" rel="noopener noreferrer">NC_000913.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A6Z6" target="_blank" rel="noopener noreferrer">P0A6Z6</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTATGACGAATACTTAAAATCGTCATAC</td>
+        <td class="border p-2">+  [3613601, 3613628]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Premethylation interference footprinting (ECO:0005656)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">nikA (b3476)</span>, </span><span><span style="color: #F44336;">nikB (b3477)</span>, </span><span><span style="color: #F44336;">nikC (b3478)</span>, </span><span><span style="color: #F44336;">nikD (b3479)</span>, </span><span><span style="color: #F44336;">nikE (b3480)</span>, </span><span><span style="color: #ffffff;">nikR (b3481)</span></span></td>
+        <td class="border p-2">1013</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10787413" target="_blank" rel="noopener noreferrer">10787413</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

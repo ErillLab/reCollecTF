@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhhR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">PhhR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q88EH4/entry">
+          UniProtKB: Q88EH4
+        </a>
+        regulon and binding site collection of Pseudomonas putida KT2440
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTAAAATTATCGTTACG</td>
+        <td class="border p-2">+  [5101743, 5101760]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">phhR (PP_4489)</span>, </span><span><span style="color: #4CAF50;">phhA (PP_4490)</span>, </span><span><span style="color: #ffffff;">phhB (PP_4491)</span></span></td>
+        <td class="border p-2">276</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17217960" target="_blank" rel="noopener noreferrer">17217960</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACAAAAACTGTGTTTCCG</td>
+        <td class="border p-2">+  [5101685, 5101702]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">phhR (PP_4489)</span>, </span><span><span style="color: #4CAF50;">phhA (PP_4490)</span>, </span><span><span style="color: #ffffff;">phhB (PP_4491)</span></span></td>
+        <td class="border p-2">277</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17217960" target="_blank" rel="noopener noreferrer">17217960</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTTTTGTAAAAATTATCAATCGATGA</td>
+        <td class="border p-2">+  [3533195, 3533220]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_3121 (PP_3121)</span>, </span><span><span style="color: #ffffff;">PP_3120 (PP_3120)</span>, </span><span><span style="color: #4CAF50;">PP_3122 (PP_3122)</span>, </span><span><span style="color: #ffffff;">PP_3123 (PP_3123)</span></span></td>
+        <td class="border p-2">281</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTGCGGTGAAGATGTCTGCACACGCT</td>
+        <td class="border p-2">+  [3533248, 3533273]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_3121 (PP_3121)</span>, </span><span><span style="color: #ffffff;">PP_3120 (PP_3120)</span>, </span><span><span style="color: #4CAF50;">PP_3122 (PP_3122)</span>, </span><span><span style="color: #ffffff;">PP_3123 (PP_3123)</span></span></td>
+        <td class="border p-2">281</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGGTTGTCGAGGATGTGTTCGACGTG</td>
+        <td class="border p-2">+  [3891175, 3891200]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_3435 (PP_3435)</span>, </span><span><span style="color: #4CAF50;">PP_3434 (PP_3434)</span>, </span><span><span style="color: #ffffff;">hpd (PP_3433)</span>, </span><span><span style="color: #ffffff;">PP_3432 (PP_3432)</span>, </span><span><span style="color: #ffffff;">rarD-2 (PP_3436)</span>, </span><span><span style="color: #ffffff;">PP_3437 (PP_3437)</span></span></td>
+        <td class="border p-2">282</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGGCTGCTGGCCTGCATTTCACGTTC</td>
+        <td class="border p-2">+  [3891124, 3891149]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_3435 (PP_3435)</span>, </span><span><span style="color: #4CAF50;">PP_3434 (PP_3434)</span>, </span><span><span style="color: #ffffff;">hpd (PP_3433)</span>, </span><span><span style="color: #ffffff;">PP_3432 (PP_3432)</span>, </span><span><span style="color: #ffffff;">rarD-2 (PP_3436)</span>, </span><span><span style="color: #ffffff;">PP_3437 (PP_3437)</span></span></td>
+        <td class="border p-2">282</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCGGAGCAAATTACGTTATTCGTAAT</td>
+        <td class="border p-2">+  [5244513, 5244538]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hmgA (PP_4621)</span>, </span><span><span style="color: #ffffff;">PP_4620 (PP_4620)</span>, </span><span><span style="color: #ffffff;">PP_4619 (PP_4619)</span>, </span><span><span style="color: #ffffff;">PP_4618 (PP_4618)</span>, </span><span><span style="color: #ffffff;">PP_4622 (PP_4622)</span>, </span><span><span style="color: #ffffff;">PP_4623 (PP_4623)</span></span></td>
+        <td class="border p-2">283</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTGCGGTCATGGTGGCGTTACTCGTA</td>
+        <td class="border p-2">+  [2365428, 2365453]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lysA-1 (PP_2077)</span>, </span><span><span style="color: #ffffff;">PP_2076 (PP_2076)</span>, </span><span><span style="color: #ffffff;">PP_2075 (PP_2075)</span>, </span><span><span style="color: #ffffff;">PP_2078 (PP_2078)</span></span></td>
+        <td class="border p-2">283</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAGTGGTAATTAGAGGTTCACAAAGG</td>
+        <td class="border p-2">+  [3225584, 3225609]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">mexT (PP_2826)</span>, </span><span><span style="color: #ffffff;">PP_2825 (PP_2825)</span>, </span><span><span style="color: #ffffff;">PP_2827 (PP_2827)</span></span></td>
+        <td class="border p-2">283</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q88EH4" target="_blank" rel="noopener noreferrer">Q88EH4</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CACAAGTGATACACGATTGACGACCA</td>
+        <td class="border p-2">+  [3719662, 3719687]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), Isothermal titration calorimetry (ECO:0005647)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_3284 (PP_3284)</span>, </span><span><span style="color: #ffffff;">phaB (PP_3283)</span>, </span><span><span style="color: #ffffff;">paaC (PP_3282)</span>, </span><span><span style="color: #ffffff;">PP_3281 (PP_3281)</span>, </span><span><span style="color: #ffffff;">phaD (PP_3280)</span>, </span><span><span style="color: #ffffff;">phaM (PP_3285)</span></span></td>
+        <td class="border p-2">284</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19781550" target="_blank" rel="noopener noreferrer">19781550</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

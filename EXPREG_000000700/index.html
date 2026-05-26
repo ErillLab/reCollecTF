@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IHF - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">IHF</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0A128/entry">
+          UniProtKB: P0A128
+        </a>
+        regulon and binding site collection of Pseudomonas putida mt-2
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACAGAGTTTTA</td>
+        <td class="border p-2">+  [9237, 9248]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">rpmH (PP_0009)</span>, </span><span><span style="color: #F44336;">rnpA (PP_0008)</span>, </span><span><span style="color: #ffffff;">PP_0007 (PP_0007)</span>, </span><span><span style="color: #ffffff;">yidC (PP_0006)</span>, </span><span><span style="color: #ffffff;">trmE (PP_0005)</span>, </span><span><span style="color: #ffffff;">dnaA (PP_0010)</span>, </span><span><span style="color: #ffffff;">dnaN (PP_0011)</span>, </span><span><span style="color: #ffffff;">recF (PP_0012)</span>, </span><span><span style="color: #ffffff;">gyrB (PP_0013)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACAACTCGATG</td>
+        <td class="border p-2">+  [458942, 458953]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">pqqB (PP_0379)</span>, </span><span><span style="color: #4CAF50;">pqqC (PP_0378)</span>, </span><span><span style="color: #4CAF50;">pqqD (PP_0377)</span>, </span><span><span style="color: #ffffff;">pqqE (PP_0376)</span>, </span><span><span style="color: #ffffff;">PP_0375 (PP_0375)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACAAGATGATG</td>
+        <td class="border p-2">+  [947605, 947616]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hmpA (PP_0808)</span>, </span><span><span style="color: #ffffff;">PP_0807 (PP_0807)</span>, </span><span><span style="color: #ffffff;">dsbB (PP_0809)</span>, </span><span><span style="color: #ffffff;">cyoups1 (PP_0810)</span>, </span><span><span style="color: #ffffff;">cyoups2 (PP_0811)</span>, </span><span><span style="color: #ffffff;">cyoA (PP_0812)</span>, </span><span><span style="color: #ffffff;">cyoB (PP_0813)</span>, </span><span><span style="color: #ffffff;">cyoC (PP_0814)</span>, </span><span><span style="color: #ffffff;">cyoD (PP_0815)</span>, </span><span><span style="color: #ffffff;">cyoE-2 (PP_0816)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAATTTCATG</td>
+        <td class="border p-2">+  [973588, 973599]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">secF (PP_0836)</span>, </span><span><span style="color: #4CAF50;">PP_0837 (PP_0837)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAGACATTTA</td>
+        <td class="border p-2">+  [1142417, 1142428]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">arcD (PP_1002)</span>, </span><span><span style="color: #ffffff;">arcA (PP_1001)</span>, </span><span><span style="color: #ffffff;">argI (PP_1000)</span>, </span><span><span style="color: #ffffff;">PP_1003 (PP_1003)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCAAACGCATG</td>
+        <td class="border p-2">+  [1142825, 1142836]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">arcD (PP_1002)</span>, </span><span><span style="color: #4CAF50;">arcA (PP_1001)</span>, </span><span><span style="color: #4CAF50;">argI (PP_1000)</span>, </span><span><span style="color: #ffffff;">PP_1003 (PP_1003)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAGGAGATTA</td>
+        <td class="border p-2">+  [1243092, 1243103]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_1083 (PP_1083)</span>, </span><span><span style="color: #ffffff;">PP_1084 (PP_1084)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAGCAGCTTG</td>
+        <td class="border p-2">+  [1627287, 1627298]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">algU (PP_1427)</span>, </span><span><span style="color: #ffffff;">nadB (PP_1426)</span>, </span><span><span style="color: #4CAF50;">mucA (PP_1428)</span>, </span><span><span style="color: #4CAF50;">algN (PP_1429)</span>, </span><span><span style="color: #ffffff;">algY (PP_1430)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAAGCAGTTG</td>
+        <td class="border p-2">+  [1667426, 1667437]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ffh (PP_1461)</span>, </span><span><span style="color: #ffffff;">PP_1460 (PP_1460)</span>, </span><span><span style="color: #ffffff;">PP_1459 (PP_1459)</span>, </span><span><span style="color: #F44336;">rpsP (PP_1462)</span>, </span><span><span style="color: #F44336;">rimM (PP_1463)</span>, </span><span><span style="color: #ffffff;">trmD (PP_1464)</span>, </span><span><span style="color: #ffffff;">rplS (PP_1465)</span>, </span><span><span style="color: #ffffff;">PP_1466 (PP_1466)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAAGAACTTA</td>
+        <td class="border p-2">+  [2572994, 2573005]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">PP_2256 (PP_2256)</span>, </span><span><span style="color: #ffffff;">aer-1 (PP_2257)</span>, </span><span><span style="color: #ffffff;">PP_2258 (PP_2258)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACAACAAGATG</td>
+        <td class="border p-2">+  [3070084, 3070095]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PP_2680 (PP_2680)</span>, </span><span><span style="color: #4CAF50;">PP_2681 (PP_2681)</span>, </span><span><span style="color: #ffffff;">PP_2682 (PP_2682)</span>, </span><span><span style="color: #ffffff;">PP_2683 (PP_2683)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACAGCAAGTTG</td>
+        <td class="border p-2">+  [3974508, 3974519]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">PP_3503 (PP_3503)</span>, </span><span><span style="color: #ffffff;">PP_3504 (PP_3504)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCAAGGCTTTG</td>
+        <td class="border p-2">+  [5013527, 5013538]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_4417 (PP_4417)</span>, </span><span><span style="color: #F44336;">PP_4418 (PP_4418)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCAAGGCCATG</td>
+        <td class="border p-2">+  [5017864, 5017875]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_4422 (PP_4422)</span>, </span><span><span style="color: #F44336;">PP_4421 (PP_4421)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCAACGCCATG</td>
+        <td class="border p-2">+  [5225787, 5225798]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">PP_4605 (PP_4605)</span>, </span><span><span style="color: #ffffff;">PP_4604 (PP_4604)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TACAGGGTCTTG</td>
+        <td class="border p-2">+  [1358606, 1358617]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_1183 (PP_1183)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACAACACGATG</td>
+        <td class="border p-2">+  [1471715, 1471726]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_1287 (PP_1287)</span>, </span><span><span style="color: #ffffff;">PP_1286 (PP_1286)</span>, </span><span><span style="color: #ffffff;">algK (PP_1285)</span>, </span><span><span style="color: #ffffff;">algE (PP_1284)</span>, </span><span><span style="color: #ffffff;">PP_1283 (PP_1283)</span>, </span><span><span style="color: #ffffff;">algX (PP_1282)</span>, </span><span><span style="color: #ffffff;">algL (PP_1281)</span>, </span><span><span style="color: #ffffff;">algI (PP_1280)</span>, </span><span><span style="color: #4CAF50;">algJ (PP_1279)</span>, </span><span><span style="color: #4CAF50;">algF (PP_1278)</span>, </span><span><span style="color: #4CAF50;">algA (PP_1277)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002947.3" target="_blank" rel="noopener noreferrer">NC_002947.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A128" target="_blank" rel="noopener noreferrer">P0A128</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCAGTTCCATG</td>
+        <td class="border p-2">+  [5017406, 5017417]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PP_4422 (PP_4422)</span>, </span><span><span style="color: #F44336;">PP_4421 (PP_4421)</span></span></td>
+        <td class="border p-2">790</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22510163" target="_blank" rel="noopener noreferrer">22510163</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

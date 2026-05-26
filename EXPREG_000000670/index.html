@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NikR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">NikR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/O25896/entry">
+          UniProtKB: O25896
+        </a>
+        regulon and binding site collection of Helicobacter pylori 26695
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTATAATTGTTCATTTTAAATTA</td>
+        <td class="border p-2">+  [1398835, 1398859]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1338 (HP1338)</span>, </span><span><span style="color: #ffffff;">HP1337 (HP1337)</span>, </span><span><span style="color: #ffffff;">HP1339 (HP1339)</span>, </span><span><span style="color: #ffffff;">HP1340 (HP1340)</span>, </span><span><span style="color: #ffffff;">HP1341 (HP1341)</span></span></td>
+        <td class="border p-2">1004</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22549756" target="_blank" rel="noopener noreferrer">22549756</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TAACACTAATTCATTTTAAATAATA</td>
+        <td class="border p-2">+  [78071, 78095]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1004</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22549756" target="_blank" rel="noopener noreferrer">22549756</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTATTAAATAGAATAATGTAATA</td>
+        <td class="border p-2">+  [1584358, 1584382]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), Ad-hoc quantitative phenotype observation (ECO:0005676)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HP1512 (HP1512)</span></span></td>
+        <td class="border p-2">1059</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17015456" target="_blank" rel="noopener noreferrer">17015456</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CATTATTAAGTTTTTTTTGTTTTTA</td>
+        <td class="border p-2">+  [1461318, 1461342]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), Ad-hoc quantitative phenotype observation (ECO:0005676)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HP1400 (HP1400)</span></span></td>
+        <td class="border p-2">1059</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17015456" target="_blank" rel="noopener noreferrer">17015456</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">ATATAACACTAATTCATTTTAAATAATAATTA</td>
+        <td class="border p-2">+  [78067, 78098]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1075</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18790698" target="_blank" rel="noopener noreferrer">18790698</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATAACACTAATTCATTTTAAATAATAATTAGTT</td>
+        <td class="border p-2">+  [78064, 78097]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1077</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16343630" target="_blank" rel="noopener noreferrer">16343630</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TAACACTAATTCATTTTAAATAATA</td>
+        <td class="border p-2">+  [78071, 78095]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1088</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17291009" target="_blank" rel="noopener noreferrer">17291009</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">GCATGAGTTCGTTAAAAGCCGCTCATGC</td>
+        <td class="border p-2">+  [1398793, 1398820]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), RNA dot blot (ECO:0001177)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HP1338 (HP1338)</span>, </span><span><span style="color: #ffffff;">HP1337 (HP1337)</span>, </span><span><span style="color: #ffffff;">HP1339 (HP1339)</span>, </span><span><span style="color: #ffffff;">HP1340 (HP1340)</span>, </span><span><span style="color: #ffffff;">HP1341 (HP1341)</span></span></td>
+        <td class="border p-2">1095</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12890020" target="_blank" rel="noopener noreferrer">12890020</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTACAATTACCAAAAAAGTATTA</td>
+        <td class="border p-2">+  [1136920, 1136944]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Hydroxyl-radical footprinting (ECO:0005643), Premethylation interference footprinting (ECO:0005656)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1077 (HP1077)</span></span></td>
+        <td class="border p-2">1106</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17522054" target="_blank" rel="noopener noreferrer">17522054</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TAACACTAATTCATTTTAAATAATA</td>
+        <td class="border p-2">+  [78071, 78095]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Hydroxyl-radical footprinting (ECO:0005643), Premethylation interference footprinting (ECO:0005656)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1106</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17522054" target="_blank" rel="noopener noreferrer">17522054</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTATTAAATAGAATAATGTAATAATA</td>
+        <td class="border p-2">+  [1584358, 1584385]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Consensus search (ECO:0005624), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HP1512 (HP1512)</span></span></td>
+        <td class="border p-2">1110</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17030579" target="_blank" rel="noopener noreferrer">17030579</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TAACACTAATTCATTTTAAATAATA</td>
+        <td class="border p-2">+  [78071, 78095]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP0073 (HP0073)</span>, </span><span><span style="color: #ffffff;">ureB (HP0072)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTACAATTACCAAAAAAGTATTA</td>
+        <td class="border p-2">+  [1136920, 1136944]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1077 (HP1077)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTATTAAATAGAATAATGTAATA</td>
+        <td class="border p-2">+  [1584358, 1584382]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1512 (HP1512)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">CATTATTAAGTTTTTTTTGTTTTTA</td>
+        <td class="border p-2">+  [1461318, 1461342]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1400 (HP1400)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTATTAAAACAATATAATCAACA</td>
+        <td class="border p-2">+  [1398937, 1398961]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1338 (HP1338)</span>, </span><span><span style="color: #ffffff;">HP1337 (HP1337)</span>, </span><span><span style="color: #ffffff;">HP1339 (HP1339)</span>, </span><span><span style="color: #ffffff;">HP1340 (HP1340)</span>, </span><span><span style="color: #ffffff;">HP1341 (HP1341)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TATTATAATTGTTCATTTTAAATTA</td>
+        <td class="border p-2">+  [1398835, 1398859]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1338 (HP1338)</span>, </span><span><span style="color: #ffffff;">HP1337 (HP1337)</span>, </span><span><span style="color: #ffffff;">HP1339 (HP1339)</span>, </span><span><span style="color: #ffffff;">HP1340 (HP1340)</span>, </span><span><span style="color: #ffffff;">HP1341 (HP1341)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">CATTATTATTGTATAATAATATTCT</td>
+        <td class="border p-2">+  [1090147, 1090171]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1027 (HP1027)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000915.1" target="_blank" rel="noopener noreferrer">NC_000915.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/O25896" target="_blank" rel="noopener noreferrer">O25896</a>
+        </td>
+        <td class="border p-2">TETRAMER</td>
+        <td class="border p-2 break-words">TCTTATAAGTTACATTAAAATGCGA</td>
+        <td class="border p-2">+  [1090052, 1090076]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HP1026 (HP1026)</span>, </span><span><span style="color: #ffffff;">HP1027 (HP1027)</span></span></td>
+        <td class="border p-2">1111</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19119856" target="_blank" rel="noopener noreferrer">19119856</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

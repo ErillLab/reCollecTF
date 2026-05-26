@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ArgR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">ArgR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/G3XCU2/entry">
+          UniProtKB: G3XCU2
+        </a>
+        regulon and binding site collection of Pseudomonas aeruginosa PAO1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCGTCTTTCATTTTGGCGACATTGAATTTCATTTTCTCGCCG</td>
+        <td class="border p-2">+  [5672265, 5672306]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gltB (PA5036)</span>, </span><span><span style="color: #F44336;">gltD (PA5035)</span></span></td>
+        <td class="border p-2">714</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175298" target="_blank" rel="noopener noreferrer">15175298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAAAGTTTCAGTTTTGCACCATAAAGATTCATCAATGCGTCA</td>
+        <td class="border p-2">+  [5138835, 5138876]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gdhA (PA4588)</span></span></td>
+        <td class="border p-2">714</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175298" target="_blank" rel="noopener noreferrer">15175298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGTCTTATTGGTGGACCGGAATGTCGCGATTCTGTAAACTAC</td>
+        <td class="border p-2">+  [5345028, 5345069]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA4758.1 (PA4758.1)</span>, </span><span><span style="color: #2196F3;">carA (PA4758)</span>, </span><span><span style="color: #ffffff;">PA4757 (PA4757)</span>, </span><span><span style="color: #ffffff;">carB (PA4756)</span>, </span><span><span style="color: #ffffff;">greA (PA4755)</span>, </span><span><span style="color: #ffffff;">PA4754 (PA4754)</span></span></td>
+        <td class="border p-2">720</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9286981" target="_blank" rel="noopener noreferrer">9286981</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGGCGCGATCTTATAAGGAAATGTCGCGGAAACACAAGGAGG</td>
+        <td class="border p-2">+  [3958882, 3958923]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA3536 (PA3536)</span>, </span><span><span style="color: #2196F3;">argF (PA3537)</span>, </span><span><span style="color: #ffffff;">PA3538 (PA3538)</span>, </span><span><span style="color: #ffffff;">PA3539 (PA3539)</span></span></td>
+        <td class="border p-2">720</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9286981" target="_blank" rel="noopener noreferrer">9286981</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTGCGCCTTCCCGATGCTTTCTGTCGCATTTCCGAAAGCCGC</td>
+        <td class="border p-2">+  [977755, 977796]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0894 (PA0894)</span>, </span><span><span style="color: #4CAF50;">aruC (PA0895)</span></span></td>
+        <td class="border p-2">720</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9286981" target="_blank" rel="noopener noreferrer">9286981</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTTCGGTGCTTTTATAATTAGTTGTCGCATTGAAGAAATAACC</td>
+        <td class="border p-2">+  [971962, 972004]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0887.1 (PA0887.1)</span>, </span><span><span style="color: #4CAF50;">aotJ (PA0888)</span>, </span><span><span style="color: #4CAF50;">aotQ (PA0889)</span>, </span><span><span style="color: #4CAF50;">aotM (PA0890)</span>, </span><span><span style="color: #4CAF50;">PA0891 (PA0891)</span>, </span><span><span style="color: #4CAF50;">aotP (PA0892)</span>, </span><span><span style="color: #4CAF50;">argR (PA0893)</span></span></td>
+        <td class="border p-2">762</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9791103" target="_blank" rel="noopener noreferrer">9791103</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGCACCTACGCAGATGCGACATGCGTCATGCAATTTTGCGACA</td>
+        <td class="border p-2">+  [1045458, 1045500]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624), RNA dot blot (ECO:0001177)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">oprD (PA0958)</span>, </span><span><span style="color: #ffffff;">PA0959 (PA0959)</span>, </span><span><span style="color: #ffffff;">PA0960 (PA0960)</span></span></td>
+        <td class="border p-2">768</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10464217" target="_blank" rel="noopener noreferrer">10464217</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCGCTTTTGCGTCTAAAGCTGTCGCCCCTCTGTAATTTCC</td>
+        <td class="border p-2">+  [3945934, 3945975]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">argG (PA3525)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGACGCATTGATGAATCTTTATGGTGCAAAACTGAAACTTTC</td>
+        <td class="border p-2">+  [5138835, 5138876]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gdhA (PA4588)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGCGAGAAAATGAAATTCAATGTCGCCAAAATGAAAGACGA</td>
+        <td class="border p-2">+  [5672265, 5672306]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gltB (PA5036)</span>, </span><span><span style="color: #F44336;">gltD (PA5035)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGCTTGCCCTTGTAAGAAAAGGTCGCGGCAACACAAGTCGG</td>
+        <td class="border p-2">+  [1974698, 1974739]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA1817 (PA1817)</span>, </span><span><span style="color: #4CAF50;">ldcA (PA1818)</span>, </span><span><span style="color: #4CAF50;">PA1819 (PA1819)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCCTTTTGTTGAAAAACGACGTCGCAATCAGAACAGTCCG</td>
+        <td class="border p-2">+  [2153248, 2153289]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">braZ (PA1971)</span>, </span><span><span style="color: #ffffff;">PA1972 (PA1972)</span>, </span><span><span style="color: #ffffff;">pqqF (PA1973)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCGTCGCAGGCGCATTGCCAGCCGGGAGGCCGGAAATCCC</td>
+        <td class="border p-2">+  [2233778, 2233819]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA2042 (PA2042)</span>, </span><span><span style="color: #ffffff;">PA2043 (PA2043)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGTCGCCTCTGCGACATTCGCTGTCGTGTCCCGGCGTGCCGC</td>
+        <td class="border p-2">+  [4413075, 4413116]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA3934 (PA3934)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCGCATCGCTGCAGTGCGCTGTCGCGTAGGAACAAAACTG</td>
+        <td class="border p-2">+  [5800368, 5800409]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA5152 (PA5152)</span>, </span><span><span style="color: #4CAF50;">PA5153 (PA5153)</span>, </span><span><span style="color: #4CAF50;">PA5154 (PA5154)</span>, </span><span><span style="color: #4CAF50;">PA5155 (PA5155)</span></span></td>
+        <td class="border p-2">769</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15175299" target="_blank" rel="noopener noreferrer">15175299</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGACCGACGGCGGCACCTGCGTGTCGCAGAAACGAAA</td>
+        <td class="border p-2">+  [4322671, 4322707]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">dauB (PA3862)</span>, </span><span><span style="color: #4CAF50;">dauA (PA3863)</span>, </span><span><span style="color: #4CAF50;">dauR (PA3864)</span></span></td>
+        <td class="border p-2">770</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19850617" target="_blank" rel="noopener noreferrer">19850617</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCTCCCGGGGTGAACGAATATGTCGCAGCACGGTAAGTGTT</td>
+        <td class="border p-2">+  [3441665, 3441706]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">gdhB (PA3068)</span>, </span><span><span style="color: #ffffff;">PA3067 (PA3067)</span>, </span><span><span style="color: #ffffff;">PA3066 (PA3066)</span>, </span><span><span style="color: #ffffff;">PA3065 (PA3065)</span></span></td>
+        <td class="border p-2">772</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11133942" target="_blank" rel="noopener noreferrer">11133942</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/G3XCU2" target="_blank" rel="noopener noreferrer">G3XCU2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTCCTACTCAAAGTAATTAGATGACGCATTCCTGTAAGTCGC</td>
+        <td class="border p-2">+  [5820785, 5820826]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">arcD (PA5170)</span>, </span><span><span style="color: #4CAF50;">arcA (PA5171)</span>, </span><span><span style="color: #4CAF50;">arcB (PA5172)</span>, </span><span><span style="color: #4CAF50;">arcC (PA5173)</span></span></td>
+        <td class="border p-2">966</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10198009" target="_blank" rel="noopener noreferrer">10198009</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

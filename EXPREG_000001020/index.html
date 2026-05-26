@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q7CQY3/entry">
+          UniProtKB: Q7CQY3
+        </a>
+        regulon and binding site collection of Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTAATGCAAAGCATAAAA</td>
+        <td class="border p-2">+  [462372, 462389]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tgt (STM14_0480)</span>, </span><span><span style="color: #ffffff;">STM14_0479 (STM14_0479)</span>, </span><span><span style="color: #ffffff;">queA (STM14_0478)</span>, </span><span><span style="color: #F44336;">yajC (STM14_0481)</span>, </span><span><span style="color: #ffffff;">secD (STM14_0482)</span>, </span><span><span style="color: #ffffff;">secF (STM14_0483)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAACGGTAAAAATTACC</td>
+        <td class="border p-2">+  [469779, 469796]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yajI (STM14_0490)</span>, </span><span><span style="color: #ffffff;">tsx (STM14_0489)</span>, </span><span><span style="color: #ffffff;">STM14_0491 (STM14_0491)</span>, </span><span><span style="color: #F44336;">ybaD (STM14_0492)</span>, </span><span><span style="color: #ffffff;">ribD (STM14_0493)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATCCAAATCACATCC</td>
+        <td class="border p-2">+  [495314, 495331]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">cyoC (STM14_0521)</span>, </span><span><span style="color: #ffffff;">cyoD (STM14_0520)</span>, </span><span><span style="color: #F44336;">cyoE (STM14_0519)</span>, </span><span><span style="color: #ffffff;">cyoB (STM14_0522)</span>, </span><span><span style="color: #ffffff;">cyoA (STM14_0523)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAAAGCGAAGCAGTCTC</td>
+        <td class="border p-2">+  [498116, 498133]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">cyoA (STM14_0523)</span>, </span><span><span style="color: #F44336;">cyoB (STM14_0522)</span>, </span><span><span style="color: #ffffff;">cyoC (STM14_0521)</span>, </span><span><span style="color: #ffffff;">cyoD (STM14_0520)</span>, </span><span><span style="color: #ffffff;">cyoE (STM14_0519)</span>, </span><span><span style="color: #ffffff;">ampG (STM14_0524)</span>, </span><span><span style="color: #ffffff;">yajG (STM14_0525)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAATTACCAATAATTTCC</td>
+        <td class="border p-2">+  [499174, 499191]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">cyoA (STM14_0523)</span>, </span><span><span style="color: #ffffff;">cyoB (STM14_0522)</span>, </span><span><span style="color: #ffffff;">cyoC (STM14_0521)</span>, </span><span><span style="color: #ffffff;">cyoD (STM14_0520)</span>, </span><span><span style="color: #ffffff;">cyoE (STM14_0519)</span>, </span><span><span style="color: #ffffff;">ampG (STM14_0524)</span>, </span><span><span style="color: #ffffff;">yajG (STM14_0525)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATGCAAATAGTTATC</td>
+        <td class="border p-2">+  [644615, 644632]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_0683 (STM14_0683)</span>, </span><span><span style="color: #F44336;">fepA (STM14_0682)</span>, </span><span><span style="color: #ffffff;">entD (STM14_0681)</span>, </span><span><span style="color: #ffffff;">ybdK (STM14_0680)</span>, </span><span><span style="color: #ffffff;">fes (STM14_0684)</span>, </span><span><span style="color: #ffffff;">ybdZ (STM14_0685)</span>, </span><span><span style="color: #ffffff;">entF (STM14_0686)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATAATAATAATCATTGTG</td>
+        <td class="border p-2">+  [1435239, 1435256]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ydiE (STM14_1634)</span>, </span><span><span style="color: #ffffff;">ydiU (STM14_1633)</span>, </span><span><span style="color: #ffffff;">aroH (STM14_1635)</span>, </span><span><span style="color: #ffffff;">STM14_1636 (STM14_1636)</span>, </span><span><span style="color: #ffffff;">ydiA (STM14_1637)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAAAGCGTACCATTCCC</td>
+        <td class="border p-2">+  [1539386, 1539403]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ydgQ (STM14_1753)</span>, </span><span><span style="color: #F44336;">nth (STM14_1752)</span>, </span><span><span style="color: #ffffff;">ydgP (STM14_1754)</span>, </span><span><span style="color: #ffffff;">rnfD (STM14_1755)</span>, </span><span><span style="color: #ffffff;">STM14_1756 (STM14_1756)</span>, </span><span><span style="color: #ffffff;">ydgM (STM14_1757)</span>, </span><span><span style="color: #ffffff;">STM14_1758 (STM14_1758)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTAACGGAAATAATTTTC</td>
+        <td class="border p-2">+  [1683888, 1683905]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yncD (STM14_1920)</span>, </span><span><span style="color: #ffffff;">STM14_1919 (STM14_1919)</span>, </span><span><span style="color: #ffffff;">STM14_1918 (STM14_1918)</span>, </span><span><span style="color: #ffffff;">yncC (STM14_1921)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATAGCAATCATATTC</td>
+        <td class="border p-2">+  [1842725, 1842742]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">tonB (STM14_2100)</span>, </span><span><span style="color: #ffffff;">yciI (STM14_2101)</span>, </span><span><span style="color: #ffffff;">STM14_2102 (STM14_2102)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACAATGCTTATCATCACC</td>
+        <td class="border p-2">+  [1857593, 1857610]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_2115 (STM14_2115)</span>, </span><span><span style="color: #ffffff;">tdk_2 (STM14_2114)</span>, </span><span><span style="color: #F44336;">hns (STM14_2116)</span>, </span><span><span style="color: #ffffff;">STM14_2117 (STM14_2117)</span>, </span><span><span style="color: #ffffff;">galU (STM14_2118)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAATTCGAATAAATAAT</td>
+        <td class="border p-2">+  [2648850, 2648867]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">acrD (STM14_3044)</span>, </span><span><span style="color: #ffffff;">STM14_3043 (STM14_3043)</span>, </span><span><span style="color: #F44336;">yffB (STM14_3045)</span>, </span><span><span style="color: #ffffff;">dapE (STM14_3046)</span>, </span><span><span style="color: #ffffff;">STM14_3047 (STM14_3047)</span>, </span><span><span style="color: #ffffff;">ypfI (STM14_3048)</span>, </span><span><span style="color: #ffffff;">STM14_3049 (STM14_3049)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGAATGATAATAATTACC</td>
+        <td class="border p-2">+  [2936547, 2936564]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_3343 (STM14_3343)</span>, </span><span><span style="color: #ffffff;">STM14_3342 (STM14_3342)</span>, </span><span><span style="color: #F44336;">iroB (STM14_3344)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTAATGATAATAATTATC</td>
+        <td class="border p-2">+  [2946090, 2946107]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">iroN (STM14_3348)</span>, </span><span><span style="color: #ffffff;">iroE (STM14_3347)</span>, </span><span><span style="color: #ffffff;">iroD (STM14_3346)</span>, </span><span><span style="color: #ffffff;">STM14_3349 (STM14_3349)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATAAGAATTATTTTC</td>
+        <td class="border p-2">+  [3026507, 3026524]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_3457 (STM14_3457)</span>, </span><span><span style="color: #ffffff;">ygbA (STM14_3456)</span>, </span><span><span style="color: #F44336;">sitA (STM14_3458)</span>, </span><span><span style="color: #ffffff;">sitB (STM14_3459)</span>, </span><span><span style="color: #ffffff;">sitC (STM14_3460)</span>, </span><span><span style="color: #ffffff;">sitD (STM14_3461)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATAACGCTAAGAATAAAC</td>
+        <td class="border p-2">+  [3280994, 3281011]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yggT (STM14_3745)</span>, </span><span><span style="color: #ffffff;">yggS (STM14_3744)</span>, </span><span><span style="color: #ffffff;">yggR (STM14_3743)</span>, </span><span><span style="color: #F44336;">yggU (STM14_3746)</span>, </span><span><span style="color: #ffffff;">yggV (STM14_3747)</span>, </span><span><span style="color: #ffffff;">yggW (STM14_3748)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAAGCGGCAAACATTATC</td>
+        <td class="border p-2">+  [3601355, 3601372]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rplO (STM14_4124)</span>, </span><span><span style="color: #F44336;">secY (STM14_4123)</span>, </span><span><span style="color: #ffffff;">rpmJ_2 (STM14_4122)</span>, </span><span><span style="color: #ffffff;">rpmD (STM14_4125)</span>, </span><span><span style="color: #ffffff;">rpsE (STM14_4126)</span>, </span><span><span style="color: #ffffff;">rplR (STM14_4127)</span>, </span><span><span style="color: #ffffff;">rplF (STM14_4128)</span>, </span><span><span style="color: #ffffff;">rpsH (STM14_4129)</span>, </span><span><span style="color: #ffffff;">rpsN (STM14_4130)</span>, </span><span><span style="color: #ffffff;">rplE (STM14_4131)</span>, </span><span><span style="color: #ffffff;">rplX (STM14_4132)</span>, </span><span><span style="color: #ffffff;">rplN (STM14_4133)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTAATCATAACCATTCTC</td>
+        <td class="border p-2">+  [3612011, 3612028]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_4148 (STM14_4148)</span>, </span><span><span style="color: #F44336;">bfd (STM14_4147)</span>, </span><span><span style="color: #ffffff;">tuf_1 (STM14_4149)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAAATGATTATCAATGCC</td>
+        <td class="border p-2">+  [4280023, 4280040]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_4877 (STM14_4877)</span>, </span><span><span style="color: #ffffff;">STM14_4876 (STM14_4876)</span>, </span><span><span style="color: #ffffff;">STM14_4875 (STM14_4875)</span>, </span><span><span style="color: #F44336;">sodA (STM14_4878)</span></span></td>
+        <td class="border p-2">241</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAATAGATATAATTTAT</td>
+        <td class="border p-2">+  [1755834, 1755851]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_1996 (STM14_1996)</span>, </span><span><span style="color: #ffffff;">nifJ (STM14_1995)</span>, </span><span><span style="color: #4CAF50;">ynaF (STM14_1997)</span>, </span><span><span style="color: #ffffff;">STM14_1998 (STM14_1998)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAATTGAGAATAGTTATT</td>
+        <td class="border p-2">+  [2332760, 2332777]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_2692 (STM14_2692)</span>, </span><span><span style="color: #ffffff;">sanA (STM14_2691)</span>, </span><span><span style="color: #4CAF50;">STM14_2693 (STM14_2693)</span>, </span><span><span style="color: #ffffff;">yeiA (STM14_2694)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATAATGCCCATCGTTTCC</td>
+        <td class="border p-2">+  [2618854, 2618871]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">eutB (STM14_3016)</span>, </span><span><span style="color: #4CAF50;">eutC (STM14_3015)</span>, </span><span><span style="color: #ffffff;">eutL (STM14_3014)</span>, </span><span><span style="color: #ffffff;">eutK (STM14_3013)</span>, </span><span><span style="color: #ffffff;">eutR (STM14_3012)</span>, </span><span><span style="color: #ffffff;">eutA (STM14_3017)</span>, </span><span><span style="color: #ffffff;">eutH (STM14_3018)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAACTGATAAACATTGCC</td>
+        <td class="border p-2">+  [2620122, 2620139]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">eutB (STM14_3016)</span>, </span><span><span style="color: #ffffff;">eutC (STM14_3015)</span>, </span><span><span style="color: #ffffff;">eutL (STM14_3014)</span>, </span><span><span style="color: #ffffff;">eutK (STM14_3013)</span>, </span><span><span style="color: #ffffff;">eutR (STM14_3012)</span>, </span><span><span style="color: #ffffff;">eutA (STM14_3017)</span>, </span><span><span style="color: #ffffff;">eutH (STM14_3018)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTGATGCTCATCATTATT</td>
+        <td class="border p-2">+  [3787002, 3787019]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">STM14_4330 (STM14_4330)</span>, </span><span><span style="color: #ffffff;">STM14_4329 (STM14_4329)</span>, </span><span><span style="color: #ffffff;">STM14_4331 (STM14_4331)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATAAACATTATAATTATA</td>
+        <td class="border p-2">+  [3893981, 3893998]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_4448 (STM14_4448)</span>, </span><span><span style="color: #ffffff;">yibL (STM14_4447)</span>, </span><span><span style="color: #4CAF50;">STM14_4449 (STM14_4449)</span>, </span><span><span style="color: #ffffff;">STM14_4450 (STM14_4450)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATAACAACAATTTAA</td>
+        <td class="border p-2">+  [4583693, 4583710]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">dcuA (STM14_5201)</span>, </span><span><span style="color: #ffffff;">aspA (STM14_5202)</span>, </span><span><span style="color: #ffffff;">STM14_5203 (STM14_5203)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAAGTAAAAATCATTGGC</td>
+        <td class="border p-2">+  [4585233, 4585250]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_5203 (STM14_5203)</span>, </span><span><span style="color: #4CAF50;">aspA (STM14_5202)</span>, </span><span><span style="color: #ffffff;">fxsA (STM14_5204)</span></span></td>
+        <td class="border p-2">242</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22017966" target="_blank" rel="noopener noreferrer">22017966</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003197.1" target="_blank" rel="noopener noreferrer">NC_003197.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7CQY3" target="_blank" rel="noopener noreferrer">Q7CQY3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCCGAAGATAATATTTACC</td>
+        <td class="border p-2">+  [2951462, 2951480]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM2804 (STM2804)</span>, </span><span><span style="color: #ffffff;">STM2803 (STM2803)</span>, </span><span><span style="color: #ffffff;">ygaM (STM2802)</span>, </span><span><span style="color: #ffffff;">ygaC (STM2801)</span>, </span><span><span style="color: #ffffff;">STM2800 (STM2800)</span>, </span><span><span style="color: #ffffff;">STM2804.1n (STM2804.1n)</span>, </span><span><span style="color: #F44336;">nrdH (STM2805)</span>, </span><span><span style="color: #F44336;">nrdI (STM2806)</span>, </span><span><span style="color: #F44336;">nrdE (STM2807)</span>, </span><span><span style="color: #F44336;">nrdF (STM2808)</span></span></td>
+        <td class="border p-2">557</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20593029" target="_blank" rel="noopener noreferrer">20593029</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
