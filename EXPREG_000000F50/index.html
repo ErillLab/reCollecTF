@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HgtR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">HgtR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q747A3/entry">
+          UniProtKB: Q747A3
+        </a>
+        regulon and binding site collection of Geobacter sulfurreducens strain DL1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTATACAGTATAC</td>
+        <td class="border p-2">+  [1191975, 1191989]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU1105 (GSU1105)</span>, </span><span><span style="color: #ffffff;">GSU1104 (GSU1104)</span>, </span><span><span style="color: #ffffff;">GSU1103 (GSU1103)</span>, </span><span><span style="color: #F44336;">gltA (GSU1106)</span>, </span><span><span style="color: #ffffff;">GSU1107 (GSU1107)</span>, </span><span><span style="color: #ffffff;">GSU1108 (GSU1108)</span></span></td>
+        <td class="border p-2">455</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAATTGTATACAGTATACTAAA</td>
+        <td class="border p-2">+  [1191972, 1191993]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU1105 (GSU1105)</span>, </span><span><span style="color: #ffffff;">GSU1104 (GSU1104)</span>, </span><span><span style="color: #ffffff;">GSU1103 (GSU1103)</span>, </span><span><span style="color: #F44336;">gltA (GSU1106)</span>, </span><span><span style="color: #ffffff;">GSU1107 (GSU1107)</span>, </span><span><span style="color: #ffffff;">GSU1108 (GSU1108)</span></span></td>
+        <td class="border p-2">456</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATTTGTATACTGTATACAAAA</td>
+        <td class="border p-2">+  [123503, 123524]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU0107 (GSU0107)</span>, </span><span><span style="color: #ffffff;">GSU0106 (GSU0106)</span>, </span><span><span style="color: #ffffff;">atpX (GSU0108)</span>, </span><span><span style="color: #ffffff;">atpF (GSU0109)</span>, </span><span><span style="color: #ffffff;">atpH (GSU0110)</span>, </span><span><span style="color: #ffffff;">atpA (GSU0111)</span>, </span><span><span style="color: #F44336;">atpG (GSU0112)</span>, </span><span><span style="color: #ffffff;">atpD (GSU0113)</span>, </span><span><span style="color: #ffffff;">atpC (GSU0114)</span>, </span><span><span style="color: #ffffff;">pdxA (GSU0115)</span>, </span><span><span style="color: #ffffff;">GSU0116 (GSU0116)</span>, </span><span><span style="color: #ffffff;">GSU0117 (GSU0117)</span></span></td>
+        <td class="border p-2">456</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAATTGTATACAGTATACGCAA</td>
+        <td class="border p-2">+  [367755, 367776]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hemL (GSU0337)</span>, </span><span><span style="color: #ffffff;">atpZ (GSU0336)</span>, </span><span><span style="color: #ffffff;">atpI (GSU0335)</span>, </span><span><span style="color: #ffffff;">atpB (GSU0334)</span>, </span><span><span style="color: #ffffff;">atpE (GSU0333)</span>, </span><span><span style="color: #ffffff;">pepA (GSU0332)</span>, </span><span><span style="color: #ffffff;">degP (GSU0331)</span>, </span><span><span style="color: #F44336;">nuoA-1 (GSU0338)</span>, </span><span><span style="color: #ffffff;">nuoB (GSU0339)</span>, </span><span><span style="color: #ffffff;">nuoC (GSU0340)</span>, </span><span><span style="color: #ffffff;">nuoD (GSU0341)</span>, </span><span><span style="color: #ffffff;">nuoE-1 (GSU0342)</span>, </span><span><span style="color: #ffffff;">nuoF-1 (GSU0343)</span>, </span><span><span style="color: #ffffff;">nuoG-1 (GSU0344)</span>, </span><span><span style="color: #ffffff;">nuoH-1 (GSU0345)</span>, </span><span><span style="color: #ffffff;">nuoI-1 (GSU0346)</span>, </span><span><span style="color: #ffffff;">nuoJ-1 (GSU0347)</span>, </span><span><span style="color: #ffffff;">nuoK-1 (GSU0348)</span>, </span><span><span style="color: #ffffff;">nuoL-1 (GSU0349)</span>, </span><span><span style="color: #ffffff;">nuoM-1 (GSU0350)</span>, </span><span><span style="color: #ffffff;">nuoN-1 (GSU0351)</span>, </span><span><span style="color: #ffffff;">prx-3 (GSU0352)</span>, </span><span><span style="color: #ffffff;">yqaA (GSU0353)</span>, </span><span><span style="color: #ffffff;">GSU0354 (GSU0354)</span>, </span><span><span style="color: #ffffff;">GSU0355 (GSU0355)</span></span></td>
+        <td class="border p-2">456</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCCCTGTATACTGTATACAATA</td>
+        <td class="border p-2">+  [3704539, 3704560]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">GSU3370 (GSU3370)</span>, </span><span><span style="color: #ffffff;">GSU3371 (GSU3371)</span>, </span><span><span style="color: #ffffff;">cls-2 (GSU3372)</span></span></td>
+        <td class="border p-2">456</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAATTGTATACAGTATCCATTT</td>
+        <td class="border p-2">+  [1822569, 1822590]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hisS (GSU1659)</span>, </span><span><span style="color: #ffffff;">GSU1658 (GSU1658)</span>, </span><span><span style="color: #ffffff;">GSU1657 (GSU1657)</span>, </span><span><span style="color: #F44336;">acnB (GSU1660)</span>, </span><span><span style="color: #ffffff;">GSU1661 (GSU1661)</span>, </span><span><span style="color: #ffffff;">GSU1662 (GSU1662)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTTTTGTATACTGTATACAAAC</td>
+        <td class="border p-2">+  [1606339, 1606360]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU1464 (GSU1464)</span>, </span><span><span style="color: #ffffff;">aspS (GSU1463)</span>, </span><span><span style="color: #F44336;">icd (GSU1465)</span>, </span><span><span style="color: #ffffff;">mdh (GSU1466)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAGTTGTATACAGTATGTGCTA</td>
+        <td class="border p-2">+  [1609868, 1609889]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">mdh (GSU1466)</span>, </span><span><span style="color: #ffffff;">icd (GSU1465)</span>, </span><span><span style="color: #F44336;">korD (GSU1467)</span>, </span><span><span style="color: #F44336;">korA (GSU1468)</span>, </span><span><span style="color: #F44336;">korB (GSU1469)</span>, </span><span><span style="color: #F44336;">korC (GSU1470)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGCAGTATACTGTATGCGAAA</td>
+        <td class="border p-2">+  [521301, 521322]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">comM (GSU0489)</span>, </span><span><span style="color: #ffffff;">trxB (GSU0488)</span>, </span><span><span style="color: #F44336;">ato-1 (GSU0490)</span>, </span><span><span style="color: #ffffff;">rhlE-1 (GSU0491)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTTAGTATACAGTATACAGTA</td>
+        <td class="border p-2">+  [1281609, 1281630]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tgt-1 (GSU1175)</span>, </span><span><span style="color: #ffffff;">mazG (GSU1174)</span>, </span><span><span style="color: #F44336;">frdC (GSU1176)</span>, </span><span><span style="color: #F44336;">frdA (GSU1177)</span>, </span><span><span style="color: #F44336;">frdB (GSU1178)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CCGCCGTATACTGTATACACTT</td>
+        <td class="border p-2">+  [1076351, 1076372]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">fumB (GSU0994)</span>, </span><span><span style="color: #ffffff;">GSU0993 (GSU0993)</span>, </span><span><span style="color: #ffffff;">GSU0992 (GSU0992)</span>, </span><span><span style="color: #ffffff;">GSU0991 (GSU0991)</span>, </span><span><span style="color: #ffffff;">GSU0990 (GSU0990)</span>, </span><span><span style="color: #ffffff;">GSU0989 (GSU0989)</span>, </span><span><span style="color: #ffffff;">GSU0988 (GSU0988)</span>, </span><span><span style="color: #ffffff;">GSU0987 (GSU0987)</span>, </span><span><span style="color: #ffffff;">GSU0986 (GSU0986)</span>, </span><span><span style="color: #ffffff;">GSU0985 (GSU0985)</span>, </span><span><span style="color: #ffffff;">GSU0996 (GSU0996)</span>, </span><span><span style="color: #ffffff;">mutM (GSU0997)</span>, </span><span><span style="color: #ffffff;">dnaB (GSU0998)</span>, </span><span><span style="color: #ffffff;">lpxA-2 (GSU0999)</span>, </span><span><span style="color: #ffffff;">GSU1000 (GSU1000)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGATTGTATACAGTATGCGATC</td>
+        <td class="border p-2">+  [417288, 417309]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU0384 (GSU0384)</span>, </span><span><span style="color: #ffffff;">GSU0383 (GSU0383)</span>, </span><span><span style="color: #ffffff;">GSU0382 (GSU0382)</span>, </span><span><span style="color: #ffffff;">GSU0381 (GSU0381)</span>, </span><span><span style="color: #ffffff;">lipA (GSU0380)</span>, </span><span><span style="color: #ffffff;">lplA (GSU0379)</span>, </span><span><span style="color: #ffffff;">gcvP2 (GSU0378)</span>, </span><span><span style="color: #ffffff;">gcvP1 (GSU0377)</span>, </span><span><span style="color: #ffffff;">gcvH-1 (GSU0376)</span>, </span><span><span style="color: #ffffff;">gcvT (GSU0375)</span>, </span><span><span style="color: #ffffff;">hypA (GSU0374)</span>, </span><span><span style="color: #F44336;">GSU0385 (GSU0385)</span>, </span><span><span style="color: #ffffff;">GSU0386 (GSU0386)</span>, </span><span><span style="color: #ffffff;">uppP (GSU0387)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAGTGCATACTGTATACACTT</td>
+        <td class="border p-2">+  [544290, 544311]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">sfrB (GSU0510)</span>, </span><span><span style="color: #F44336;">sfrA (GSU0509)</span>, </span><span><span style="color: #ffffff;">yceG (GSU0508)</span>, </span><span><span style="color: #ffffff;">plsY (GSU0507)</span>, </span><span><span style="color: #ffffff;">GSU0506 (GSU0506)</span>, </span><span><span style="color: #ffffff;">GSU0505 (GSU0505)</span>, </span><span><span style="color: #ffffff;">GSU0504 (GSU0504)</span>, </span><span><span style="color: #ffffff;">crcB (GSU0503)</span>, </span><span><span style="color: #ffffff;">GSU0502 (GSU0502)</span>, </span><span><span style="color: #ffffff;">yfiO (GSU0501)</span>, </span><span><span style="color: #ffffff;">typA (GSU0500)</span>, </span><span><span style="color: #ffffff;">GSU0511 (GSU0511)</span>, </span><span><span style="color: #ffffff;">GSU0512 (GSU0512)</span>, </span><span><span style="color: #ffffff;">GSU0513 (GSU0513)</span>, </span><span><span style="color: #ffffff;">GSU0514 (GSU0514)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q747A3" target="_blank" rel="noopener noreferrer">Q747A3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTATTGTATACAGTATACAGGG</td>
+        <td class="border p-2">+  [3704538, 3704559]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">GSU3370 (GSU3370)</span>, </span><span><span style="color: #ffffff;">GSU3371 (GSU3371)</span>, </span><span><span style="color: #ffffff;">cls-2 (GSU3372)</span></span></td>
+        <td class="border p-2">457</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19939938" target="_blank" rel="noopener noreferrer">19939938</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

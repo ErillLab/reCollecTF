@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P33117/entry">
+          UniProtKB: P33117
+        </a>
+        regulon and binding site collection of Vibrio vulnificus MO6-24/O
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014965.1" target="_blank" rel="noopener noreferrer">NC_014965.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGACATTACTGTTCATTTA</td>
+        <td class="border p-2">+  [597079, 597097]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), qRT-PCR [RNA] (ECO:0001808), Luciferase reporter assay (ECO:0005648), Visual sequence inspection (nan), Ad-hoc quantitative phenotype observation (ECO:0005676)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">VVMO6_00535 (VVMO6_00535)</span>, </span><span><span style="color: #ffffff;">VVMO6_00534 (VVMO6_00534)</span>, </span><span><span style="color: #ffffff;">VVMO6_00536 (VVMO6_00536)</span>, </span><span><span style="color: #ffffff;">VVMO6_00537 (VVMO6_00537)</span></span></td>
+        <td class="border p-2">432</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23716618" target="_blank" rel="noopener noreferrer">23716618</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014965.1" target="_blank" rel="noopener noreferrer">NC_014965.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATTATTAAAACAATCAAT</td>
+        <td class="border p-2">+  [597002, 597020]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), qRT-PCR [RNA] (ECO:0001808), Luciferase reporter assay (ECO:0005648), Visual sequence inspection (nan), Ad-hoc quantitative phenotype observation (ECO:0005676)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">VVMO6_00535 (VVMO6_00535)</span>, </span><span><span style="color: #ffffff;">VVMO6_00534 (VVMO6_00534)</span>, </span><span><span style="color: #ffffff;">VVMO6_00536 (VVMO6_00536)</span>, </span><span><span style="color: #ffffff;">VVMO6_00537 (VVMO6_00537)</span></span></td>
+        <td class="border p-2">432</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23716618" target="_blank" rel="noopener noreferrer">23716618</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014966.1" target="_blank" rel="noopener noreferrer">NC_014966.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TATTTTCAGGATTATTAAT</td>
+        <td class="border p-2">+  [1037238, 1037256]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Luciferase reporter assay (ECO:0005648), Ad-hoc quantitative phenotype observation (ECO:0005676)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VVMO6_03879 (VVMO6_03879)</span>, </span><span><span style="color: #F44336;">VVMO6_03880 (VVMO6_03880)</span>, </span><span><span style="color: #F44336;">VVMO6_03881 (VVMO6_03881)</span></span></td>
+        <td class="border p-2">438</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23560801" target="_blank" rel="noopener noreferrer">23560801</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014966.1" target="_blank" rel="noopener noreferrer">NC_014966.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAATCGATAATGAAACAC</td>
+        <td class="border p-2">+  [1589548, 1589566]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VVMO6_04367 (VVMO6_04367)</span>, </span><span><span style="color: #ffffff;">VVMO6_04366 (VVMO6_04366)</span>, </span><span><span style="color: #ffffff;">VVMO6_04365 (VVMO6_04365)</span>, </span><span><span style="color: #ffffff;">VVMO6_04368 (VVMO6_04368)</span>, </span><span><span style="color: #ffffff;">VVMO6_04369 (VVMO6_04369)</span></span></td>
+        <td class="border p-2">439</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23560801" target="_blank" rel="noopener noreferrer">23560801</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014966.1" target="_blank" rel="noopener noreferrer">NC_014966.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GATAATGAAACACAACCAA</td>
+        <td class="border p-2">+  [1589542, 1589560]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VVMO6_04367 (VVMO6_04367)</span>, </span><span><span style="color: #ffffff;">VVMO6_04366 (VVMO6_04366)</span>, </span><span><span style="color: #ffffff;">VVMO6_04365 (VVMO6_04365)</span>, </span><span><span style="color: #ffffff;">VVMO6_04368 (VVMO6_04368)</span>, </span><span><span style="color: #ffffff;">VVMO6_04369 (VVMO6_04369)</span></span></td>
+        <td class="border p-2">439</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23560801" target="_blank" rel="noopener noreferrer">23560801</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014966.1" target="_blank" rel="noopener noreferrer">NC_014966.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATGCAAATGAGAATGCTTTACATTT</td>
+        <td class="border p-2">+  [1423581, 1423606]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VVMO6_04211 (VVMO6_04211)</span>, </span><span><span style="color: #ffffff;">VVMO6_04210 (VVMO6_04210)</span>, </span><span><span style="color: #ffffff;">VVMO6_04209 (VVMO6_04209)</span>, </span><span><span style="color: #ffffff;">VVMO6_04212 (VVMO6_04212)</span></span></td>
+        <td class="border p-2">440</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22297218" target="_blank" rel="noopener noreferrer">22297218</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004459.3" target="_blank" rel="noopener noreferrer">NC_004459.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAGCTCTCTTTGCAAATTGTTATTAAATTGTAACTGG</td>
+        <td class="border p-2">+  [163670, 163706]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VV1_0174 (VV1_0174)</span>, </span><span><span style="color: #ffffff;">VV1_0173 (VV1_0173)</span>, </span><span><span style="color: #ffffff;">VV1_0172 (VV1_0172)</span>, </span><span><span style="color: #ffffff;">VV1_0171 (VV1_0171)</span>, </span><span><span style="color: #ffffff;">VV1_0170 (VV1_0170)</span>, </span><span><span style="color: #ffffff;">pgm (VV1_0169)</span>, </span><span><span style="color: #4CAF50;">VV1_0175 (VV1_0175)</span>, </span><span><span style="color: #ffffff;">glnS (VV1_0176)</span></span></td>
+        <td class="border p-2">560</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17237166" target="_blank" rel="noopener noreferrer">17237166</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_014966.1" target="_blank" rel="noopener noreferrer">NC_014966.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P33117" target="_blank" rel="noopener noreferrer">P33117</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTAATGATAATTATTATC</td>
+        <td class="border p-2">+  [1410205, 1410223]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Luciferase reporter assay (ECO:0005648)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">VVMO6_04199 (VVMO6_04199)</span>, </span><span><span style="color: #F44336;">VVMO6_04198 (VVMO6_04198)</span>, </span><span><span style="color: #ffffff;">VVMO6_04197 (VVMO6_04197)</span>, </span><span><span style="color: #ffffff;">VVMO6_04200 (VVMO6_04200)</span></span></td>
+        <td class="border p-2">879</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22696215" target="_blank" rel="noopener noreferrer">22696215</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

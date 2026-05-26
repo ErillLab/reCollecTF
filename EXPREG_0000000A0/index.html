@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AraC - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">AraC</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A0A0F6AWN9/entry">
+          UniProtKB: A0A0F6AWN9
+        </a>
+        regulon and binding site collection of Salmonella enterica subsp. enterica serovar Typhimurium str. 14028S
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">GCGAATAATTACCGCCATC</td>
+        <td class="border p-2">+  [173950, 173968]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_0179 (STM14_0179)</span>, </span><span><span style="color: #4CAF50;">STM14_0178 (STM14_0178)</span>, </span><span><span style="color: #4CAF50;">STM14_0177 (STM14_0177)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGTAGCCATTTAATCCATA</td>
+        <td class="border p-2">+  [3197111, 3197129]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araE (STM14_3641)</span>, </span><span><span style="color: #4CAF50;">ygeA (STM14_3640)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CATAGCATAATAATGAATA</td>
+        <td class="border p-2">+  [446878, 446896]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araJ (STM14_0466)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">ATTAGCATTTTTGTCCATA</td>
+        <td class="border p-2">+  [122093, 122111]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araB (STM14_0122)</span>, </span><span><span style="color: #4CAF50;">araA (STM14_0121)</span>, </span><span><span style="color: #4CAF50;">araD (STM14_0120)</span>, </span><span><span style="color: #4CAF50;">araC (STM14_0123)</span>, </span><span><span style="color: #ffffff;">yabI (STM14_0124)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TATGGCTGGAATGTCCACA</td>
+        <td class="border p-2">+  [122146, 122164]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">araB (STM14_0122)</span>, </span><span><span style="color: #4CAF50;">araA (STM14_0121)</span>, </span><span><span style="color: #4CAF50;">araD (STM14_0120)</span>, </span><span><span style="color: #4CAF50;">araC (STM14_0123)</span>, </span><span><span style="color: #ffffff;">yabI (STM14_0124)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_016856.1" target="_blank" rel="noopener noreferrer">NC_016856.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0F6AWN9" target="_blank" rel="noopener noreferrer">A0A0F6AWN9</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAGACTTCTCCCCATCAGATGATGGCGGTAATTATTCGCCTGCGAGCTTTTTTTTGCGTAGCAGGATCACGCCGCTGATATGGATAAAATGGTTATACGT</td>
+        <td class="border p-2">+  [173929, 174029]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">STM14_0178 (STM14_0178)</span>, </span><span><span style="color: #ffffff;">STM14_0179 (STM14_0179)</span>, </span><span><span style="color: #ffffff;">STM14_0177 (STM14_0177)</span></span></td>
+        <td class="border p-2">629</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24272778" target="_blank" rel="noopener noreferrer">24272778</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

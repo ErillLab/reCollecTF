@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CovR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">CovR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q1J8D4/entry">
+          UniProtKB: Q1J8D4
+        </a>
+        regulon and binding site collection of Streptococcus pyogenes JRS4
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTAAA</td>
+        <td class="border p-2">+  [322929, 322934]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0310 (M6_Spy0310)</span>, </span><span><span style="color: #F44336;">M6_Spy0311 (M6_Spy0311)</span></span></td>
+        <td class="border p-2">957</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15882414" target="_blank" rel="noopener noreferrer">15882414</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTACA</td>
+        <td class="border p-2">+  [322941, 322946]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0310 (M6_Spy0310)</span>, </span><span><span style="color: #F44336;">M6_Spy0311 (M6_Spy0311)</span></span></td>
+        <td class="border p-2">957</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15882414" target="_blank" rel="noopener noreferrer">15882414</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTAGA</td>
+        <td class="border p-2">+  [323053, 323058]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0310 (M6_Spy0310)</span>, </span><span><span style="color: #F44336;">M6_Spy0311 (M6_Spy0311)</span></span></td>
+        <td class="border p-2">957</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15882414" target="_blank" rel="noopener noreferrer">15882414</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTAGA</td>
+        <td class="border p-2">+  [323095, 323100]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0310 (M6_Spy0310)</span>, </span><span><span style="color: #F44336;">M6_Spy0311 (M6_Spy0311)</span></span></td>
+        <td class="border p-2">957</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15882414" target="_blank" rel="noopener noreferrer">15882414</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTAAG</td>
+        <td class="border p-2">+  [323162, 323167]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0310 (M6_Spy0310)</span>, </span><span><span style="color: #F44336;">M6_Spy0311 (M6_Spy0311)</span></span></td>
+        <td class="border p-2">957</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15882414" target="_blank" rel="noopener noreferrer">15882414</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007297.1" target="_blank" rel="noopener noreferrer">NC_007297.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATATAGGATTATACAATTTAAT</td>
+        <td class="border p-2">+  [195524, 195546]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), In-vitro transcription (ECO:0001204), RNAse protection (ECO:0000288)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M5005_Spy_0186 (M5005_Spy_0186)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0187 (M5005_Spy_0187)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0188 (M5005_Spy_0188)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0189 (M5005_Spy_0189)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0190 (M5005_Spy_0190)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0191 (M5005_Spy_0191)</span></span></td>
+        <td class="border p-2">1078</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16963575" target="_blank" rel="noopener noreferrer">16963575</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007297.1" target="_blank" rel="noopener noreferrer">NC_007297.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAGAGAAAAATTACATTGTTAGATTATTATTTGGAA</td>
+        <td class="border p-2">+  [195483, 195518]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), In-vitro transcription (ECO:0001204), RNAse protection (ECO:0000288)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M5005_Spy_0186 (M5005_Spy_0186)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0187 (M5005_Spy_0187)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0188 (M5005_Spy_0188)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0189 (M5005_Spy_0189)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0190 (M5005_Spy_0190)</span>, </span><span><span style="color: #ffffff;">M5005_Spy_0191 (M5005_Spy_0191)</span></span></td>
+        <td class="border p-2">1078</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16963575" target="_blank" rel="noopener noreferrer">16963575</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAGTTATAAAGCTTTAAAAATTAGCTCTCATTTTTGTCGTTATTGTTTGAAAAATATAGTTTTTTAGAGAAAATTATTATTTTTTTTGTCATTTTTGATAATATTAAAAAGAAAGGGTTTACATATTAATCATTTTTTACTATAATAAAAGTG</td>
+        <td class="border p-2">+  [575286, 575438]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), In-vitro transcription (ECO:0001204)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0578 (M6_Spy0578)</span></span></td>
+        <td class="border p-2">1091</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16174772" target="_blank" rel="noopener noreferrer">16174772</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006086.1" target="_blank" rel="noopener noreferrer">NC_006086.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q1J8D4" target="_blank" rel="noopener noreferrer">Q1J8D4</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAACTTTATTTTTAAAATAAGGTTAAAAATAAACGACTCGCGTTCTTATCAGTTACTTATTAGATAAGGAGGTAAACCTTATG</td>
+        <td class="border p-2">+  [575502, 575584]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), In-vitro transcription (ECO:0001204)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">M6_Spy0578 (M6_Spy0578)</span>, </span><span><span style="color: #ffffff;">M6_Spy0579 (M6_Spy0579)</span>, </span><span><span style="color: #ffffff;">M6_Spy0580 (M6_Spy0580)</span>, </span><span><span style="color: #ffffff;">M6_Spy0581 (M6_Spy0581)</span>, </span><span><span style="color: #ffffff;">M6_Spy0582 (M6_Spy0582)</span>, </span><span><span style="color: #ffffff;">M6_Spy0583 (M6_Spy0583)</span>, </span><span><span style="color: #ffffff;">M6_Spy0584 (M6_Spy0584)</span>, </span><span><span style="color: #ffffff;">M6_Spy0585 (M6_Spy0585)</span>, </span><span><span style="color: #ffffff;">M6_Spy0586 (M6_Spy0586)</span></span></td>
+        <td class="border p-2">1091</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16174772" target="_blank" rel="noopener noreferrer">16174772</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

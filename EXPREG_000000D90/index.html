@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PerR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">PerR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q2G282/entry">
+          UniProtKB: Q2G282
+        </a>
+        regulon and binding site collection of Staphylococcus aureus subsp. aureus NCTC 8325
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTATAATTATTATAAAT</td>
+        <td class="border p-2">+  [1269991, 1270009]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SAOUHSC_01326 (SAOUHSC_01326)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01325 (SAOUHSC_01325)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01324 (SAOUHSC_01324)</span>, </span><span><span style="color: #F44336;">SAOUHSC_01327 (SAOUHSC_01327)</span>, </span><span><span style="color: #ffffff;">rpmG (SAOUHSC_01328)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATTAGAATTATTATAATT</td>
+        <td class="border p-2">+  [371894, 371912]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SAOUHSC_00365 (SAOUHSC_00365)</span>, </span><span><span style="color: #F44336;">SAOUHSC_00364 (SAOUHSC_00364)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00363 (SAOUHSC_00363)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00362 (SAOUHSC_00362)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00366 (SAOUHSC_00366)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00367 (SAOUHSC_00367)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00368 (SAOUHSC_00368)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATTAGAATTATTATAATA</td>
+        <td class="border p-2">+  [2203493, 2203511]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SAOUHSC_02381 (SAOUHSC_02381)</span>, </span><span><span style="color: #ffffff;">deoD (SAOUHSC_02380)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02382 (SAOUHSC_02382)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATAATAATTATTATATAA</td>
+        <td class="border p-2">+  [1907687, 1907705]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SAOUHSC_01997 (SAOUHSC_01997)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01998 (SAOUHSC_01998)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01999 (SAOUHSC_01999)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02000 (SAOUHSC_02000)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTTTTAATTATTAGTAGG</td>
+        <td class="border p-2">+  [1518394, 1518412]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SAOUHSC_01592 (SAOUHSC_01592)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01591 (SAOUHSC_01591)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01590 (SAOUHSC_01590)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01589 (SAOUHSC_01589)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01588 (SAOUHSC_01588)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01587 (SAOUHSC_01587)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01586 (SAOUHSC_01586)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01585 (SAOUHSC_01585)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01593 (SAOUHSC_01593)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01594 (SAOUHSC_01594)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTATAATTATTATTATT</td>
+        <td class="border p-2">+  [1981524, 1981542]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SAOUHSC_02107 (SAOUHSC_02107)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02106 (SAOUHSC_02106)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02105 (SAOUHSC_02105)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02104 (SAOUHSC_02104)</span>, </span><span><span style="color: #F44336;">SAOUHSC_02108 (SAOUHSC_02108)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02109 (SAOUHSC_02109)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCATATAATTATTATTATT</td>
+        <td class="border p-2">+  [766302, 766320]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SAOUHSC_00784 (SAOUHSC_00784)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00783 (SAOUHSC_00783)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00782 (SAOUHSC_00782)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_00781 (SAOUHSC_00781)</span>, </span><span><span style="color: #F44336;">SAOUHSC_00785 (SAOUHSC_00785)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007795.1" target="_blank" rel="noopener noreferrer">NC_007795.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q2G282" target="_blank" rel="noopener noreferrer">Q2G282</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCATAAAATTATTATAATG</td>
+        <td class="border p-2">+  [1909195, 1909213]</td>
+        <td class="border p-2">Beta-gal reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SAOUHSC_01999 (SAOUHSC_01999)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01998 (SAOUHSC_01998)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_01997 (SAOUHSC_01997)</span>, </span><span><span style="color: #ffffff;">SAOUHSC_02000 (SAOUHSC_02000)</span></span></td>
+        <td class="border p-2">559</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11349039" target="_blank" rel="noopener noreferrer">11349039</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RpoN - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">RpoN</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q74BZ1/entry">
+          UniProtKB: Q74BZ1
+        </a>
+        regulon and binding site collection of Geobacter sulfurreducens strain DL1
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGGCAGACTATTTGCT</td>
+        <td class="border p-2">+  [2002708, 2002723]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">glnB (GSU1836)</span>, </span><span><span style="color: #ffffff;">glnA (GSU1835)</span>, </span><span><span style="color: #ffffff;">GSU1834 (GSU1834)</span>, </span><span><span style="color: #ffffff;">trpS (GSU1833)</span>, </span><span><span style="color: #ffffff;">scpA (GSU1832)</span>, </span><span><span style="color: #ffffff;">scpB (GSU1831)</span>, </span><span><span style="color: #ffffff;">GSU1830 (GSU1830)</span>, </span><span><span style="color: #ffffff;">GSU1829 (GSU1829)</span>, </span><span><span style="color: #ffffff;">GSU1828 (GSU1828)</span>, </span><span><span style="color: #ffffff;">nadB (GSU1827)</span>, </span><span><span style="color: #ffffff;">GSU1837 (GSU1837)</span>, </span><span><span style="color: #ffffff;">hrpB (GSU1838)</span>, </span><span><span style="color: #ffffff;">GSU1839 (GSU1839)</span>, </span><span><span style="color: #ffffff;">GSU1840 (GSU1840)</span>, </span><span><span style="color: #ffffff;">GSU1841 (GSU1841)</span>, </span><span><span style="color: #ffffff;">GSU1842 (GSU1842)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGTATCCCCCTTGCT</td>
+        <td class="border p-2">+  [3027514, 3027529]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">dcuB (GSU2751)</span>, </span><span><span style="color: #ffffff;">GSU2750 (GSU2750)</span>, </span><span><span style="color: #ffffff;">GSU2749 (GSU2749)</span>, </span><span><span style="color: #ffffff;">GSU2748 (GSU2748)</span>, </span><span><span style="color: #ffffff;">GSU2747 (GSU2747)</span>, </span><span><span style="color: #ffffff;">GSU2746 (GSU2746)</span>, </span><span><span style="color: #ffffff;">GSU2753 (GSU2753)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCATTTCGGTTGCA</td>
+        <td class="border p-2">+  [451028, 451043]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">flgE (GSU0419)</span>, </span><span><span style="color: #2196F3;">fliL (GSU0420)</span>, </span><span><span style="color: #ffffff;">fliM (GSU0421)</span>, </span><span><span style="color: #ffffff;">fliN (GSU0422)</span>, </span><span><span style="color: #ffffff;">fliO (GSU3482)</span>, </span><span><span style="color: #ffffff;">fliP (GSU0423)</span>, </span><span><span style="color: #ffffff;">fliQ (GSU0424)</span>, </span><span><span style="color: #ffffff;">fliR (GSU0425)</span>, </span><span><span style="color: #ffffff;">flhB (GSU0426)</span>, </span><span><span style="color: #ffffff;">GSU0427 (GSU0427)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCACAATGCTTGCC</td>
+        <td class="border p-2">+  [834866, 834881]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">GSU0776 (GSU0776)</span>, </span><span><span style="color: #ffffff;">GSU0775 (GSU0775)</span>, </span><span><span style="color: #ffffff;">GSU0774 (GSU0774)</span>, </span><span><span style="color: #ffffff;">GSU0773 (GSU0773)</span>, </span><span><span style="color: #ffffff;">GSU0772 (GSU0772)</span>, </span><span><span style="color: #2196F3;">fdnG (GSU0777)</span>, </span><span><span style="color: #ffffff;">fdnH (GSU0778)</span>, </span><span><span style="color: #2196F3;">fdnI (GSU0779)</span>, </span><span><span style="color: #ffffff;">fdhD/mobA-2 (GSU0780)</span>, </span><span><span style="color: #2196F3;">fdnT (GSU0781)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCACGTGGGGTGCA</td>
+        <td class="border p-2">+  [3087155, 3087170]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">nifEN (GSU2806)</span>, </span><span><span style="color: #ffffff;">nifX (GSU2805)</span>, </span><span><span style="color: #ffffff;">fdxN (GSU2804)</span>, </span><span><span style="color: #ffffff;">nifB (GSU2803)</span>, </span><span><span style="color: #ffffff;">draT (GSU2802)</span>, </span><span><span style="color: #ffffff;">GSU2801 (GSU2801)</span>, </span><span><span style="color: #ffffff;">draG (GSU2800)</span>, </span><span><span style="color: #ffffff;">ycbK (GSU2807)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74BZ1" target="_blank" rel="noopener noreferrer">Q74BZ1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCACATAACATGCT</td>
+        <td class="border p-2">+  [3350119, 3350134]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">flgJ (GSU3046)</span>, </span><span><span style="color: #2196F3;">flgM (GSU3045)</span>, </span><span><span style="color: #2196F3;">flgN (GSU3044)</span>, </span><span><span style="color: #2196F3;">flgK (GSU3043)</span>, </span><span><span style="color: #2196F3;">flgL (GSU3042)</span>, </span><span><span style="color: #2196F3;">csrA (GSU3041)</span>, </span><span><span style="color: #ffffff;">fliW (GSU3040)</span>, </span><span><span style="color: #ffffff;">flgI (GSU3047)</span>, </span><span><span style="color: #ffffff;">flgH (GSU3048)</span>, </span><span><span style="color: #ffffff;">flgA (GSU3050)</span>, </span><span><span style="color: #ffffff;">flgG (GSU3051)</span>, </span><span><span style="color: #ffffff;">flgF (GSU3052)</span>, </span><span><span style="color: #ffffff;">fliA (GSU3053)</span>, </span><span><span style="color: #ffffff;">flhG (GSU3054)</span>, </span><span><span style="color: #ffffff;">flhF (GSU3055)</span>, </span><span><span style="color: #ffffff;">flhA (GSU3056)</span></span></td>
+        <td class="border p-2">466</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19624843" target="_blank" rel="noopener noreferrer">19624843</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

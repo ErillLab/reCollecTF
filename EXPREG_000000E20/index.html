@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Zur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q4KKK3/entry">
+          UniProtKB: Q4KKK3
+        </a>
+        regulon and binding site collection of Pseudomonas protegens Pf-5
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTTATAATATAACAT</td>
+        <td class="border p-2">+  [7012814, 7012830]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_6174 (PFL_6174)</span>, </span><span><span style="color: #ffffff;">PFL_6173 (PFL_6173)</span>, </span><span><span style="color: #ffffff;">PFL_6172 (PFL_6172)</span>, </span><span><span style="color: #ffffff;">PFL_6171 (PFL_6171)</span>, </span><span><span style="color: #ffffff;">PFL_6175 (PFL_6175)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTATATTATAACAA</td>
+        <td class="border p-2">+  [7012814, 7012830]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PFL_6174 (PFL_6174)</span>, </span><span><span style="color: #ffffff;">PFL_6173 (PFL_6173)</span>, </span><span><span style="color: #ffffff;">PFL_6172 (PFL_6172)</span>, </span><span><span style="color: #ffffff;">PFL_6171 (PFL_6171)</span>, </span><span><span style="color: #4CAF50;">PFL_6175 (PFL_6175)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTATATTATAACAA</td>
+        <td class="border p-2">+  [7014700, 7014716]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">amiC (PFL_6176)</span>, </span><span><span style="color: #ffffff;">PFL_6177 (PFL_6177)</span>, </span><span><span style="color: #ffffff;">mntA (PFL_6178)</span>, </span><span><span style="color: #ffffff;">mntB (PFL_6179)</span>, </span><span><span style="color: #ffffff;">mntC (PFL_6180)</span>, </span><span><span style="color: #ffffff;">hisI2 (PFL_6181)</span>, </span><span><span style="color: #ffffff;">PFL_6182 (PFL_6182)</span>, </span><span><span style="color: #ffffff;">PFL_6183 (PFL_6183)</span>, </span><span><span style="color: #ffffff;">thrS_2 (PFL_6184)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTTATAATATAACAT</td>
+        <td class="border p-2">+  [7014700, 7014716]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">amiC (PFL_6176)</span>, </span><span><span style="color: #4CAF50;">PFL_6177 (PFL_6177)</span>, </span><span><span style="color: #ffffff;">mntA (PFL_6178)</span>, </span><span><span style="color: #ffffff;">mntB (PFL_6179)</span>, </span><span><span style="color: #ffffff;">mntC (PFL_6180)</span>, </span><span><span style="color: #ffffff;">hisI2 (PFL_6181)</span>, </span><span><span style="color: #ffffff;">PFL_6182 (PFL_6182)</span>, </span><span><span style="color: #ffffff;">PFL_6183 (PFL_6183)</span>, </span><span><span style="color: #ffffff;">thrS_2 (PFL_6184)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTATATTGTATCAA</td>
+        <td class="border p-2">+  [5655550, 5655566]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_4911 (PFL_4911)</span>, </span><span><span style="color: #ffffff;">PFL_4910 (PFL_4910)</span>, </span><span><span style="color: #ffffff;">PFL_4912 (PFL_4912)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTGATCTTATAACAA</td>
+        <td class="border p-2">+  [6308823, 6308839]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_5527 (PFL_5527)</span>, </span><span><span style="color: #ffffff;">PFL_5528 (PFL_5528)</span>, </span><span><span style="color: #ffffff;">PFL_5529 (PFL_5529)</span>, </span><span><span style="color: #ffffff;">PFL_5530 (PFL_5530)</span>, </span><span><span style="color: #ffffff;">PFL_5531 (PFL_5531)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGTTATAAGATCACAT</td>
+        <td class="border p-2">+  [6308823, 6308839]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PFL_5527 (PFL_5527)</span>, </span><span><span style="color: #4CAF50;">PFL_5528 (PFL_5528)</span>, </span><span><span style="color: #ffffff;">PFL_5529 (PFL_5529)</span>, </span><span><span style="color: #ffffff;">PFL_5530 (PFL_5530)</span>, </span><span><span style="color: #ffffff;">PFL_5531 (PFL_5531)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTATATTGTTTCAA</td>
+        <td class="border p-2">+  [1075045, 1075061]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_0932 (PFL_0932)</span>, </span><span><span style="color: #ffffff;">PFL_0931 (PFL_0931)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTATTGTATAACGC</td>
+        <td class="border p-2">+  [5639808, 5639824]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">rpmE_1 (PFL_4896)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGATATGTTATTACAT</td>
+        <td class="border p-2">+  [4404946, 4404962]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">rpmJ (PFL_3806)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGTTACTTTATAACGC</td>
+        <td class="border p-2">+  [754736, 754752]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_0646 (PFL_0646)</span>, </span><span><span style="color: #ffffff;">PFL_0645 (PFL_0645)</span>, </span><span><span style="color: #ffffff;">PFL_0644 (PFL_0644)</span>, </span><span><span style="color: #ffffff;">PFL_0643 (PFL_0643)</span>, </span><span><span style="color: #ffffff;">PFL_0642 (PFL_0642)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_004129.6" target="_blank" rel="noopener noreferrer">NC_004129.6</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q4KKK3" target="_blank" rel="noopener noreferrer">Q4KKK3</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCGTTATATAGTAACGA</td>
+        <td class="border p-2">+  [7033802, 7033818]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PFL_6194 (PFL_6194)</span>, </span><span><span style="color: #ffffff;">PFL_6193 (PFL_6193)</span>, </span><span><span style="color: #ffffff;">PFL_6192 (PFL_6192)</span>, </span><span><span style="color: #ffffff;">cadA_2 (PFL_6191)</span>, </span><span><span style="color: #ffffff;">PFL_6190 (PFL_6190)</span>, </span><span><span style="color: #ffffff;">PFL_6189 (PFL_6189)</span>, </span><span><span style="color: #ffffff;">PFL_6188 (PFL_6188)</span>, </span><span><span style="color: #ffffff;">PFL_6187 (PFL_6187)</span>, </span><span><span style="color: #ffffff;">PFL_6195 (PFL_6195)</span>, </span><span><span style="color: #ffffff;">PFL_6196 (PFL_6196)</span>, </span><span><span style="color: #ffffff;">PFL_6197 (PFL_6197)</span>, </span><span><span style="color: #ffffff;">PFL_6198 (PFL_6198)</span>, </span><span><span style="color: #ffffff;">PFL_6199 (PFL_6199)</span>, </span><span><span style="color: #ffffff;">cdsA_2 (PFL_6200)</span></span></td>
+        <td class="border p-2">776</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22900619" target="_blank" rel="noopener noreferrer">22900619</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

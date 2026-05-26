@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BldD  - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://erilllab.github.io/reCollecTF/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">BldD </b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q7AKQ8/entry">
+          UniProtKB: Q7AKQ8
+        </a>
+        regulon and binding site collection of Streptomyces coelicolor A3(2)
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGCACTCTACGTGAG</td>
+        <td class="border p-2">+  [5179541, 5179555]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO4767 (SCO4767)</span>, </span><span><span style="color: #ffffff;">SCO4768 (SCO4768)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCACTCTGCGGAAC</td>
+        <td class="border p-2">+  [3321145, 3321159]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3034 (SCO3034)</span>, </span><span><span style="color: #ffffff;">SCO3035 (SCO3035)</span>, </span><span><span style="color: #ffffff;">SCO3036 (SCO3036)</span>, </span><span><span style="color: #ffffff;">SCO3037 (SCO3037)</span>, </span><span><span style="color: #ffffff;">SCO3038 (SCO3038)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGTACTCATGGTGAC</td>
+        <td class="border p-2">+  [1510234, 1510248]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1414 (SCO1414)</span>, </span><span><span style="color: #ffffff;">SCO1415 (SCO1415)</span>, </span><span><span style="color: #ffffff;">SCO1416 (SCO1416)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTCACTCCTTGTGAT</td>
+        <td class="border p-2">+  [4319376, 4319390]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3926 (SCO3926)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AACACTCAGAGGGGT</td>
+        <td class="border p-2">+  [1650278, 1650292]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1540 (SCO1540)</span>, </span><span><span style="color: #ffffff;">SCOt02 (SCOt02)</span>, </span><span><span style="color: #ffffff;">SCO1541 (SCO1541)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCACCCTATGTGAT</td>
+        <td class="border p-2">+  [2235846, 2235860]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO2082 (SCO2082)</span>, </span><span><span style="color: #ffffff;">SCO2081 (SCO2081)</span>, </span><span><span style="color: #ffffff;">SCO2080 (SCO2080)</span>, </span><span><span style="color: #ffffff;">SCO2079 (SCO2079)</span>, </span><span><span style="color: #ffffff;">SCO2078 (SCO2078)</span>, </span><span><span style="color: #ffffff;">SCO2077 (SCO2077)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTTACGGGGTGTGAC</td>
+        <td class="border p-2">+  [6367441, 6367455]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5820 (SCO5820)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATCACCCAGAGCGAT</td>
+        <td class="border p-2">+  [6120830, 6120844]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5621 (SCO5621)</span>, </span><span><span style="color: #ffffff;">SCO5622 (SCO5622)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTCACGCTACGCTCA</td>
+        <td class="border p-2">+  [6120926, 6120940]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5621 (SCO5621)</span>, </span><span><span style="color: #ffffff;">SCO5622 (SCO5622)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCACGCTGAGTGAC</td>
+        <td class="border p-2">+  [5108811, 5108825]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO4677 (SCO4677)</span>, </span><span><span style="color: #ffffff;">SCO4676 (SCO4676)</span>, </span><span><span style="color: #ffffff;">SCO4675 (SCO4675)</span>, </span><span><span style="color: #ffffff;">SCO4678 (SCO4678)</span>, </span><span><span style="color: #ffffff;">SCO4679 (SCO4679)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTTACTATGAGTGAC</td>
+        <td class="border p-2">+  [5705630, 5705644]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5244 (SCO5244)</span>, </span><span><span style="color: #ffffff;">SCO5243 (SCO5243)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCACGAAGCGTTAT</td>
+        <td class="border p-2">+  [3675073, 3675087]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3323 (SCO3323)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGTACTGCACGTGAT</td>
+        <td class="border p-2">+  [3675141, 3675155]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3323 (SCO3323)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTAACGCTGCGTAAC</td>
+        <td class="border p-2">+  [1592294, 1592308]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1488 (SCO1488)</span>, </span><span><span style="color: #ffffff;">pyrB (SCO1487)</span>, </span><span><span style="color: #ffffff;">pyrC (SCO1486)</span>, </span><span><span style="color: #ffffff;">SCO1485 (SCO1485)</span>, </span><span><span style="color: #ffffff;">SCO1484 (SCO1484)</span>, </span><span><span style="color: #ffffff;">carB (SCO1483)</span>, </span><span><span style="color: #ffffff;">SCO1482 (SCO1482)</span>, </span><span><span style="color: #ffffff;">pyrF (SCO1481)</span>, </span><span><span style="color: #ffffff;">SCO1489 (SCO1489)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTCACAGTGAGTTAC</td>
+        <td class="border p-2">+  [1592309, 1592323]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1488 (SCO1488)</span>, </span><span><span style="color: #ffffff;">pyrB (SCO1487)</span>, </span><span><span style="color: #ffffff;">pyrC (SCO1486)</span>, </span><span><span style="color: #ffffff;">SCO1485 (SCO1485)</span>, </span><span><span style="color: #ffffff;">SCO1484 (SCO1484)</span>, </span><span><span style="color: #ffffff;">carB (SCO1483)</span>, </span><span><span style="color: #ffffff;">SCO1482 (SCO1482)</span>, </span><span><span style="color: #ffffff;">pyrF (SCO1481)</span>, </span><span><span style="color: #ffffff;">SCO1489 (SCO1489)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTGACTGATCGTCAC</td>
+        <td class="border p-2">+  [4485106, 4485120]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO4091 (SCO4091)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCCACGCGAAGTCGC</td>
+        <td class="border p-2">+  [6284993, 6285007]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5749 (SCO5749)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGAACTCGCGGTGGC</td>
+        <td class="border p-2">+  [6083969, 6083983]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO5581 (SCO5581)</span>, </span><span><span style="color: #ffffff;">SCO5582 (SCO5582)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATGACTCACCGTGAC</td>
+        <td class="border p-2">+  [1744949, 1744963]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1630 (SCO1630)</span>, </span><span><span style="color: #ffffff;">SCO1629 (SCO1629)</span>, </span><span><span style="color: #ffffff;">SCO1628 (SCO1628)</span>, </span><span><span style="color: #ffffff;">SCO1627 (SCO1627)</span>, </span><span><span style="color: #ffffff;">SCO1626 (SCO1626)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTAACTCTCCGCGAC</td>
+        <td class="border p-2">+  [3910148, 3910162]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3540 (SCO3540)</span>, </span><span><span style="color: #ffffff;">SCOt28 (SCOt28)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ACGACGCTGCGTGGG</td>
+        <td class="border p-2">+  [7488421, 7488435]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO6733 (SCO6733)</span>, </span><span><span style="color: #ffffff;">SCO6734 (SCO6734)</span>, </span><span><span style="color: #ffffff;">SCO6735 (SCO6735)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATACGCAAGGTTAC</td>
+        <td class="border p-2">+  [806725, 806739]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO0762 (SCO0762)</span>, </span><span><span style="color: #ffffff;">SCO0763 (SCO0763)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GTCACGCTGCGTGAC</td>
+        <td class="border p-2">+  [3380869, 3380883]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO3087 (SCO3087)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GCAACGCTTCGTGAT</td>
+        <td class="border p-2">+  [3046925, 3046939]</td>
+        <td class="border p-2">Motif-discovery (ECO:0005558), ChIP-chip (ECO:0006007), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO2791 (SCO2791)</span>, </span><span><span style="color: #ffffff;">SCO2792 (SCO2792)</span></span></td>
+        <td class="border p-2">919</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20979333" target="_blank" rel="noopener noreferrer">20979333</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTGATCACC</td>
+        <td class="border p-2">+  [6120826, 6120835]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO5621 (SCO5621)</span>, </span><span><span style="color: #ffffff;">SCO5622 (SCO5622)</span></span></td>
+        <td class="border p-2">920</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11298292" target="_blank" rel="noopener noreferrer">11298292</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTCACGCTACGCTCACG</td>
+        <td class="border p-2">+  [6120925, 6120942]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO5621 (SCO5621)</span>, </span><span><span style="color: #ffffff;">SCO5622 (SCO5622)</span></span></td>
+        <td class="border p-2">920</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11298292" target="_blank" rel="noopener noreferrer">11298292</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGCGACGAAGAGTCACC</td>
+        <td class="border p-2">+  [3680315, 3680331]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO3328 (SCO3328)</span>, </span><span><span style="color: #ffffff;">SCO3327 (SCO3327)</span></span></td>
+        <td class="border p-2">920</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11298292" target="_blank" rel="noopener noreferrer">11298292</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTGCCTGCACGAAGCGTTATTCTCC</td>
+        <td class="border p-2">+  [3675067, 3675092]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Northern blot (ECO:0005653), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO3323 (SCO3323)</span></span></td>
+        <td class="border p-2">920</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11298292" target="_blank" rel="noopener noreferrer">11298292</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTAGCCACTGTGCGTGTTCGCGTGTTTACTATGAGTGACAGCAC</td>
+        <td class="border p-2">+  [5705625, 5705668]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO5244 (SCO5244)</span>, </span><span><span style="color: #ffffff;">SCO5243 (SCO5243)</span></span></td>
+        <td class="border p-2">921</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11401688" target="_blank" rel="noopener noreferrer">11401688</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q7AKQ8" target="_blank" rel="noopener noreferrer">Q7AKQ8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACGCAGCAGAGTAACGCTGCGTAACCTCAC</td>
+        <td class="border p-2">+  [1592284, 1592313]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO1488 (SCO1488)</span>, </span><span><span style="color: #ffffff;">pyrB (SCO1487)</span>, </span><span><span style="color: #ffffff;">pyrC (SCO1486)</span>, </span><span><span style="color: #ffffff;">SCO1485 (SCO1485)</span>, </span><span><span style="color: #ffffff;">SCO1484 (SCO1484)</span>, </span><span><span style="color: #ffffff;">carB (SCO1483)</span>, </span><span><span style="color: #ffffff;">SCO1482 (SCO1482)</span>, </span><span><span style="color: #ffffff;">pyrF (SCO1481)</span>, </span><span><span style="color: #ffffff;">SCO1489 (SCO1489)</span></span></td>
+        <td class="border p-2">923</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10542188" target="_blank" rel="noopener noreferrer">10542188</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
