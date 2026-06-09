@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CcpA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">CcpA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9CF33/entry">
+          UniProtKB: Q9CF33
+        </a>
+        regulon and binding site collection of Lactococcus lactis subsp. lactis Il1403
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002662.1" target="_blank" rel="noopener noreferrer">NC_002662.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGATATCGCTTGCA</td>
+        <td class="border p-2">+  [176236, 176249]</td>
+        <td class="border p-2">Luciferase reporter assay (ECO:0005648), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ybhE (L176316)</span>, </span><span><span style="color: #ffffff;">celB (L177520)</span>, </span><span><span style="color: #ffffff;">L200010 (L200010)</span></span></td>
+        <td class="border p-2">856</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21262549" target="_blank" rel="noopener noreferrer">21262549</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002662.1" target="_blank" rel="noopener noreferrer">NC_002662.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGACAACGAAGGCT</td>
+        <td class="border p-2">+  [177263, 177276]</td>
+        <td class="border p-2">Luciferase reporter assay (ECO:0005648), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ybhE (L176316)</span>, </span><span><span style="color: #F44336;">celB (L177520)</span>, </span><span><span style="color: #ffffff;">L200010 (L200010)</span></span></td>
+        <td class="border p-2">856</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21262549" target="_blank" rel="noopener noreferrer">21262549</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAACCTTTTCA</td>
+        <td class="border p-2">+  [764211, 764224]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">pepQ (llmg_0774)</span>, </span><span><span style="color: #F44336;">ccpA (llmg_0775)</span>, </span><span><span style="color: #ffffff;">trxB2 (llmg_0776)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTAACCGTTTACA</td>
+        <td class="border p-2">+  [1060273, 1060286]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">glpK (llmg_1099)</span>, </span><span><span style="color: #ffffff;">glpD (llmg_1098)</span>, </span><span><span style="color: #ffffff;">glpF2 (llmg_1097)</span>, </span><span><span style="color: #ffffff;">rluC (llmg_1100)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAATCGCTAACA</td>
+        <td class="border p-2">+  [1089040, 1089053]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1127 (llmg_1127)</span>, </span><span><span style="color: #ffffff;">llmg_1128 (llmg_1128)</span>, </span><span><span style="color: #ffffff;">llmg_1129 (llmg_1129)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAACAGTTTACA</td>
+        <td class="border p-2">+  [1713777, 1713790]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">noxB (llmg_1734)</span>, </span><span><span style="color: #ffffff;">sdaB (llmg_1733)</span>, </span><span><span style="color: #ffffff;">sdaA (llmg_1732)</span>, </span><span><span style="color: #ffffff;">copR (llmg_1731)</span>, </span><span><span style="color: #ffffff;">merP (llmg_1730)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTAACCGGTATTA</td>
+        <td class="border p-2">+  [1845407, 1845420]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">cydA (llmg_1864)</span>, </span><span><span style="color: #ffffff;">cydB (llmg_1863)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGAGCATACA</td>
+        <td class="border p-2">+  [1895596, 1895609]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1915 (llmg_1915)</span>, </span><span><span style="color: #ffffff;">llmg_1916 (llmg_1916)</span>, </span><span><span style="color: #ffffff;">llmg_1917 (llmg_1917)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGACAGAGTTTTCA</td>
+        <td class="border p-2">+  [1896652, 1896665]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1916 (llmg_1916)</span>, </span><span><span style="color: #ffffff;">llmg_1917 (llmg_1917)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAAAACGTTTGAA</td>
+        <td class="border p-2">+  [2243520, 2243533]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ackA1 (llmg_2289)</span>, </span><span><span style="color: #ffffff;">ackA2 (llmg_2288)</span>, </span><span><span style="color: #ffffff;">llmg_2286 (llmg_2286)</span>, </span><span><span style="color: #ffffff;">pyrH (llmg_2285)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAAAACGCATACA</td>
+        <td class="border p-2">+  [2242413, 2242426]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ackA2 (llmg_2288)</span>, </span><span><span style="color: #ffffff;">llmg_2286 (llmg_2286)</span>, </span><span><span style="color: #ffffff;">pyrH (llmg_2285)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAAAGCGATTTCT</td>
+        <td class="border p-2">+  [2382930, 2382943]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">adhE (llmg_2432)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTAAGCGTATTCA</td>
+        <td class="border p-2">+  [133732, 133745]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_tRNA_10 (llmg_tRNA_10)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAGAGATATCT</td>
+        <td class="border p-2">+  [1012045, 1012058]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">busAA (llmg_1048)</span>, </span><span><span style="color: #ffffff;">busAB (llmg_1049)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACTTTTACA</td>
+        <td class="border p-2">+  [2263384, 2263397]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">arcB (llmg_2312)</span>, </span><span><span style="color: #ffffff;">arcD1 (llmg_2311)</span>, </span><span><span style="color: #ffffff;">arcC1 (llmg_2310)</span>, </span><span><span style="color: #ffffff;">arcC2 (llmg_2309)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAACGATTCCA</td>
+        <td class="border p-2">+  [2264669, 2264682]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">arcA (llmg_2313)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAATCATTAGCA</td>
+        <td class="border p-2">+  [994996, 995009]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">trpE (llmg_1030)</span>, </span><span><span style="color: #ffffff;">trpG (llmg_1031)</span>, </span><span><span style="color: #ffffff;">trpD (llmg_1032)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAGCGCAAGCA</td>
+        <td class="border p-2">+  [2425585, 2425598]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">gntP (llmg_2467)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTGAACGCTTAAA</td>
+        <td class="border p-2">+  [751169, 751182]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0761 (llmg_0761)</span>, </span><span><span style="color: #ffffff;">llmg_tRNA_35 (llmg_tRNA_35)</span>, </span><span><span style="color: #F44336;">udk (llmg_0762)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAATGGATTTCA</td>
+        <td class="border p-2">+  [938159, 938172]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">purQ (llmg_0975)</span>, </span><span><span style="color: #ffffff;">purL (llmg_0976)</span>, </span><span><span style="color: #ffffff;">purF (llmg_0977)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGTGATAACA</td>
+        <td class="border p-2">+  [2116563, 2116576]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">gmk (llmg_2155)</span>, </span><span><span style="color: #ffffff;">rpoZ (llmg_2154)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCACACGTTATCT</td>
+        <td class="border p-2">+  [2168307, 2168320]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">purA (llmg_2201)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGTAGCGGTTATA</td>
+        <td class="border p-2">+  [26442, 26455]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">mtlA (llmg_0022)</span>, </span><span><span style="color: #ffffff;">mtlR (llmg_0023)</span>, </span><span><span style="color: #ffffff;">mtlF (llmg_0024)</span>, </span><span><span style="color: #ffffff;">mtlD (llmg_0025)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAAAGCTTACA</td>
+        <td class="border p-2">+  [30849, 30862]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">mtlD (llmg_0025)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACCTTTGCA</td>
+        <td class="border p-2">+  [150492, 150505]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">glgB (llmg_0158)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACGTTATAA</td>
+        <td class="border p-2">+  [428327, 428340]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ptcB (llmg_0437)</span>, </span><span><span style="color: #ffffff;">ptcA (llmg_0438)</span>, </span><span><span style="color: #ffffff;">llmg_0439 (llmg_0439)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAACCGCTTTCT</td>
+        <td class="border p-2">+  [430167, 430180]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ptcC (llmg_0440)</span>, </span><span><span style="color: #ffffff;">celA (llmg_0441)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACGTTTTTA</td>
+        <td class="border p-2">+  [446865, 446878]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">treR (llmg_0452)</span>, </span><span><span style="color: #4CAF50;">llmg_0453 (llmg_0453)</span>, </span><span><span style="color: #ffffff;">llmg_0454 (llmg_0454)</span>, </span><span><span style="color: #ffffff;">trePP (llmg_0455)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAAACCGTTTTCA</td>
+        <td class="border p-2">+  [722208, 722221]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">malE (llmg_0739)</span>, </span><span><span style="color: #ffffff;">malF (llmg_0738)</span>, </span><span><span style="color: #ffffff;">malG (llmg_0737)</span>, </span><span><span style="color: #ffffff;">dexC (llmg_0740)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAATCGCTATCA</td>
+        <td class="border p-2">+  [738258, 738271]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">arb (llmg_0751)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTAATCGTTATCT</td>
+        <td class="border p-2">+  [923492, 923505]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0956 (llmg_0956)</span>, </span><span><span style="color: #F44336;">rpe2 (llmg_0957)</span>, </span><span><span style="color: #ffffff;">rpiB (llmg_0958)</span>, </span><span><span style="color: #ffffff;">llmg_0959 (llmg_0959)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAACAGTTATCA</td>
+        <td class="border p-2">+  [925294, 925307]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0959 (llmg_0959)</span>, </span><span><span style="color: #ffffff;">llmg_0960 (llmg_0960)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAAAGCGTTTACA</td>
+        <td class="border p-2">+  [1444528, 1444541]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1468 (llmg_1468)</span>, </span><span><span style="color: #ffffff;">llmg_1467 (llmg_1467)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAAAGGTAACA</td>
+        <td class="border p-2">+  [1543916, 1543929]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">fruR (llmg_1570)</span>, </span><span><span style="color: #F44336;">fruC (llmg_1569)</span>, </span><span><span style="color: #ffffff;">fruA (llmg_1568)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGCGAATAAA</td>
+        <td class="border p-2">+  [1769738, 1769751]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1790 (llmg_1790)</span>, </span><span><span style="color: #4CAF50;">pmi (llmg_1789)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGTTAGCGCTTACA</td>
+        <td class="border p-2">+  [2165064, 2165077]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">chiC (llmg_2199)</span>, </span><span><span style="color: #ffffff;">chb (llmg_2200)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATCAGCGTTAACA</td>
+        <td class="border p-2">+  [2198279, 2198292]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">galK (llmg_2235)</span>, </span><span><span style="color: #ffffff;">galT (llmg_2234)</span>, </span><span><span style="color: #ffffff;">galE (llmg_2233)</span>, </span><span><span style="color: #ffffff;">llmg_2232 (llmg_2232)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCCATCGTATTCA</td>
+        <td class="border p-2">+  [2200597, 2200610]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">galP (llmg_2237)</span>, </span><span><span style="color: #ffffff;">galM (llmg_2236)</span>, </span><span><span style="color: #ffffff;">galK (llmg_2235)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACGCTTTTT</td>
+        <td class="border p-2">+  [2381721, 2381734]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rpsB (llmg_2430)</span>, </span><span><span style="color: #ffffff;">tsf (llmg_2429)</span>, </span><span><span style="color: #4CAF50;">llmg_2431 (llmg_2431)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATAAGCGCTTACA</td>
+        <td class="border p-2">+  [2402023, 2402036]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">pgi (llmg_2448)</span>, </span><span><span style="color: #ffffff;">llmg_2449 (llmg_2449)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAGTATTTTCA</td>
+        <td class="border p-2">+  [1189435, 1189448]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">dltB (llmg_1220)</span>, </span><span><span style="color: #ffffff;">dltC (llmg_1221)</span>, </span><span><span style="color: #F44336;">dltD (llmg_1222)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAAATGTTTTCA</td>
+        <td class="border p-2">+  [1701647, 1701660]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">rpsA (llmg_1724)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCAAGCGATTTGA</td>
+        <td class="border p-2">+  [1701981, 1701994]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">mnmA (llmg_1725)</span>, </span><span><span style="color: #ffffff;">rpsA (llmg_1724)</span>, </span><span><span style="color: #ffffff;">llmg_1726 (llmg_1726)</span>, </span><span><span style="color: #ffffff;">llmg_1727 (llmg_1727)</span>, </span><span><span style="color: #ffffff;">llmg_1728 (llmg_1728)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGATATCGCTTCCA</td>
+        <td class="border p-2">+  [764560, 764573]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ccpA (llmg_0775)</span>, </span><span><span style="color: #ffffff;">pepQ (llmg_0774)</span>, </span><span><span style="color: #ffffff;">trxB2 (llmg_0776)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGTAATCGTTTACT</td>
+        <td class="border p-2">+  [923612, 923625]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">llmg_0956 (llmg_0956)</span>, </span><span><span style="color: #ffffff;">rpe2 (llmg_0957)</span>, </span><span><span style="color: #ffffff;">rpiB (llmg_0958)</span>, </span><span><span style="color: #ffffff;">llmg_0959 (llmg_0959)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGCGCAAACA</td>
+        <td class="border p-2">+  [2183501, 2183514]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">llmg_2218 (llmg_2218)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAAAGCGTATTCA</td>
+        <td class="border p-2">+  [1028645, 1028658]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1069 (llmg_1069)</span>, </span><span><span style="color: #4CAF50;">llrB (llmg_1068)</span>, </span><span><span style="color: #ffffff;">kinB (llmg_1067)</span>, </span><span><span style="color: #ffffff;">llmg_1066 (llmg_1066)</span>, </span><span><span style="color: #ffffff;">llmg_1070 (llmg_1070)</span>, </span><span><span style="color: #ffffff;">llmg_1071 (llmg_1071)</span>, </span><span><span style="color: #ffffff;">tnp1077 (llmg_pseudo_35)</span>, </span><span><span style="color: #ffffff;">llmg_1072 (llmg_1072)</span>, </span><span><span style="color: #ffffff;">llmg_1073 (llmg_1073)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAATACGATTACA</td>
+        <td class="border p-2">+  [2275630, 2275643]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_2320 (llmg_2320)</span>, </span><span><span style="color: #ffffff;">snf (llmg_2319)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGCGTTAAGA</td>
+        <td class="border p-2">+  [634208, 634221]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">clpP (llmg_0638)</span>, </span><span><span style="color: #ffffff;">llmg_0639 (llmg_0639)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAAGGCTTAAA</td>
+        <td class="border p-2">+  [297967, 297980]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0311 (llmg_0311)</span>, </span><span><span style="color: #4CAF50;">phnD (llmg_0312)</span>, </span><span><span style="color: #ffffff;">phnC (llmg_0313)</span>, </span><span><span style="color: #ffffff;">phnB (llmg_0314)</span>, </span><span><span style="color: #ffffff;">llmg_0315 (llmg_0315)</span>, </span><span><span style="color: #ffffff;">cpdC (llmg_0316)</span>, </span><span><span style="color: #ffffff;">llmg_0317 (llmg_0317)</span>, </span><span><span style="color: #ffffff;">tpx (llmg_0318)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAAAGCGGTTAAA</td>
+        <td class="border p-2">+  [337108, 337121]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">fhuD (llmg_0349)</span>, </span><span><span style="color: #ffffff;">fhuR (llmg_0350)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAACTCTAACA</td>
+        <td class="border p-2">+  [657848, 657861]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0661 (llmg_0661)</span>, </span><span><span style="color: #ffffff;">tnp905 (llmg_pseudo_15)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAAATACGCTTTCA</td>
+        <td class="border p-2">+  [1523566, 1523579]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fdhC (llmg_1551)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAATACGAATACA</td>
+        <td class="border p-2">+  [173529, 173542]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_0185 (llmg_0185)</span>, </span><span><span style="color: #ffffff;">llmg_0186 (llmg_0186)</span>, </span><span><span style="color: #ffffff;">celB (llmg_0187)</span>, </span><span><span style="color: #ffffff;">llmg_0188 (llmg_0188)</span>, </span><span><span style="color: #ffffff;">llmg_0189 (llmg_0189)</span>, </span><span><span style="color: #ffffff;">bglS (llmg_0190)</span>, </span><span><span style="color: #ffffff;">dut (llmg_0191)</span>, </span><span><span style="color: #ffffff;">llmg_0192 (llmg_0192)</span>, </span><span><span style="color: #ffffff;">llmg_0193 (llmg_0193)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAATCGTTCACA</td>
+        <td class="border p-2">+  [182572, 182585]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">llmg_0194 (llmg_0194)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAAGCGTTGATA</td>
+        <td class="border p-2">+  [540011, 540024]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pgmA (llmg_0541)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTAAGCGTTCACA</td>
+        <td class="border p-2">+  [751169, 751182]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_0761 (llmg_0761)</span>, </span><span><span style="color: #ffffff;">llmg_tRNA_35 (llmg_tRNA_35)</span>, </span><span><span style="color: #ffffff;">udk (llmg_0762)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGATATCGATAACA</td>
+        <td class="border p-2">+  [960372, 960385]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_0995 (llmg_0995)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTAAACGTTTACC</td>
+        <td class="border p-2">+  [1900619, 1900632]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1920 (llmg_1920)</span>, </span><span><span style="color: #ffffff;">llmg_1919 (llmg_1919)</span>, </span><span><span style="color: #ffffff;">llmg_1918 (llmg_1918)</span>, </span><span><span style="color: #ffffff;">rpsT (llmg_1921)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAATGCGTTTACA</td>
+        <td class="border p-2">+  [1979094, 1979107]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">adhA (llmg_1991)</span>, </span><span><span style="color: #ffffff;">llmg_1990 (llmg_1990)</span>, </span><span><span style="color: #ffffff;">recQ (llmg_1992)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCAGCATTTTCA</td>
+        <td class="border p-2">+  [1916902, 1916915]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1936 (llmg_1936)</span>, </span><span><span style="color: #ffffff;">llmg_pseudo_59 (llmg_pseudo_59)</span>, </span><span><span style="color: #ffffff;">aroC (llmg_1934)</span>, </span><span><span style="color: #ffffff;">llmg_1933 (llmg_1933)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTAATCGGTTACA</td>
+        <td class="border p-2">+  [420922, 420935]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">cstA (llmg_0430)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGCACTGCCA</td>
+        <td class="border p-2">+  [954599, 954612]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0989 (llmg_0989)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAAAGTGCTTGCA</td>
+        <td class="border p-2">+  [172511, 172524]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_0183 (llmg_0183)</span>, </span><span><span style="color: #ffffff;">llmg_0184 (llmg_0184)</span>, </span><span><span style="color: #ffffff;">llmg_0185 (llmg_0185)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGATAACGCTGACA</td>
+        <td class="border p-2">+  [297783, 297796]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_0311 (llmg_0311)</span>, </span><span><span style="color: #ffffff;">phnD (llmg_0312)</span>, </span><span><span style="color: #ffffff;">phnC (llmg_0313)</span>, </span><span><span style="color: #ffffff;">phnB (llmg_0314)</span>, </span><span><span style="color: #ffffff;">llmg_0315 (llmg_0315)</span>, </span><span><span style="color: #ffffff;">cpdC (llmg_0316)</span>, </span><span><span style="color: #ffffff;">llmg_0317 (llmg_0317)</span>, </span><span><span style="color: #ffffff;">tpx (llmg_0318)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAAGCGTTTTAT</td>
+        <td class="border p-2">+  [1050252, 1050265]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_1090 (llmg_1090)</span>, </span><span><span style="color: #ffffff;">llmg_1091 (llmg_1091)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGCGAACGCATTCA</td>
+        <td class="border p-2">+  [1052166, 1052179]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1092 (llmg_1092)</span>, </span><span><span style="color: #ffffff;">llmg_1093 (llmg_1093)</span>, </span><span><span style="color: #ffffff;">llmg_1094 (llmg_1094)</span>, </span><span><span style="color: #ffffff;">llmg_1095 (llmg_1095)</span>, </span><span><span style="color: #ffffff;">llmg_1096 (llmg_1096)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAAGCGGACTCA</td>
+        <td class="border p-2">+  [1055584, 1055597]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1096 (llmg_1096)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAGAAGCGATAACA</td>
+        <td class="border p-2">+  [1361137, 1361150]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_1388 (llmg_1388)</span>, </span><span><span style="color: #ffffff;">llmg_1387 (llmg_1387)</span>, </span><span><span style="color: #ffffff;">llmg_1386 (llmg_1386)</span>, </span><span><span style="color: #ffffff;">llmg_1385 (llmg_1385)</span>, </span><span><span style="color: #ffffff;">llmg_1384 (llmg_1384)</span>, </span><span><span style="color: #ffffff;">traD (llmg_1383)</span>, </span><span><span style="color: #ffffff;">llmg_1382 (llmg_1382)</span>, </span><span><span style="color: #ffffff;">llmg_1381 (llmg_1381)</span>, </span><span><span style="color: #ffffff;">llmg_1379 (llmg_1379)</span>, </span><span><span style="color: #ffffff;">llmg_1378 (llmg_1378)</span>, </span><span><span style="color: #ffffff;">llmg_1377 (llmg_1377)</span>, </span><span><span style="color: #ffffff;">ltrC (llmg_1376)</span>, </span><span><span style="color: #ffffff;">ltrD (llmg_1375)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGCAAACGTTATCA</td>
+        <td class="border p-2">+  [1732275, 1732288]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">llmg_1750 (llmg_1750)</span>, </span><span><span style="color: #ffffff;">llmg_1749 (llmg_1749)</span>, </span><span><span style="color: #ffffff;">llmg_1748 (llmg_1748)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTATGCGTTTTAA</td>
+        <td class="border p-2">+  [2101493, 2101506]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">ps412 (llmg_2131)</span>, </span><span><span style="color: #ffffff;">ps413 (llmg_2130)</span>, </span><span><span style="color: #ffffff;">ps414 (llmg_2129)</span>, </span><span><span style="color: #ffffff;">ps415 (llmg_2128)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAAGGGTTTTCT</td>
+        <td class="border p-2">+  [2175250, 2175263]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_2211 (llmg_2211)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9CF33" target="_blank" rel="noopener noreferrer">Q9CF33</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAAGCGCTATAA</td>
+        <td class="border p-2">+  [2241105, 2241118]</td>
+        <td class="border p-2">DNA-array expression analysis (ECO:0005525), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">llmg_2286 (llmg_2286)</span>, </span><span><span style="color: #ffffff;">pyrH (llmg_2285)</span></span></td>
+        <td class="border p-2">867</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17028270" target="_blank" rel="noopener noreferrer">17028270</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

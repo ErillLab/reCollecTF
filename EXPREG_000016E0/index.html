@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RpoN - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">RpoN</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9KP49/entry">
+          UniProtKB: Q9KP49
+        </a>
+        regulon and binding site collection of Vibrio cholerae O37 strain V52 [185332]
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGTATAGCTTATGC</td>
+        <td class="border p-2">+  [789441, 789455]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0734 (VC0734)</span>, </span><span><span style="color: #ffffff;">VC0733 (VC0733)</span>, </span><span><span style="color: #ffffff;">VC0735 (VC0735)</span>, </span><span><span style="color: #ffffff;">VC0736 (VC0736)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCCCACTTGC</td>
+        <td class="border p-2">+  [1509539, 1509553]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1414 (VC1414)</span>, </span><span><span style="color: #4CAF50;">VC1415 (VC1415)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGAATGGATCTTGC</td>
+        <td class="border p-2">+  [1543753, 1543767]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1446 (VC1446)</span>, </span><span><span style="color: #ffffff;">VC1445 (VC1445)</span>, </span><span><span style="color: #ffffff;">VC1444 (VC1444)</span>, </span><span><span style="color: #ffffff;">VC1447 (VC1447)</span>, </span><span><span style="color: #ffffff;">VC1448 (VC1448)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCACCCTTTTTGC</td>
+        <td class="border p-2">+  [1631839, 1631853]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC1519 (VC1519)</span>, </span><span><span style="color: #ffffff;">VC1518 (VC1518)</span>, </span><span><span style="color: #ffffff;">VC1517 (VC1517)</span>, </span><span><span style="color: #ffffff;">VC1520 (VC1520)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATGACTCTTGC</td>
+        <td class="border p-2">+  [2291237, 2291251]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC2136 (VC2136)</span>, </span><span><span style="color: #ffffff;">VC2135 (VC2135)</span>, </span><span><span style="color: #ffffff;">VC2137 (VC2137)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACACTAATTGA</td>
+        <td class="border p-2">+  [2335939, 2335953]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC2189 (VC2189)</span>, </span><span><span style="color: #4CAF50;">VC2188 (VC2188)</span>, </span><span><span style="color: #ffffff;">flgL (VC2190)</span>, </span><span><span style="color: #ffffff;">flgK (VC2191)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGGAAGTTGC</td>
+        <td class="border p-2">+  [2336133, 2336147]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2189 (VC2189)</span>, </span><span><span style="color: #ffffff;">flgL (VC2190)</span>, </span><span><span style="color: #ffffff;">flgK (VC2191)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGTATGCTTAATGC</td>
+        <td class="border p-2">+  [2848880, 2848894]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2681 (VC2681)</span>, </span><span><span style="color: #ffffff;">VC2680 (VC2680)</span>, </span><span><span style="color: #ffffff;">VC2682 (VC2682)</span></span></td>
+        <td class="border p-2">8</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATTGAGTTTGC</td>
+        <td class="border p-2">+  [137451, 137465]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0122 (VCA0122)</span>, </span><span><span style="color: #ffffff;">VCA0121 (VCA0121)</span>, </span><span><span style="color: #ffffff;">VCA0120 (VCA0120)</span>, </span><span><span style="color: #ffffff;">VCA0119 (VCA0119)</span>, </span><span><span style="color: #ffffff;">VCA0118 (VCA0118)</span>, </span><span><span style="color: #ffffff;">VCA0117 (VCA0117)</span>, </span><span><span style="color: #ffffff;">VCA0116 (VCA0116)</span>, </span><span><span style="color: #ffffff;">VCA0115 (VCA0115)</span>, </span><span><span style="color: #ffffff;">VCA0114 (VCA0114)</span>, </span><span><span style="color: #ffffff;">VCA0113 (VCA0113)</span>, </span><span><span style="color: #ffffff;">VCA0112 (VCA0112)</span>, </span><span><span style="color: #ffffff;">VCA0111 (VCA0111)</span>, </span><span><span style="color: #ffffff;">VCA0110 (VCA0110)</span>, </span><span><span style="color: #ffffff;">VCA0109 (VCA0109)</span>, </span><span><span style="color: #ffffff;">VCA0108 (VCA0108)</span>, </span><span><span style="color: #ffffff;">VCA0107 (VCA0107)</span>, </span><span><span style="color: #4CAF50;">VCA0123 (VCA0123)</span>, </span><span><span style="color: #ffffff;">VCA0124 (VCA0124)</span></span></td>
+        <td class="border p-2">9</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATTCTTTATGC</td>
+        <td class="border p-2">+  [492039, 492053]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0554 (VCA0554)</span>, </span><span><span style="color: #ffffff;">VCA0553 (VCA0553)</span>, </span><span><span style="color: #ffffff;">VCA0555 (VCA0555)</span></span></td>
+        <td class="border p-2">9</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCAAATATGC</td>
+        <td class="border p-2">+  [820452, 820466]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0868 (VCA0868)</span>, </span><span><span style="color: #ffffff;">VCA0867 (VCA0867)</span>, </span><span><span style="color: #ffffff;">VCA0869 (VCA0869)</span>, </span><span><span style="color: #ffffff;">pbpG (VCA0870)</span></span></td>
+        <td class="border p-2">9</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCATGCTTTCTGC</td>
+        <td class="border p-2">+  [879793, 879807]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0925 (VCA0925)</span>, </span><span><span style="color: #ffffff;">VCA0924 (VCA0924)</span>, </span><span><span style="color: #ffffff;">VCA0926 (VCA0926)</span></span></td>
+        <td class="border p-2">9</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGTAATCTGC</td>
+        <td class="border p-2">+  [908318, 908332]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), ChIP-PCR (ECO:0005620), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0959 (VCA0959)</span>, </span><span><span style="color: #ffffff;">VCA0958 (VCA0958)</span>, </span><span><span style="color: #ffffff;">VCA0960 (VCA0960)</span></span></td>
+        <td class="border p-2">9</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCTCTTTTTTTGC</td>
+        <td class="border p-2">+  [174026, 174040]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0173 (VC0173)</span>, </span><span><span style="color: #ffffff;">VC0172 (VC0172)</span>, </span><span><span style="color: #ffffff;">VC0174 (VC0174)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCGATCTTGA</td>
+        <td class="border p-2">+  [517095, 517109]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0486 (VC0486)</span>, </span><span><span style="color: #ffffff;">VC0485 (VC0485)</span>, </span><span><span style="color: #ffffff;">VC0487 (VC0487)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGCCCCTTGG</td>
+        <td class="border p-2">+  [637143, 637157]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC0605 (VC0605)</span>, </span><span><span style="color: #4CAF50;">VC0606 (VC0606)</span>, </span><span><span style="color: #ffffff;">VC0607 (VC0607)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGGCATTTGTTGGC</td>
+        <td class="border p-2">+  [712259, 712273]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lysS (VC0664)</span>, </span><span><span style="color: #ffffff;">prfB (VC0663)</span>, </span><span><span style="color: #ffffff;">VC0665 (VC0665)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCTAGATTTTTGC</td>
+        <td class="border p-2">+  [1078279, 1078293]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1007 (VC1007)</span>, </span><span><span style="color: #ffffff;">VC1006 (VC1006)</span>, </span><span><span style="color: #4CAF50;">VC1008 (VC1008)</span>, </span><span><span style="color: #ffffff;">VC1009 (VC1009)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGATATGTGC</td>
+        <td class="border p-2">+  [1090070, 1090084]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1020 (VC1020)</span>, </span><span><span style="color: #ffffff;">uvrB (VC1018)</span>, </span><span><span style="color: #ffffff;">VC1021 (VC1021)</span>, </span><span><span style="color: #ffffff;">VC1022 (VC1022)</span>, </span><span><span style="color: #ffffff;">VC1023 (VC1023)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATATAATTTGC</td>
+        <td class="border p-2">+  [1131508, 1131522]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1063 (VC1063)</span>, </span><span><span style="color: #ffffff;">VC1062 (VC1062)</span>, </span><span><span style="color: #ffffff;">VC1061 (VC1061)</span>, </span><span><span style="color: #ffffff;">VC1064 (VC1064)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGTTTACTGC</td>
+        <td class="border p-2">+  [1212887, 1212901]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">clpS (VC1143)</span>, </span><span><span style="color: #ffffff;">VC1142 (VC1142)</span>, </span><span><span style="color: #ffffff;">clpA (VC1144)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACTCTAATTGC</td>
+        <td class="border p-2">+  [1226396, 1226410]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC1154 (VC1154)</span>, </span><span><span style="color: #ffffff;">VC1155 (VC1155)</span>, </span><span><span style="color: #ffffff;">VC1156 (VC1156)</span>, </span><span><span style="color: #ffffff;">VC1157 (VC1157)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCGCGAATCTTGC</td>
+        <td class="border p-2">+  [1246282, 1246296]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">trpD (VC1172)</span>, </span><span><span style="color: #4CAF50;">VC1171 (VC1171)</span>, </span><span><span style="color: #ffffff;">VC1170 (VC1170)</span>, </span><span><span style="color: #ffffff;">trpA (VC1169)</span>, </span><span><span style="color: #ffffff;">VC1173 (VC1173)</span>, </span><span><span style="color: #ffffff;">VC1174 (VC1174)</span>, </span><span><span style="color: #ffffff;">VC1175 (VC1175)</span>, </span><span><span style="color: #ffffff;">VC1176 (VC1176)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TAGCACGTTTTATGC</td>
+        <td class="border p-2">+  [1344672, 1344686]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1268 (VC1268)</span>, </span><span><span style="color: #ffffff;">VC1269 (VC1269)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGTATAATAATTGC</td>
+        <td class="border p-2">+  [1322616, 1322630]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1250 (VC1250)</span>, </span><span><span style="color: #ffffff;">VC1249 (VC1249)</span>, </span><span><span style="color: #ffffff;">VC1251 (VC1251)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">AGGTACGAAATTTGC</td>
+        <td class="border p-2">+  [1476876, 1476890]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1383 (VC1383)</span>, </span><span><span style="color: #ffffff;">VC1382 (VC1382)</span>, </span><span><span style="color: #ffffff;">VC1381 (VC1381)</span>, </span><span><span style="color: #ffffff;">VC1380 (VC1380)</span>, </span><span><span style="color: #ffffff;">VC1379 (VC1379)</span>, </span><span><span style="color: #4CAF50;">VC1384 (VC1384)</span>, </span><span><span style="color: #ffffff;">VC1385 (VC1385)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGAACGCTATTTGC</td>
+        <td class="border p-2">+  [1630513, 1630527]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC1516 (VC1516)</span>, </span><span><span style="color: #4CAF50;">VC1515 (VC1515)</span>, </span><span><span style="color: #ffffff;">VC1517 (VC1517)</span>, </span><span><span style="color: #ffffff;">VC1518 (VC1518)</span>, </span><span><span style="color: #ffffff;">VC1519 (VC1519)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCGCAATTATTGC</td>
+        <td class="border p-2">+  [1631760, 1631774]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1519 (VC1519)</span>, </span><span><span style="color: #4CAF50;">VC1518 (VC1518)</span>, </span><span><span style="color: #4CAF50;">VC1517 (VC1517)</span>, </span><span><span style="color: #ffffff;">VC1520 (VC1520)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCCCATTTGC</td>
+        <td class="border p-2">+  [1638344, 1638358]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1522 (VC1522)</span>, </span><span><span style="color: #ffffff;">VC1521 (VC1521)</span>, </span><span><span style="color: #4CAF50;">VC1523 (VC1523)</span>, </span><span><span style="color: #4CAF50;">VC1524 (VC1524)</span>, </span><span><span style="color: #4CAF50;">VC1525 (VC1525)</span>, </span><span><span style="color: #4CAF50;">mobA (VC1526)</span>, </span><span><span style="color: #4CAF50;">VC1527 (VC1527)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGATTTATCTTTGC</td>
+        <td class="border p-2">+  [1812547, 1812561]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC1678 (VC1678)</span>, </span><span><span style="color: #4CAF50;">pspB (VC1677)</span>, </span><span><span style="color: #4CAF50;">VC1676 (VC1676)</span>, </span><span><span style="color: #ffffff;">VC1679 (VC1679)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCGGTTTTGC</td>
+        <td class="border p-2">+  [1832278, 1832292]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1698 (VC1698)</span>, </span><span><span style="color: #ffffff;">VC1697 (VC1697)</span>, </span><span><span style="color: #4CAF50;">VC1699 (VC1699)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATTGGAATTGC</td>
+        <td class="border p-2">+  [2141190, 2141204]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC1989 (VC1989)</span>, </span><span><span style="color: #ffffff;">VC1988 (VC1988)</span>, </span><span><span style="color: #ffffff;">VC1987 (VC1987)</span>, </span><span><span style="color: #ffffff;">VC1986 (VC1986)</span>, </span><span><span style="color: #ffffff;">VC1990 (VC1990)</span>, </span><span><span style="color: #ffffff;">VC1991 (VC1991)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">AGGCACAGCATTTGC</td>
+        <td class="border p-2">+  [2157740, 2157754]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2004 (VC2004)</span>, </span><span><span style="color: #ffffff;">rrmA (VC2003)</span>, </span><span><span style="color: #4CAF50;">VC2005 (VC2005)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGAACAAATTTTGC</td>
+        <td class="border p-2">+  [2224587, 2224601]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">flhA (VC2069)</span>, </span><span><span style="color: #4CAF50;">flhF (VC2068)</span>, </span><span><span style="color: #4CAF50;">VC2067 (VC2067)</span>, </span><span><span style="color: #4CAF50;">fliA (VC2066)</span>, </span><span><span style="color: #ffffff;">VC2065 (VC2065)</span>, </span><span><span style="color: #ffffff;">VC2070 (VC2070)</span>, </span><span><span style="color: #ffffff;">VC2071 (VC2071)</span>, </span><span><span style="color: #ffffff;">VC2072 (VC2072)</span>, </span><span><span style="color: #ffffff;">VC2073 (VC2073)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGACTGAAAATTGC</td>
+        <td class="border p-2">+  [2226619, 2226633]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flhA (VC2069)</span>, </span><span><span style="color: #ffffff;">flhF (VC2068)</span>, </span><span><span style="color: #ffffff;">VC2067 (VC2067)</span>, </span><span><span style="color: #ffffff;">fliA (VC2066)</span>, </span><span><span style="color: #ffffff;">VC2065 (VC2065)</span>, </span><span><span style="color: #ffffff;">VC2070 (VC2070)</span>, </span><span><span style="color: #ffffff;">VC2071 (VC2071)</span>, </span><span><span style="color: #ffffff;">VC2072 (VC2072)</span>, </span><span><span style="color: #ffffff;">VC2073 (VC2073)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCTTACTTCTTGC</td>
+        <td class="border p-2">+  [2282770, 2282784]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC2128 (VC2128)</span>, </span><span><span style="color: #ffffff;">fliL (VC2127)</span>, </span><span><span style="color: #ffffff;">fliM (VC2126)</span>, </span><span><span style="color: #ffffff;">fliJ (VC2129)</span>, </span><span><span style="color: #ffffff;">fliI (VC2130)</span>, </span><span><span style="color: #ffffff;">fliH (VC2131)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATACAAATTGC</td>
+        <td class="border p-2">+  [2288688, 2288702]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliE (VC2134)</span>, </span><span><span style="color: #4CAF50;">fliF (VC2133)</span>, </span><span><span style="color: #4CAF50;">fliG (VC2132)</span>, </span><span><span style="color: #ffffff;">VC2135 (VC2135)</span>, </span><span><span style="color: #ffffff;">VC2136 (VC2136)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACTAAAATTGC</td>
+        <td class="border p-2">+  [2296156, 2296170]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2141 (VC2141)</span>, </span><span><span style="color: #4CAF50;">fliD (VC2140)</span>, </span><span><span style="color: #4CAF50;">VC2139 (VC2139)</span>, </span><span><span style="color: #4CAF50;">fliS (VC2138)</span>, </span><span><span style="color: #ffffff;">VC2142 (VC2142)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGTACGAAGTTTGC</td>
+        <td class="border p-2">+  [2323218, 2323232]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2178 (VC2178)</span>, </span><span><span style="color: #ffffff;">VC2177 (VC2177)</span>, </span><span><span style="color: #ffffff;">VC2176 (VC2176)</span>, </span><span><span style="color: #ffffff;">VC2175 (VC2175)</span>, </span><span><span style="color: #ffffff;">prfA (VC2179)</span>, </span><span><span style="color: #ffffff;">hemA (VC2180)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATACATATTGC</td>
+        <td class="border p-2">+  [2339340, 2339354]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgK (VC2191)</span>, </span><span><span style="color: #4CAF50;">flgL (VC2190)</span>, </span><span><span style="color: #ffffff;">flgJ (VC2192)</span>, </span><span><span style="color: #ffffff;">flgI (VC2193)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGATTTTTTA</td>
+        <td class="border p-2">+  [2341601, 2341615]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">flgH (VC2194)</span>, </span><span><span style="color: #4CAF50;">flgI (VC2193)</span>, </span><span><span style="color: #4CAF50;">flgJ (VC2192)</span>, </span><span><span style="color: #ffffff;">flgG (VC2195)</span>, </span><span><span style="color: #ffffff;">flgF (VC2196)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATGCTGCTTGC</td>
+        <td class="border p-2">+  [2343980, 2343994]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgF (VC2196)</span>, </span><span><span style="color: #4CAF50;">flgG (VC2195)</span>, </span><span><span style="color: #4CAF50;">flgH (VC2194)</span>, </span><span><span style="color: #ffffff;">flgE (VC2197)</span>, </span><span><span style="color: #ffffff;">flgD (VC2198)</span>, </span><span><span style="color: #ffffff;">flgC (VC2199)</span>, </span><span><span style="color: #ffffff;">flgB (VC2200)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGTACGCTAATTGC</td>
+        <td class="border p-2">+  [2347047, 2347061]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgB (VC2200)</span>, </span><span><span style="color: #4CAF50;">flgC (VC2199)</span>, </span><span><span style="color: #4CAF50;">flgD (VC2198)</span>, </span><span><span style="color: #4CAF50;">flgE (VC2197)</span>, </span><span><span style="color: #ffffff;">VC2201 (VC2201)</span>, </span><span><span style="color: #ffffff;">VC2202 (VC2202)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">GGGTATAAATTTTGC</td>
+        <td class="border p-2">+  [2352113, 2352127]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">VC2207 (VC2207)</span>, </span><span><span style="color: #4CAF50;">VC2206 (VC2206)</span>, </span><span><span style="color: #ffffff;">VC2208 (VC2208)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGAACGCTCCTTGC</td>
+        <td class="border p-2">+  [2352039, 2352053]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2207 (VC2207)</span>, </span><span><span style="color: #ffffff;">VC2206 (VC2206)</span>, </span><span><span style="color: #4CAF50;">VC2208 (VC2208)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGATCGCATAATTC</td>
+        <td class="border p-2">+  [2443519, 2443533]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2288 (VC2288)</span>, </span><span><span style="color: #ffffff;">VC2287 (VC2287)</span>, </span><span><span style="color: #ffffff;">VC2289 (VC2289)</span>, </span><span><span style="color: #ffffff;">VC2290 (VC2290)</span>, </span><span><span style="color: #ffffff;">VC2291 (VC2291)</span>, </span><span><span style="color: #ffffff;">VC2292 (VC2292)</span>, </span><span><span style="color: #ffffff;">VC2293 (VC2293)</span>, </span><span><span style="color: #ffffff;">VC2294 (VC2294)</span>, </span><span><span style="color: #ffffff;">VC2295 (VC2295)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCACAGCCTTTGC</td>
+        <td class="border p-2">+  [2565183, 2565197]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2397 (VC2397)</span>, </span><span><span style="color: #ffffff;">lpxC (VC2396)</span>, </span><span><span style="color: #ffffff;">ftsA (VC2398)</span>, </span><span><span style="color: #ffffff;">VC2399 (VC2399)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGTTGAAAGAAACG</td>
+        <td class="border p-2">+  [2634404, 2634418]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">rumA (VC2452)</span>, </span><span><span style="color: #ffffff;">VC2451 (VC2451)</span>, </span><span><span style="color: #ffffff;">VC2453 (VC2453)</span>, </span><span><span style="color: #ffffff;">VC2454 (VC2454)</span>, </span><span><span style="color: #ffffff;">VC2455 (VC2455)</span>, </span><span><span style="color: #ffffff;">VC2456 (VC2456)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGTGATATGC</td>
+        <td class="border p-2">+  [2684862, 2684876]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2499 (VC2499)</span>, </span><span><span style="color: #ffffff;">VC2498 (VC2498)</span>, </span><span><span style="color: #ffffff;">VC2500 (VC2500)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGCTGCTTGA</td>
+        <td class="border p-2">+  [2795432, 2795446]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2624 (VC2624)</span>, </span><span><span style="color: #ffffff;">VC2623 (VC2623)</span>, </span><span><span style="color: #ffffff;">VC2625 (VC2625)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGCTTTTCGC</td>
+        <td class="border p-2">+  [2918961, 2918975]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2745 (VC2745)</span>, </span><span><span style="color: #ffffff;">VC2744 (VC2744)</span>, </span><span><span style="color: #4CAF50;">glnA (VC2746)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002505.1" target="_blank" rel="noopener noreferrer">NC_002505.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCAAGATTATTGC</td>
+        <td class="border p-2">+  [2921196, 2921210]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VC2747 (VC2747)</span>, </span><span><span style="color: #ffffff;">glnA (VC2746)</span>, </span><span><span style="color: #4CAF50;">glnL (VC2748)</span>, </span><span><span style="color: #ffffff;">VC2749 (VC2749)</span>, </span><span><span style="color: #ffffff;">VC2750 (VC2750)</span></span></td>
+        <td class="border p-2">10</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCCCACTTGC</td>
+        <td class="border p-2">+  [19688, 19702]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0016 (VCA0016)</span>, </span><span><span style="color: #ffffff;">VCA0015 (VCA0015)</span>, </span><span><span style="color: #4CAF50;">VCA0017 (VCA0017)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGCTTCGTGC</td>
+        <td class="border p-2">+  [48421, 48435]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0040 (VCA0040)</span>, </span><span><span style="color: #ffffff;">VCA0041 (VCA0041)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACAATTTATGC</td>
+        <td class="border p-2">+  [59869, 59883]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0052 (VCA0052)</span>, </span><span><span style="color: #4CAF50;">VCA0051 (VCA0051)</span>, </span><span><span style="color: #4CAF50;">VCA0050 (VCA0050)</span>, </span><span><span style="color: #4CAF50;">VCA0049 (VCA0049)</span>, </span><span><span style="color: #ffffff;">VCA0053 (VCA0053)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCATTGAAAATGC</td>
+        <td class="border p-2">+  [109550, 109564]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0101 (VCA0101)</span>, </span><span><span style="color: #ffffff;">VCA0100 (VCA0100)</span>, </span><span><span style="color: #ffffff;">VCA0099 (VCA0099)</span>, </span><span><span style="color: #ffffff;">VCA0098 (VCA0098)</span>, </span><span><span style="color: #ffffff;">VCA0102 (VCA0102)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGAACATTAATTGC</td>
+        <td class="border p-2">+  [115092, 115106]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0104 (VCA0104)</span>, </span><span><span style="color: #ffffff;">VCA0103 (VCA0103)</span>, </span><span><span style="color: #4CAF50;">VCA0105 (VCA0105)</span>, </span><span><span style="color: #4CAF50;">VCA0106 (VCA0106)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATCTTCTTTGC</td>
+        <td class="border p-2">+  [159101, 159115]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0143 (VCA0143)</span>, </span><span><span style="color: #4CAF50;">VCA0144 (VCA0144)</span>, </span><span><span style="color: #ffffff;">VCA0145 (VCA0145)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGCGCATTTATTGC</td>
+        <td class="border p-2">+  [212745, 212759]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0196 (VCA0196)</span>, </span><span><span style="color: #4CAF50;">VCA0195 (VCA0195)</span>, </span><span><span style="color: #ffffff;">VCA0197 (VCA0197)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGTACAGAAATGAGC</td>
+        <td class="border p-2">+  [304626, 304640]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0283 (VCA0283)</span>, </span><span><span style="color: #ffffff;">VCA0284 (VCA0284)</span>, </span><span><span style="color: #ffffff;">VCA0285 (VCA0285)</span>, </span><span><span style="color: #ffffff;">VCA0286 (VCA0286)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">AGGCACAATATTTGC</td>
+        <td class="border p-2">+  [458949, 458963]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0524 (VCA0524)</span>, </span><span><span style="color: #ffffff;">VCA0523 (VCA0523)</span>, </span><span><span style="color: #ffffff;">VCA0525 (VCA0525)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCATATAGCTTGC</td>
+        <td class="border p-2">+  [483803, 483817]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0545 (VCA0545)</span>, </span><span><span style="color: #ffffff;">VCA0546 (VCA0546)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCCTGTAATTTGC</td>
+        <td class="border p-2">+  [678984, 678998]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0733 (VCA0733)</span>, </span><span><span style="color: #ffffff;">VCA0732 (VCA0732)</span>, </span><span><span style="color: #4CAF50;">VCA0734 (VCA0734)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACAGATAGTGC</td>
+        <td class="border p-2">+  [772230, 772244]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0826 (VCA0826)</span>, </span><span><span style="color: #ffffff;">phhB (VCA0827)</span>, </span><span><span style="color: #ffffff;">phhA (VCA0828)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACTTTATTTGC</td>
+        <td class="border p-2">+  [919495, 919509]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA0972 (VCA0972)</span>, </span><span><span style="color: #ffffff;">VCA0971 (VCA0971)</span>, </span><span><span style="color: #ffffff;">VCA0973 (VCA0973)</span>, </span><span><span style="color: #ffffff;">VCA0974 (VCA0974)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TGGCACGCACTATGC</td>
+        <td class="border p-2">+  [965825, 965839]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA1017 (VCA1017)</span>, </span><span><span style="color: #4CAF50;">VCA1016 (VCA1016)</span>, </span><span><span style="color: #ffffff;">VCA1018 (VCA1018)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002506.1" target="_blank" rel="noopener noreferrer">NC_002506.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KP49" target="_blank" rel="noopener noreferrer">Q9KP49</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CGGAATAAAATTTGC</td>
+        <td class="border p-2">+  [1028176, 1028190]</td>
+        <td class="border p-2">ChIP-Seq (ECO:0006009), RNA-Seq (ECO:0005664)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">VCA1074 (VCA1074)</span>, </span><span><span style="color: #ffffff;">VCA1075 (VCA1075)</span>, </span><span><span style="color: #ffffff;">VCA1076 (VCA1076)</span></span></td>
+        <td class="border p-2">11</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22723378" target="_blank" rel="noopener noreferrer">22723378</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

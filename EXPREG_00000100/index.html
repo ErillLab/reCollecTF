@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A0A0H3C2M1/entry">
+          UniProtKB: A0A0H3C2M1
+        </a>
+        regulon and binding site collection of Caulobacter crescentus NA1000
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGATTGATTCTGAGA</td>
+        <td class="border p-2">+  [2400673, 2400691]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_2193 (CC_2193)</span>, </span><span><span style="color: #ffffff;">CC_2192 (CC_2192)</span>, </span><span><span style="color: #ffffff;">CC_2191 (CC_2191)</span>, </span><span><span style="color: #F44336;">CC_2194 (CC_2194)</span>, </span><span><span style="color: #ffffff;">CC_2195 (CC_2195)</span>, </span><span><span style="color: #ffffff;">CC_2196 (CC_2196)</span>, </span><span><span style="color: #ffffff;">CC_2197 (CC_2197)</span>, </span><span><span style="color: #ffffff;">CC_2198 (CC_2198)</span>, </span><span><span style="color: #ffffff;">CC_2199 (CC_2199)</span>, </span><span><span style="color: #ffffff;">CC_2200 (CC_2200)</span></span></td>
+        <td class="border p-2">536</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTGCGAGCCATTCGCATG</td>
+        <td class="border p-2">+  [2400748, 2400766]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_2193 (CC_2193)</span>, </span><span><span style="color: #ffffff;">CC_2192 (CC_2192)</span>, </span><span><span style="color: #ffffff;">CC_2191 (CC_2191)</span>, </span><span><span style="color: #F44336;">CC_2194 (CC_2194)</span>, </span><span><span style="color: #ffffff;">CC_2195 (CC_2195)</span>, </span><span><span style="color: #ffffff;">CC_2196 (CC_2196)</span>, </span><span><span style="color: #ffffff;">CC_2197 (CC_2197)</span>, </span><span><span style="color: #ffffff;">CC_2198 (CC_2198)</span>, </span><span><span style="color: #ffffff;">CC_2199 (CC_2199)</span>, </span><span><span style="color: #ffffff;">CC_2200 (CC_2200)</span></span></td>
+        <td class="border p-2">536</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTGCGAACGTTTCTCAAT</td>
+        <td class="border p-2">+  [2151564, 2151582]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">CC_1956 (CC_1956)</span>, </span><span><span style="color: #ffffff;">CC_1955 (CC_1955)</span>, </span><span><span style="color: #ffffff;">CC_1954 (CC_1954)</span>, </span><span><span style="color: #ffffff;">CC_1953 (CC_1953)</span>, </span><span><span style="color: #ffffff;">CC_1952 (CC_1952)</span>, </span><span><span style="color: #ffffff;">CC_1951 (CC_1951)</span>, </span><span><span style="color: #ffffff;">CC_1950 (CC_1950)</span>, </span><span><span style="color: #ffffff;">CC_1949 (CC_1949)</span>, </span><span><span style="color: #ffffff;">CC_1948 (CC_1948)</span>, </span><span><span style="color: #ffffff;">CC_1947 (CC_1947)</span>, </span><span><span style="color: #ffffff;">CC_1946 (CC_1946)</span>, </span><span><span style="color: #ffffff;">CC_1945 (CC_1945)</span>, </span><span><span style="color: #ffffff;">CC_1944 (CC_1944)</span>, </span><span><span style="color: #ffffff;">CC_1943 (CC_1943)</span>, </span><span><span style="color: #ffffff;">CC_1942 (CC_1942)</span>, </span><span><span style="color: #ffffff;">CC_1941 (CC_1941)</span>, </span><span><span style="color: #ffffff;">CC_1940 (CC_1940)</span>, </span><span><span style="color: #ffffff;">CC_1939 (CC_1939)</span>, </span><span><span style="color: #ffffff;">CC_1938 (CC_1938)</span>, </span><span><span style="color: #ffffff;">CC_1937 (CC_1937)</span>, </span><span><span style="color: #ffffff;">CC_1936 (CC_1936)</span>, </span><span><span style="color: #ffffff;">CC_1935 (CC_1935)</span>, </span><span><span style="color: #ffffff;">CC_1934 (CC_1934)</span>, </span><span><span style="color: #ffffff;">CC_1933 (CC_1933)</span>, </span><span><span style="color: #ffffff;">CC_1932 (CC_1932)</span>, </span><span><span style="color: #ffffff;">CC_t26 (CC_t26)</span>, </span><span><span style="color: #ffffff;">CC_t27 (CC_t27)</span>, </span><span><span style="color: #ffffff;">CC_1957 (CC_1957)</span>, </span><span><span style="color: #ffffff;">CC_1958 (CC_1958)</span></span></td>
+        <td class="border p-2">537</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGAACGTTTCTCAAC</td>
+        <td class="border p-2">+  [3777745, 3777763]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">CC_3529 (CC_3529)</span>, </span><span><span style="color: #ffffff;">CC_3528 (CC_3528)</span>, </span><span><span style="color: #ffffff;">sdhA (CC_3527)</span>, </span><span><span style="color: #ffffff;">sdhB (CC_3526)</span>, </span><span><span style="color: #ffffff;">CC_3525 (CC_3525)</span>, </span><span><span style="color: #ffffff;">CC_3524 (CC_3524)</span>, </span><span><span style="color: #ffffff;">CC_3523 (CC_3523)</span>, </span><span><span style="color: #ffffff;">CC_3530 (CC_3530)</span>, </span><span><span style="color: #ffffff;">CC_3531 (CC_3531)</span>, </span><span><span style="color: #ffffff;">CC_3532 (CC_3532)</span>, </span><span><span style="color: #ffffff;">CC_3533 (CC_3533)</span>, </span><span><span style="color: #ffffff;">CC_3534 (CC_3534)</span>, </span><span><span style="color: #ffffff;">CC_3535 (CC_3535)</span>, </span><span><span style="color: #ffffff;">CC_3536 (CC_3536)</span>, </span><span><span style="color: #ffffff;">CC_3537 (CC_3537)</span>, </span><span><span style="color: #ffffff;">CC_3538 (CC_3538)</span>, </span><span><span style="color: #ffffff;">CC_3539 (CC_3539)</span></span></td>
+        <td class="border p-2">538</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATGAGAACAGCTCTCAAC</td>
+        <td class="border p-2">+  [3924210, 3924228]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_3668 (CC_3668)</span>, </span><span><span style="color: #4CAF50;">CC_3667 (CC_3667)</span>, </span><span><span style="color: #ffffff;">CC_3669 (CC_3669)</span>, </span><span><span style="color: #ffffff;">CC_3670 (CC_3670)</span>, </span><span><span style="color: #ffffff;">CC_3671 (CC_3671)</span>, </span><span><span style="color: #ffffff;">CC_3672 (CC_3672)</span>, </span><span><span style="color: #ffffff;">CC_3673 (CC_3673)</span>, </span><span><span style="color: #ffffff;">CC_3674 (CC_3674)</span>, </span><span><span style="color: #ffffff;">CC_3675 (CC_3675)</span>, </span><span><span style="color: #ffffff;">CC_3676 (CC_3676)</span>, </span><span><span style="color: #ffffff;">CC_3677 (CC_3677)</span>, </span><span><span style="color: #ffffff;">CC_3678 (CC_3678)</span>, </span><span><span style="color: #ffffff;">CC_3679 (CC_3679)</span>, </span><span><span style="color: #ffffff;">CC_3680 (CC_3680)</span></span></td>
+        <td class="border p-2">539</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGAGTGACACTCAGA</td>
+        <td class="border p-2">+  [148679, 148697]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_0138 (CC_0138)</span>, </span><span><span style="color: #ffffff;">CC_0137 (CC_0137)</span>, </span><span><span style="color: #ffffff;">CC_0136 (CC_0136)</span>, </span><span><span style="color: #ffffff;">CC_0135 (CC_0135)</span>, </span><span><span style="color: #ffffff;">CC_0134 (CC_0134)</span>, </span><span><span style="color: #F44336;">CC_0139 (CC_0139)</span>, </span><span><span style="color: #ffffff;">CC_0140 (CC_0140)</span>, </span><span><span style="color: #ffffff;">CC_0141 (CC_0141)</span>, </span><span><span style="color: #ffffff;">CC_0142 (CC_0142)</span>, </span><span><span style="color: #ffffff;">CC_0143 (CC_0143)</span>, </span><span><span style="color: #ffffff;">CC_0144 (CC_0144)</span>, </span><span><span style="color: #ffffff;">CC_0145 (CC_0145)</span>, </span><span><span style="color: #ffffff;">CC_0146 (CC_0146)</span>, </span><span><span style="color: #ffffff;">CC_0147 (CC_0147)</span>, </span><span><span style="color: #ffffff;">CC_0148 (CC_0148)</span>, </span><span><span style="color: #ffffff;">CC_0149 (CC_0149)</span>, </span><span><span style="color: #ffffff;">CC_0150 (CC_0150)</span>, </span><span><span style="color: #ffffff;">CC_0151 (CC_0151)</span>, </span><span><span style="color: #ffffff;">CC_0152 (CC_0152)</span>, </span><span><span style="color: #ffffff;">hrcA (CC_0153)</span>, </span><span><span style="color: #ffffff;">CC_0154 (CC_0154)</span>, </span><span><span style="color: #ffffff;">CC_0155 (CC_0155)</span></span></td>
+        <td class="border p-2">540</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGACGCACTCGCAAT</td>
+        <td class="border p-2">+  [3153119, 3153137]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">CC_2928 (CC_2928)</span>, </span><span><span style="color: #ffffff;">CC_2927 (CC_2927)</span>, </span><span><span style="color: #ffffff;">CC_2926 (CC_2926)</span>, </span><span><span style="color: #ffffff;">CC_2925 (CC_2925)</span>, </span><span><span style="color: #ffffff;">CC_2924 (CC_2924)</span>, </span><span><span style="color: #ffffff;">CC_2929 (CC_2929)</span>, </span><span><span style="color: #ffffff;">CC_2930 (CC_2930)</span>, </span><span><span style="color: #ffffff;">CC_2931 (CC_2931)</span></span></td>
+        <td class="border p-2">540</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACTGATAATCGTTCGCAAT</td>
+        <td class="border p-2">+  [778987, 779005]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_0710 (CC_0710)</span>, </span><span><span style="color: #ffffff;">CC_0709 (CC_0709)</span>, </span><span><span style="color: #ffffff;">CC_0708 (CC_0708)</span>, </span><span><span style="color: #ffffff;">CC_0707 (CC_0707)</span>, </span><span><span style="color: #F44336;">CC_0711 (CC_0711)</span>, </span><span><span style="color: #F44336;">CC_0712 (CC_0712)</span></span></td>
+        <td class="border p-2">540</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGACGGCGCCGCAAC</td>
+        <td class="border p-2">+  [32725, 32743]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">CCNA_00028 (CCNA_00028)</span>, </span><span><span style="color: #ffffff;">CCNA_00027 (CCNA_00027)</span>, </span><span><span style="color: #ffffff;">CCNA_00026 (CCNA_00026)</span>, </span><span><span style="color: #ffffff;">CCNA_00025 (CCNA_00025)</span>, </span><span><span style="color: #ffffff;">CCNA_00024 (CCNA_00024)</span>, </span><span><span style="color: #ffffff;">CCNA_00023 (CCNA_00023)</span>, </span><span><span style="color: #ffffff;">CCNA_00022 (CCNA_00022)</span>, </span><span><span style="color: #ffffff;">CCNA_00021 (CCNA_00021)</span>, </span><span><span style="color: #ffffff;">CCNA_00029 (CCNA_00029)</span>, </span><span><span style="color: #ffffff;">CCNA_00030 (CCNA_00030)</span>, </span><span><span style="color: #ffffff;">vapC (CCNA_00031)</span>, </span><span><span style="color: #ffffff;">vapB (CCNA_00032)</span></span></td>
+        <td class="border p-2">545</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATAAGAACGCCTCGCAAT</td>
+        <td class="border p-2">+  [32703, 32721]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">CCNA_00028 (CCNA_00028)</span>, </span><span><span style="color: #ffffff;">CCNA_00027 (CCNA_00027)</span>, </span><span><span style="color: #ffffff;">CCNA_00026 (CCNA_00026)</span>, </span><span><span style="color: #ffffff;">CCNA_00025 (CCNA_00025)</span>, </span><span><span style="color: #ffffff;">CCNA_00024 (CCNA_00024)</span>, </span><span><span style="color: #ffffff;">CCNA_00023 (CCNA_00023)</span>, </span><span><span style="color: #ffffff;">CCNA_00022 (CCNA_00022)</span>, </span><span><span style="color: #ffffff;">CCNA_00021 (CCNA_00021)</span>, </span><span><span style="color: #ffffff;">CCNA_00029 (CCNA_00029)</span>, </span><span><span style="color: #ffffff;">CCNA_00030 (CCNA_00030)</span>, </span><span><span style="color: #ffffff;">vapC (CCNA_00031)</span>, </span><span><span style="color: #ffffff;">vapB (CCNA_00032)</span></span></td>
+        <td class="border p-2">545</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGAATAATTATCATT</td>
+        <td class="border p-2">+  [32741, 32759]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">CCNA_00028 (CCNA_00028)</span>, </span><span><span style="color: #ffffff;">CCNA_00027 (CCNA_00027)</span>, </span><span><span style="color: #ffffff;">CCNA_00026 (CCNA_00026)</span>, </span><span><span style="color: #ffffff;">CCNA_00025 (CCNA_00025)</span>, </span><span><span style="color: #ffffff;">CCNA_00024 (CCNA_00024)</span>, </span><span><span style="color: #ffffff;">CCNA_00023 (CCNA_00023)</span>, </span><span><span style="color: #ffffff;">CCNA_00022 (CCNA_00022)</span>, </span><span><span style="color: #ffffff;">CCNA_00021 (CCNA_00021)</span>, </span><span><span style="color: #ffffff;">CCNA_00029 (CCNA_00029)</span>, </span><span><span style="color: #ffffff;">CCNA_00030 (CCNA_00030)</span>, </span><span><span style="color: #ffffff;">vapC (CCNA_00031)</span>, </span><span><span style="color: #ffffff;">vapB (CCNA_00032)</span></span></td>
+        <td class="border p-2">545</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CAGGCGAACGGCTCTGAAA</td>
+        <td class="border p-2">+  [32858, 32876]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">CCNA_00028 (CCNA_00028)</span>, </span><span><span style="color: #ffffff;">CCNA_00027 (CCNA_00027)</span>, </span><span><span style="color: #ffffff;">CCNA_00026 (CCNA_00026)</span>, </span><span><span style="color: #ffffff;">CCNA_00025 (CCNA_00025)</span>, </span><span><span style="color: #ffffff;">CCNA_00024 (CCNA_00024)</span>, </span><span><span style="color: #ffffff;">CCNA_00023 (CCNA_00023)</span>, </span><span><span style="color: #ffffff;">CCNA_00022 (CCNA_00022)</span>, </span><span><span style="color: #ffffff;">CCNA_00021 (CCNA_00021)</span>, </span><span><span style="color: #ffffff;">CCNA_00029 (CCNA_00029)</span>, </span><span><span style="color: #ffffff;">CCNA_00030 (CCNA_00030)</span>, </span><span><span style="color: #ffffff;">vapC (CCNA_00031)</span>, </span><span><span style="color: #ffffff;">vapB (CCNA_00032)</span></span></td>
+        <td class="border p-2">545</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATGAGAATGACACTCAAT</td>
+        <td class="border p-2">+  [3521572, 3521590]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_3263 (CC_3263)</span>, </span><span><span style="color: #ffffff;">CC_3264 (CC_3264)</span>, </span><span><span style="color: #ffffff;">CC_3265 (CC_3265)</span>, </span><span><span style="color: #ffffff;">CC_3266 (CC_3266)</span>, </span><span><span style="color: #ffffff;">CC_3267 (CC_3267)</span>, </span><span><span style="color: #ffffff;">CC_3268 (CC_3268)</span></span></td>
+        <td class="border p-2">548</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTGAGAATGGTTCTCAAT</td>
+        <td class="border p-2">+  [163248, 163266]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_0155 (CC_0155)</span>, </span><span><span style="color: #ffffff;">CC_0154 (CC_0154)</span>, </span><span><span style="color: #ffffff;">hrcA (CC_0153)</span>, </span><span><span style="color: #ffffff;">CC_0152 (CC_0152)</span>, </span><span><span style="color: #ffffff;">CC_0151 (CC_0151)</span>, </span><span><span style="color: #ffffff;">CC_0150 (CC_0150)</span>, </span><span><span style="color: #ffffff;">CC_0149 (CC_0149)</span>, </span><span><span style="color: #ffffff;">CC_0148 (CC_0148)</span>, </span><span><span style="color: #ffffff;">CC_0147 (CC_0147)</span>, </span><span><span style="color: #ffffff;">CC_0146 (CC_0146)</span>, </span><span><span style="color: #ffffff;">CC_0145 (CC_0145)</span>, </span><span><span style="color: #ffffff;">CC_0144 (CC_0144)</span>, </span><span><span style="color: #ffffff;">CC_0143 (CC_0143)</span>, </span><span><span style="color: #ffffff;">CC_0142 (CC_0142)</span>, </span><span><span style="color: #ffffff;">CC_0141 (CC_0141)</span>, </span><span><span style="color: #ffffff;">CC_0140 (CC_0140)</span>, </span><span><span style="color: #ffffff;">CC_0139 (CC_0139)</span>, </span><span><span style="color: #ffffff;">CC_0156 (CC_0156)</span>, </span><span><span style="color: #ffffff;">CC_0157 (CC_0157)</span>, </span><span><span style="color: #ffffff;">CC_0158 (CC_0158)</span></span></td>
+        <td class="border p-2">548</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCGACAGGTTCTCAAT</td>
+        <td class="border p-2">+  [3859085, 3859103]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">uppP (CC_3605)</span>, </span><span><span style="color: #ffffff;">CC_3606 (CC_3606)</span>, </span><span><span style="color: #ffffff;">CC_3607 (CC_3607)</span>, </span><span><span style="color: #ffffff;">CC_3608 (CC_3608)</span></span></td>
+        <td class="border p-2">548</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19520766" target="_blank" rel="noopener noreferrer">19520766</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0A0H3C2M1" target="_blank" rel="noopener noreferrer">A0A0H3C2M1</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTGCAATTCGTTCTCAAGTAAG</td>
+        <td class="border p-2">+  [3311235, 3311257]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CCNA_03154 (CCNA_03154)</span>, </span><span><span style="color: #ffffff;">CCNA_03153 (CCNA_03153)</span>, </span><span><span style="color: #ffffff;">CCNA_03152 (CCNA_03152)</span>, </span><span><span style="color: #F44336;">CCNA_03155 (CCNA_03155)</span>, </span><span><span style="color: #ffffff;">CCNA_03156 (CCNA_03156)</span>, </span><span><span style="color: #ffffff;">CCNA_03157 (CCNA_03157)</span>, </span><span><span style="color: #ffffff;">CCNA_03158 (CCNA_03158)</span>, </span><span><span style="color: #ffffff;">CCNA_03159 (CCNA_03159)</span>, </span><span><span style="color: #ffffff;">CCNA_03160 (CCNA_03160)</span>, </span><span><span style="color: #ffffff;">CCNA_03161 (CCNA_03161)</span></span></td>
+        <td class="border p-2">549</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23941329" target="_blank" rel="noopener noreferrer">23941329</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

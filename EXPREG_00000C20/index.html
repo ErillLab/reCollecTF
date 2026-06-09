@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WggR (ExpG) - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">WggR (ExpG)</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P96440/entry">
+          UniProtKB: P96440
+        </a>
+        regulon and binding site collection of Sinorhizobium meliloti 2011
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020560.1" target="_blank" rel="noopener noreferrer">NC_020560.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P96440" target="_blank" rel="noopener noreferrer">P96440</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATATTGCTTCAATTTTTGAAG</td>
+        <td class="border p-2">+  [985878, 985899]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">wgcA (SM2011_b21318)</span>, </span><span><span style="color: #4CAF50;">wgaA (SM2011_b21319)</span>, </span><span><span style="color: #4CAF50;">wgaB (SM2011_b21320)</span></span></td>
+        <td class="border p-2">1001</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18344362" target="_blank" rel="noopener noreferrer">18344362</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020560.1" target="_blank" rel="noopener noreferrer">NC_020560.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P96440" target="_blank" rel="noopener noreferrer">P96440</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAATTACTTTAAAATTTGAAG</td>
+        <td class="border p-2">+  [980466, 980487]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">wgeA (SM2011_b21314)</span></span></td>
+        <td class="border p-2">1001</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18344362" target="_blank" rel="noopener noreferrer">18344362</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020560.1" target="_blank" rel="noopener noreferrer">NC_020560.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P96440" target="_blank" rel="noopener noreferrer">P96440</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CTTCAAAACTTGAAGTAATTT</td>
+        <td class="border p-2">+  [983852, 983872]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">wggR (SM2011_b21317)</span>, </span><span><span style="color: #4CAF50;">wgdA (SM2011_b21316)</span>, </span><span><span style="color: #4CAF50;">wgdB (SM2011_b21315)</span>, </span><span><span style="color: #ffffff;">wgcA (SM2011_b21318)</span></span></td>
+        <td class="border p-2">1001</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18344362" target="_blank" rel="noopener noreferrer">18344362</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_020560.1" target="_blank" rel="noopener noreferrer">NC_020560.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P96440" target="_blank" rel="noopener noreferrer">P96440</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AAATTACTTCAAGTTTTGAAG</td>
+        <td class="border p-2">+  [983852, 983872]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">wggR (SM2011_b21317)</span>, </span><span><span style="color: #ffffff;">wgdA (SM2011_b21316)</span>, </span><span><span style="color: #ffffff;">wgdB (SM2011_b21315)</span>, </span><span><span style="color: #ffffff;">wgcA (SM2011_b21318)</span></span></td>
+        <td class="border p-2">1001</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18344362" target="_blank" rel="noopener noreferrer">18344362</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

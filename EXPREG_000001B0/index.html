@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodY - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">CodY</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A2RHP2/entry">
+          UniProtKB: A2RHP2
+        </a>
+        regulon and binding site collection of Lactococcus lactis subsp. cremoris MG1363
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTTTTCTGACAATT</td>
+        <td class="border p-2">+  [350294, 350308]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dppA (llmg_0362)</span></span></td>
+        <td class="border p-2">610</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATATTCTGAAAATT</td>
+        <td class="border p-2">+  [350362, 350376]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dppA (llmg_0362)</span></span></td>
+        <td class="border p-2">610</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTATCAAAAAAAT</td>
+        <td class="border p-2">+  [2053233, 2053247]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">pepC (llmg_2069)</span>, </span><span><span style="color: #ffffff;">rmeA (llmg_2068)</span>, </span><span><span style="color: #ffffff;">rlrB (llmg_2067)</span>, </span><span><span style="color: #ffffff;">llmg_2066 (llmg_2066)</span>, </span><span><span style="color: #ffffff;">llmg_2065 (llmg_2065)</span>, </span><span><span style="color: #ffffff;">llmg_2064 (llmg_2064)</span></span></td>
+        <td class="border p-2">610</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATGTTCAGAAAATT</td>
+        <td class="border p-2">+  [683431, 683445]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0696 (llmg_0696)</span>, </span><span><span style="color: #F44336;">oppD (llmg_0697)</span>, </span><span><span style="color: #ffffff;">oppF (llmg_0698)</span>, </span><span><span style="color: #ffffff;">oppB (llmg_0699)</span>, </span><span><span style="color: #ffffff;">oppC (llmg_0700)</span>, </span><span><span style="color: #ffffff;">oppA (llmg_0701)</span>, </span><span><span style="color: #ffffff;">pepO (llmg_0702)</span></span></td>
+        <td class="border p-2">611</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTTTCTGAAAATT</td>
+        <td class="border p-2">+  [628194, 628208]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gltA (llmg_0635)</span>, </span><span><span style="color: #ffffff;">citB (llmg_0636)</span>, </span><span><span style="color: #ffffff;">icd (llmg_0637)</span></span></td>
+        <td class="border p-2">612</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTTTCGGAATAAA</td>
+        <td class="border p-2">+  [628212, 628226]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gltA (llmg_0635)</span>, </span><span><span style="color: #ffffff;">citB (llmg_0636)</span>, </span><span><span style="color: #ffffff;">icd (llmg_0637)</span></span></td>
+        <td class="border p-2">612</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTTTCTAAAAAAA</td>
+        <td class="border p-2">+  [628170, 628184]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">gltA (llmg_0635)</span>, </span><span><span style="color: #ffffff;">citB (llmg_0636)</span>, </span><span><span style="color: #ffffff;">icd (llmg_0637)</span></span></td>
+        <td class="border p-2">612</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTATCAGAAAATT</td>
+        <td class="border p-2">+  [557845, 557859]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">serC (llmg_0565)</span>, </span><span><span style="color: #ffffff;">serA (llmg_0566)</span>, </span><span><span style="color: #ffffff;">serB (llmg_0567)</span></span></td>
+        <td class="border p-2">612</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTGTCTGACAATT</td>
+        <td class="border p-2">+  [111364, 111378]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ctrA (llmg_0118)</span>, </span><span><span style="color: #ffffff;">llmg_0119 (llmg_0119)</span></span></td>
+        <td class="border p-2">613</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTCGTCAGTAAATT</td>
+        <td class="border p-2">+  [111296, 111310]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">llmg_0117 (llmg_0117)</span>, </span><span><span style="color: #F44336;">ctrA (llmg_0118)</span>, </span><span><span style="color: #ffffff;">llmg_0119 (llmg_0119)</span></span></td>
+        <td class="border p-2">613</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTTTTCAAAAAAAT</td>
+        <td class="border p-2">+  [111319, 111333]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ctrA (llmg_0118)</span>, </span><span><span style="color: #ffffff;">llmg_0119 (llmg_0119)</span></span></td>
+        <td class="border p-2">613</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009004.1" target="_blank" rel="noopener noreferrer">NC_009004.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A2RHP2" target="_blank" rel="noopener noreferrer">A2RHP2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATTTCCAGACAATT</td>
+        <td class="border p-2">+  [363642, 363656]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), Motif-discovery (ECO:0005558), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">asnB (llmg_0372)</span></span></td>
+        <td class="border p-2">614</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16040604" target="_blank" rel="noopener noreferrer">16040604</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

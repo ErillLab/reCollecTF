@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NikR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">NikR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/D3UIX2/entry">
+          UniProtKB: D3UIX2
+        </a>
+        regulon and binding site collection of Helicobacter mustelae 12198
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013949.1" target="_blank" rel="noopener noreferrer">NC_013949.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/D3UIX2" target="_blank" rel="noopener noreferrer">D3UIX2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTATTTATAAATTTTTCTTGATA</td>
+        <td class="border p-2">+  [364668, 364692]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Western blot (quantitative) expression analysis (ECO:0000279), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HMU03040 (HMU03040)</span>, </span><span><span style="color: #4CAF50;">ureA (HMU03050)</span>, </span><span><span style="color: #4CAF50;">ureB (HMU03060)</span>, </span><span><span style="color: #ffffff;">ureI (HMU03070)</span>, </span><span><span style="color: #ffffff;">ureE (HMU03080)</span>, </span><span><span style="color: #ffffff;">ureF (HMU03090)</span>, </span><span><span style="color: #ffffff;">ureG (HMU03100)</span>, </span><span><span style="color: #ffffff;">ureH (HMU03110)</span>, </span><span><span style="color: #ffffff;">HMU_t07 (HMU_t07)</span>, </span><span><span style="color: #ffffff;">HMU_t08 (HMU_t08)</span>, </span><span><span style="color: #ffffff;">HMU_t09 (HMU_t09)</span>, </span><span><span style="color: #ffffff;">HMU_t10 (HMU_t10)</span>, </span><span><span style="color: #ffffff;">tuf (HMU03120)</span></span></td>
+        <td class="border p-2">1107</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19894125" target="_blank" rel="noopener noreferrer">19894125</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013949.1" target="_blank" rel="noopener noreferrer">NC_013949.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/D3UIX2" target="_blank" rel="noopener noreferrer">D3UIX2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATAATTTTTGATATAAATTATTA</td>
+        <td class="border p-2">+  [1415737, 1415761]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ureA2 (HMU13020)</span>, </span><span><span style="color: #ffffff;">ureB2 (HMU13010)</span>, </span><span><span style="color: #ffffff;">deaD (HMU13030)</span>, </span><span><span style="color: #ffffff;">ilvE (HMU13040)</span>, </span><span><span style="color: #ffffff;">HMU13050 (HMU13050)</span>, </span><span><span style="color: #ffffff;">hisI (HMU13060)</span>, </span><span><span style="color: #ffffff;">HMU13070 (HMU13070)</span></span></td>
+        <td class="border p-2">1107</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19894125" target="_blank" rel="noopener noreferrer">19894125</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013949.1" target="_blank" rel="noopener noreferrer">NC_013949.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/D3UIX2" target="_blank" rel="noopener noreferrer">D3UIX2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATACTTTTTTAAAAAAGTTAATA</td>
+        <td class="border p-2">+  [1415707, 1415731]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Western blot (quantitative) expression analysis (ECO:0000279), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ureA2 (HMU13020)</span>, </span><span><span style="color: #F44336;">ureB2 (HMU13010)</span>, </span><span><span style="color: #ffffff;">deaD (HMU13030)</span>, </span><span><span style="color: #ffffff;">ilvE (HMU13040)</span>, </span><span><span style="color: #ffffff;">HMU13050 (HMU13050)</span>, </span><span><span style="color: #ffffff;">hisI (HMU13060)</span>, </span><span><span style="color: #ffffff;">HMU13070 (HMU13070)</span></span></td>
+        <td class="border p-2">1107</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19894125" target="_blank" rel="noopener noreferrer">19894125</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013949.1" target="_blank" rel="noopener noreferrer">NC_013949.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/D3UIX2" target="_blank" rel="noopener noreferrer">D3UIX2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATATTGCATCGCAAAAAATATTA</td>
+        <td class="border p-2">+  [359393, 359417]</td>
+        <td class="border p-2">Western blot (quantitative) expression analysis (ECO:0000279), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HMU03020 (HMU03020)</span>, </span><span><span style="color: #ffffff;">HMU03030 (HMU03030)</span></span></td>
+        <td class="border p-2">1107</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19894125" target="_blank" rel="noopener noreferrer">19894125</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

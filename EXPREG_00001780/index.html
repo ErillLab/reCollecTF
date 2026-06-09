@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Zur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9L2H5/entry">
+          UniProtKB: Q9L2H5
+        </a>
+        regulon and binding site collection of Streptomyces coelicolor A3(2)
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGATTATCATTTCTA</td>
+        <td class="border p-2">+  [8506198, 8506213]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO7681 (SCO7681)</span>, </span><span><span style="color: #ffffff;">SCO7680 (SCO7680)</span>, </span><span><span style="color: #ffffff;">SCO7679 (SCO7679)</span>, </span><span><span style="color: #ffffff;">SCO7678 (SCO7678)</span>, </span><span><span style="color: #ffffff;">SCO7677 (SCO7677)</span>, </span><span><span style="color: #ffffff;">SCO7676 (SCO7676)</span>, </span><span><span style="color: #F44336;">SCO7682 (SCO7682)</span>, </span><span><span style="color: #ffffff;">SCO7683 (SCO7683)</span>, </span><span><span style="color: #ffffff;">SCO7684 (SCO7684)</span>, </span><span><span style="color: #ffffff;">SCO7685 (SCO7685)</span>, </span><span><span style="color: #ffffff;">SCO7686 (SCO7686)</span>, </span><span><span style="color: #ffffff;">SCO7687 (SCO7687)</span>, </span><span><span style="color: #ffffff;">SCO7688 (SCO7688)</span>, </span><span><span style="color: #ffffff;">SCO7689 (SCO7689)</span>, </span><span><span style="color: #ffffff;">SCO7690 (SCO7690)</span>, </span><span><span style="color: #ffffff;">SCO7691 (SCO7691)</span></span></td>
+        <td class="border p-2">525</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19915027" target="_blank" rel="noopener noreferrer">19915027</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATGAATGTCGTTTTCT</td>
+        <td class="border p-2">+  [8498987, 8499002]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO7675 (SCO7675)</span>, </span><span><span style="color: #ffffff;">SCO7674 (SCO7674)</span>, </span><span><span style="color: #ffffff;">SCO7673 (SCO7673)</span>, </span><span><span style="color: #F44336;">SCO7676 (SCO7676)</span>, </span><span><span style="color: #ffffff;">SCO7677 (SCO7677)</span>, </span><span><span style="color: #ffffff;">SCO7678 (SCO7678)</span>, </span><span><span style="color: #ffffff;">SCO7679 (SCO7679)</span>, </span><span><span style="color: #ffffff;">SCO7680 (SCO7680)</span>, </span><span><span style="color: #ffffff;">SCO7681 (SCO7681)</span></span></td>
+        <td class="border p-2">525</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19915027" target="_blank" rel="noopener noreferrer">19915027</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGAACATGATTTTCA</td>
+        <td class="border p-2">+  [497375, 497390]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), DNA-array expression analysis (ECO:0005525), qPCR [quantitative real-time] (ECO:0005660)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SCO0476 (SCO0476)</span>, </span><span><span style="color: #F44336;">SCO0475 (SCO0475)</span>, </span><span><span style="color: #ffffff;">SCO0474 (SCO0474)</span>, </span><span><span style="color: #ffffff;">SCO0473 (SCO0473)</span>, </span><span><span style="color: #ffffff;">SCO0472 (SCO0472)</span>, </span><span><span style="color: #ffffff;">SCO0477 (SCO0477)</span>, </span><span><span style="color: #ffffff;">SCO0478 (SCO0478)</span>, </span><span><span style="color: #ffffff;">SCO0479 (SCO0479)</span>, </span><span><span style="color: #ffffff;">SCO0480 (SCO0480)</span></span></td>
+        <td class="border p-2">525</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19915027" target="_blank" rel="noopener noreferrer">19915027</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATCTTACTGAAAATGAATTCCATTAACAGCTAGG</td>
+        <td class="border p-2">+  [3791108, 3791142]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556), Visual sequence inspection (nan), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">rpmG (SCO3428)</span>, </span><span><span style="color: #F44336;">rpmE2 (SCO3427)</span>, </span><span><span style="color: #ffffff;">SCO3426 (SCO3426)</span>, </span><span><span style="color: #ffffff;">SCO3425 (SCO3425)</span>, </span><span><span style="color: #ffffff;">rpmB (SCO3429)</span>, </span><span><span style="color: #ffffff;">rpsN (SCO3430)</span>, </span><span><span style="color: #ffffff;">SCO3431 (SCO3431)</span></span></td>
+        <td class="border p-2">1079</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17400736" target="_blank" rel="noopener noreferrer">17400736</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CACATTCAACATGAACATCGTTTTCATGTAGG</td>
+        <td class="border p-2">+  [457419, 457450]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556), Visual sequence inspection (nan), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">rpmF (SCO0436)</span></span></td>
+        <td class="border p-2">1079</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17400736" target="_blank" rel="noopener noreferrer">17400736</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L2H5" target="_blank" rel="noopener noreferrer">Q9L2H5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGACAACGGTTTCCATATTTGTTGAAAATGAGTGTCATGAACGTACG</td>
+        <td class="border p-2">+  [2703966, 2704013]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), Multiple sequence alignment (MSA) (ECO:0005556), Visual sequence inspection (nan), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SCO2505 (SCO2505)</span>, </span><span><span style="color: #ffffff;">SCO2504 (SCO2504)</span>, </span><span><span style="color: #F44336;">SCO2506 (SCO2506)</span>, </span><span><span style="color: #F44336;">SCO2507 (SCO2507)</span>, </span><span><span style="color: #ffffff;">SCO2508 (SCO2508)</span></span></td>
+        <td class="border p-2">1079</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17400736" target="_blank" rel="noopener noreferrer">17400736</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

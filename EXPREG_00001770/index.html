@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AdpA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">AdpA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9L062/entry">
+          UniProtKB: Q9L062
+        </a>
+        regulon and binding site collection of Streptomyces lividans 1326
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCCGGATT</td>
+        <td class="border p-2">+  [532075, 532084]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0498 (SCO0498)</span>, </span><span><span style="color: #ffffff;">SCO0497 (SCO0497)</span>, </span><span><span style="color: #ffffff;">SCO0496 (SCO0496)</span>, </span><span><span style="color: #ffffff;">SCO0495 (SCO0495)</span>, </span><span><span style="color: #ffffff;">SCO0494 (SCO0494)</span>, </span><span><span style="color: #ffffff;">SCO0493 (SCO0493)</span>, </span><span><span style="color: #ffffff;">SCO0492 (SCO0492)</span>, </span><span><span style="color: #ffffff;">SCO0491 (SCO0491)</span>, </span><span><span style="color: #4CAF50;">SCO0499 (SCO0499)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCGACATT</td>
+        <td class="border p-2">+  [532246, 532255]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0498 (SCO0498)</span>, </span><span><span style="color: #ffffff;">SCO0497 (SCO0497)</span>, </span><span><span style="color: #ffffff;">SCO0496 (SCO0496)</span>, </span><span><span style="color: #ffffff;">SCO0495 (SCO0495)</span>, </span><span><span style="color: #ffffff;">SCO0494 (SCO0494)</span>, </span><span><span style="color: #ffffff;">SCO0493 (SCO0493)</span>, </span><span><span style="color: #ffffff;">SCO0492 (SCO0492)</span>, </span><span><span style="color: #ffffff;">SCO0491 (SCO0491)</span>, </span><span><span style="color: #4CAF50;">SCO0499 (SCO0499)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGGCCGATTC</td>
+        <td class="border p-2">+  [532399, 532408]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0498 (SCO0498)</span>, </span><span><span style="color: #ffffff;">SCO0497 (SCO0497)</span>, </span><span><span style="color: #ffffff;">SCO0496 (SCO0496)</span>, </span><span><span style="color: #ffffff;">SCO0495 (SCO0495)</span>, </span><span><span style="color: #ffffff;">SCO0494 (SCO0494)</span>, </span><span><span style="color: #ffffff;">SCO0493 (SCO0493)</span>, </span><span><span style="color: #ffffff;">SCO0492 (SCO0492)</span>, </span><span><span style="color: #ffffff;">SCO0491 (SCO0491)</span>, </span><span><span style="color: #4CAF50;">SCO0499 (SCO0499)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCTCGAAT</td>
+        <td class="border p-2">+  [532405, 532414]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0498 (SCO0498)</span>, </span><span><span style="color: #ffffff;">SCO0497 (SCO0497)</span>, </span><span><span style="color: #ffffff;">SCO0496 (SCO0496)</span>, </span><span><span style="color: #ffffff;">SCO0495 (SCO0495)</span>, </span><span><span style="color: #ffffff;">SCO0494 (SCO0494)</span>, </span><span><span style="color: #ffffff;">SCO0493 (SCO0493)</span>, </span><span><span style="color: #ffffff;">SCO0492 (SCO0492)</span>, </span><span><span style="color: #ffffff;">SCO0491 (SCO0491)</span>, </span><span><span style="color: #4CAF50;">SCO0499 (SCO0499)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCGCGAAA</td>
+        <td class="border p-2">+  [7427387, 7427396]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6685 (SCO6685)</span>, </span><span><span style="color: #ffffff;">SCO6686 (SCO6686)</span>, </span><span><span style="color: #ffffff;">SCO6687 (SCO6687)</span>, </span><span><span style="color: #ffffff;">SCO6688 (SCO6688)</span>, </span><span><span style="color: #ffffff;">SCO6689 (SCO6689)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGCCGAAAA</td>
+        <td class="border p-2">+  [7427361, 7427370]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6685 (SCO6685)</span>, </span><span><span style="color: #ffffff;">SCO6686 (SCO6686)</span>, </span><span><span style="color: #ffffff;">SCO6687 (SCO6687)</span>, </span><span><span style="color: #ffffff;">SCO6688 (SCO6688)</span>, </span><span><span style="color: #ffffff;">SCO6689 (SCO6689)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGGCGGGTTC</td>
+        <td class="border p-2">+  [7427283, 7427292]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6685 (SCO6685)</span>, </span><span><span style="color: #ffffff;">SCO6686 (SCO6686)</span>, </span><span><span style="color: #ffffff;">SCO6687 (SCO6687)</span>, </span><span><span style="color: #ffffff;">SCO6688 (SCO6688)</span>, </span><span><span style="color: #ffffff;">SCO6689 (SCO6689)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCCAGGAC</td>
+        <td class="border p-2">+  [7427273, 7427282]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6685 (SCO6685)</span>, </span><span><span style="color: #ffffff;">SCO6686 (SCO6686)</span>, </span><span><span style="color: #ffffff;">SCO6687 (SCO6687)</span>, </span><span><span style="color: #ffffff;">SCO6688 (SCO6688)</span>, </span><span><span style="color: #ffffff;">SCO6689 (SCO6689)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGGCGGATAA</td>
+        <td class="border p-2">+  [7427187, 7427196]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6685 (SCO6685)</span>, </span><span><span style="color: #ffffff;">SCO6686 (SCO6686)</span>, </span><span><span style="color: #ffffff;">SCO6687 (SCO6687)</span>, </span><span><span style="color: #ffffff;">SCO6688 (SCO6688)</span>, </span><span><span style="color: #ffffff;">SCO6689 (SCO6689)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGACGGGAAC</td>
+        <td class="border p-2">+  [823551, 823560]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0774 (SCO0774)</span>, </span><span><span style="color: #ffffff;">SCO0773 (SCO0773)</span>, </span><span><span style="color: #4CAF50;">SCO0775 (SCO0775)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGGCGCGATC</td>
+        <td class="border p-2">+  [823496, 823505]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0774 (SCO0774)</span>, </span><span><span style="color: #ffffff;">SCO0773 (SCO0773)</span>, </span><span><span style="color: #4CAF50;">SCO0775 (SCO0775)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCGCGATC</td>
+        <td class="border p-2">+  [823468, 823477]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0774 (SCO0774)</span>, </span><span><span style="color: #ffffff;">SCO0773 (SCO0773)</span>, </span><span><span style="color: #4CAF50;">SCO0775 (SCO0775)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGCCAGTCT</td>
+        <td class="border p-2">+  [823399, 823408]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO0774 (SCO0774)</span>, </span><span><span style="color: #ffffff;">SCO0773 (SCO0773)</span>, </span><span><span style="color: #4CAF50;">SCO0775 (SCO0775)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGACCAGAAG</td>
+        <td class="border p-2">+  [6808626, 6808635]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6197 (SCO6197)</span>, </span><span><span style="color: #4CAF50;">SCO6198 (SCO6198)</span>, </span><span><span style="color: #ffffff;">SCO6199 (SCO6199)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCCGAGTT</td>
+        <td class="border p-2">+  [6808574, 6808583]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6197 (SCO6197)</span>, </span><span><span style="color: #4CAF50;">SCO6198 (SCO6198)</span>, </span><span><span style="color: #ffffff;">SCO6199 (SCO6199)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTCCTGCAA</td>
+        <td class="border p-2">+  [6808518, 6808527]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6197 (SCO6197)</span>, </span><span><span style="color: #4CAF50;">SCO6198 (SCO6198)</span>, </span><span><span style="color: #ffffff;">SCO6199 (SCO6199)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGGCTGAAAC</td>
+        <td class="border p-2">+  [6808492, 6808501]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6197 (SCO6197)</span>, </span><span><span style="color: #4CAF50;">SCO6198 (SCO6198)</span>, </span><span><span style="color: #ffffff;">SCO6199 (SCO6199)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCTGAATT</td>
+        <td class="border p-2">+  [6808328, 6808337]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO6197 (SCO6197)</span>, </span><span><span style="color: #4CAF50;">SCO6198 (SCO6198)</span>, </span><span><span style="color: #ffffff;">SCO6199 (SCO6199)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGCCGGATC</td>
+        <td class="border p-2">+  [8483641, 8483650]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO7657 (SCO7657)</span>, </span><span><span style="color: #ffffff;">SCO7658 (SCO7658)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGGCCATTTC</td>
+        <td class="border p-2">+  [8483656, 8483665]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO7657 (SCO7657)</span>, </span><span><span style="color: #ffffff;">SCO7658 (SCO7658)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003888.3" target="_blank" rel="noopener noreferrer">NC_003888.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9L062" target="_blank" rel="noopener noreferrer">Q9L062</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGTCCAGAAG</td>
+        <td class="border p-2">+  [8483670, 8483679]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808), DNA-array expression analysis (ECO:0005525)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SCO7657 (SCO7657)</span>, </span><span><span style="color: #ffffff;">SCO7658 (SCO7658)</span></span></td>
+        <td class="border p-2">910</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24694298" target="_blank" rel="noopener noreferrer">24694298</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

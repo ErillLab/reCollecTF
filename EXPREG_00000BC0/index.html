@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PerR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">PerR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P71086/entry">
+          UniProtKB: P71086
+        </a>
+        regulon and binding site collection of Bacillus subtilis subsp. subtilis str. 168
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTTTTATTTTTCTGT</td>
+        <td class="border p-2">+  [376522, 376536]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hxlR (BSU03470)</span>, </span><span><span style="color: #ffffff;">srfAA (BSU03480)</span>, </span><span><span style="color: #4CAF50;">srfAB (BSU03490)</span>, </span><span><span style="color: #ffffff;">comS (BSU03500)</span></span></td>
+        <td class="border p-2">278</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16166527" target="_blank" rel="noopener noreferrer">16166527</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATTATTATAA</td>
+        <td class="border p-2">+  [3383481, 3383495]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yusZ (BSU32980)</span>, </span><span><span style="color: #ffffff;">yusY (BSU32970)</span>, </span><span><span style="color: #ffffff;">yusY (BSU32960)</span>, </span><span><span style="color: #ffffff;">yusW (BSU32950)</span>, </span><span><span style="color: #F44336;">mrgA (BSU32990)</span>, </span><span><span style="color: #ffffff;">htrB (BSU33000)</span></span></td>
+        <td class="border p-2">433</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14563870" target="_blank" rel="noopener noreferrer">14563870</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTAAAATAATTATAA</td>
+        <td class="border p-2">+  [1451214, 1451228]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">stoA (BSU13840)</span>, </span><span><span style="color: #ffffff;">ykvU (BSU13830)</span>, </span><span><span style="color: #ffffff;">ykvT (BSU13820)</span>, </span><span><span style="color: #4CAF50;">zosA (BSU13850)</span></span></td>
+        <td class="border p-2">434</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14563870" target="_blank" rel="noopener noreferrer">14563870</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGATAATTATTATCA</td>
+        <td class="border p-2">+  [1451191, 1451205]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">stoA (BSU13840)</span>, </span><span><span style="color: #ffffff;">ykvU (BSU13830)</span>, </span><span><span style="color: #ffffff;">ykvT (BSU13820)</span>, </span><span><span style="color: #4CAF50;">zosA (BSU13850)</span></span></td>
+        <td class="border p-2">434</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14563870" target="_blank" rel="noopener noreferrer">14563870</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGATAATAGTTATCA</td>
+        <td class="border p-2">+  [183344, 183358]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">feuA (BSU01630)</span>, </span><span><span style="color: #ffffff;">feuB (BSU01620)</span>, </span><span><span style="color: #ffffff;">feuC (BSU01610)</span>, </span><span><span style="color: #ffffff;">ybbA (BSU01600)</span>, </span><span><span style="color: #ffffff;">ybaS (BSU01590)</span>, </span><span><span style="color: #ffffff;">ybaR (BSU01580)</span>, </span><span><span style="color: #ffffff;">ybbB (BSU01640)</span></span></td>
+        <td class="border p-2">435</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14563870" target="_blank" rel="noopener noreferrer">14563870</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATAATTATTATCA</td>
+        <td class="border p-2">+  [1451192, 1451205]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">stoA (BSU13840)</span>, </span><span><span style="color: #ffffff;">ykvU (BSU13830)</span>, </span><span><span style="color: #ffffff;">ykvT (BSU13820)</span>, </span><span><span style="color: #F44336;">zosA (BSU13850)</span></span></td>
+        <td class="border p-2">500</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12180919" target="_blank" rel="noopener noreferrer">12180919</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAAAATAATTATAA</td>
+        <td class="border p-2">+  [1451215, 1451228]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">stoA (BSU13840)</span>, </span><span><span style="color: #ffffff;">ykvU (BSU13830)</span>, </span><span><span style="color: #ffffff;">ykvT (BSU13820)</span>, </span><span><span style="color: #F44336;">zosA (BSU13850)</span></span></td>
+        <td class="border p-2">500</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12180919" target="_blank" rel="noopener noreferrer">12180919</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAAACATTACAA</td>
+        <td class="border p-2">+  [944435, 944449]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ygaF (BSU08720)</span>, </span><span><span style="color: #F44336;">perR (BSU08730)</span>, </span><span><span style="color: #ffffff;">ygzB (BSU08740)</span></span></td>
+        <td class="border p-2">522</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029044" target="_blank" rel="noopener noreferrer">12029044</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTACACTAATTATAA</td>
+        <td class="border p-2">+  [944426, 944440]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">ygaF (BSU08720)</span>, </span><span><span style="color: #F44336;">perR (BSU08730)</span>, </span><span><span style="color: #ffffff;">ygzB (BSU08740)</span></span></td>
+        <td class="border p-2">522</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029044" target="_blank" rel="noopener noreferrer">12029044</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATAATTATAG</td>
+        <td class="border p-2">+  [2450351, 2450365]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">fur (BSU23520)</span>, </span><span><span style="color: #ffffff;">yqzK (BSU23519)</span>, </span><span><span style="color: #ffffff;">xerD (BSU23510)</span>, </span><span><span style="color: #ffffff;">spoIIM (BSU23530)</span>, </span><span><span style="color: #ffffff;">yqkK (BSU23540)</span>, </span><span><span style="color: #ffffff;">mleA (BSU23550)</span>, </span><span><span style="color: #ffffff;">mleN (BSU23560)</span>, </span><span><span style="color: #ffffff;">aspA (BSU23570)</span>, </span><span><span style="color: #ffffff;">ansA (BSU23580)</span></span></td>
+        <td class="border p-2">522</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029044" target="_blank" rel="noopener noreferrer">12029044</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATTATTATAA</td>
+        <td class="border p-2">+  [3383481, 3383495]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yusZ (BSU32980)</span>, </span><span><span style="color: #ffffff;">yusY (BSU32970)</span>, </span><span><span style="color: #ffffff;">yusY (BSU32960)</span>, </span><span><span style="color: #ffffff;">yusW (BSU32950)</span>, </span><span><span style="color: #ffffff;">mrgA (BSU32990)</span>, </span><span><span style="color: #ffffff;">htrB (BSU33000)</span></span></td>
+        <td class="border p-2">534</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATAATTATAA</td>
+        <td class="border p-2">+  [961049, 961063]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">katA (BSU08820)</span>, </span><span><span style="color: #ffffff;">senS (BSU08810)</span>, </span><span><span style="color: #ffffff;">ssuB (BSU08830)</span>, </span><span><span style="color: #ffffff;">ssuA (BSU08840)</span>, </span><span><span style="color: #ffffff;">ssuC (BSU08850)</span>, </span><span><span style="color: #ffffff;">ssuD (BSU08860)</span>, </span><span><span style="color: #ffffff;">ygaN (BSU08870)</span>, </span><span><span style="color: #ffffff;">rpsN (BSU08880)</span>, </span><span><span style="color: #ffffff;">ygaO (BSU08890)</span>, </span><span><span style="color: #ffffff;">ygzD (BSU08899)</span></span></td>
+        <td class="border p-2">535</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATAATTATAA</td>
+        <td class="border p-2">+  [961049, 961063]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">katA (BSU08820)</span>, </span><span><span style="color: #ffffff;">ssuB (BSU08830)</span>, </span><span><span style="color: #ffffff;">ssuA (BSU08840)</span>, </span><span><span style="color: #ffffff;">ssuC (BSU08850)</span>, </span><span><span style="color: #ffffff;">ssuD (BSU08860)</span>, </span><span><span style="color: #ffffff;">ygaN (BSU08870)</span>, </span><span><span style="color: #ffffff;">rpsN (BSU08880)</span></span></td>
+        <td class="border p-2">1084</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATTATTATAA</td>
+        <td class="border p-2">+  [3383481, 3383495]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">mrgA (BSU32990)</span></span></td>
+        <td class="border p-2">1084</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTATAATTATTATAA</td>
+        <td class="border p-2">+  [2879197, 2879211]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">hemA (BSU28170)</span>, </span><span><span style="color: #ffffff;">hemX (BSU28160)</span>, </span><span><span style="color: #ffffff;">hemC (BSU28150)</span>, </span><span><span style="color: #ffffff;">hemD (BSU28140)</span>, </span><span><span style="color: #ffffff;">hemB (BSU28130)</span>, </span><span><span style="color: #ffffff;">hemL (BSU28120)</span>, </span><span><span style="color: #ffffff;">spoVID (BSU28110)</span>, </span><span><span style="color: #ffffff;">ysxE (BSU28100)</span>, </span><span><span style="color: #ffffff;">ysxD (BSU28180)</span></span></td>
+        <td class="border p-2">1084</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000964.3" target="_blank" rel="noopener noreferrer">NC_000964.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P71086" target="_blank" rel="noopener noreferrer">P71086</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTAGAATGATTATAA</td>
+        <td class="border p-2">+  [2879167, 2879181]</td>
+        <td class="border p-2">EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">hemA (BSU28170)</span>, </span><span><span style="color: #ffffff;">hemX (BSU28160)</span>, </span><span><span style="color: #ffffff;">hemC (BSU28150)</span>, </span><span><span style="color: #ffffff;">hemD (BSU28140)</span>, </span><span><span style="color: #ffffff;">hemB (BSU28130)</span>, </span><span><span style="color: #ffffff;">hemL (BSU28120)</span>, </span><span><span style="color: #ffffff;">spoVID (BSU28110)</span>, </span><span><span style="color: #ffffff;">ysxE (BSU28100)</span>, </span><span><span style="color: #ffffff;">ysxD (BSU28180)</span></span></td>
+        <td class="border p-2">1084</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11532148" target="_blank" rel="noopener noreferrer">11532148</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
