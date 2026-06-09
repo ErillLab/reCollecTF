@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const vercelUrl = "https://recollectf.vercel.app";
 
+
 // En local (Vite), import.meta.env.DEV === true
 const DISABLE_AUTH =
   import.meta.env.VITE_DISABLE_AUTH === "true" || import.meta.env.DEV;

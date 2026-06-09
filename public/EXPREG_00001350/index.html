@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FleQ - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">FleQ</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q8P9D2/entry">
+          UniProtKB: Q8P9D2
+        </a>
+        regulon and binding site collection of Xanthomonas campestris pv. campestris str.17
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACCCCGGCGCCGCGTT</td>
+        <td class="border p-2">+  [2233455, 2233472]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flhF (XCC1908)</span>, </span><span><span style="color: #ffffff;">fleN (XCC1907)</span>, </span><span><span style="color: #ffffff;">fliA (XCC1906)</span>, </span><span><span style="color: #ffffff;">cheY (XCC1905)</span>, </span><span><span style="color: #ffffff;">cheZ (XCC1904)</span>, </span><span><span style="color: #ffffff;">cheA (XCC1903)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATCCCCACTCCCGTGTC</td>
+        <td class="border p-2">+  [2247489, 2247506]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliQ (XCC1915)</span>, </span><span><span style="color: #ffffff;">fliR (XCC1914)</span>, </span><span><span style="color: #ffffff;">XCC1913 (XCC1913)</span>, </span><span><span style="color: #ffffff;">XCC1912 (XCC1912)</span>, </span><span><span style="color: #ffffff;">XCC1911 (XCC1911)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGAAACCGGCGCGGTTTT</td>
+        <td class="border p-2">+  [2251610, 2251627]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliL (XCC1920)</span>, </span><span><span style="color: #ffffff;">fliM (XCC1919)</span>, </span><span><span style="color: #ffffff;">fliN (XCC1918)</span>, </span><span><span style="color: #ffffff;">fliO (XCC1917)</span>, </span><span><span style="color: #ffffff;">fliP (XCC1916)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAAACCCGCCGCGGTTTC</td>
+        <td class="border p-2">+  [2258634, 2258651]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliE (XCC1927)</span>, </span><span><span style="color: #ffffff;">fliF (XCC1926)</span>, </span><span><span style="color: #ffffff;">fliG (XCC1925)</span>, </span><span><span style="color: #ffffff;">fliH (XCC1924)</span>, </span><span><span style="color: #ffffff;">fliI (XCC1923)</span>, </span><span><span style="color: #ffffff;">fliJ (XCC1922)</span>, </span><span><span style="color: #ffffff;">fliK (XCC1921)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAAAACCGGCGCGGCTTT</td>
+        <td class="border p-2">+  [2282408, 2282425]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgG (XCC1947)</span>, </span><span><span style="color: #ffffff;">flgH (XCC1946)</span>, </span><span><span style="color: #ffffff;">flgI (XCC1945)</span>, </span><span><span style="color: #ffffff;">flgJ (XCC1944)</span>, </span><span><span style="color: #ffffff;">flgK (XCC1943)</span>, </span><span><span style="color: #ffffff;">flgL (XCC1942)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003902.1" target="_blank" rel="noopener noreferrer">NC_003902.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q8P9D2" target="_blank" rel="noopener noreferrer">Q8P9D2</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAGCCCGCTGCCCCGTC</td>
+        <td class="border p-2">+  [2286965, 2286982]</td>
+        <td class="border p-2">Beta-gal reporter assay, Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flgB (XCC1952)</span>, </span><span><span style="color: #ffffff;">flgC (XCC1951)</span>, </span><span><span style="color: #ffffff;">flgD (XCC1950)</span>, </span><span><span style="color: #ffffff;">flgE (XCC1949)</span>, </span><span><span style="color: #ffffff;">flgF (XCC1948)</span></span></td>
+        <td class="border p-2">914</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16111660" target="_blank" rel="noopener noreferrer">16111660</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

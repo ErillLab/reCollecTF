@@ -1,0 +1,167 @@
+name: Update DB and Create Expression Page
+
+on:
+  workflow_dispatch:
+    inputs:
+      sql_path:
+        description: "Path to SQL file committed in repo"
+        required: true
+      expression_id:
+        description: "Expression ID (e.g. EXPREG_000014f0)"
+        required: true
+      html_content:
+        description: "HTML content (base64 encoded)"
+        required: true
+      expressionInfo:
+        description: "Boolean, true if curation contains experimentally verified data"
+        required: true
+      uniprot_accession:
+        description: "UniProt accession (e.g. Q9A724)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  update-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install sqlite3 + gzip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sqlite3 gzip
+
+      - name: Validate sql_path
+        run: |
+          set -euo pipefail
+          SQL_PATH="${{ github.event.inputs.sql_path }}"
+
+          case "$SQL_PATH" in
+            pending-sql/*.sql) ;;
+            *) echo "Invalid sql_path: $SQL_PATH"; exit 1 ;;
+          esac
+
+          test -f "$SQL_PATH"
+          echo "SQL_PATH=$SQL_PATH" >> $GITHUB_ENV
+
+      - name: Prepare DB (accept gz or plain, always output plain sqlite)
+        run: |
+          set -euo pipefail
+          test -f ./public/CollecTF.db.gz
+
+          if gzip -t ./public/CollecTF.db.gz 2>/dev/null; then
+            echo "DB is valid gzip, unzipping to plain sqlite..."
+            gunzip -c ./public/CollecTF.db.gz > ./public/CollecTF.db
+          else
+            echo "DB is NOT gzip. Treating ./public/CollecTF.db.gz as plain sqlite..."
+            cp ./public/CollecTF.db.gz ./public/CollecTF.db
+          fi
+
+          head -c 16 ./public/CollecTF.db | strings || true
+
+      - name: Run SQL from file
+        run: |
+          set -euo pipefail
+          echo "Using SQL file: $SQL_PATH"
+          sqlite3 ./public/CollecTF.db ".read $SQL_PATH"
+
+      - name: Store updated DB as .gz filename (but keep it plain sqlite)
+        run: |
+          set -euo pipefail
+          mv -f ./public/CollecTF.db ./public/CollecTF.db.gz
+
+      - name: Delete SQL file after use
+        run: |
+          set -euo pipefail
+          rm -f "$SQL_PATH"
+
+      - name: Commit updated database + cleanup sql file
+        env:
+          TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add ./public/CollecTF.db.gz
+          git add -u
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update database via workflow_dispatch"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git push origin main
+
+  create-page:
+    runs-on: ubuntu-latest
+    needs: update-db  # Executed only if successful DB update
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main # Makes sure create-page has the last changes in main
+
+      - name: Conditional EXPR_ID/index.html creation and dbxref.txt updating
+        run: |
+          set -euo pipefail
+          EXPR_ID="${{ github.event.inputs.expression_id }}"
+          UNIPROT="${{ github.event.inputs.uniprot_accession }}"
+          EXPRESSION_INFO="${{ github.event.inputs.expressionInfo }}"
+          DBXREF_FILE="public/static/uniprot_dbxref.txt"
+
+          # If EXPR_ID already exists in the dbxref file, skip update dbxref.txt, create index.html
+          if grep -qF "$EXPR_ID" "$DBXREF_FILE"; then
+            echo "$EXPR_ID already in $DBXREF_FILE, skipping dbxref update."
+            mkdir -p "./public/$EXPR_ID"
+            echo "${{ github.event.inputs.html_content }}" | base64 -d > "./public/$EXPR_ID/index.html"
+            exit 0
+          fi
+
+          # EXPR_ID is new — only add entry if expressionInfo is true
+          if [ "$EXPRESSION_INFO" != "true" ]; then
+            echo "expressionInfo is not true, skipping dbxref update for new entry."
+            exit 0
+          fi
+
+          # If Uniprot not defined error (exit 1).
+          if [ -z "$UNIPROT" ]; then
+            echo "No uniprot_accession provided, cannot add new entry to dbxref."
+            exit 1
+          fi
+
+          # If EXPR_ID not in dbxref and EXPRESSION_INFO true add new entry to dbxref file and create index.html
+          mkdir -p "./public/$EXPR_ID"
+          echo "${{ github.event.inputs.html_content }}" | base64 -d > "./public/$EXPR_ID/index.html"
+          echo "${UNIPROT}	${EXPR_ID}" >> "$DBXREF_FILE"
+          echo "Added new entry: ${UNIPROT}	${EXPR_ID}"
+
+      - name: Commit and push
+        env:
+          TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          EXPR_ID="${{ github.event.inputs.expression_id }}"
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add "./public/$EXPR_ID/index.html"
+          git add "public/static/uniprot_dbxref.txt"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Add expression page: $EXPR_ID"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git push origin main

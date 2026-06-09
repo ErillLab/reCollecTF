@@ -1,13 +1,13 @@
-import { dbWorkerPromise } from "./dbClient";
+import { dbWorkerPromise } from "./dbClient.js";
 
-export async function runQuery(sql, params = []) {
+export default async function runQuery(sql, params = []) {
   const worker = await dbWorkerPromise;
   return worker.db.query(sql, params);
 }
 
 
 /*
-import { initDb } from "./dbClient";
+import { initDb } from "./dbClient.js";
 
 export async function runQuery(sql, params = []) {
 

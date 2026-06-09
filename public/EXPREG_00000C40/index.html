@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mce2R - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Mce2R</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P9WMG5/entry">
+          UniProtKB: P9WMG5
+        </a>
+        regulon and binding site collection of Mycobacterium tuberculosis H37Rv
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_018143.1" target="_blank" rel="noopener noreferrer">NC_018143.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGTGTCGGTCTGACCACTTGA</td>
+        <td class="border p-2">+  [684360, 684380]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">RVBD_0585c (RVBD_0585c)</span>, </span><span><span style="color: #ffffff;">RVBD_0584 (RVBD_0584)</span>, </span><span><span style="color: #ffffff;">RVBD_0586 (RVBD_0586)</span>, </span><span><span style="color: #ffffff;">RVBD_0587 (RVBD_0587)</span>, </span><span><span style="color: #ffffff;">RVBD_0588 (RVBD_0588)</span>, </span><span><span style="color: #ffffff;">RVBD_0589 (RVBD_0589)</span>, </span><span><span style="color: #ffffff;">RVBD_0590 (RVBD_0590)</span>, </span><span><span style="color: #ffffff;">RVBD_0590A (RVBD_0590A)</span>, </span><span><span style="color: #ffffff;">RVBD_0591 (RVBD_0591)</span>, </span><span><span style="color: #ffffff;">RVBD_0592 (RVBD_0592)</span>, </span><span><span style="color: #ffffff;">RVBD_0593 (RVBD_0593)</span>, </span><span><span style="color: #ffffff;">RVBD_0594 (RVBD_0594)</span></span></td>
+        <td class="border p-2">16</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002944.2" target="_blank" rel="noopener noreferrer">NC_002944.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCCGGTGGTCTGACCACCTGA</td>
+        <td class="border p-2">+  [4550913, 4550933]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">MAP4080c (MAP4080c)</span>, </span><span><span style="color: #ffffff;">MAP4081 (MAP4081)</span>, </span><span><span style="color: #ffffff;">MAP4082 (MAP4082)</span>, </span><span><span style="color: #ffffff;">MAP4083 (MAP4083)</span></span></td>
+        <td class="border p-2">18</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008705.1" target="_blank" rel="noopener noreferrer">NC_008705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCTAACTGGTCAGACCACTTGAC</td>
+        <td class="border p-2">+  [2892900, 2892922]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Mkms_2770 (Mkms_2770)</span>, </span><span><span style="color: #ffffff;">Mkms_2769 (Mkms_2769)</span>, </span><span><span style="color: #ffffff;">Mkms_2771 (Mkms_2771)</span>, </span><span><span style="color: #ffffff;">Mkms_2772 (Mkms_2772)</span>, </span><span><span style="color: #ffffff;">Mkms_2773 (Mkms_2773)</span></span></td>
+        <td class="border p-2">19</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008596.1" target="_blank" rel="noopener noreferrer">NC_008596.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACCACTGGTAAGACCACTTGA</td>
+        <td class="border p-2">+  [3589417, 3589437]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">MSMEG_3526 (MSMEG_3526)</span>, </span><span><span style="color: #ffffff;">MSMEG_3525 (MSMEG_3525)</span>, </span><span><span style="color: #ffffff;">MSMEG_3527 (MSMEG_3527)</span>, </span><span><span style="color: #ffffff;">MSMEG_3529 (MSMEG_3529)</span>, </span><span><span style="color: #ffffff;">MSMEG_3528 (MSMEG_3528)</span></span></td>
+        <td class="border p-2">21</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008726.1" target="_blank" rel="noopener noreferrer">NC_008726.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CACACTGGTCTGACCACTTGA</td>
+        <td class="border p-2">+  [3116631, 3116651]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Mvan_2941 (Mvan_2941)</span>, </span><span><span style="color: #ffffff;">Mvan_2940 (Mvan_2940)</span>, </span><span><span style="color: #ffffff;">Mvan_2939 (Mvan_2939)</span>, </span><span><span style="color: #ffffff;">Mvan_2942 (Mvan_2942)</span>, </span><span><span style="color: #ffffff;">Mvan_2943 (Mvan_2943)</span></span></td>
+        <td class="border p-2">23</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_006361.1" target="_blank" rel="noopener noreferrer">NC_006361.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ACGATTGGTCTTACCACTTGA</td>
+        <td class="border p-2">+  [153084, 153104]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">nfa1630 (nfa1630)</span>, </span><span><span style="color: #ffffff;">nfa1620 (nfa1620)</span>, </span><span><span style="color: #ffffff;">nfa1640 (nfa1640)</span>, </span><span><span style="color: #ffffff;">nfa1650 (nfa1650)</span>, </span><span><span style="color: #ffffff;">nfa1660 (nfa1660)</span>, </span><span><span style="color: #ffffff;">nfa1670 (nfa1670)</span>, </span><span><span style="color: #ffffff;">nfa1680 (nfa1680)</span>, </span><span><span style="color: #ffffff;">nfa1690 (nfa1690)</span></span></td>
+        <td class="border p-2">24</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009077.1" target="_blank" rel="noopener noreferrer">NC_009077.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P9WMG5" target="_blank" rel="noopener noreferrer">P9WMG5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCTAACTGGTCAGACCACTTGAC</td>
+        <td class="border p-2">+  [2867328, 2867350]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Mjls_2756 (Mjls_2756)</span>, </span><span><span style="color: #ffffff;">Mjls_2755 (Mjls_2755)</span>, </span><span><span style="color: #ffffff;">Mjls_2757 (Mjls_2757)</span>, </span><span><span style="color: #ffffff;">Mjls_2758 (Mjls_2758)</span>, </span><span><span style="color: #ffffff;">Mjls_2759 (Mjls_2759)</span></span></td>
+        <td class="border p-2">25</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/18329386" target="_blank" rel="noopener noreferrer">18329386</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

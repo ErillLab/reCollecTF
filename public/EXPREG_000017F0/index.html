@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HrpX - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">HrpX</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9ZIP8/entry">
+          UniProtKB: Q9ZIP8
+        </a>
+        regulon and binding site collection of Xanthomonas oryzae pv. oryzae MAFF 311018
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCGCTTAACGCGACCGGTCTGCGG</td>
+        <td class="border p-2">+  [873315, 873339]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), qRT-PCR [RNA] (ECO:0001808), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_0804 (XOO_0804)</span></span></td>
+        <td class="border p-2">638</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15774873" target="_blank" rel="noopener noreferrer">15774873</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCGCCAAATCGCACATCGATTCTG</td>
+        <td class="border p-2">+  [4303433, 4303457]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), qRT-PCR [RNA] (ECO:0001808), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">XOO_3802 (XOO_3802)</span>, </span><span><span style="color: #4CAF50;">XOO_3803 (XOO_3803)</span></span></td>
+        <td class="border p-2">638</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15774873" target="_blank" rel="noopener noreferrer">15774873</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGCTTGCCCGTTAAGTGTTTCGT</td>
+        <td class="border p-2">+  [87197, 87221]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_0080 (XOO_0080)</span>, </span><span><span style="color: #ffffff;">XOO_0081 (XOO_0081)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGTTTACGGAATCGCTTGTTCGT</td>
+        <td class="border p-2">+  [1823471, 1823495]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">XOO_1668 (XOO_1668)</span>, </span><span><span style="color: #ffffff;">XOO_1667 (XOO_1667)</span>, </span><span><span style="color: #4CAF50;">XOO_1669 (XOO_1669)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGCAAGTTCTGCAGCTTTTTCGG</td>
+        <td class="border p-2">+  [3246582, 3246606]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_2877 (XOO_2877)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGCTTTGCGTCGCTTTACTTCGT</td>
+        <td class="border p-2">+  [3359419, 3359443]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_2967 (XOO_2967)</span>, </span><span><span style="color: #ffffff;">XOO_2966 (XOO_2966)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGCCAGGAGACGCGTAACTGCGG</td>
+        <td class="border p-2">+  [4347528, 4347552]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_3844 (XOO_3844)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGGACTGCGCGACGCCGGTTCGC</td>
+        <td class="border p-2">+  [4662132, 4662156]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_4134 (XOO_4134)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGTCGCCGCACACAGGAATTCAC</td>
+        <td class="border p-2">+  [4751978, 4752002]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">XOO_4209 (XOO_4209)</span>, </span><span><span style="color: #4CAF50;">XOO_4208 (XOO_4208)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007705.1" target="_blank" rel="noopener noreferrer">NC_007705.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9ZIP8" target="_blank" rel="noopener noreferrer">Q9ZIP8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">TTCGCCATTGATGACAGAATTTCAC</td>
+        <td class="border p-2">+  [4817411, 4817435]</td>
+        <td class="border p-2">Consensus search (ECO:0005624), GUS reporter gene assay (ECO:0005641)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">XOO_4259 (XOO_4259)</span>, </span><span><span style="color: #ffffff;">XOO_4258 (XOO_4258)</span></span></td>
+        <td class="border p-2">960</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16684113" target="_blank" rel="noopener noreferrer">16684113</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

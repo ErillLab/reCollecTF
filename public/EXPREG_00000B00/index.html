@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CsgD - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">CsgD</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P52106/entry">
+          UniProtKB: P52106
+        </a>
+        regulon and binding site collection of Escherichia coli str. K-12 substr. W3110
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAAGTGCCAGACT</td>
+        <td class="border p-2">+  [3800299, 3800312]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yicS (Y75_p3513)</span>, </span><span><span style="color: #ffffff;">nlpA (Y75_p3514)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAAGTGGAATATA</td>
+        <td class="border p-2">+  [3800314, 3800327]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">yicS (Y75_p3513)</span>, </span><span><span style="color: #ffffff;">nlpA (Y75_p3514)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATGGATTACATC</td>
+        <td class="border p-2">+  [1103569, 1103582]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAATGGGTAAAATA</td>
+        <td class="border p-2">+  [1103549, 1103562]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAAGTTGTACATT</td>
+        <td class="border p-2">+  [1103696, 1103709]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AATGGTGATAACTT</td>
+        <td class="border p-2">+  [1103744, 1103757]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAACGGGTGAGCTA</td>
+        <td class="border p-2">+  [402838, 402851]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">yaiC (Y75_p0374)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAGGCGCTAAATA</td>
+        <td class="border p-2">+  [2015205, 2015218]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">fliE (Y75_p1907)</span>, </span><span><span style="color: #ffffff;">fliF (Y75_p1908)</span>, </span><span><span style="color: #ffffff;">fliG (Y75_p1909)</span>, </span><span><span style="color: #ffffff;">fliH (Y75_p1910)</span>, </span><span><span style="color: #ffffff;">fliI (Y75_p1911)</span>, </span><span><span style="color: #ffffff;">fliJ (Y75_p1912)</span>, </span><span><span style="color: #ffffff;">fliK (Y75_p1913)</span>, </span><span><span style="color: #ffffff;">fliL (Y75_p1914)</span>, </span><span><span style="color: #ffffff;">fliM (Y75_p1915)</span>, </span><span><span style="color: #ffffff;">fliN (Y75_p1916)</span>, </span><span><span style="color: #ffffff;">fliO (Y75_p1917)</span>, </span><span><span style="color: #ffffff;">fliP (Y75_p1918)</span>, </span><span><span style="color: #ffffff;">fliQ (Y75_p1919)</span>, </span><span><span style="color: #ffffff;">fliR (Y75_p1920)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTAAGTCAATAAGA</td>
+        <td class="border p-2">+  [2015190, 2015203]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">fliE (Y75_p1907)</span>, </span><span><span style="color: #ffffff;">fliF (Y75_p1908)</span>, </span><span><span style="color: #ffffff;">fliG (Y75_p1909)</span>, </span><span><span style="color: #ffffff;">fliH (Y75_p1910)</span>, </span><span><span style="color: #ffffff;">fliI (Y75_p1911)</span>, </span><span><span style="color: #ffffff;">fliJ (Y75_p1912)</span>, </span><span><span style="color: #ffffff;">fliK (Y75_p1913)</span>, </span><span><span style="color: #ffffff;">fliL (Y75_p1914)</span>, </span><span><span style="color: #ffffff;">fliM (Y75_p1915)</span>, </span><span><span style="color: #ffffff;">fliN (Y75_p1916)</span>, </span><span><span style="color: #ffffff;">fliO (Y75_p1917)</span>, </span><span><span style="color: #ffffff;">fliP (Y75_p1918)</span>, </span><span><span style="color: #ffffff;">fliQ (Y75_p1919)</span>, </span><span><span style="color: #ffffff;">fliR (Y75_p1920)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAAAAAGAAAAATA</td>
+        <td class="border p-2">+  [1104035, 1104048]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CAAAGTATTAAAAC</td>
+        <td class="border p-2">+  [1104012, 1104025]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAATATTTTTAATA</td>
+        <td class="border p-2">+  [1104065, 1104078]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">csgD (Y75_p1009)</span>, </span><span><span style="color: #ffffff;">csgE (Y75_p1008)</span>, </span><span><span style="color: #ffffff;">csgF (Y75_p1007)</span>, </span><span><span style="color: #ffffff;">csgG (Y75_p1006)</span>, </span><span><span style="color: #ffffff;">csgB (Y75_p1010)</span>, </span><span><span style="color: #ffffff;">csgA (Y75_p1011)</span>, </span><span><span style="color: #ffffff;">csgC (Y75_p1012)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATACGAATGAAT</td>
+        <td class="border p-2">+  [1028294, 1028307]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">yccT (Y75_p0936)</span>, </span><span><span style="color: #ffffff;">mgsA (Y75_p0935)</span>, </span><span><span style="color: #ffffff;">yccU (Y75_p0937)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AACAGGGAGTAAAA</td>
+        <td class="border p-2">+  [3301134, 3301147]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">yhbT (Y75_p3079)</span>, </span><span><span style="color: #ffffff;">yhbS (Y75_p3078)</span>, </span><span><span style="color: #ffffff;">yhbU (Y75_p3080)</span>, </span><span><span style="color: #ffffff;">yhbV (Y75_p3081)</span>, </span><span><span style="color: #ffffff;">yhbW (Y75_p3082)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATATGGCAAAATA</td>
+        <td class="border p-2">+  [3301161, 3301174]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">yhbT (Y75_p3079)</span>, </span><span><span style="color: #ffffff;">yhbS (Y75_p3078)</span>, </span><span><span style="color: #ffffff;">yhbU (Y75_p3080)</span>, </span><span><span style="color: #ffffff;">yhbV (Y75_p3081)</span>, </span><span><span style="color: #ffffff;">yhbW (Y75_p3082)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAACGCGATGAGAT</td>
+        <td class="border p-2">+  [1068287, 1068300]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">wrbA (Y75_p0977)</span>, </span><span><span style="color: #ffffff;">yccJ (Y75_p0976)</span>, </span><span><span style="color: #ffffff;">ymdF (Y75_p0978)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATAAGAGCGGCTTA</td>
+        <td class="border p-2">+  [1068309, 1068322]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">wrbA (Y75_p0977)</span>, </span><span><span style="color: #ffffff;">yccJ (Y75_p0976)</span>, </span><span><span style="color: #ffffff;">ymdF (Y75_p0978)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_007779.1" target="_blank" rel="noopener noreferrer">NC_007779.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P52106" target="_blank" rel="noopener noreferrer">P52106</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGAATAGATATCAT</td>
+        <td class="border p-2">+  [1068339, 1068352]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), ChIP-chip (ECO:0006007), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">wrbA (Y75_p0977)</span>, </span><span><span style="color: #ffffff;">yccJ (Y75_p0976)</span>, </span><span><span style="color: #ffffff;">ymdF (Y75_p0978)</span></span></td>
+        <td class="border p-2">994</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21421764" target="_blank" rel="noopener noreferrer">21421764</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

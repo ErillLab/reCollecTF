@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/B5Z6G7/entry">
+          UniProtKB: B5Z6G7
+        </a>
+        regulon and binding site collection of Helicobacter pylori G27
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTCCAAAGTTTCTAATCTTTTC</td>
+        <td class="border p-2">+  [430377, 430398]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631), Western blot (quantitative) expression analysis (ECO:0000279), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">HPG27_401 (HPG27_401)</span>, </span><span><span style="color: #ffffff;">HPG27_400 (HPG27_400)</span>, </span><span><span style="color: #ffffff;">HPG27_399 (HPG27_399)</span>, </span><span><span style="color: #ffffff;">fliY-1 (HPG27_398)</span>, </span><span><span style="color: #ffffff;">fliM (HPG27_397)</span>, </span><span><span style="color: #ffffff;">HPG27_402 (HPG27_402)</span>, </span><span><span style="color: #ffffff;">HPG27_403 (HPG27_403)</span>, </span><span><span style="color: #ffffff;">HPG27_404 (HPG27_404)</span></span></td>
+        <td class="border p-2">228</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12421315" target="_blank" rel="noopener noreferrer">12421315</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAAAAAGCATTATTA</td>
+        <td class="border p-2">+  [62564, 62578]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_51 (HPG27_51)</span>, </span><span><span style="color: #ffffff;">putP (HPG27_50)</span>, </span><span><span style="color: #ffffff;">HPG27_49 (HPG27_49)</span>, </span><span><span style="color: #ffffff;">HPG27_48 (HPG27_48)</span>, </span><span><span style="color: #ffffff;">HPG27_52 (HPG27_52)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATAATGCTTTTTA</td>
+        <td class="border p-2">+  [62564, 62578]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_51 (HPG27_51)</span>, </span><span><span style="color: #ffffff;">putP (HPG27_50)</span>, </span><span><span style="color: #ffffff;">HPG27_49 (HPG27_49)</span>, </span><span><span style="color: #ffffff;">HPG27_48 (HPG27_48)</span>, </span><span><span style="color: #ffffff;">HPG27_52 (HPG27_52)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAAAAATGATTATTC</td>
+        <td class="border p-2">+  [222795, 222809]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_199 (HPG27_199)</span>, </span><span><span style="color: #ffffff;">HPG27_200 (HPG27_200)</span>, </span><span><span style="color: #ffffff;">HPG27_201 (HPG27_201)</span>, </span><span><span style="color: #ffffff;">HPG27_202 (HPG27_202)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATCATAATAATTA</td>
+        <td class="border p-2">+  [306593, 306607]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_272 (HPG27_272)</span>, </span><span><span style="color: #ffffff;">HPG27_271 (HPG27_271)</span>, </span><span><span style="color: #ffffff;">HPG27_270 (HPG27_270)</span>, </span><span><span style="color: #ffffff;">HPG27_269 (HPG27_269)</span>, </span><span><span style="color: #ffffff;">HPG27_268 (HPG27_268)</span>, </span><span><span style="color: #ffffff;">amiE (HPG27_273)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATTATTATTTTTA</td>
+        <td class="border p-2">+  [477842, 477856]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_444 (HPG27_444)</span>, </span><span><span style="color: #ffffff;">hofC (HPG27_445)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATAATGGTTATTA</td>
+        <td class="border p-2">+  [703672, 703686]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">fecA (HPG27_643)</span>, </span><span><span style="color: #ffffff;">fliP (HPG27_642)</span>, </span><span><span style="color: #ffffff;">glmU (HPG27_641)</span>, </span><span><span style="color: #ffffff;">feoB (HPG27_644)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATAATTATTTTTA</td>
+        <td class="border p-2">+  [832470, 832484]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HPG27_763 (HPG27_763)</span>, </span><span><span style="color: #ffffff;">HPG27_762 (HPG27_762)</span>, </span><span><span style="color: #ffffff;">acpS (HPG27_764)</span>, </span><span><span style="color: #ffffff;">fliL (HPG27_765)</span>, </span><span><span style="color: #ffffff;">HPG27_766 (HPG27_766)</span>, </span><span><span style="color: #ffffff;">HPG27_767 (HPG27_767)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATTATAATGATTA</td>
+        <td class="border p-2">+  [892110, 892124]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_825 (HPG27_825)</span>, </span><span><span style="color: #ffffff;">HPG27_826 (HPG27_826)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATAATAATTATCA</td>
+        <td class="border p-2">+  [895823, 895837]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_829 (HPG27_829)</span>, </span><span><span style="color: #F44336;">HPG27_830 (HPG27_830)</span>, </span><span><span style="color: #ffffff;">ruvC (HPG27_831)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAATAACGATTATTG</td>
+        <td class="border p-2">+  [1169452, 1169466]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_1063 (HPG27_1063)</span>, </span><span><span style="color: #ffffff;">HPG27_1062 (HPG27_1062)</span>, </span><span><span style="color: #ffffff;">flgK (HPG27_1064)</span>, </span><span><span style="color: #ffffff;">HPG27_1065 (HPG27_1065)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CAAAAATCATTATTA</td>
+        <td class="border p-2">+  [1645024, 1645038]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_1518 (HPG27_1518)</span>, </span><span><span style="color: #ffffff;">HPG27_1517 (HPG27_1517)</span>, </span><span><span style="color: #ffffff;">HPG27_1516 (HPG27_1516)</span>, </span><span><span style="color: #ffffff;">HPG27_1515 (HPG27_1515)</span>, </span><span><span style="color: #ffffff;">HPG27_1514 (HPG27_1514)</span>, </span><span><span style="color: #ffffff;">metN (HPG27_1513)</span>, </span><span><span style="color: #ffffff;">HPG27_1512 (HPG27_1512)</span>, </span><span><span style="color: #ffffff;">HPG27_1511 (HPG27_1511)</span>, </span><span><span style="color: #ffffff;">HPG27_1519 (HPG27_1519)</span>, </span><span><span style="color: #ffffff;">pdxA (HPG27_1520)</span></span></td>
+        <td class="border p-2">252</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TATTAATAATGATTA</td>
+        <td class="border p-2">+  [548096, 548110]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), PSSM site search (ECO:0005659), Multiple sequence alignment (MSA) (ECO:0005556)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">cagB (HPG27_506)</span>, </span><span><span style="color: #ffffff;">cagA (HPG27_507)</span></span></td>
+        <td class="border p-2">253</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/22507395" target="_blank" rel="noopener noreferrer">22507395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAATAATCATTTTTA</td>
+        <td class="border p-2">+  [588072, 588086]</td>
+        <td class="border p-2">qRT-PCR [RNA] (ECO:0001808), Primer Extension assay (ECO:0005657), Fluorescence anisotropy (ECO:0005632)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_547 (HPG27_547)</span>, </span><span><span style="color: #ffffff;">HPG27_546 (HPG27_546)</span>, </span><span><span style="color: #ffffff;">HPG27_545 (HPG27_545)</span>, </span><span><span style="color: #ffffff;">HPG27_544 (HPG27_544)</span>, </span><span><span style="color: #4CAF50;">oorD (HPG27_548)</span>, </span><span><span style="color: #ffffff;">oorA (HPG27_549)</span>, </span><span><span style="color: #ffffff;">oorB (HPG27_550)</span>, </span><span><span style="color: #ffffff;">oorC (HPG27_551)</span></span></td>
+        <td class="border p-2">273</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/23002221" target="_blank" rel="noopener noreferrer">23002221</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GGTTTTAATAATAATTATC</td>
+        <td class="border p-2">+  [895818, 895836]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_829 (HPG27_829)</span>, </span><span><span style="color: #ffffff;">HPG27_828 (HPG27_828)</span>, </span><span><span style="color: #ffffff;">HPG27_827 (HPG27_827)</span>, </span><span><span style="color: #ffffff;">HPG27_826 (HPG27_826)</span>, </span><span><span style="color: #ffffff;">HPG27_830 (HPG27_830)</span>, </span><span><span style="color: #ffffff;">ruvC (HPG27_831)</span>, </span><span><span style="color: #ffffff;">HPG27_832 (HPG27_832)</span></span></td>
+        <td class="border p-2">441</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11466300" target="_blank" rel="noopener noreferrer">11466300</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">ATTAATGAAAATAAGAAAA</td>
+        <td class="border p-2">+  [895771, 895789]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_829 (HPG27_829)</span>, </span><span><span style="color: #ffffff;">HPG27_828 (HPG27_828)</span>, </span><span><span style="color: #ffffff;">HPG27_827 (HPG27_827)</span>, </span><span><span style="color: #ffffff;">HPG27_826 (HPG27_826)</span>, </span><span><span style="color: #ffffff;">HPG27_830 (HPG27_830)</span>, </span><span><span style="color: #ffffff;">ruvC (HPG27_831)</span>, </span><span><span style="color: #ffffff;">HPG27_832 (HPG27_832)</span></span></td>
+        <td class="border p-2">441</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11466300" target="_blank" rel="noopener noreferrer">11466300</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAAACTATTTTTCACAAAA</td>
+        <td class="border p-2">+  [1629479, 1629497]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HPG27_1499 (HPG27_1499)</span>, </span><span><span style="color: #ffffff;">HPG27_1498 (HPG27_1498)</span>, </span><span><span style="color: #ffffff;">HPG27_1500 (HPG27_1500)</span>, </span><span><span style="color: #ffffff;">HPG27_1501 (HPG27_1501)</span></span></td>
+        <td class="border p-2">441</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11466300" target="_blank" rel="noopener noreferrer">11466300</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AAGAAAAGATTTACCAAAAAGTATTAAAAAATGATTACAATAC</td>
+        <td class="border p-2">+  [1111301, 1111343]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Visual sequence inspection (nan), RNAse protection (ECO:0000288)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_1007 (HPG27_1007)</span>, </span><span><span style="color: #F44336;">HPG27_1008 (HPG27_1008)</span>, </span><span><span style="color: #ffffff;">HPG27_1009 (HPG27_1009)</span></span></td>
+        <td class="border p-2">700</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/19399190" target="_blank" rel="noopener noreferrer">19399190</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TAAATCCAGTTTGTATTATAATTGTTAATTTTA</td>
+        <td class="border p-2">+  [1390794, 1390826]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_1286 (HPG27_1286)</span>, </span><span><span style="color: #ffffff;">HPG27_1285 (HPG27_1285)</span>, </span><span><span style="color: #ffffff;">HPG27_1287 (HPG27_1287)</span>, </span><span><span style="color: #ffffff;">HPG27_1288 (HPG27_1288)</span>, </span><span><span style="color: #ffffff;">HPG27_1289 (HPG27_1289)</span></span></td>
+        <td class="border p-2">1031</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16267295" target="_blank" rel="noopener noreferrer">16267295</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTGGATTTGATTGTAATTATTAGCTTAATCATTATT</td>
+        <td class="border p-2">+  [1390848, 1390883]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_1286 (HPG27_1286)</span>, </span><span><span style="color: #ffffff;">HPG27_1285 (HPG27_1285)</span>, </span><span><span style="color: #ffffff;">HPG27_1287 (HPG27_1287)</span>, </span><span><span style="color: #ffffff;">HPG27_1288 (HPG27_1288)</span>, </span><span><span style="color: #ffffff;">HPG27_1289 (HPG27_1289)</span></span></td>
+        <td class="border p-2">1031</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/16267295" target="_blank" rel="noopener noreferrer">16267295</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGATTAAATTAAAATAATAATGAGTTTTATCT</td>
+        <td class="border p-2">+  [430476, 430507]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">HPG27_401 (HPG27_401)</span></span></td>
+        <td class="border p-2">1052</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14622419" target="_blank" rel="noopener noreferrer">14622419</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTATAATAATATTCTAGTTAT</td>
+        <td class="border p-2">+  [430434, 430454]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">HPG27_401 (HPG27_401)</span></span></td>
+        <td class="border p-2">1052</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14622419" target="_blank" rel="noopener noreferrer">14622419</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTGTCCCATAATTATAGCATAAATGATAATGAAAAAGTA</td>
+        <td class="border p-2">+  [668555, 668594]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556), 2D PAGE (ECO:0005614)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HPG27_615 (HPG27_615)</span>, </span><span><span style="color: #ffffff;">HPG27_614 (HPG27_614)</span>, </span><span><span style="color: #ffffff;">HPG27_613 (HPG27_613)</span>, </span><span><span style="color: #ffffff;">HPG27_616 (HPG27_616)</span>, </span><span><span style="color: #ffffff;">HPG27_617 (HPG27_617)</span>, </span><span><span style="color: #ffffff;">HPG27_618 (HPG27_618)</span>, </span><span><span style="color: #ffffff;">HPG27_619 (HPG27_619)</span>, </span><span><span style="color: #ffffff;">gatB (HPG27_620)</span>, </span><span><span style="color: #ffffff;">HPG27_621 (HPG27_621)</span>, </span><span><span style="color: #ffffff;">HPG27_622 (HPG27_622)</span>, </span><span><span style="color: #ffffff;">HPG27_623 (HPG27_623)</span>, </span><span><span style="color: #ffffff;">rnc (HPG27_624)</span>, </span><span><span style="color: #ffffff;">HPG27_625 (HPG27_625)</span>, </span><span><span style="color: #ffffff;">HPG27_626 (HPG27_626)</span>, </span><span><span style="color: #ffffff;">HPG27_627 (HPG27_627)</span>, </span><span><span style="color: #ffffff;">HPG27_628 (HPG27_628)</span>, </span><span><span style="color: #ffffff;">HPG27_629 (HPG27_629)</span>, </span><span><span style="color: #ffffff;">HPG27_630 (HPG27_630)</span></span></td>
+        <td class="border p-2">1054</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11886560" target="_blank" rel="noopener noreferrer">11886560</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATTTTATCATAAAAATCTATTTAATGAGAATTAGGTAAA</td>
+        <td class="border p-2">+  [668670, 668708]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Multiple sequence alignment (MSA) (ECO:0005556), 2D PAGE (ECO:0005614)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">HPG27_615 (HPG27_615)</span>, </span><span><span style="color: #ffffff;">HPG27_614 (HPG27_614)</span>, </span><span><span style="color: #ffffff;">HPG27_613 (HPG27_613)</span>, </span><span><span style="color: #ffffff;">HPG27_616 (HPG27_616)</span>, </span><span><span style="color: #ffffff;">HPG27_617 (HPG27_617)</span>, </span><span><span style="color: #ffffff;">HPG27_618 (HPG27_618)</span>, </span><span><span style="color: #ffffff;">HPG27_619 (HPG27_619)</span>, </span><span><span style="color: #ffffff;">gatB (HPG27_620)</span>, </span><span><span style="color: #ffffff;">HPG27_621 (HPG27_621)</span>, </span><span><span style="color: #ffffff;">HPG27_622 (HPG27_622)</span>, </span><span><span style="color: #ffffff;">HPG27_623 (HPG27_623)</span>, </span><span><span style="color: #ffffff;">rnc (HPG27_624)</span>, </span><span><span style="color: #ffffff;">HPG27_625 (HPG27_625)</span>, </span><span><span style="color: #ffffff;">HPG27_626 (HPG27_626)</span>, </span><span><span style="color: #ffffff;">HPG27_627 (HPG27_627)</span>, </span><span><span style="color: #ffffff;">HPG27_628 (HPG27_628)</span>, </span><span><span style="color: #ffffff;">HPG27_629 (HPG27_629)</span>, </span><span><span style="color: #ffffff;">HPG27_630 (HPG27_630)</span></span></td>
+        <td class="border p-2">1054</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11886560" target="_blank" rel="noopener noreferrer">11886560</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011333.1" target="_blank" rel="noopener noreferrer">NC_011333.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/B5Z6G7" target="_blank" rel="noopener noreferrer">B5Z6G7</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTTTAATAATTATTATCATACTAT</td>
+        <td class="border p-2">+  [895820, 895843]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), Multiple sequence alignment (MSA) (ECO:0005556), Consensus search (ECO:0005624), Hydroxyl-radical footprinting (ECO:0005643)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">HPG27_829 (HPG27_829)</span>, </span><span><span style="color: #ffffff;">HPG27_828 (HPG27_828)</span>, </span><span><span style="color: #ffffff;">HPG27_827 (HPG27_827)</span>, </span><span><span style="color: #F44336;">HPG27_830 (HPG27_830)</span></span></td>
+        <td class="border p-2">1065</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24322295" target="_blank" rel="noopener noreferrer">24322295</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

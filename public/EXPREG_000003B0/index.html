@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0DN68/entry">
+          UniProtKB: P0DN68
+        </a>
+        regulon and binding site collection of Fibrobacter succinogenes subsp. succinogenes S85
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013410.1" target="_blank" rel="noopener noreferrer">NC_013410.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0DN68" target="_blank" rel="noopener noreferrer">P0DN68</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TTGCCCAGTTGTGCAT</td>
+        <td class="border p-2">+  [3482588, 3482603]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Fisuc_2822 (Fisuc_2822)</span>, </span><span><span style="color: #ffffff;">Fisuc_2821 (Fisuc_2821)</span>, </span><span><span style="color: #ffffff;">Fisuc_2820 (Fisuc_2820)</span>, </span><span><span style="color: #ffffff;">Fisuc_2819 (Fisuc_2819)</span>, </span><span><span style="color: #ffffff;">Fisuc_R0065 (Fisuc_R0065)</span></span></td>
+        <td class="border p-2">390</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15528664" target="_blank" rel="noopener noreferrer">15528664</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013410.1" target="_blank" rel="noopener noreferrer">NC_013410.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0DN68" target="_blank" rel="noopener noreferrer">P0DN68</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCACAAAAGTTCA</td>
+        <td class="border p-2">+  [2922941, 2922954]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Fisuc_2374 (Fisuc_2374)</span>, </span><span><span style="color: #ffffff;">Fisuc_2373 (Fisuc_2373)</span>, </span><span><span style="color: #ffffff;">Fisuc_2372 (Fisuc_2372)</span>, </span><span><span style="color: #ffffff;">Fisuc_2371 (Fisuc_2371)</span>, </span><span><span style="color: #ffffff;">Fisuc_2370 (Fisuc_2370)</span>, </span><span><span style="color: #ffffff;">Fisuc_2375 (Fisuc_2375)</span>, </span><span><span style="color: #ffffff;">Fisuc_2376 (Fisuc_2376)</span></span></td>
+        <td class="border p-2">391</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15528664" target="_blank" rel="noopener noreferrer">15528664</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013410.1" target="_blank" rel="noopener noreferrer">NC_013410.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0DN68" target="_blank" rel="noopener noreferrer">P0DN68</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TATTCAAATGTTCA</td>
+        <td class="border p-2">+  [703836, 703849]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Fisuc_0596 (Fisuc_0596)</span>, </span><span><span style="color: #ffffff;">Fisuc_0595 (Fisuc_0595)</span>, </span><span><span style="color: #ffffff;">Fisuc_0594 (Fisuc_0594)</span>, </span><span><span style="color: #ffffff;">Fisuc_0593 (Fisuc_0593)</span>, </span><span><span style="color: #ffffff;">Fisuc_0592 (Fisuc_0592)</span>, </span><span><span style="color: #ffffff;">Fisuc_0597 (Fisuc_0597)</span>, </span><span><span style="color: #ffffff;">Fisuc_0598 (Fisuc_0598)</span></span></td>
+        <td class="border p-2">391</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15528664" target="_blank" rel="noopener noreferrer">15528664</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013410.1" target="_blank" rel="noopener noreferrer">NC_013410.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0DN68" target="_blank" rel="noopener noreferrer">P0DN68</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGCCTCCTCGAGCA</td>
+        <td class="border p-2">+  [3653728, 3653741]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Fisuc_2961 (Fisuc_2961)</span>, </span><span><span style="color: #ffffff;">Fisuc_2960 (Fisuc_2960)</span>, </span><span><span style="color: #ffffff;">Fisuc_2959 (Fisuc_2959)</span>, </span><span><span style="color: #ffffff;">Fisuc_2958 (Fisuc_2958)</span>, </span><span><span style="color: #ffffff;">Fisuc_2957 (Fisuc_2957)</span>, </span><span><span style="color: #ffffff;">Fisuc_2956 (Fisuc_2956)</span>, </span><span><span style="color: #ffffff;">Fisuc_2955 (Fisuc_2955)</span>, </span><span><span style="color: #ffffff;">Fisuc_2954 (Fisuc_2954)</span>, </span><span><span style="color: #ffffff;">Fisuc_2953 (Fisuc_2953)</span>, </span><span><span style="color: #ffffff;">Fisuc_2952 (Fisuc_2952)</span>, </span><span><span style="color: #ffffff;">Fisuc_2951 (Fisuc_2951)</span>, </span><span><span style="color: #ffffff;">Fisuc_2950 (Fisuc_2950)</span>, </span><span><span style="color: #ffffff;">Fisuc_2962 (Fisuc_2962)</span>, </span><span><span style="color: #ffffff;">Fisuc_2963 (Fisuc_2963)</span>, </span><span><span style="color: #ffffff;">Fisuc_2964 (Fisuc_2964)</span>, </span><span><span style="color: #ffffff;">Fisuc_2965 (Fisuc_2965)</span>, </span><span><span style="color: #ffffff;">Fisuc_2966 (Fisuc_2966)</span>, </span><span><span style="color: #ffffff;">Fisuc_2967 (Fisuc_2967)</span></span></td>
+        <td class="border p-2">391</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15528664" target="_blank" rel="noopener noreferrer">15528664</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_013410.1" target="_blank" rel="noopener noreferrer">NC_013410.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0DN68" target="_blank" rel="noopener noreferrer">P0DN68</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AGCTCAAAGGCGCA</td>
+        <td class="border p-2">+  [917212, 917225]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">Fisuc_0765 (Fisuc_0765)</span>, </span><span><span style="color: #ffffff;">Fisuc_0764 (Fisuc_0764)</span>, </span><span><span style="color: #ffffff;">Fisuc_0763 (Fisuc_0763)</span>, </span><span><span style="color: #ffffff;">Fisuc_0762 (Fisuc_0762)</span>, </span><span><span style="color: #ffffff;">Fisuc_0761 (Fisuc_0761)</span>, </span><span><span style="color: #ffffff;">Fisuc_0766 (Fisuc_0766)</span></span></td>
+        <td class="border p-2">391</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15528664" target="_blank" rel="noopener noreferrer">15528664</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

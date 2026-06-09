@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>H-NS - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">H-NS</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q9KSX6/entry">
+          UniProtKB: Q9KSX6
+        </a>
+        regulon and binding site collection of Vibrio cholerae O395
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009456.1" target="_blank" rel="noopener noreferrer">NC_009456.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TCGATACCTT</td>
+        <td class="border p-2">+  [566154, 566163]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">zot (VC0395_0511)</span>, </span><span><span style="color: #ffffff;">ace (VC0395_0510)</span>, </span><span><span style="color: #ffffff;">VC0395_0509 (VC0395_0509)</span>, </span><span><span style="color: #ffffff;">cep (VC0395_0508)</span>, </span><span><span style="color: #ffffff;">rstB2 (VC0395_0507)</span>, </span><span><span style="color: #ffffff;">rstA1 (VC0395_0506)</span>, </span><span><span style="color: #ffffff;">VC0395_0505 (VC0395_0505)</span>, </span><span><span style="color: #F44336;">ctxA (VC0395_0512)</span></span></td>
+        <td class="border p-2">502</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009456.1" target="_blank" rel="noopener noreferrer">NC_009456.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TCGGTAAACC</td>
+        <td class="border p-2">+  [566198, 566207]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">zot (VC0395_0511)</span>, </span><span><span style="color: #ffffff;">ace (VC0395_0510)</span>, </span><span><span style="color: #ffffff;">VC0395_0509 (VC0395_0509)</span>, </span><span><span style="color: #ffffff;">cep (VC0395_0508)</span>, </span><span><span style="color: #ffffff;">rstB2 (VC0395_0507)</span>, </span><span><span style="color: #ffffff;">rstA1 (VC0395_0506)</span>, </span><span><span style="color: #ffffff;">VC0395_0505 (VC0395_0505)</span>, </span><span><span style="color: #F44336;">ctxA (VC0395_0512)</span></span></td>
+        <td class="border p-2">502</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009456.1" target="_blank" rel="noopener noreferrer">NC_009456.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">CCGATAAAAA</td>
+        <td class="border p-2">+  [566204, 566213]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">zot (VC0395_0511)</span>, </span><span><span style="color: #ffffff;">ace (VC0395_0510)</span>, </span><span><span style="color: #ffffff;">VC0395_0509 (VC0395_0509)</span>, </span><span><span style="color: #ffffff;">cep (VC0395_0508)</span>, </span><span><span style="color: #ffffff;">rstB2 (VC0395_0507)</span>, </span><span><span style="color: #ffffff;">rstA1 (VC0395_0506)</span>, </span><span><span style="color: #ffffff;">VC0395_0505 (VC0395_0505)</span>, </span><span><span style="color: #F44336;">ctxA (VC0395_0512)</span></span></td>
+        <td class="border p-2">502</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009456.1" target="_blank" rel="noopener noreferrer">NC_009456.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TTGATCAATT</td>
+        <td class="border p-2">+  [566332, 566341]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">zot (VC0395_0511)</span>, </span><span><span style="color: #ffffff;">ace (VC0395_0510)</span>, </span><span><span style="color: #ffffff;">VC0395_0509 (VC0395_0509)</span>, </span><span><span style="color: #ffffff;">cep (VC0395_0508)</span>, </span><span><span style="color: #ffffff;">rstB2 (VC0395_0507)</span>, </span><span><span style="color: #ffffff;">rstA1 (VC0395_0506)</span>, </span><span><span style="color: #ffffff;">VC0395_0505 (VC0395_0505)</span>, </span><span><span style="color: #F44336;">ctxA (VC0395_0512)</span></span></td>
+        <td class="border p-2">502</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009456.1" target="_blank" rel="noopener noreferrer">NC_009456.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">ATGATAAGTT</td>
+        <td class="border p-2">+  [566429, 566438]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ctxA (VC0395_0512)</span>, </span><span><span style="color: #ffffff;">zot (VC0395_0511)</span>, </span><span><span style="color: #ffffff;">ace (VC0395_0510)</span>, </span><span><span style="color: #ffffff;">VC0395_0509 (VC0395_0509)</span>, </span><span><span style="color: #ffffff;">cep (VC0395_0508)</span>, </span><span><span style="color: #ffffff;">rstB2 (VC0395_0507)</span>, </span><span><span style="color: #ffffff;">rstA1 (VC0395_0506)</span>, </span><span><span style="color: #ffffff;">VC0395_0505 (VC0395_0505)</span>, </span><span><span style="color: #ffffff;">VC0395_0513 (VC0395_0513)</span>, </span><span><span style="color: #ffffff;">VC0395_0514 (VC0395_0514)</span></span></td>
+        <td class="border p-2">502</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">GCGTTAAAAT</td>
+        <td class="border p-2">+  [380910, 380919]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tcpH (VC0395_A0352)</span>, </span><span><span style="color: #ffffff;">tcpP (VC0395_A0351)</span>, </span><span><span style="color: #F44336;">tcpA (VC0395_A0353)</span>, </span><span><span style="color: #ffffff;">tcpB (VC0395_A0354)</span>, </span><span><span style="color: #ffffff;">tcpQ (VC0395_A0355)</span>, </span><span><span style="color: #ffffff;">tcpC (VC0395_A0356)</span>, </span><span><span style="color: #ffffff;">tcpR (VC0395_A0357)</span>, </span><span><span style="color: #ffffff;">tcpD (VC0395_A0358)</span>, </span><span><span style="color: #ffffff;">tcpS (VC0395_A0359)</span>, </span><span><span style="color: #ffffff;">tcpT (VC0395_A0360)</span>, </span><span><span style="color: #ffffff;">tcpE (VC0395_A0361)</span>, </span><span><span style="color: #ffffff;">tcpF (VC0395_A0362)</span></span></td>
+        <td class="border p-2">503</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">GCATTAAATT</td>
+        <td class="border p-2">+  [380929, 380938]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tcpH (VC0395_A0352)</span>, </span><span><span style="color: #ffffff;">tcpP (VC0395_A0351)</span>, </span><span><span style="color: #F44336;">tcpA (VC0395_A0353)</span>, </span><span><span style="color: #ffffff;">tcpB (VC0395_A0354)</span>, </span><span><span style="color: #ffffff;">tcpQ (VC0395_A0355)</span>, </span><span><span style="color: #ffffff;">tcpC (VC0395_A0356)</span>, </span><span><span style="color: #ffffff;">tcpR (VC0395_A0357)</span>, </span><span><span style="color: #ffffff;">tcpD (VC0395_A0358)</span>, </span><span><span style="color: #ffffff;">tcpS (VC0395_A0359)</span>, </span><span><span style="color: #ffffff;">tcpT (VC0395_A0360)</span>, </span><span><span style="color: #ffffff;">tcpE (VC0395_A0361)</span>, </span><span><span style="color: #ffffff;">tcpF (VC0395_A0362)</span></span></td>
+        <td class="border p-2">503</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TGAATAAGTT</td>
+        <td class="border p-2">+  [380957, 380966]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tcpH (VC0395_A0352)</span>, </span><span><span style="color: #ffffff;">tcpP (VC0395_A0351)</span>, </span><span><span style="color: #F44336;">tcpA (VC0395_A0353)</span>, </span><span><span style="color: #ffffff;">tcpB (VC0395_A0354)</span>, </span><span><span style="color: #ffffff;">tcpQ (VC0395_A0355)</span>, </span><span><span style="color: #ffffff;">tcpC (VC0395_A0356)</span>, </span><span><span style="color: #ffffff;">tcpR (VC0395_A0357)</span>, </span><span><span style="color: #ffffff;">tcpD (VC0395_A0358)</span>, </span><span><span style="color: #ffffff;">tcpS (VC0395_A0359)</span>, </span><span><span style="color: #ffffff;">tcpT (VC0395_A0360)</span>, </span><span><span style="color: #ffffff;">tcpE (VC0395_A0361)</span>, </span><span><span style="color: #ffffff;">tcpF (VC0395_A0362)</span></span></td>
+        <td class="border p-2">503</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TCTGTCAATT</td>
+        <td class="border p-2">+  [381072, 381081]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tcpH (VC0395_A0352)</span>, </span><span><span style="color: #ffffff;">tcpP (VC0395_A0351)</span>, </span><span><span style="color: #F44336;">tcpA (VC0395_A0353)</span>, </span><span><span style="color: #ffffff;">tcpB (VC0395_A0354)</span>, </span><span><span style="color: #ffffff;">tcpQ (VC0395_A0355)</span>, </span><span><span style="color: #ffffff;">tcpC (VC0395_A0356)</span>, </span><span><span style="color: #ffffff;">tcpR (VC0395_A0357)</span>, </span><span><span style="color: #ffffff;">tcpD (VC0395_A0358)</span>, </span><span><span style="color: #ffffff;">tcpS (VC0395_A0359)</span>, </span><span><span style="color: #ffffff;">tcpT (VC0395_A0360)</span>, </span><span><span style="color: #ffffff;">tcpE (VC0395_A0361)</span>, </span><span><span style="color: #ffffff;">tcpF (VC0395_A0362)</span></span></td>
+        <td class="border p-2">503</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009457.1" target="_blank" rel="noopener noreferrer">NC_009457.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q9KSX6" target="_blank" rel="noopener noreferrer">Q9KSX6</a>
+        </td>
+        <td class="border p-2">OTHER</td>
+        <td class="border p-2 break-words">TACATAAATA</td>
+        <td class="border p-2">+  [381178, 381187]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">tcpA (VC0395_A0353)</span>, </span><span><span style="color: #ffffff;">tcpH (VC0395_A0352)</span>, </span><span><span style="color: #ffffff;">tcpP (VC0395_A0351)</span>, </span><span><span style="color: #ffffff;">tcpB (VC0395_A0354)</span>, </span><span><span style="color: #ffffff;">tcpQ (VC0395_A0355)</span>, </span><span><span style="color: #ffffff;">tcpC (VC0395_A0356)</span>, </span><span><span style="color: #ffffff;">tcpR (VC0395_A0357)</span>, </span><span><span style="color: #ffffff;">tcpD (VC0395_A0358)</span>, </span><span><span style="color: #ffffff;">tcpS (VC0395_A0359)</span>, </span><span><span style="color: #ffffff;">tcpT (VC0395_A0360)</span>, </span><span><span style="color: #ffffff;">tcpE (VC0395_A0361)</span>, </span><span><span style="color: #ffffff;">tcpF (VC0395_A0362)</span></span></td>
+        <td class="border p-2">503</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/21169492" target="_blank" rel="noopener noreferrer">21169492</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

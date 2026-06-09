@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlnR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">GlnR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A4FQD5/entry">
+          UniProtKB: A4FQD5
+        </a>
+        regulon and binding site collection of Saccharopolyspora erythraea NRRL 2338
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCAACAGCTCAGAAAC</td>
+        <td class="border p-2">+  [1785103, 1785118]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_1617 (SACE_1617)</span>, </span><span><span style="color: #2196F3;">SACE_1618 (SACE_1618)</span>, </span><span><span style="color: #ffffff;">glnE (SACE_1619)</span>, </span><span><span style="color: #ffffff;">SACE_1620 (SACE_1620)</span>, </span><span><span style="color: #ffffff;">SACE_1617 (SACE_1617)</span>, </span><span><span style="color: #F44336;">SACE_1618 (SACE_1618)</span>, </span><span><span style="color: #ffffff;">glnE (SACE_1619)</span>, </span><span><span style="color: #ffffff;">SACE_1620 (SACE_1620)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAACGCCCGCGAAAC</td>
+        <td class="border p-2">+  [1793129, 1793144]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">SACE_1623 (SACE_1623)</span>, </span><span><span style="color: #ffffff;">SACE_1624 (SACE_1624)</span>, </span><span><span style="color: #4CAF50;">SACE_1623 (SACE_1623)</span>, </span><span><span style="color: #ffffff;">SACE_1624 (SACE_1624)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAACAGTCAAGATAC</td>
+        <td class="border p-2">+  [6455262, 6455277]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">gltB (SACE_5742)</span>, </span><span><span style="color: #ffffff;">SACE_5741 (SACE_5741)</span>, </span><span><span style="color: #ffffff;">SACE_5743 (SACE_5743)</span>, </span><span><span style="color: #ffffff;">SACE_5744 (SACE_5744)</span>, </span><span><span style="color: #ffffff;">SACE_5745 (SACE_5745)</span>, </span><span><span style="color: #4CAF50;">gltB (SACE_5742)</span>, </span><span><span style="color: #ffffff;">SACE_5741 (SACE_5741)</span>, </span><span><span style="color: #ffffff;">SACE_5743 (SACE_5743)</span>, </span><span><span style="color: #ffffff;">SACE_5744 (SACE_5744)</span>, </span><span><span style="color: #ffffff;">SACE_5745 (SACE_5745)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTCACGCTCCGGAAAC</td>
+        <td class="border p-2">+  [6799670, 6799685]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">amt (SACE_6062)</span>, </span><span><span style="color: #ffffff;">glnB (SACE_6061)</span>, </span><span><span style="color: #4CAF50;">amt (SACE_6062)</span>, </span><span><span style="color: #ffffff;">glnB (SACE_6061)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAGCAACCGCGAAAC</td>
+        <td class="border p-2">+  [5658176, 5658191]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">aspA (SACE_5071)</span>, </span><span><span style="color: #2196F3;">SACE_5070 (SACE_5070)</span>, </span><span><span style="color: #ffffff;">racX (SACE_5069)</span>, </span><span><span style="color: #ffffff;">SACE_5068 (SACE_5068)</span>, </span><span><span style="color: #ffffff;">SACE_5072 (SACE_5072)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CAAACGCCTGAAAAAA</td>
+        <td class="border p-2">+  [697442, 697457]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">citA (SACE_0633)</span>, </span><span><span style="color: #ffffff;">citA4 (SACE_0632)</span>, </span><span><span style="color: #ffffff;">SACE_0631 (SACE_0631)</span>, </span><span><span style="color: #2196F3;">ureA (SACE_0634)</span>, </span><span><span style="color: #ffffff;">ureB (SACE_0635)</span>, </span><span><span style="color: #ffffff;">ureC (SACE_0636)</span>, </span><span><span style="color: #ffffff;">ureF (SACE_0637)</span>, </span><span><span style="color: #ffffff;">ureG (SACE_0638)</span>, </span><span><span style="color: #ffffff;">ureD (SACE_0639)</span>, </span><span><span style="color: #ffffff;">citA (SACE_0633)</span>, </span><span><span style="color: #ffffff;">citA4 (SACE_0632)</span>, </span><span><span style="color: #ffffff;">SACE_0631 (SACE_0631)</span>, </span><span><span style="color: #4CAF50;">ureA (SACE_0634)</span>, </span><span><span style="color: #ffffff;">ureB (SACE_0635)</span>, </span><span><span style="color: #ffffff;">ureC (SACE_0636)</span>, </span><span><span style="color: #ffffff;">ureF (SACE_0637)</span>, </span><span><span style="color: #ffffff;">ureG (SACE_0638)</span>, </span><span><span style="color: #ffffff;">ureD (SACE_0639)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCAACTTTTCCTCAAC</td>
+        <td class="border p-2">+  [3088631, 3088646]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">aspA (SACE_2829)</span>, </span><span><span style="color: #2196F3;">SACE_2830 (SACE_2830)</span>, </span><span><span style="color: #ffffff;">SACE_2831 (SACE_2831)</span>, </span><span><span style="color: #ffffff;">aspA (SACE_2829)</span>, </span><span><span style="color: #F44336;">SACE_2830 (SACE_2830)</span>, </span><span><span style="color: #ffffff;">SACE_2831 (SACE_2831)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTATCGTTCCAGCAAC</td>
+        <td class="border p-2">+  [6713006, 6713021]</td>
+        <td class="border p-2">EMSA (ECO:0001807), Motif-discovery (ECO:0005558), qRT-PCR [RNA] (ECO:0001808), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #2196F3;">gdh (SACE_5979)</span>, </span><span><span style="color: #F44336;">gdh (SACE_5979)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGCAGCACTGGGAATC</td>
+        <td class="border p-2">+  [1466430, 1466445]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_1324 (SACE_1324)</span>, </span><span><span style="color: #F44336;">gudB (SACE_1325)</span>, </span><span><span style="color: #ffffff;">SACE_1326 (SACE_1326)</span>, </span><span><span style="color: #ffffff;">SACE_1327 (SACE_1327)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCAACGCTGCGGAAAC</td>
+        <td class="border p-2">+  [1629622, 1629637]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">nirA (SACE_1476)</span>, </span><span><span style="color: #ffffff;">SACE_1477 (SACE_1477)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTTACATGCCGGACGC</td>
+        <td class="border p-2">+  [1767891, 1767906]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">nadE (SACE_1610)</span>, </span><span><span style="color: #ffffff;">helZ (SACE_1609)</span>, </span><span><span style="color: #ffffff;">SACE_1608 (SACE_1608)</span>, </span><span><span style="color: #ffffff;">SACE_1611 (SACE_1611)</span>, </span><span><span style="color: #ffffff;">SACE_1612 (SACE_1612)</span>, </span><span><span style="color: #ffffff;">glnA2 (SACE_1613)</span>, </span><span><span style="color: #ffffff;">SACE_1614 (SACE_1614)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CGCACCCTGGAGGAAC</td>
+        <td class="border p-2">+  [1771308, 1771323]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">glnA2 (SACE_1613)</span>, </span><span><span style="color: #ffffff;">SACE_1614 (SACE_1614)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GACACGATGGCCGAAA</td>
+        <td class="border p-2">+  [1923821, 1923836]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SACE_1746 (SACE_1746)</span>, </span><span><span style="color: #ffffff;">gluB1 (SACE_1745)</span>, </span><span><span style="color: #ffffff;">SACE_1744 (SACE_1744)</span>, </span><span><span style="color: #ffffff;">gluD (SACE_1743)</span>, </span><span><span style="color: #ffffff;">SACE_1747 (SACE_1747)</span>, </span><span><span style="color: #ffffff;">SACE_1748 (SACE_1748)</span>, </span><span><span style="color: #ffffff;">SACE_1749 (SACE_1749)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCAACCCGCCGGTAAC</td>
+        <td class="border p-2">+  [3236573, 3236588]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">racX (SACE_2953)</span>, </span><span><span style="color: #ffffff;">pfpI (SACE_2952)</span>, </span><span><span style="color: #ffffff;">SACE_2954 (SACE_2954)</span>, </span><span><span style="color: #ffffff;">cydA (SACE_2955)</span>, </span><span><span style="color: #ffffff;">cydB (SACE_2956)</span>, </span><span><span style="color: #ffffff;">SACE_2957 (SACE_2957)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGCACAGACCCGAATC</td>
+        <td class="border p-2">+  [3404935, 3404950]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">SACE_3095 (SACE_3095)</span>, </span><span><span style="color: #ffffff;">SACE_3096 (SACE_3096)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">AGCACAATGGTGAAAT</td>
+        <td class="border p-2">+  [3840204, 3840219]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_3483 (SACE_3483)</span>, </span><span><span style="color: #ffffff;">SACE_3482 (SACE_3482)</span>, </span><span><span style="color: #4CAF50;">ureA (SACE_3484)</span>, </span><span><span style="color: #ffffff;">ureC (SACE_3485)</span>, </span><span><span style="color: #ffffff;">SACE_3486 (SACE_3486)</span>, </span><span><span style="color: #ffffff;">SACE_3487 (SACE_3487)</span>, </span><span><span style="color: #ffffff;">SACE_3488 (SACE_3488)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTGCATCTCGGTAAC</td>
+        <td class="border p-2">+  [4155499, 4155514]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_3798 (SACE_3798)</span>, </span><span><span style="color: #4CAF50;">narK (SACE_3799)</span>, </span><span><span style="color: #ffffff;">SACE_3800 (SACE_3800)</span>, </span><span><span style="color: #ffffff;">nirB (SACE_3801)</span>, </span><span><span style="color: #ffffff;">nirB (SACE_3802)</span>, </span><span><span style="color: #ffffff;">nirD (SACE_3803)</span>, </span><span><span style="color: #ffffff;">SACE_3804 (SACE_3804)</span>, </span><span><span style="color: #ffffff;">SACE_3805 (SACE_3805)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCTACCGTTAAGTAAC</td>
+        <td class="border p-2">+  [4392580, 4392595]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">gltB (SACE_3998)</span>, </span><span><span style="color: #ffffff;">SACE_3997 (SACE_3997)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGAACAATGCCGCAAA</td>
+        <td class="border p-2">+  [4478534, 4478549]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">narG (SACE_4070)</span>, </span><span><span style="color: #ffffff;">narH (SACE_4069)</span>, </span><span><span style="color: #ffffff;">narJ (SACE_4068)</span>, </span><span><span style="color: #ffffff;">narI (SACE_4067)</span>, </span><span><span style="color: #ffffff;">SACE_4066 (SACE_4066)</span>, </span><span><span style="color: #ffffff;">SACE_4065 (SACE_4065)</span>, </span><span><span style="color: #ffffff;">SACE_4071 (SACE_4071)</span>, </span><span><span style="color: #ffffff;">tnp (SACE_4072)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCAACATGTGGTTCAC</td>
+        <td class="border p-2">+  [5658042, 5658057]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SACE_5070 (SACE_5070)</span>, </span><span><span style="color: #ffffff;">racX (SACE_5069)</span>, </span><span><span style="color: #ffffff;">SACE_5068 (SACE_5068)</span>, </span><span><span style="color: #ffffff;">aspA (SACE_5071)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GACACAACGACGACAC</td>
+        <td class="border p-2">+  [5994575, 5994590]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_5356 (SACE_5356)</span>, </span><span><span style="color: #4CAF50;">glnA4 (SACE_5355)</span>, </span><span><span style="color: #ffffff;">SACE_5354 (SACE_5354)</span>, </span><span><span style="color: #ffffff;">aldC (SACE_5353)</span>, </span><span><span style="color: #ffffff;">SACE_5352 (SACE_5352)</span>, </span><span><span style="color: #ffffff;">SACE_5351 (SACE_5351)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAGCGCGACGGAAAC</td>
+        <td class="border p-2">+  [6562195, 6562210]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">nos (SACE_5845)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GCAACCGCGGCGAAAC</td>
+        <td class="border p-2">+  [6605109, 6605124]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_5882 (SACE_5882)</span>, </span><span><span style="color: #ffffff;">SACE_5881 (SACE_5881)</span>, </span><span><span style="color: #ffffff;">SACE_5880 (SACE_5880)</span>, </span><span><span style="color: #4CAF50;">SACE_5883 (SACE_5883)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GACACATGCCCGTAAC</td>
+        <td class="border p-2">+  [7909867, 7909882]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SACE_7102 (SACE_7102)</span>, </span><span><span style="color: #4CAF50;">glnR (SACE_7101)</span>, </span><span><span style="color: #ffffff;">SACE_7103 (SACE_7103)</span>, </span><span><span style="color: #ffffff;">trxA4 (SACE_7104)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTCACGGACCCGTAAA</td>
+        <td class="border p-2">+  [8061269, 8061284]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">nos (SACE_7255)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_009142.1" target="_blank" rel="noopener noreferrer">NC_009142.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A4FQD5" target="_blank" rel="noopener noreferrer">A4FQD5</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTAACGCGTTCGAAAC</td>
+        <td class="border p-2">+  [8094417, 8094432]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808), Motif-discovery (ECO:0005558), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SACE_7286 (SACE_7286)</span>, </span><span><span style="color: #ffffff;">SACE_7285 (SACE_7285)</span>, </span><span><span style="color: #ffffff;">SACE_7284 (SACE_7284)</span>, </span><span><span style="color: #ffffff;">SACE_7287 (SACE_7287)</span></span></td>
+        <td class="border p-2">832</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/24931311" target="_blank" rel="noopener noreferrer">24931311</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

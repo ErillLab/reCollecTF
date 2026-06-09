@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A0QVY5/entry">
+          UniProtKB: A0QVY5
+        </a>
+        regulon and binding site collection of Mycobacterium smegmatis str. MC2 155
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008596.1" target="_blank" rel="noopener noreferrer">NC_008596.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0QVY5" target="_blank" rel="noopener noreferrer">A0QVY5</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAACAGGTGTTC</td>
+        <td class="border p-2">+  [2792243, 2792254]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Visual sequence inspection (nan), xylE reporter assay</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hypA (MSMEG_2722)</span>, </span><span><span style="color: #ffffff;">hypB (MSMEG_2721)</span>, </span><span><span style="color: #ffffff;">MSMEG_2720 (MSMEG_2720)</span>, </span><span><span style="color: #ffffff;">MSMEG_2719 (MSMEG_2719)</span>, </span><span><span style="color: #ffffff;">MSMEG_2718 (MSMEG_2718)</span>, </span><span><span style="color: #ffffff;">MSMEG_2717 (MSMEG_2717)</span>, </span><span><span style="color: #ffffff;">MSMEG_2716 (MSMEG_2716)</span>, </span><span><span style="color: #ffffff;">MSMEG_2715 (MSMEG_2715)</span>, </span><span><span style="color: #ffffff;">MSMEG_2714 (MSMEG_2714)</span>, </span><span><span style="color: #ffffff;">MSMEG_2713 (MSMEG_2713)</span>, </span><span><span style="color: #ffffff;">hypC (MSMEG_2712)</span>, </span><span><span style="color: #ffffff;">hypF (MSMEG_2711)</span>, </span><span><span style="color: #ffffff;">MSMEG_2710 (MSMEG_2710)</span>, </span><span><span style="color: #ffffff;">MSMEG_2708 (MSMEG_2708)</span>, </span><span><span style="color: #ffffff;">MSMEG_2709 (MSMEG_2709)</span>, </span><span><span style="color: #ffffff;">MSMEG_2707 (MSMEG_2707)</span>, </span><span><span style="color: #ffffff;">gmhA (MSMEG_2706)</span>, </span><span><span style="color: #ffffff;">hypE (MSMEG_2705)</span>, </span><span><span style="color: #ffffff;">MSMEG_2704 (MSMEG_2704)</span>, </span><span><span style="color: #F44336;">recA (MSMEG_2723)</span>, </span><span><span style="color: #ffffff;">recX (MSMEG_2724)</span>, </span><span><span style="color: #ffffff;">MSMEG_2725 (MSMEG_2725)</span>, </span><span><span style="color: #ffffff;">MSMEG_2726 (MSMEG_2726)</span>, </span><span><span style="color: #ffffff;">MSMEG_2727 (MSMEG_2727)</span>, </span><span><span style="color: #ffffff;">MSMEG_2728 (MSMEG_2728)</span>, </span><span><span style="color: #ffffff;">miaB (MSMEG_2729)</span>, </span><span><span style="color: #ffffff;">MSMEG_2730 (MSMEG_2730)</span>, </span><span><span style="color: #ffffff;">MSMEG_2731 (MSMEG_2731)</span>, </span><span><span style="color: #ffffff;">MSMEG_2732 (MSMEG_2732)</span>, </span><span><span style="color: #ffffff;">MSMEG_2733 (MSMEG_2733)</span>, </span><span><span style="color: #ffffff;">miaA (MSMEG_2734)</span>, </span><span><span style="color: #ffffff;">dapF (MSMEG_2735)</span>, </span><span><span style="color: #ffffff;">MSMEG_2736 (MSMEG_2736)</span>, </span><span><span style="color: #ffffff;">MSMEG_2737 (MSMEG_2737)</span>, </span><span><span style="color: #ffffff;">MSMEG_2738 (MSMEG_2738)</span></span></td>
+        <td class="border p-2">385</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9427395" target="_blank" rel="noopener noreferrer">9427395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002677.1" target="_blank" rel="noopener noreferrer">NC_002677.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0QVY5" target="_blank" rel="noopener noreferrer">A0QVY5</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAACACATGTTT</td>
+        <td class="border p-2">+  [1175762, 1175773]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), EMSA (ECO:0001807), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">lexA (ML1003)</span>, </span><span><span style="color: #ffffff;">ML1002 (ML1002)</span>, </span><span><span style="color: #ffffff;">ML1001 (ML1001)</span>, </span><span><span style="color: #ffffff;">ML1004 (ML1004)</span></span></td>
+        <td class="border p-2">386</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9427395" target="_blank" rel="noopener noreferrer">9427395</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000962.3" target="_blank" rel="noopener noreferrer">NC_000962.3</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A0QVY5" target="_blank" rel="noopener noreferrer">A0QVY5</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TCGAACAGGTGTTCGG</td>
+        <td class="border p-2">+  [3051531, 3051546]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">recA (Rv2737c)</span>, </span><span><span style="color: #ffffff;">recX (Rv2736c)</span>, </span><span><span style="color: #ffffff;">Rv2735c (Rv2735c)</span>, </span><span><span style="color: #ffffff;">Rv2734 (Rv2734)</span>, </span><span><span style="color: #ffffff;">Rv2737A (Rv2737A)</span>, </span><span><span style="color: #ffffff;">Rv2738c (Rv2738c)</span>, </span><span><span style="color: #ffffff;">Rv2739c (Rv2739c)</span>, </span><span><span style="color: #ffffff;">ephG (Rv2740)</span></span></td>
+        <td class="border p-2">388</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12029045" target="_blank" rel="noopener noreferrer">12029045</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

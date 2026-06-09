@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fur - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">Fur</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0A0S8/entry">
+          UniProtKB: P0A0S8
+        </a>
+        regulon and binding site collection of Neisseria meningitidis MC58
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GATAATAACTATCATTATT</td>
+        <td class="border p-2">+  [1687712, 1687730]</td>
+        <td class="border p-2">Beta-gal reporter assay, PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">norB (NMB1622)</span>, </span><span><span style="color: #ffffff;">pan1 (NMB1623)</span>, </span><span><span style="color: #ffffff;">NMB1624 (NMB1624)</span></span></td>
+        <td class="border p-2">467</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15130126" target="_blank" rel="noopener noreferrer">15130126</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TAAAATAATAATCCTTATC</td>
+        <td class="border p-2">+  [475536, 475554]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">NMB0459 (NMB0459)</span>, </span><span><span style="color: #F44336;">tbp2 (NMB0460)</span>, </span><span><span style="color: #ffffff;">tbp1 (NMB0461)</span></span></td>
+        <td class="border p-2">469</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15130126" target="_blank" rel="noopener noreferrer">15130126</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TATTAGAAGTATCATTTTA</td>
+        <td class="border p-2">+  [1687821, 1687839]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">norB (NMB1622)</span>, </span><span><span style="color: #4CAF50;">pan1 (NMB1623)</span>, </span><span><span style="color: #ffffff;">NMB1624 (NMB1624)</span></span></td>
+        <td class="border p-2">470</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15130126" target="_blank" rel="noopener noreferrer">15130126</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCAAATAAGAATCGTTATC</td>
+        <td class="border p-2">+  [246469, 246487]</td>
+        <td class="border p-2">PSSM site search (ECO:0005659), DNAse footprinting (ECO:0005631), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">NMB0240 (NMB0240)</span>, </span><span><span style="color: #ffffff;">NMB0239 (NMB0239)</span>, </span><span><span style="color: #4CAF50;">nuoA (NMB0241)</span>, </span><span><span style="color: #ffffff;">nuoB (NMB0242)</span>, </span><span><span style="color: #ffffff;">nuoC (NMB0243)</span>, </span><span><span style="color: #ffffff;">nuoD (NMB0244)</span>, </span><span><span style="color: #ffffff;">nuoE (NMB0245)</span></span></td>
+        <td class="border p-2">470</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15130126" target="_blank" rel="noopener noreferrer">15130126</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">ATATTTTATAAAAGCGAACGATAATCATACGATTAAGC</td>
+        <td class="border p-2">+  [205650, 205687]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Visual sequence inspection (nan), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">NMB0204 (NMB0204)</span>, </span><span><span style="color: #ffffff;">dapB (NMB0203)</span>, </span><span><span style="color: #F44336;">fur (NMB0205)</span>, </span><span><span style="color: #ffffff;">aat (NMB0206)</span></span></td>
+        <td class="border p-2">690</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14526014" target="_blank" rel="noopener noreferrer">14526014</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003112.2" target="_blank" rel="noopener noreferrer">NC_003112.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0A0S8" target="_blank" rel="noopener noreferrer">P0A0S8</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGTATTATAACGTCTATTGTTTTACA</td>
+        <td class="border p-2">+  [205778, 205803]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Primer Extension assay (ECO:0005657), Visual sequence inspection (nan), S1 nuclease protection (ECO:0005666)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">NMB0204 (NMB0204)</span>, </span><span><span style="color: #ffffff;">dapB (NMB0203)</span>, </span><span><span style="color: #2196F3;">fur (NMB0205)</span>, </span><span><span style="color: #ffffff;">aat (NMB0206)</span></span></td>
+        <td class="border p-2">690</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14526014" target="_blank" rel="noopener noreferrer">14526014</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

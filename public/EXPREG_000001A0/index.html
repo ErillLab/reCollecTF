@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OmpR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">OmpR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/A1JSH8/entry">
+          UniProtKB: A1JSH8
+        </a>
+        regulon and binding site collection of Yersinia enterocolitica O:9
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008800.1" target="_blank" rel="noopener noreferrer">NC_008800.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A1JSH8" target="_blank" rel="noopener noreferrer">A1JSH8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTGACTTCTGGCTATTT</td>
+        <td class="border p-2">+  [2777421, 2777437]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flhD (YE2581)</span>, </span><span><span style="color: #4CAF50;">flhC (YE2580)</span>, </span><span><span style="color: #ffffff;">YE2583 (YE2583)</span></span></td>
+        <td class="border p-2">58</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20830609" target="_blank" rel="noopener noreferrer">20830609</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008800.1" target="_blank" rel="noopener noreferrer">NC_008800.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A1JSH8" target="_blank" rel="noopener noreferrer">A1JSH8</a>
+        </td>
+        <td class="border p-2">MONOMER</td>
+        <td class="border p-2 break-words">CTAATATTTTGTAAGAAAA</td>
+        <td class="border p-2">+  [2777240, 2777258]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">flhD (YE2581)</span>, </span><span><span style="color: #4CAF50;">flhC (YE2580)</span>, </span><span><span style="color: #ffffff;">YE2583 (YE2583)</span></span></td>
+        <td class="border p-2">59</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20830609" target="_blank" rel="noopener noreferrer">20830609</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_008800.1" target="_blank" rel="noopener noreferrer">NC_008800.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/A1JSH8" target="_blank" rel="noopener noreferrer">A1JSH8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTATTTTTGTAAGTTCTG</td>
+        <td class="border p-2">+  [2757915, 2757933]</td>
+        <td class="border p-2">Beta-gal reporter assay, EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">invA (YE2564)</span>, </span><span><span style="color: #ffffff;">flgN (YE2563)</span>, </span><span><span style="color: #ffffff;">flgM (YE2562)</span>, </span><span><span style="color: #ffffff;">flhE (YE2565)</span>, </span><span><span style="color: #ffffff;">flhA (YE2566)</span>, </span><span><span style="color: #ffffff;">flhB (YE2567)</span></span></td>
+        <td class="border p-2">450</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/17660406" target="_blank" rel="noopener noreferrer">17660406</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

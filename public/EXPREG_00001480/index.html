@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q92PW3/entry">
+          UniProtKB: Q92PW3
+        </a>
+        regulon and binding site collection of Sinorhizobium meliloti 1021
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCTTGATTTGTTTCG</td>
+        <td class="border p-2">+  [1749415, 1749432]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tRNA-ALA_CGC (SMc01244)</span>, </span><span><span style="color: #F44336;">lexA (SMc01183)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCCATATGTGTTCCG</td>
+        <td class="border p-2">+  [1749388, 1749405]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">tRNA-ALA_CGC (SMc01244)</span>, </span><span><span style="color: #F44336;">lexA (SMc01183)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTTTTGTTTTGTTCAC</td>
+        <td class="border p-2">+  [2961333, 2961350]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ruvC (SMc03967)</span>, </span><span><span style="color: #ffffff;">SMc03968 (SMc03968)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCCGGATATGATCGA</td>
+        <td class="border p-2">+  [1409077, 1409094]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dinP (SMc01373)</span>, </span><span><span style="color: #ffffff;">SMc01374 (SMc01374)</span>, </span><span><span style="color: #ffffff;">SMc01372 (SMc01372)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">CGTTCAACATTTGTTCCG</td>
+        <td class="border p-2">+  [1409088, 1409105]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">dinP (SMc01373)</span>, </span><span><span style="color: #ffffff;">SMc01372 (SMc01372)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCATGTTATGTTCTT</td>
+        <td class="border p-2">+  [3458286, 3458303]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SMc03790 (SMc03790)</span>, </span><span><span style="color: #ffffff;">SMc03789 (SMc03789)</span>, </span><span><span style="color: #F44336;">dnaE2 (SMc03788)</span>, </span><span><span style="color: #ffffff;">SMc03791 (SMc03791)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">AATTCGCCTTTTGTTCGC</td>
+        <td class="border p-2">+  [1544426, 1544443]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">parE (SMc01018)</span>, </span><span><span style="color: #ffffff;">SMc01017 (SMc01017)</span>, </span><span><span style="color: #ffffff;">SMc01019 (SMc01019)</span>, </span><span><span style="color: #ffffff;">SMc01020 (SMc01020)</span>, </span><span><span style="color: #ffffff;">SMc01021 (SMc01021)</span>, </span><span><span style="color: #ffffff;">SMc01022 (SMc01022)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCTCGTTTTGATCTG</td>
+        <td class="border p-2">+  [455431, 455448]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc01102 (SMc01102)</span>, </span><span><span style="color: #ffffff;">def (SMc01101)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003047.1" target="_blank" rel="noopener noreferrer">NC_003047.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">TGTTCTTGATTTGTTCTA</td>
+        <td class="border p-2">+  [921610, 921627]</td>
+        <td class="border p-2">EMSA (ECO:0001807), PSSM site search (ECO:0005659), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #F44336;">SMc00866 (SMc00866)</span>, </span><span><span style="color: #ffffff;">SMc00865 (SMc00865)</span></span></td>
+        <td class="border p-2">114</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15604457" target="_blank" rel="noopener noreferrer">15604457</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_003037.1" target="_blank" rel="noopener noreferrer">NC_003037.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q92PW3" target="_blank" rel="noopener noreferrer">Q92PW3</a>
+        </td>
+        <td class="border p-2">DIMER</td>
+        <td class="border p-2 break-words">GAGAACAAATACAGAACAT</td>
+        <td class="border p-2">+  [495132, 495150]</td>
+        <td class="border p-2">EMSA (ECO:0001807), qRT-PCR [RNA] (ECO:0001808)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">SMa0887 (SMa0887)</span>, </span><span><span style="color: #ffffff;">SMa5005 (SMa5005)</span>, </span><span><span style="color: #ffffff;">SMa0886 (SMa0886)</span>, </span><span><span style="color: #F44336;">SMa0888 (SMa0888)</span>, </span><span><span style="color: #F44336;">SMa0890 (SMa0890)</span>, </span><span><span style="color: #F44336;">dnaE3 (SMa0892)</span></span></td>
+        <td class="border p-2">132</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/15458417" target="_blank" rel="noopener noreferrer">15458417</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

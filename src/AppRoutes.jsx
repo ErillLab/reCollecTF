@@ -1,35 +1,31 @@
-import "../curation-pipeline/src/index.css";
-
 import { HashRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
 import Layout from "./pages/Layout";
 import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/Search/SearchPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useUser } from "@/contexts/UserContext";
-import "../curation-pipeline/src/index.css";
-
-import CurationPipelineApp from "../curation-pipeline/src/App.jsx";
-import { CurationProvider } from "../curation-pipeline/src/context/CurationContext"; 
+import CurationPipeline from "./pages/CurationPipeline.jsx";
+import { CurationProvider } from "./contexts/CurationContext.jsx";
+import DetailedView from "./components/uniprot-tf-queries/detail/DetailedView.jsx";
 
 function AppRoutes() {
   const { userStatus } = useUser();
-
   return (
     <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="Search/:step?" element={<SearchPage />} />
-        </Route>
-
-        <Route
-          path="/curation-pipeline/*"
+          <Route
+          path="curation-pipeline/*"
           element={
             <CurationProvider>
-              <CurationPipelineApp />
+              <CurationPipeline />
             </CurationProvider>
-          }
-        />
+            }
+          />
+        </Route>
       </Routes>
     </HashRouter>
   );

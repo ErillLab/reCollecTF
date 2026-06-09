@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PilR - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">PilR</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q74D24/entry">
+          UniProtKB: Q74D24
+        </a>
+        regulon and binding site collection of Geobacter sulfurreducens PCA
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002939.5" target="_blank" rel="noopener noreferrer">NC_002939.5</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q74D24" target="_blank" rel="noopener noreferrer">Q74D24</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GGCAAAATTTGGCATG</td>
+        <td class="border p-2">+  [1642063, 1642078]</td>
+        <td class="border p-2">Luciferase reporter assay (ECO:0005648), Regular expression search (ECO:0005662)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">pilR (GSU1495)</span>, </span><span><span style="color: #ffffff;">pilS (GSU1494)</span>, </span><span><span style="color: #ffffff;">pilC (GSU1493)</span>, </span><span><span style="color: #ffffff;">pilT-4 (GSU1492)</span>, </span><span><span style="color: #ffffff;">pilB (GSU1491)</span>, </span><span><span style="color: #ffffff;">aroE (GSU1490)</span>, </span><span><span style="color: #ffffff;">GSU1489 (GSU1489)</span>, </span><span><span style="color: #ffffff;">GSU1488 (GSU1488)</span>, </span><span><span style="color: #ffffff;">ribF (GSU1487)</span>, </span><span><span style="color: #ffffff;">tatC (GSU1486)</span>, </span><span><span style="color: #ffffff;">rnr (GSU1485)</span>, </span><span><span style="color: #4CAF50;">pilA-N (GSU1496)</span>, </span><span><span style="color: #ffffff;">pilA-C (GSU1497)</span>, </span><span><span style="color: #ffffff;">xapA (GSU1498)</span>, </span><span><span style="color: #ffffff;">xapB (GSU1499)</span>, </span><span><span style="color: #ffffff;">GSU1500 (GSU1500)</span>, </span><span><span style="color: #ffffff;">xapD (GSU1501)</span>, </span><span><span style="color: #ffffff;">xapE (GSU1502)</span>, </span><span><span style="color: #ffffff;">xapF (GSU1503)</span>, </span><span><span style="color: #ffffff;">xapG (GSU1504)</span>, </span><span><span style="color: #ffffff;">xapH (GSU1505)</span>, </span><span><span style="color: #ffffff;">xapI (GSU1506)</span>, </span><span><span style="color: #ffffff;">xapJ (GSU1507)</span>, </span><span><span style="color: #ffffff;">GSU1508 (GSU1508)</span>, </span><span><span style="color: #ffffff;">GSU1509 (GSU1509)</span>, </span><span><span style="color: #ffffff;">GSU1510 (GSU1510)</span>, </span><span><span style="color: #ffffff;">GSU1510.1 (GSU1510.1)</span>, </span><span><span style="color: #ffffff;">GSU1511 (GSU1511)</span>, </span><span><span style="color: #ffffff;">GSU1512 (GSU1512)</span>, </span><span><span style="color: #ffffff;">GSU1513 (GSU1513)</span>, </span><span><span style="color: #ffffff;">GSU1514 (GSU1514)</span>, </span><span><span style="color: #ffffff;">GSUR026 (GSUR026)</span>, </span><span><span style="color: #ffffff;">thrS (GSU1515)</span>, </span><span><span style="color: #ffffff;">infC (GSU1516)</span>, </span><span><span style="color: #ffffff;">rpmI (GSU1517)</span>, </span><span><span style="color: #ffffff;">rplT (GSU1518)</span>, </span><span><span style="color: #ffffff;">pheS (GSU1519)</span>, </span><span><span style="color: #ffffff;">pheT (GSU1520)</span>, </span><span><span style="color: #ffffff;">ihfA-1 (GSU1521)</span>, </span><span><span style="color: #ffffff;">GSU1522 (GSU1522)</span>, </span><span><span style="color: #ffffff;">GSUR027 (GSUR027)</span>, </span><span><span style="color: #ffffff;">surE (GSU1523)</span>, </span><span><span style="color: #ffffff;">pcm (GSU1524)</span>, </span><span><span style="color: #ffffff;">rpoS (GSU1525)</span>, </span><span><span style="color: #ffffff;">apt (GSU1526)</span>, </span><span><span style="color: #ffffff;">GSUR028 (GSUR028)</span></span></td>
+        <td class="border p-2">449</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/20708667" target="_blank" rel="noopener noreferrer">20708667</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>

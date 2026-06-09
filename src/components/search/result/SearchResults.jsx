@@ -111,7 +111,7 @@ function SearchResults() {
 
                     const geneKey = `${row.gene_name}-${row.locus_tag}`;
                     if (!currentData.gene_regulation.some(g => `${g.gene_name}-${g.locus_tag}` === geneKey)) {
-                        currentData.gene_regulation.push({ gene_name: row.gene_name, locus_tag: row.locus_tag });
+                        currentData.gene_regulation.push({ gene_name: row.gene_name, locus_tag: row.locus_tag, TF_function: row.TF_function, evidence_type: row.evidence_type });
                     }
                 
                 });

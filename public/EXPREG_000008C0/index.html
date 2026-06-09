@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CtrA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">CtrA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/P0CAW8/entry">
+          UniProtKB: P0CAW8
+        </a>
+        regulon and binding site collection of Caulobacter crescentus NA1000
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAACGCTCTGTTAA</td>
+        <td class="border p-2">+  [4042876, 4042890]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">hemE (CCNA_03879)</span>, </span><span><span style="color: #ffffff;">hemH (CCNA_03878)</span>, </span><span><span style="color: #ffffff;">CCNA_03877 (CCNA_03877)</span></span></td>
+        <td class="border p-2">1020</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/12949109" target="_blank" rel="noopener noreferrer">12949109</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAAGATCTTTCTAA</td>
+        <td class="border p-2">+  [4016751, 4016765]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_3763 (CC_3763)</span>, </span><span><span style="color: #ffffff;">CC_3762 (CC_3762)</span>, </span><span><span style="color: #ffffff;">CC_3761 (CC_3761)</span></span></td>
+        <td class="border p-2">1021</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10698954" target="_blank" rel="noopener noreferrer">10698954</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAATAAGAAATTAA</td>
+        <td class="border p-2">+  [4016772, 4016786]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_3763 (CC_3763)</span>, </span><span><span style="color: #ffffff;">CC_3762 (CC_3762)</span>, </span><span><span style="color: #ffffff;">CC_3761 (CC_3761)</span></span></td>
+        <td class="border p-2">1021</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10698954" target="_blank" rel="noopener noreferrer">10698954</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAACGCTCTGTTAA</td>
+        <td class="border p-2">+  [4016894, 4016908]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_3763 (CC_3763)</span>, </span><span><span style="color: #ffffff;">CC_3762 (CC_3762)</span>, </span><span><span style="color: #ffffff;">CC_3761 (CC_3761)</span></span></td>
+        <td class="border p-2">1021</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10698954" target="_blank" rel="noopener noreferrer">10698954</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAAGCAACCGTTAA</td>
+        <td class="border p-2">+  [205, 219]</td>
+        <td class="border p-2">Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">CC_0001 (CC_0001)</span>, </span><span><span style="color: #ffffff;">CC_0002 (CC_0002)</span>, </span><span><span style="color: #ffffff;">CC_0003 (CC_0003)</span>, </span><span><span style="color: #ffffff;">coaE (CC_0004)</span>, </span><span><span style="color: #ffffff;">CC_0005 (CC_0005)</span>, </span><span><span style="color: #ffffff;">CC_0006 (CC_0006)</span>, </span><span><span style="color: #ffffff;">CC_0007 (CC_0007)</span></span></td>
+        <td class="border p-2">1021</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10698954" target="_blank" rel="noopener noreferrer">10698954</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTGAAGTATGGTTAATGCCGG</td>
+        <td class="border p-2">+  [2818599, 2818619]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">fliX (CCNA_02664)</span>, </span><span><span style="color: #ffffff;">flgI (CCNA_02665)</span>, </span><span><span style="color: #ffffff;">CCNA_02666 (CCNA_02666)</span>, </span><span><span style="color: #ffffff;">flbY (CCNA_02667)</span></span></td>
+        <td class="border p-2">1023</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9555902" target="_blank" rel="noopener noreferrer">9555902</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TGGTTAAGAACAAATAACG</td>
+        <td class="border p-2">+  [3198858, 3198876]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pilA (CCNA_03043)</span>, </span><span><span style="color: #ffffff;">CCNA_03044 (CCNA_03044)</span>, </span><span><span style="color: #ffffff;">CCNA_03045 (CCNA_03045)</span>, </span><span><span style="color: #ffffff;">CCNA_03046 (CCNA_03046)</span></span></td>
+        <td class="border p-2">1026</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10880436" target="_blank" rel="noopener noreferrer">10880436</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GTAAATACAAATAAACCAA</td>
+        <td class="border p-2">+  [3198839, 3198857]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pilA (CCNA_03043)</span>, </span><span><span style="color: #ffffff;">CCNA_03044 (CCNA_03044)</span>, </span><span><span style="color: #ffffff;">CCNA_03045 (CCNA_03045)</span>, </span><span><span style="color: #ffffff;">CCNA_03046 (CCNA_03046)</span></span></td>
+        <td class="border p-2">1026</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10880436" target="_blank" rel="noopener noreferrer">10880436</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002696.2" target="_blank" rel="noopener noreferrer">NC_002696.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">CTAACGCCCTGTTAAC</td>
+        <td class="border p-2">+  [1207446, 1207461]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #FFEB3B;">fliQ (CC_1075)</span>, </span><span><span style="color: #ffffff;">fliR (CC_1076)</span>, </span><span><span style="color: #ffffff;">flhB (CC_1077)</span>, </span><span><span style="color: #ffffff;">CC_1078 (CC_1078)</span></span></td>
+        <td class="border p-2">1027</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/8548829" target="_blank" rel="noopener noreferrer">8548829</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TCAACAAAAGACTAAA</td>
+        <td class="border p-2">+  [3198953, 3198968]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pilA (CCNA_03043)</span>, </span><span><span style="color: #ffffff;">CCNA_03044 (CCNA_03044)</span>, </span><span><span style="color: #ffffff;">CCNA_03045 (CCNA_03045)</span>, </span><span><span style="color: #ffffff;">CCNA_03046 (CCNA_03046)</span></span></td>
+        <td class="border p-2">1028</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10880436" target="_blank" rel="noopener noreferrer">10880436</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTTACTGGCCATTAAG</td>
+        <td class="border p-2">+  [3198796, 3198811]</td>
+        <td class="border p-2">Beta-gal reporter assay, DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">pilA (CCNA_03043)</span>, </span><span><span style="color: #ffffff;">CCNA_03044 (CCNA_03044)</span>, </span><span><span style="color: #ffffff;">CCNA_03045 (CCNA_03045)</span>, </span><span><span style="color: #ffffff;">CCNA_03046 (CCNA_03046)</span></span></td>
+        <td class="border p-2">1028</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/10880436" target="_blank" rel="noopener noreferrer">10880436</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAACCGCCGATTAAC</td>
+        <td class="border p-2">+  [2773206, 2773221]</td>
+        <td class="border p-2">DNAse footprinting (ECO:0005631), Visual sequence inspection (nan), xylE reporter assay</td>
+        <td class="border p-2"><span><span style="color: #F44336;">ftsZ (CCNA_02623)</span>, </span><span><span style="color: #ffffff;">CCNA_02622 (CCNA_02622)</span></span></td>
+        <td class="border p-2">1029</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/9512521" target="_blank" rel="noopener noreferrer">9512521</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_011916.1" target="_blank" rel="noopener noreferrer">NC_011916.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/P0CAW8" target="_blank" rel="noopener noreferrer">P0CAW8</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">TTAATGCCGGATTAA</td>
+        <td class="border p-2">+  [1085157, 1085171]</td>
+        <td class="border p-2">Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), DNAse footprinting (ECO:0005631), Visual sequence inspection (nan)</td>
+        <td class="border p-2"><span><span style="color: #FFEB3B;">fliO (CCNA_01003)</span>, </span><span><span style="color: #FFEB3B;">fliP (CCNA_01002)</span>, </span><span><span style="color: #ffffff;">CCNA_01001 (CCNA_01001)</span>, </span><span><span style="color: #FFEB3B;">flgB (CCNA_01004)</span>, </span><span><span style="color: #ffffff;">flgC (CCNA_01005)</span>, </span><span><span style="color: #ffffff;">fliE (CCNA_01006)</span></span></td>
+        <td class="border p-2">1060</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11133968" target="_blank" rel="noopener noreferrer">11133968</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
