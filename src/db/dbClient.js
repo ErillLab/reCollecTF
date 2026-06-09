@@ -1,4 +1,9 @@
 import { createDbWorker } from "sql.js-httpvfs";
+// Comment line up and uncomment these two below to execute generate-reports profile error otherwise
+// import sqljsHttpvfs from "sql.js-httpvfs";
+// const { createDbWorker } = sqljsHttpvfs.default || sqljsHttpvfs;
+
+
 
 const isNode = typeof Worker === "undefined";
 

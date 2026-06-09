@@ -19,7 +19,7 @@ const expregFilePath = "";
 function expressionIdFromTfInstanceId(tfInstanceId) {
   const hex = tfInstanceId
     .toString(16)
-    .toUpperCase()
+    .toLowerCase()
     .padStart(7, "0");
   return `EXPREG_${hex}0`;
 }

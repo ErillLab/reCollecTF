@@ -97,8 +97,6 @@ jobs:
           fi
 
           git commit -m "Update database via workflow_dispatch"
-          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
-          git push origin main
 
   create-page:
     runs-on: ubuntu-latest
