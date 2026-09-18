@@ -1,5 +1,5 @@
-const dispatchUrl = "https://recollectf2.vercel.app/api/functions/send-form.ts" //  "http://localhost:3000/api/auth/functions/send-form.ts"
-const BASE_URL = "https://recollectf2.vercel.app/api/functions/"
+const dispatchUrl = "https://recollectf.vercel.app/api/functions/send-form.ts" //  "http://localhost:3000/api/auth/functions/send-form.ts"
+const BASE_URL = "https://recollectf.vercel.app/api/functions/"
 import { getMaxTfInstanceId } from "../db/queries/uniprotQueries";
 import { expressionIdFromTfInstanceId } from "../../src/utils/tfIdConverterToExpressionId";
 
@@ -52,7 +52,7 @@ export async function dispatchWorkflowPipe(data) {
 export async function createUniprotAccessionFile(htmlContent, tf_instance_id, uniprotAccession, expressionInfo) {
   const expressionId = expressionIdFromTfInstanceId(tf_instance_id); //+1 to generate the next tfId
 
-  const res = await fetch("https://recollectf2.vercel.app/api/functions/create-expression-page", {
+  const res = await fetch("https://recollectf.vercel.app/api/functions/create-expression-page", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
@@ -78,7 +78,7 @@ export async function createUniprotAccessionFile(htmlContent, tf_instance_id, un
 
 export async function dispatchAndCreate(data, htmlContent, tf_instance_id, uniprotAccession, expressionInfo) {
   const expressionId = expressionIdFromTfInstanceId(tf_instance_id);
-  const BASE_URL = "https://recollectf2.vercel.app/api/functions";
+  const BASE_URL = "https://recollectf.vercel.app/api/functions";
 
   const res = await fetch(`${BASE_URL}/dispatch-and-create`, {
     method: "POST",
