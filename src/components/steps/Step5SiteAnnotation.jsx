@@ -162,7 +162,21 @@ export default function Step5SiteAnnotation() {
     setAnnotations(next);
   }
 
+  const [error, setError] = useState("");
+
   function handleConfirm() {
+    // Comprova que cada site té almenys una tècnica seleccionada
+    const sitesWithoutTechnique = sites.filter((site) => {
+      const techMap = annotations[site]?.techniques || {};
+      return !Object.values(techMap).some((v) => v === true);
+    });
+
+    if (sitesWithoutTechnique.length > 0) {
+      setError(`Please select at least one experimental technique for: ${sitesWithoutTechnique.join(", ")}`);
+      return;
+    }
+
+    setError("");
     setStep5Data({ annotations, bulkTfType, bulkTfFunc });
     goToNextStep();
   }
@@ -367,9 +381,14 @@ export default function Step5SiteAnnotation() {
         </div>
       </div>
 
+      {error && (
+        <div className="text-red-400 text-sm">{error}</div>
+      )}
+
       <button className="btn mt-6" onClick={handleConfirm}>
         Confirm and continue →
       </button>
+      
     </div>
   );
 }

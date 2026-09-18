@@ -241,6 +241,12 @@ export default function Step1Publication() {
           placeholder="PMID, DOI, or article title"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSearch(e);
+            }
+          }}
         />
         <button className="btn" onClick={handleSearch} disabled={loading}>
           {loading ? "Searching..." : "Search"}

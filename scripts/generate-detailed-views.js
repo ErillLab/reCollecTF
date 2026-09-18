@@ -14,7 +14,7 @@ import { getAllTfInstanceIds } from "../src/db/queries/uniprotQueries.js";
 //  EXPREG_00000050
 
 const publicDir = path.resolve("public");
-const expregFilePath = "";
+const expregFilePath = "public/static/uniprot_dbxref.txt";
 
 function expressionIdFromTfInstanceId(tfInstanceId) {
   const hex = tfInstanceId
@@ -28,14 +28,17 @@ async function getTfFromXRef() {
   const results = [];
 
   const rl = readline.createInterface({
-    input: fs.createReadStream(expregFilePath), 
+    input: fs.createReadStream(expregFilePath),
     terminal: false
   });
 
   return new Promise((resolve, reject) => {
     rl.on('line', (line) => {
-      if (line.trim() !== '') {
-        results.push(tfInstanceFromExpression(line.trim()));
+      if (line.trim() === '') return;
+      const cols = line.trim().split('\t');
+      const expregId = cols[1]?.trim();
+      if (expregId) {
+        results.push(tfInstanceFromExpression(expregId));
       }
     });
 

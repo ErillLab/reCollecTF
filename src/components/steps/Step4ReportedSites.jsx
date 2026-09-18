@@ -123,7 +123,7 @@ export default function Step4ReportedSites() {
   const [accordion, setAccordion] = useState({ a1: true, a2: true, a3: false });
   const toggleAcc = (k) => setAccordion((p) => ({ ...p, [k]: !p[k] }));
 
-  const [siteType, setSiteType] = useState("variable");
+  const [siteType, setSiteType] = useState("motif_associated");
   const [rawSites, setRawSites] = useState("");
   const [sites, setSites] = useState([]);
 
@@ -145,7 +145,7 @@ export default function Step4ReportedSites() {
   useEffect(() => {
     if (!step4Data) return;
 
-    setSiteType(step4Data.siteType || "variable");
+    setSiteType(step4Data.siteType || "motif_associated");
     setRawSites(step4Data.rawSites || "");
     setSites(step4Data.sites || []);
     setExactHits(step4Data.exactHits || {});
@@ -194,12 +194,6 @@ export default function Step4ReportedSites() {
         }
 
         try {
-          const fastaUrl = buildNcbiUrl({ db: "nuccore", id: acc, rettype: "fasta", retmode: "text" });
-          const fastaText = await fetchTextWithFallback(fastaUrl);
-
-          const seq = fastaText.replace(/>.*/g, "").replace(/[^ATCGatcg]/g, "").toUpperCase();
-          if (!seq || seq.length < 100) throw new Error(`Empty/invalid FASTA for ${acc}`);
-
           const gbUrl = buildNcbiUrl({
             db: "nuccore",
             id: acc,
@@ -210,7 +204,10 @@ export default function Step4ReportedSites() {
 
           const parsed = genbankParser(gbText);
           const entry = parsed?.[0];
+
+          const seq = entry?.sequence.toUpperCase() || "";
           const features = entry?.features || [];
+          
 
           // Barregem gene + CDS pel mateix locus_tag
           const locusMap = new Map();
@@ -590,15 +587,19 @@ export default function Step4ReportedSites() {
           <div className="space-y-3 text-sm">
             <div className="space-y-1">
               <label className="flex items-center gap-2">
-                <input type="radio" checked={siteType === "motif"} onChange={() => setSiteType("motif")} />
+                <input 
+                  type="radio" 
+                  checked={siteType === "motif_associated"} 
+                  onChange={() => setSiteType("motif_associated")} 
+                />
                 Motif-associated (new motif)
               </label>
 
               <label className="flex items-center gap-2">
                 <input
                   type="radio"
-                  checked={siteType === "variable"}
-                  onChange={() => setSiteType("variable")}
+                  checked={siteType === "var_motif_associated"}
+                  onChange={() => setSiteType("var_motif_associated")}
                 />
                 Variable motif-associated
               </label>
@@ -606,8 +607,8 @@ export default function Step4ReportedSites() {
               <label className="flex items-center gap-2">
                 <input
                   type="radio"
-                  checked={siteType === "nonmotif"}
-                  onChange={() => setSiteType("nonmotif")}
+                  checked={siteType === "non_motif_associated"}
+                  onChange={() => setSiteType("non_motif_associated")}
                 />
                 Non-motif-associated
               </label>

@@ -25,10 +25,10 @@ const Header = () => {
             <div className="flex items-center gap-4">
                 {(userStatus == 2)}
 
-                <SearchButton />
-                <NewCurationButton />
+                <SearchButton   />
+                <NewCurationButton  userStatus={userStatus} />
 
-                <LoginButton userStatus={userStatus} user={user} loading={loading}/>
+                <LoginButton userStatus={userStatus}    user={user}    loading={loading}  />
             </div>
         </header>
     );

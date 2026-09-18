@@ -35,6 +35,7 @@ export default defineConfig({
     
     }
   ],
+  // change to base:"/" in prod
   base: "/",
   build: {
     rollupOptions: {

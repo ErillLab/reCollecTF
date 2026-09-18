@@ -78,8 +78,9 @@ export async function createUniprotAccessionFile(htmlContent, tf_instance_id, un
 
 export async function dispatchAndCreate(data, htmlContent, tf_instance_id, uniprotAccession, expressionInfo) {
   const expressionId = expressionIdFromTfInstanceId(tf_instance_id);
+  const BASE_URL = "https://recollectf.vercel.app/api/functions";
 
-  const res = await fetch("https://recollectf.vercel.app/api/functions/dispatch-and-create", {
+  const res = await fetch(`${BASE_URL}/dispatch-and-create`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     credentials: "include",
@@ -94,11 +95,7 @@ export async function dispatchAndCreate(data, htmlContent, tf_instance_id, unipr
 
   const text = await res.text();
   let payload;
-  try {
-    payload = text ? JSON.parse(text) : null;
-  } catch {
-    payload = text;
-  }
+  try { payload = text ? JSON.parse(text) : null; } catch { payload = text; }
 
   if (!res.ok) {
     const err = new Error(`Dispatch and create failed (${res.status})`);

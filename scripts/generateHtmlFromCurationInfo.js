@@ -65,8 +65,6 @@ export async function generateHTMLFromCurationContext({
 
   const tf_instance_id = await getTfInstanceFromUniAcc(uniAcc);
 
-  console.log(tf_instance_id);
-
   let result = [];
 
   let resultFromDB = [];
@@ -92,9 +90,24 @@ export async function generateHTMLFromCurationContext({
 
     if (!bundle || bundle.kind === "none" || !bundle.hit) continue;
 
+    const TF_FUNCTION_MAP = {
+      "activator": "ACT",
+      "repressor": "REP",
+      "dual": "DUAL",
+      "not specified": "N/A",
+    };
+
+    const TF_TYPE_MAP = {
+      "monomer": "MONOMER",
+      "dimer": "DIMER",
+      "tetramer": "TETRAMER",
+      "other": "OTHER",
+      "not specified": "N/A",
+    };
+
     const hit = bundle.hit;
-    const TF_type = pickFirstNonEmpty(s5?.tfType, "not specified");
-    const TF_function = pickFirstNonEmpty(s5?.tfFunc, "not specified");
+    const TF_type = TF_TYPE_MAP[pickFirstNonEmpty(s5?.tfType, "not specified")] ?? "N/A";
+      const TF_function = TF_FUNCTION_MAP[pickFirstNonEmpty(s5?.tfFunc, "not specified")] ?? "N/A";
     const annotated_seq = pickFirstNonEmpty(s5?.annotated_seq, s5?.annotatedSeq, site);
     const start = Number(hit.start ?? 0);
     const end = Number(hit.end ?? 0);
@@ -122,6 +135,9 @@ export async function generateHTMLFromCurationContext({
         const gene_name = pickFirstNonEmpty(g?.geneLabel, g?.gene, g?.name, "");
         const locus_tag = pickFirstNonEmpty(g?.locus, "");
         if (!gene_name && !locus_tag) continue;
+        
+        // sets regulated/not with selected
+        const evidence_type = g.selected ? "exp_verified" : "inferred";
 
         for (const tech of siteTechniques.length ? siteTechniques : [{ technique_id: null, tech_name: "", EO_term: null }]) {
           result.push({

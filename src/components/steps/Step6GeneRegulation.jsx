@@ -31,16 +31,30 @@ export default function Step6GeneRegulation() {
   const [activeSite, setActiveSite] = useState(null);
 
   useEffect(() => {
-    if (step6Data) setRegulation(step6Data);
-  }, [step6Data]);
+    if (sites.length > 0 && !activeSite) {
+      setActiveSite(sites[0]);
+    }
+  }, [sites, activeSite]);
 
   useEffect(() => {
-    if (!sites.length) {
-      setActiveSite(null);
-      return;
-    }
-    setActiveSite((prev) => (prev && sites.includes(prev) ? prev : sites[0]));
-  }, [sites]);
+    if (!sites.length) return;
+
+    setRegulation((prev) => {
+      const next = { ...prev };
+      for (const site of sites) {
+        const hit = getSelectedHit(site);
+        if (!hit) continue;
+        const genes = findGenesForHit(hit.acc, hit.start + 1, hit.end + 1);
+        const current = next?.[site]?.regulatedGenes || [];
+        const merged = genes.map((g) => {
+          const existing = current.find((x) => x.locus === g.locus);
+          return existing ?? { ...g, selected: false };
+        });
+        next[site] = { ...(next[site] || {}), regulatedGenes: merged };
+      }
+      return next;
+  });
+  }, [sites, genomes]);
 
   if (!step4Data) {
     return (
@@ -197,22 +211,18 @@ export default function Step6GeneRegulation() {
     result.sort((a, b) => Number(a.start) - Number(b.start));
     return result;
   }
-
   function toggleGene(site, gene) {
-    if (!expressionEnabled) return;
-
     setRegulation((prev) => {
       const current = prev?.[site]?.regulatedGenes || [];
       const exists = current.some((g) => g.locus === gene.locus);
 
-      const updated = exists ? current.filter((g) => g.locus !== gene.locus) : [...current, gene];
+      const updated = exists
+        ? current.map((g) => g.locus === gene.locus ? { ...g, selected: !g.selected } : g)
+        : [...current, { ...gene, selected: true }];
 
       return {
         ...prev,
-        [site]: {
-          ...(prev?.[site] || {}),
-          regulatedGenes: updated,
-        },
+        [site]: { ...(prev?.[site] || {}), regulatedGenes: updated },
       };
     });
   }
@@ -295,8 +305,7 @@ export default function Step6GeneRegulation() {
             ) : (
               <div className="space-y-2">
                 {genes.map((g) => {
-                  const checked = regulation?.[site]?.regulatedGenes?.some((x) => x.locus === g.locus) || false;
-
+                    const checked = regulation?.[site]?.regulatedGenes?.find((x) => x.locus === g.locus)?.selected || false;
                   return (
                     <label
                       key={g.locus || `${g.start}-${g.end}`}
