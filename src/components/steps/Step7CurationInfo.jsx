@@ -1,5 +1,4 @@
 // src/components/steps/Step7CurationInfo.jsx
-import gzipToBase64 from "../../utils/gzipToBase64";
 import { useMemo, useState } from "react";
 import { useCuration } from "../../contexts/CurationContext";
 import { dispatchAndCreate, dispatchWorkflowPipe } from "../../utils/serverless";
