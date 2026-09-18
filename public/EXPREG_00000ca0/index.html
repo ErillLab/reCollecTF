@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexA - CollecTF</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      background-color: rgb(30, 30, 30);
+      font-family: Segoe UI, sans-serif;
+      color: rgb(245, 245, 245);
+    }
+
+    .btn {
+      cursor: pointer;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background-color: rgb(51, 65, 85);
+      padding: 0.5rem 1rem;
+      color: rgb(245, 245, 245);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: rgb(30, 41, 59);
+    }
+
+    .text-accent {
+      color: rgb(79, 195, 247);
+    }
+
+    .bg-surface {
+      background-color: rgb(42, 42, 42);
+    }
+
+    .border-border {
+      border-color: rgb(68, 68, 68);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="flex justify-between items-center bg-surface px-8 py-4 border-b border-border">
+    <a href="https://collectf.org/" 
+    class="text-5xl font-bold text-accent cursor-pointer hover:text-white no-underline">
+    CollecTF
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main class="max-w-screen-xl mx-auto px-4 mt-6">
+
+    <div class="mb-6">
+      <b class="text-lg">LexA</b>
+
+      <p class="mt-2 text-sm text-gray-300">
+        <a class="text-accent hover:underline"
+           href="https://www.uniprot.org/uniprotkb/Q06198/entry">
+          UniProtKB: Q06198
+        </a>
+        regulon and binding site collection of Synechocystis sp. PCC 6803
+      </p>
+    </div>
+
+    <!-- GUIDE -->
+    <p class="mb-4 text-sm text-gray-300">
+      For the selected transcription factor and species, the list of curated binding sites in the database are displayed below.
+      Gene regulation diagrams show
+      <span style="text-decoration: underline;">[binding sites]</span>,
+      <span style="color: #4CAF50; text-decoration: underline;">[positively-regulated genes]</span>,
+      <span style="color: #F44336; text-decoration: underline;">[negatively-regulated genes]</span>,
+      <span style="color: #FFEB3B; text-decoration: underline;">[both positively and negatively regulated genes]</span>,
+      <span style="color: #2196F3; text-decoration: underline;">[genes with unspecified type of regulation]</span>.
+    </p>
+
+    <!-- TABLE -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-fixed border-collapse">
+
+        <thead>
+          <tr class="bg-surface">
+            <th class="border border-gray-700 p-2">Genome</th>
+            <th class="border border-gray-700 p-2">TF</th>
+            <th class="border border-gray-700 p-2">TF conformation</th>
+            <th class="border border-gray-700 p-2">Site Sequence</th>
+            <th class="border border-gray-700 p-2">Site Location</th>
+            <th class="border border-gray-700 p-2">Experimental Techniques</th>
+            <th class="border border-gray-700 p-2">Gene Regulation</th>
+            <th class="border border-gray-700 p-2">Curation</th>
+            <th class="border border-gray-700 p-2">PMID</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACGGCTAGCGGAAATCGTGGTCATA</td>
+        <td class="border p-2">+  [3791258, 3791284]</td>
+        <td class="border p-2">Visual sequence inspection (nan), Beta-gal reporter assay, Site directed mutagenesis (ECO:0005667), Primer Extension assay (ECO:0005657)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA3372 (PA3372)</span>, </span><span><span style="color: #ffffff;">PA3373 (PA3373)</span>, </span><span><span style="color: #ffffff;">PA3374 (PA3374)</span>, </span><span><span style="color: #ffffff;">PA3375 (PA3375)</span>, </span><span><span style="color: #ffffff;">PA3376 (PA3376)</span>, </span><span><span style="color: #ffffff;">PA3377 (PA3377)</span>, </span><span><span style="color: #ffffff;">PA3378 (PA3378)</span>, </span><span><span style="color: #ffffff;">PA3379 (PA3379)</span>, </span><span><span style="color: #ffffff;">PA3380 (PA3380)</span>, </span><span><span style="color: #ffffff;">PA3381 (PA3381)</span>, </span><span><span style="color: #ffffff;">phnE (PA3382)</span>, </span><span><span style="color: #ffffff;">PA3383 (PA3383)</span>, </span><span><span style="color: #ffffff;">phnC (PA3384)</span>, </span><span><span style="color: #4CAF50;">amrZ (PA3385)</span></span></td>
+        <td class="border p-2">809</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/14645293" target="_blank" rel="noopener noreferrer">14645293</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTTGAGGGCAAGTCGAAGTTCAAA</td>
+        <td class="border p-2">+  [1920704, 1920731]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">sigX (PA1776)</span>, </span><span><span style="color: #4CAF50;">oprF (PA1777)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTCACGCCAGCGCAAATGTTCAAA</td>
+        <td class="border p-2">-  [1735101, 1735128]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA1592 (PA1592)</span>, </span><span><span style="color: #ffffff;">PA1593 (PA1593)</span>, </span><span><span style="color: #ffffff;">PA1594 (PA1594)</span>, </span><span><span style="color: #ffffff;">PA1595 (PA1595)</span>, </span><span><span style="color: #ffffff;">htpG (PA1596)</span>, </span><span><span style="color: #ffffff;">PA1597 (PA1597)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTTCCTCCGCGCCGTGGCTCTGAA</td>
+        <td class="border p-2">-  [1119633, 1119660]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">quiP (PA1032)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTAGGCGCAGAATGTCGGGTCCCA</td>
+        <td class="border p-2">+  [935411, 935438]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA0853 (PA0853)</span>, </span><span><span style="color: #ffffff;">fumC2 (PA0854)</span>, </span><span><span style="color: #ffffff;">PA0855 (PA0855)</span>, </span><span><span style="color: #4CAF50;">PA0856 (PA0856)</span>, </span><span><span style="color: #ffffff;">bolA (PA0857)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTGTCCGGCTGCGTCGTCCTCCCA</td>
+        <td class="border p-2">+  [73408, 73435]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">osmC (PA0059)</span>, </span><span><span style="color: #ffffff;">PA0060 (PA0060)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTTCCCGTTTTGCCGACAGTCAGA</td>
+        <td class="border p-2">-  [6183665, 6183692]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">polA (PA5493)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTGAGATCGTGCAGGGTGCTCCAA</td>
+        <td class="border p-2">-  [4433366, 4433393]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">PA3950 (PA3950)</span>, </span><span><span style="color: #ffffff;">PA3951 (PA3951)</span>, </span><span><span style="color: #4CAF50;">PA3952 (PA3952)</span>, </span><span><span style="color: #ffffff;">PA3953 (PA3953)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTGTCGCAGTCGTGCCGTTCCAAG</td>
+        <td class="border p-2">-  [4371810, 4371837]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA3902 (PA3902)</span>, </span><span><span style="color: #ffffff;">prfC (PA3903)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_002516.2" target="_blank" rel="noopener noreferrer">NC_002516.2</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">N/A</td>
+        <td class="border p-2 break-words">GAACTTGGTGGTTTTTGCCCAGTCCTAG</td>
+        <td class="border p-2">-  [4276022, 4276049]</td>
+        <td class="border p-2">Primer Extension assay (ECO:0005657), Consensus search (ECO:0005624)</td>
+        <td class="border p-2"><span><span style="color: #4CAF50;">PA3819 (PA3819)</span></span></td>
+        <td class="border p-2">810</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/11807066" target="_blank" rel="noopener noreferrer">11807066</a></td>
+      </tr>
+      <tr>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000911.1" target="_blank" rel="noopener noreferrer">NC_000911.1</a>
+        </td>
+        <td class="border p-2">
+          <a class="text-accent hover:underline" href="http://uniprot.org/uniprot/Q06198" target="_blank" rel="noopener noreferrer">Q06198</a>
+        </td>
+        <td class="border p-2">monomer</td>
+        <td class="border p-2 break-words">AAGTTAACG</td>
+        <td class="border p-2">+  [181300, 181308]</td>
+        <td class="border p-2">EMSA (ECO:0001807)</td>
+        <td class="border p-2"><span><span style="color: #ffffff;">WP_020861377.1 (SGL_RS02720)</span></span></td>
+        <td class="border p-2">1145</td>
+        <td class="border p-2"><a class="text-accent hover:underline" href="https://pubmed.ncbi.nlm.nih.gov/8420889" target="_blank" rel="noopener noreferrer">8420889</a></td>
+      </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </main>
+
+</body>
+</html>
