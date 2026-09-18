@@ -115,13 +115,10 @@ async function computeTaxonomyForAcc(acc) {
   if (taxonomyCacheByAcc.has(acc)) return taxonomyCacheByAcc.get(acc);
 
   const info = await fetchNuccoreTaxInfo(acc);
-  console.log("taxInfo:", acc, info);
 
   if (!info?.taxid) throw new Error(`No taxid for accession ${acc}`);
 
   const chain = await fetchTaxonomyLineageEx(info.taxid);
-  console.log("chain:", acc, chain);
-
 
   if (!chain?.length) throw new Error(`No taxonomy lineage for taxid ${info.taxid}`);
 
@@ -713,7 +710,7 @@ export default function Step2GenomeTF() {
     setUniprotList(uniProtItems);
     setRefseqList(refseqItems);
     setStrainData(strainObj);
-    console.log(taxonomyData);
+
     goToNextStep();
   }
 

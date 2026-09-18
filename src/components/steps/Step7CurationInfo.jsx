@@ -423,7 +423,6 @@ WHERE NOT EXISTS (
     }
 
     // Taxonomia + link a genome
-    console.log("taxonomyData:", JSON.stringify(taxonomyData, null, 2));
 
     const taxByAcc = taxonomyData?.byAccession || {};
 
@@ -708,8 +707,6 @@ WHERE ${geneIdExpr} IS NOT NULL;
       });
 
       // We compress and pass it to string to be able to sent it to vercel's endpoint
-      console.log(htmlContent);
-
       const expressionInfo = strainData?.expressionInfo || false;
 
       let tf_instance_id =

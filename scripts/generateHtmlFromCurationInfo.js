@@ -65,8 +65,6 @@ export async function generateHTMLFromCurationContext({
 
   const tf_instance_id = await getTfInstanceFromUniAcc(uniAcc);
 
-  console.log(tf_instance_id);
-
   let result = [];
 
   let resultFromDB = [];
