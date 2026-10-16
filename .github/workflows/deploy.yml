@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ["Update DB"]
+    workflows: ["Update DB and Create Expression Page"]
     types: [completed]
 
   push:
